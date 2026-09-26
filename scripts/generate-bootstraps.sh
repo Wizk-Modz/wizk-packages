@@ -14,17 +14,17 @@ trap 'rm -rf $BOOTSTRAP_TMPDIR' EXIT
 # and <10.
 BOOTSTRAP_ANDROID10_COMPATIBLE=false
 
-# By default, bootstrap archives will be built for all architectures
-# supported by Termux application.
+# By default, bootstrap archives will be built for the aarch64 architecture
+# supported by the WizkTerm application.
 # Override with option '--architectures'.
-TERMUX_ARCHITECTURES=("aarch64" "arm" "i686" "x86_64")
+TERMUX_ARCHITECTURES=("aarch64")
 
 # The supported termux package managers.
 TERMUX_PACKAGE_MANAGERS=("apt" "pacman")
 
 # The repository base urls mapping for package managers.
 declare -A REPO_BASE_URLS=(
-	["apt"]="https://packages-cf.termux.dev/apt/termux-main"
+	["apt"]="https://wizk-modz.github.io/wizk-packages/apt/wizkterm-main"
 	["pacman"]="https://sync.termux-pacman.dev/main"
 )
 

@@ -11,7 +11,7 @@ set -euo pipefail
 # ./scripts/generate-apt-packages-list.sh "/path/to/output_dir"
 #
 # The script will generate "/path/to/output_dir/apt-packages-list-<arch>.txt"
-# for aarch64, arm, i686 and x86_64
+# for aarch64
 
 if [[ "$#" != 1 ]]; then
 	echo 'Usage:'
@@ -25,7 +25,7 @@ OUTPUT_DIR="$1"
 
 readarray -t repo_paths <<< "$(jq --raw-output 'del(.pkg_format) | keys | .[]' "$TERMUX_PACKAGES_DIR/repo.json")"
 
-for arch in "aarch64" "arm" "i686" "x86_64"; do
+for arch in "aarch64"; do
 	# Note that this is loop for generating the list of packages is being parallelized for each architecture
 	for repo_path in "${repo_paths[@]}"; do
 		repo_name="$(jq --raw-output ".\"$repo_path\".name" "$TERMUX_PACKAGES_DIR/repo.json")"

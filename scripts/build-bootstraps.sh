@@ -23,10 +23,10 @@ BOOTSTRAP_TMPDIR=$(mktemp -d "${TMPDIR:-/tmp}/bootstrap-tmp.XXXXXXXX")
 # and <10.
 BOOTSTRAP_ANDROID10_COMPATIBLE=false
 
-# By default, bootstrap archives will be built for all architectures
-# supported by Termux application.
+# By default, bootstrap archives will be built for the aarch64 architecture
+# supported by the WizkTerm application.
 # Override with option '--architectures'.
-TERMUX_DEFAULT_ARCHITECTURES=("aarch64" "arm" "i686" "x86_64")
+TERMUX_DEFAULT_ARCHITECTURES=("aarch64")
 TERMUX_ARCHITECTURES=("${TERMUX_DEFAULT_ARCHITECTURES[@]}")
 
 TERMUX_PACKAGES_DIRECTORY="/home/builder/termux-packages"

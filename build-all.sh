@@ -25,7 +25,7 @@ test -f "$HOME"/.termuxrc && . "$HOME"/.termuxrc
 _show_usage() {
 	echo "Usage: ./build-all.sh [-a ARCH] [-d] [-i] [-o DIR] [-f FORMAT]"
 	echo "Build all packages."
-	echo "  -a The architecture to build for: aarch64(default), arm, i686, x86_64 or all."
+	echo "  -a The architecture to build for: aarch64(default) or all."
 	echo "  -d Build with debug symbols."
 	echo "  -i Build dependencies."
 	echo "  -o Specify deb directory. Default: debs/."
@@ -48,7 +48,7 @@ shift $((OPTIND-1))
 if [ "$#" -ne 0 ]; then _show_usage; fi
 
 case "$TERMUX_ARCH" in
-	all|aarch64|arm|i686|x86_64);;
+	all|aarch64);;
 	*) echo "ERROR: Invalid arch '$TERMUX_ARCH'" 1>&2; exit 1;;
 esac
 

@@ -36,22 +36,31 @@ for repo in $(jq --raw-output 'del(.pkg_format) | keys | .[]' repo.json); do
 	component=$(jq --raw-output '.["'"${repo}"'"].component' repo.json)
 	url=$(jq --raw-output '.["'"${repo}"'"].url' repo.json)
 
-	for arch in aarch64 arm i686 x86_64; do
+	for arch in aarch64; do
 		if [[ ! -f "Packages-${repo}-${arch}" ]]; then
 			echo "[*] Downloading ${url}/dists/${distribution}/${component}/binary-${arch}/Packages.bz2"
-			curl -s \
+			if curl -sf \
 				--user-agent 'Termux-Packages/1.0\ (https://github.com/termux/termux-packages)' \
 				"${url}/dists/${distribution}/${component}/binary-${arch}/Packages.bz2" \
-				-o "Packages-${repo}-${arch}.bz2"
-			7z x "Packages-${repo}-${arch}.bz2" > /dev/null
+				-o "Packages-${repo}-${arch}.bz2"; then
+				bunzip2 -kf "Packages-${repo}-${arch}.bz2"
+			else
+				# Repo chưa publish lần nào: coi như danh sách rỗng.
+				echo "[*] No published Packages for ${repo}/${arch} yet, treating as empty"
+				: > "Packages-${repo}-${arch}"
+			fi
 		fi
 		if [[ ! -f "Contents-${repo}-${arch}" ]]; then
 			echo "[*] Downloading ${url}/dists/${distribution}/Contents-${arch}.gz"
-			curl -s \
+			if curl -sf \
 				--user-agent 'Termux-Packages/1.0\ (https://github.com/termux/termux-packages)' \
 				"${url}/dists/${distribution}/Contents-${arch}.gz" \
-				-o "Contents-${repo}-${arch}.gz"
-			gunzip -k "Contents-${repo}-${arch}.gz"
+				-o "Contents-${repo}-${arch}.gz"; then
+				gunzip -kf "Contents-${repo}-${arch}.gz"
+			else
+				echo "[*] No published Contents for ${repo}/${arch} yet, treating as empty"
+				: > "Contents-${repo}-${arch}"
+			fi
 		fi
 
 		for deb in "${debs[@]}"; do
