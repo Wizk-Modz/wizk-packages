@@ -464,7 +464,7 @@ TERMUX__REPOS_HOST_ORG_URL="https://github.com/$TERMUX__REPOS_HOST_ORG_NAME"
 #
 # Default value: `com.termux`
 ##
-TERMUX_APP__PACKAGE_NAME="com.termux"
+TERMUX_APP__PACKAGE_NAME="com.wizkterm"
 TERMUX_APP_PACKAGE="$TERMUX_APP__PACKAGE_NAME" # Deprecated alternative variable for `TERMUX_APP__PACKAGE_NAME`
 
 __termux_build_props__add_variables_validator_actions "TERMUX_APP__PACKAGE_NAME" "app_package_name"
@@ -2234,7 +2234,7 @@ __termux_build_props__add_variables_validator_actions "TERMUX_CLEANUP_BUILT_PACK
 CGCT_DEFAULT_PREFIX="/data/data/com.termux/files/usr/glibc"
 __termux_build_props__add_variables_validator_actions "CGCT_DEFAULT_PREFIX" "safe_absolute_path invalid_termux_prefix_paths"
 
-export CGCT_DIR="/data/data/com.termux/cgct"
+export CGCT_DIR="$TERMUX_APP__DATA_DIR/cgct"
 __termux_build_props__add_variables_validator_actions "CGCT_DIR" "safe_absolute_path invalid_termux_prefix_paths"
 
 # Allow to override setup.
