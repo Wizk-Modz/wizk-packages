@@ -1,3 +1,32 @@
+Package: attr
+Version: 2.6.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 264
+Breaks: attr-dev
+Replaces: attr-dev
+Filename: pool/main/a/attr/attr_2.6.0_aarch64.deb
+Size: 56304
+MD5sum: c6a33edec9bf6b5b084e0f6048a5ba6b
+SHA1: 0505e25fcba393c4fb5235a208ed1ef4c2aca3d5
+SHA256: 5b45b4919f42e354fc724ddcb6afd574cc5b3efb18fc145b69cbec1ffccade21
+Homepage: http://savannah.nongnu.org/projects/attr/
+Description: Utilities for manipulating filesystem extended attributes
+
+Package: attr-static
+Version: 2.6.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 60
+Depends: attr (= 2.6.0)
+Filename: pool/main/a/attr-static/attr-static_2.6.0_aarch64.deb
+Size: 6992
+MD5sum: d6432aeca8dc9eb487ee49050062912e
+SHA1: 9f501c9f7dd0c48d09fae08cfc7afff72ca95888
+SHA256: e04ad9a4f8e93a8a44dde8d978fca4ddee9584bb40c0a52358676aba49374c78
+Homepage: http://savannah.nongnu.org/projects/attr/
+Description: Static libraries for attr
+
 Package: blk-utils
 Version: 2.42.1-5
 Architecture: aarch64
@@ -394,6 +423,34 @@ SHA256: ccd42159d196d5e292a0d31cebb195ffa7db484928afdea0fa6e65dbe6982148
 Homepage: https://www.gnu.org/software/libiconv/
 Description: Utility converting between different character encodings
 
+Package: libacl
+Version: 2.4.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 468
+Depends: attr
+Filename: pool/main/l/libacl/libacl_2.4.0_aarch64.deb
+Size: 123628
+MD5sum: 967c5e4816a694537f79a7d29d5fddb5
+SHA1: 2e80543d90b7977e40c23e614a557ac2e4a872fa
+SHA256: 51dda0e5ea71e53fa76ebe8c348f29ed4a4deaf18e4d68e5bed96726642968c7
+Homepage: http://savannah.nongnu.org/projects/acl
+Description: Access control list shared library
+
+Package: libacl-static
+Version: 2.4.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 164
+Depends: libacl (= 2.4.0)
+Filename: pool/main/l/libacl-static/libacl-static_2.4.0_aarch64.deb
+Size: 20200
+MD5sum: 13a644e55e7f1fe7f5d570859e33b471
+SHA1: 8908d7be43d37dbf0e868ec862761d9073eca672
+SHA256: c30d6c90576aa31046816096c18bfbf3630a1e3f46b8781da1f663bc27942762
+Homepage: http://savannah.nongnu.org/projects/acl
+Description: Static libraries for libacl
+
 Package: libandroid-glob
 Version: 0.6-3
 Architecture: aarch64
@@ -449,6 +506,20 @@ SHA1: 9c0da6a6500444069a4f05a9d776c67479e6bcd5
 SHA256: d82b53fe618010cd6f0d8f36065bfbd5d09d87236e5fd684ed90ef00f61a41e0
 Homepage: https://man7.org/linux/man-pages/man7/sem_overview.7.html
 Description: Static libraries for libandroid-posix-semaphore
+
+Package: libandroid-selinux
+Version: 14.0.0.11-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 308
+Depends: pcre2
+Filename: pool/main/l/libandroid-selinux/libandroid-selinux_14.0.0.11-1_aarch64.deb
+Size: 59320
+MD5sum: 621d41e970f4432ae8b019aa72616055
+SHA1: 04e66140f98a541ae6c1e585888975dc0db1d4f9
+SHA256: 7914fd24a6ac98e87010e30fca2168dab182928cdb4f05d9ad750499607d159f
+Homepage: https://selinuxproject.org
+Description: Android fork of libselinux, an SELinux userland library
 
 Package: libandroid-spawn
 Version: 0.3
@@ -1921,6 +1992,21 @@ SHA256: 90aa0ad489bd073ffd1be603f28db73b46ee85edcc5aee9c5b34c721a65e8237
 Homepage: https://www.sqlite.org
 Description: Command line shell for SQLite
 
+Package: tar
+Version: 1.35-3
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 1268
+Depends: libacl, libandroid-glob, libandroid-selinux, libiconv
+Filename: pool/main/t/tar/tar_1.35-3_aarch64.deb
+Size: 345608
+MD5sum: f1da2ec59fa627c8c18695ef630a9239
+SHA1: b47b6425c2784e13c19d277cf2a963c174d1e90e
+SHA256: 0599309ec0020ba50da191efa06845c517e78f714810fdff09b8287a86b6541b
+Homepage: https://www.gnu.org/software/tar/
+Description: GNU tar for manipulating tar archives
+
 Package: tcl
 Version: 8.6.16
 Architecture: aarch64
@@ -1950,6 +2036,34 @@ SHA1: 96bd34b5873eccab7b7e6ce047469fce621411eb
 SHA256: bb8421b3e282fdcf04929a8e86be25f80ed28cf7f5d63e5db853d212e0bc93d6
 Homepage: https://github.com/termux/TermuxAm
 Description: Android Oreo-compatible am command reimplementation
+
+Package: termux-core
+Version: 0.4.0-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 1952
+Filename: pool/main/t/termux-core/termux-core_0.4.0-1_aarch64.deb
+Size: 198308
+MD5sum: 72b0f3222462609db6d8648c7406fbfc
+SHA1: 67881ddbb997e8c929fa413be22e5bbed43cdec2
+SHA256: 95dd771e2c4a90ee292f8e6096837558b0921d4c08f668512b0c1f7ce36db53b
+Homepage: https://github.com/termux/termux-core-package
+Description: Utils and libraries for Termux core
+
+Package: termux-core-static
+Version: 0.4.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 136
+Depends: termux-core (= 0.4.0-1)
+Filename: pool/main/t/termux-core-static/termux-core-static_0.4.0-1_aarch64.deb
+Size: 20148
+MD5sum: 8021030aecadb55dee9b163fb09de3a0
+SHA1: 82417f027fc0ac6be410ed04b39497989cb4ee7b
+SHA256: 730798f03889533f7bf10d15a2e4f29fd561578936d1ef100c0744c5f1bed190
+Homepage: https://github.com/termux/termux-core-package
+Description: Static libraries for termux-core
 
 Package: termux-elf-cleaner
 Version: 3.0.1-1
