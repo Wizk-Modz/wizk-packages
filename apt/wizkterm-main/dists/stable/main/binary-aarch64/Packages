@@ -264,6 +264,35 @@ SHA256: 7dbe8ce57f526876f400d091ef59c89aff5651eeb972a7130a961079bee5dba6
 Homepage: https://www.gnu.org.ua/software/gdbm/
 Description: Static libraries for gdbm
 
+Package: grep
+Version: 3.12-3
+Architecture: aarch64
+Essential: yes
+Maintainer: Joshua Kahn <tom@termux.dev>
+Installed-Size: 456
+Depends: libandroid-support, pcre2
+Filename: pool/main/g/grep/grep_3.12-3_aarch64.deb
+Size: 128480
+MD5sum: d0c50912350c489a88eb96b350155385
+SHA1: da066dc73383dc87239bb339f0d2e9df0bb7b7d6
+SHA256: 66b538bbd771161a66d6d21376c864f835dcd846f94d1e397cde039b011dd78d
+Homepage: https://www.gnu.org/software/grep/
+Description: Command which searches one or more input files for lines containing a match to a specified pattern
+
+Package: gzip
+Version: 1.14-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 324
+Filename: pool/main/g/gzip/gzip_1.14-1_aarch64.deb
+Size: 87644
+MD5sum: 184dd5708cec2b498dfe9411096cdc69
+SHA1: e893b515d15aceabb963b67271d8f5c709bdf683
+SHA256: 23b09e06dab160c754a4c0386330baeb942414d791bdad5a8ffef6020bcba6bc
+Homepage: https://www.gnu.org/software/gzip/
+Description: Standard GNU file compression utilities
+
 Package: iconv
 Version: 1.19
 Architecture: aarch64
@@ -1333,6 +1362,49 @@ SHA1: 28f09c46648bfedc001658752a3da2c7b64f0faa
 SHA256: 3ce0bf1cc1f3238054a01a3ce500bcf68ec553771110237a374b7fe1b346305a
 Homepage: https://www.openssl.org/
 Description: The openssl command line cryptographic tool
+
+Package: pcre2
+Version: 10.47
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4384
+Breaks: pcre2-dev
+Replaces: pcre2-dev
+Filename: pool/main/p/pcre2/pcre2_10.47_aarch64.deb
+Size: 990960
+MD5sum: 60d4699860fdf464bb082c86520c937c
+SHA1: e5df827af75a4007104dd5b07fe2140c6e477a0c
+SHA256: 2536d895bdbd2258b5f87cab9b9dd39e86d44529708fbd90dad279da7b39bcc5
+Homepage: https://pcre2project.github.io/pcre2/
+Description: Perl 5 compatible regular expression library
+
+Package: pcre2-static
+Version: 10.47
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1836
+Depends: pcre2 (= 10.47)
+Filename: pool/main/p/pcre2-static/pcre2-static_10.47_aarch64.deb
+Size: 377764
+MD5sum: 3fc46ebc10ee657273f8a4126bea6bd1
+SHA1: cae3b0dfa7148a54b9f83a617eef8713b1c42fe1
+SHA256: 0a18981e9dc95c771b7cfa4bbbee68442eb46538dd6eff82de143e56156ea32b
+Homepage: https://pcre2project.github.io/pcre2/
+Description: Static libraries for pcre2
+
+Package: pcre2grep
+Version: 10.47
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 104
+Depends: pcre2 (= 10.47)
+Filename: pool/main/p/pcre2grep/pcre2grep_10.47_aarch64.deb
+Size: 34156
+MD5sum: 8aafe71a764264e4b43e01f478e0df1f
+SHA1: ecf82b89919d4ab9deb1b42e12b5f5bfae3969f7
+SHA256: 2bfe108871dd8997a32ec4a7febb6bb3b4fcb7e8d4664b1fe99661e2c9c0f949
+Homepage: https://pcre2project.github.io/pcre2/
+Description: A grep with Perl-compatible regular expressions
 
 Package: python
 Version: 3.14.6-1
