@@ -87,6 +87,35 @@ SHA256: c83a7ab374163977c1f3c5b332b0ec2c1873a4f09ca37be45679f2f61dd33dee
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
+Package: dash
+Version: 0.5.12-2
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 184
+Filename: pool/main/d/dash/dash_0.5.12-2_aarch64.deb
+Size: 66036
+MD5sum: 89599c2f5e79b7cba9521ca211a2b509
+SHA1: d47b0b30b2358e5b7dbffaf55d349df02f192806
+SHA256: 090d21ffb85d6ab0c543416d3667183659f07f89fab6cea50c09df83c6ac9dec
+Homepage: http://gondor.apana.org.au/~herbert/dash/
+Description: Small POSIX-compliant implementation of /bin/sh
+
+Package: diffutils
+Version: 3.12-2
+Architecture: aarch64
+Essential: yes
+Maintainer: Joshua Kahn <tom@termux.dev>
+Installed-Size: 668
+Depends: libiconv
+Filename: pool/main/d/diffutils/diffutils_3.12-2_aarch64.deb
+Size: 163060
+MD5sum: 91a4012a0fd9b3d59f253a6a9533ec01
+SHA1: 377c7e9bcfa4184d936b9905ab3d3123af84966b
+SHA256: 1da49886937ae9bcfc441fc04072ef8fdb3796037aa0dc4a69ed008bcdde2f8a
+Homepage: https://www.gnu.org/software/diffutils/
+Description: Programs (cmp, diff, diff3 and sdiff) related to finding differences between files
+
 Package: doxygen
 Version: 1.18.0
 Architecture: aarch64
