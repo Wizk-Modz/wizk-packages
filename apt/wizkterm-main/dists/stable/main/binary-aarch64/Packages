@@ -1475,6 +1475,20 @@ SHA256: bb8421b3e282fdcf04929a8e86be25f80ed28cf7f5d63e5db853d212e0bc93d6
 Homepage: https://github.com/termux/TermuxAm
 Description: Android Oreo-compatible am command reimplementation
 
+Package: termux-elf-cleaner
+Version: 3.0.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 88
+Depends: libc++
+Filename: pool/main/t/termux-elf-cleaner/termux-elf-cleaner_3.0.1-1_aarch64.deb
+Size: 18044
+MD5sum: e4255345fcddcf4c827e34480625889d
+SHA1: 06107415035c66c12036342d570edf81091aedfd
+SHA256: 60f4549894f5c5041ad91e09cd103cf795bbc7e22e4a75ea6e333a3fbcd42c20
+Homepage: https://github.com/termux/termux-elf-cleaner
+Description: Cleaner of ELF files for Android
+
 Package: tk
 Version: 8.6.14-1
 Architecture: aarch64
