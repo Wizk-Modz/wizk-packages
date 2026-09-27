@@ -212,6 +212,22 @@ SHA256: 37d803a92a45d42f932999d0f743ebe8f929e689f64dd1d1c6c90269e0234ce7
 Homepage: http://www.bzip.org/
 Description: Tools for working with bzip2 compression
 
+Package: c-ares
+Version: 1.34.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1104
+Depends: resolv-conf
+Breaks: c-ares-dev
+Replaces: c-ares-dev
+Filename: pool/main/c/c-ares/c-ares_1.34.8_aarch64.deb
+Size: 195112
+MD5sum: 39f0ae42b32587838da13952d17bf0f4
+SHA1: 2bb96bb8952c922b4a759be4b15440993f21188c
+SHA256: 9797bed435d13b337af8ee6e2d3a83de39a8ab2111fd85c7e344367e574f9238
+Homepage: https://c-ares.org/
+Description: Library for asynchronous DNS requests (including name resolves)
+
 Package: ca-certificates
 Version: 1:2026.08.13
 Architecture: all
@@ -825,6 +841,20 @@ SHA1: b636d7e17f010c86b14bd10cc7b4d361a4e26b71
 SHA256: ccd42159d196d5e292a0d31cebb195ffa7db484928afdea0fa6e65dbe6982148
 Homepage: https://www.gnu.org/software/libiconv/
 Description: Utility converting between different character encodings
+
+Package: icu-devtools
+Version: 78.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 964
+Depends: libicu (= 78.3)
+Filename: pool/main/i/icu-devtools/icu-devtools_78.3_aarch64.deb
+Size: 210484
+MD5sum: 2373f8b0e48fb1adcd32f3ab2d1d6b4c
+SHA1: a7080c7918f2e6145708fc9add7fe6cae77d7f56
+SHA256: 2d769d6373bdc701278ca1826adb3e468561663e4ba5fd97873c73e78afd7a2b
+Homepage: http://site.icu-project.org/home
+Description: Development utilities for International Components for Unicode
 
 Package: inetutils
 Version: 2.8-1
@@ -1603,6 +1633,36 @@ SHA1: f9e90edc49771a6b916ab6b2138261453c665d59
 SHA256: c93735e321ce7c6d5ab7653f84458bff8d9c0c668b2b46e8a990489d7792eaac
 Homepage: https://www.gnu.org/software/libiconv/
 Description: Static libraries for libiconv
+
+Package: libicu
+Version: 78.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 43620
+Depends: libc++
+Breaks: libicu-dev
+Replaces: libicu-dev
+Filename: pool/main/l/libicu/libicu_78.3_aarch64.deb
+Size: 10247524
+MD5sum: 70ebd9f3063a2cafbb9c566a53f8437e
+SHA1: 86a8275f69183cab7d27c0af51405f60e904db6b
+SHA256: 3954bf21ba9d08221bde115be62516cb5a654146894c221ca1cd9fc5515649e1
+Homepage: http://site.icu-project.org/home
+Description: International Components for Unicode library
+
+Package: libicu-static
+Version: 78.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 45144
+Depends: libicu (= 78.3)
+Filename: pool/main/l/libicu-static/libicu-static_78.3_aarch64.deb
+Size: 10034856
+MD5sum: ec49cacebb96fde2324c5cb9215b5f14
+SHA1: f14d2fbfac3dc3fa81d6b12118545c9da7d788fd
+SHA256: 0a620103e3a88bba48bdecf73e9491efa1d8cb82441bd30ca96111c4068e556b
+Homepage: http://site.icu-project.org/home
+Description: Static libraries for libicu
 
 Package: libidn2
 Version: 2.3.8-1
@@ -2890,6 +2950,40 @@ SHA1: eda6410ce587b816d5d71c2e0fbee453129d5f2e
 SHA256: 17cd635b08cc5fe020ea35184a62766b55727ec6e866c2537fa3480e1a7523ee
 Homepage: https://www.lysator.liu.se/~nisse/nettle/
 Description: Low level cryptographic tools
+
+Package: nodejs
+Version: 26.4.0-1
+Architecture: aarch64
+Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
+Installed-Size: 50424
+Depends: libc++, openssl, c-ares, libicu, libsqlite, zlib, libffi
+Recommends: npm
+Suggests: clang, make, pkg-config, python
+Conflicts: nodejs-lts, nodejs-current
+Breaks: nodejs-dev
+Replaces: nodejs-current, nodejs-dev
+Filename: pool/main/n/nodejs/nodejs_26.4.0-1_aarch64.deb
+Size: 10351400
+MD5sum: f814d00a2f8311103be49422b2909f05
+SHA1: d4a861baf64528546764b0b7c8821444751dc36d
+SHA256: 102159864b781a8b9ba1b01f3b218b3cda06d73976a6c16fd863f09621437adf
+Homepage: https://nodejs.org/
+Description: Open Source, cross-platform JavaScript runtime environment
+
+Package: npm
+Version: 11.20.0
+Architecture: all
+Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
+Installed-Size: 18236
+Depends: nodejs | nodejs-lts
+Conflicts: nodejs (<= 25.3.0), nodejs-lts (<= 24.13.0)
+Filename: pool/main/n/npm/npm_11.20.0_all.deb
+Size: 2027268
+MD5sum: d3b04e9bf3c321b09ab69eb8a93fe77f
+SHA1: 45f95e279da9ce2464ca75a38cf78a3c0ffdd16b
+SHA256: fa92e818cffe5dadf61e284c70eb64b430489b2a92041f4d172b9b698e9b14b2
+Homepage: https://docs.npmjs.com/cli/
+Description: The package manager for JavaScript
 
 Package: oniguruma
 Version: 6.9.10-1
