@@ -3527,6 +3527,21 @@ SHA256: 6ae04f40441f1dd3b06e8e4b797ec7acab4448e47702cf6924e8995e36965c19
 Homepage: https://proot-me.github.io/
 Description: Emulate chroot, bind mount and binfmt_misc for non-root users
 
+Package: proot-distro
+Version: 5.9.0
+Architecture: all
+Maintainer: @termux
+Installed-Size: 1640
+Depends: proot (>= 5.1.107-71), python, python-pip
+Suggests: bash-completion, termux-api, zsh-completions
+Filename: pool/main/p/proot-distro/proot-distro_5.9.0_all.deb
+Size: 273536
+MD5sum: 284c072ed86a636f66e096449eb5b477
+SHA1: fb5145a5dfaff1e6fc202d6b7933ad77a939b086
+SHA256: fab33e473f4b8547d1cc7248b2e369e71d3b77f8766ae189da8bfba4150115ac
+Homepage: https://github.com/termux/proot-distro
+Description: Termux official utility for managing proot'ed Linux distributions
+
 Package: psmisc
 Version: 23.7-1
 Architecture: aarch64
