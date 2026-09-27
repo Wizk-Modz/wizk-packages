@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Basic system tools for Termux"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.46.0+really1.45.0"
-TERMUX_PKG_REVISION=2
+TERMUX_PKG_REVISION=3
 TERMUX_PKG_SRCURL=https://github.com/termux/termux-tools/archive/refs/tags/v1.45.0.tar.gz
 TERMUX_PKG_SHA256=1ae29b1b875d95cc626dae323b45a2ace759969862d96094b2fa6d13bffe20d2
 TERMUX_PKG_ESSENTIAL=true
@@ -20,6 +20,37 @@ TERMUX_PKG_DEPENDS="bzip2, coreutils, curl, dash, diffutils, findutils, gawk, gr
 
 # Optional packages that are distributed as part of bootstrap archives.
 TERMUX_PKG_RECOMMENDS="ed, dos2unix, inetutils, net-tools, patch, unzip"
+
+termux_step_post_get_source() {
+	# Thay motd mặc định của Termux bằng motd của WizkTerm.
+	install -Dm644 "$TERMUX_PKG_BUILDER_DIR/motd.sh.in" \
+		"$TERMUX_PKG_SRCDIR/motds/motd.sh.in"
+	install -Dm644 "$TERMUX_PKG_BUILDER_DIR/motds-Makefile.am" \
+		"$TERMUX_PKG_SRCDIR/motds/Makefile.am"
+
+	# Trỏ mirror mặc định về repo WizkTerm, bỏ toàn bộ mirror của Termux.
+	install -Dm644 "$TERMUX_PKG_BUILDER_DIR/mirrors-default" \
+		"$TERMUX_PKG_SRCDIR/mirrors/default"
+	install -Dm644 "$TERMUX_PKG_BUILDER_DIR/mirrors-Makefile.am" \
+		"$TERMUX_PKG_SRCDIR/mirrors/Makefile.am"
+	rm -rf "$TERMUX_PKG_SRCDIR/mirrors/asia" \
+		"$TERMUX_PKG_SRCDIR/mirrors/china" \
+		"$TERMUX_PKG_SRCDIR/mirrors/chinese_mainland" \
+		"$TERMUX_PKG_SRCDIR/mirrors/europe" \
+		"$TERMUX_PKG_SRCDIR/mirrors/north_america" \
+		"$TERMUX_PKG_SRCDIR/mirrors/oceania" \
+		"$TERMUX_PKG_SRCDIR/mirrors/russia" \
+		"$TERMUX_PKG_SRCDIR/mirrors/south_america"
+
+	# pkg tìm mirror trong các thư mục group đã bị xoá, bỏ phần đó đi để
+	# tránh lỗi find, chỉ dùng mirror default.
+	sed -i '/mirrors+=(.*find.*MIRROR_BASE_DIR/d' \
+		"$TERMUX_PKG_SRCDIR/scripts/pkg.in"
+
+	# Không còn mirror group để chọn, thay termux-change-repo bằng thông báo.
+	install -Dm644 "$TERMUX_PKG_BUILDER_DIR/termux-change-repo.in" \
+		"$TERMUX_PKG_SRCDIR/scripts/termux-change-repo.in"
+}
 
 termux_step_pre_configure() {
 	# configure.ac mặc định app package là com.termux và prefix là

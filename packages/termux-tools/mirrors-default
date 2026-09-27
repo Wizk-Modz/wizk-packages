@@ -1,0 +1,6 @@
+# This file is sourced by pkg
+# WizkTerm repository hosted on GitHub Pages
+WEIGHT=10
+MAIN="https://wizk-modz.github.io/wizk-packages/apt/wizkterm-main"
+ROOT="https://wizk-modz.github.io/wizk-packages/apt/wizkterm-root"
+X11="https://wizk-modz.github.io/wizk-packages/apt/wizkterm-x11"

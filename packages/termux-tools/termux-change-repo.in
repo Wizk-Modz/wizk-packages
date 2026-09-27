@@ -1,0 +1,9 @@
+#!@TERMUX_PREFIX@/bin/bash
+
+# Setup TERMUX_APP_PACKAGE_MANAGER
+source "@TERMUX_PREFIX@/bin/termux-setup-package-manager" || exit 1
+
+echo "WizkTerm uses a single fixed repository:"
+echo "  https://wizk-modz.github.io/wizk-packages"
+echo ""
+echo "Mirror selection is not supported in this build."
