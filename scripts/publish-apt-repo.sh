@@ -137,11 +137,15 @@ generate_packages() {
 	gzip -9kf "$out_dir/Packages"
 	bzip2 -9kf "$out_dir/Packages"
 
-	# Contents dùng cho `apt-file` và cho việc kiểm tra xung đột file.
+	# Contents dùng cho `apt-file`, kiểm tra xung đột file và cho
+	# command-not-found sinh bảng lệnh. apt-ftparchive căn cột bằng tab
+	# giữa path và tên package, nhưng generate-db.js của command-not-found
+	# chỉ split bằng một dấu cách, nên phải chuẩn hoá về một dấu cách.
 	local contents_dir="$repo_dir/dists/$distribution"
 	(
 		cd "$repo_dir"
-		apt-ftparchive contents pool > "$contents_dir/Contents-$TERMUX_ARCH"
+		apt-ftparchive contents pool | sed -E 's/[[:space:]]+/ /' \
+			> "$contents_dir/Contents-$TERMUX_ARCH"
 	)
 	gzip -9kf "$contents_dir/Contents-$TERMUX_ARCH"
 }
