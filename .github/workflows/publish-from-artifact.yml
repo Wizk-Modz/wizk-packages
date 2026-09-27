@@ -26,8 +26,6 @@ jobs:
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
-      with:
-        ref: dev/apt-repo-ghpages
     - name: Download *.deb artifact
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
