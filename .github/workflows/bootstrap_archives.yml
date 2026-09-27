@@ -20,10 +20,13 @@ jobs:
       matrix:
         arch:
           - aarch64
-    if: github.repository == 'termux/termux-packages'
     steps:
       - name: Git clone
         uses: actions/checkout@v7
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils zip
       - name: Create bootstrap archive
         run: ./scripts/generate-bootstraps.sh --architectures ${{ matrix.arch }}
       - name: Store artifacts
@@ -33,7 +36,7 @@ jobs:
           path: "*.zip"
   publish:
     permissions:
-      contents: write # for git push
+      contents: write # for creating release
     needs: build
     runs-on: ubuntu-slim
     steps:
@@ -60,9 +63,9 @@ jobs:
           echo "tag_name=$new_tag" >> $GITHUB_OUTPUT
       - name: Publish bootstrap zips to GitHub release
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
         run: |
-          gh release create ${{ steps.get_tag.outputs.tag_name }} --title "Bootstrap archives for Termux application (apt.android-7)"
+          gh release create ${{ steps.get_tag.outputs.tag_name }} --title "Bootstrap archives for WizkTerm application (apt.android-7)"
           for file in *.zip; do
             gh release upload ${{ steps.get_tag.outputs.tag_name }} "$file"
           done

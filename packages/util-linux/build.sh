@@ -11,7 +11,7 @@ TERMUX_PKG_LICENSE_FILE="
 "
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.42.1"
-TERMUX_PKG_REVISION=4
+TERMUX_PKG_REVISION=5
 TERMUX_PKG_SRCURL="https://www.kernel.org/pub/linux/utils/util-linux/v${TERMUX_PKG_VERSION:0:4}/util-linux-${TERMUX_PKG_VERSION}.tar.xz"
 TERMUX_PKG_SHA256=82e9158eb12a9b0b569d84e1687fed9dd18fe89ccd8ef5ac3427218a7c0d7f7f
 # <dependency>: <binaries linking to that dependency>
@@ -27,6 +27,8 @@ TERMUX_PKG_DEPENDS="libandroid-glob, libandroid-posix-semaphore, libcap-ng, libs
 TERMUX_PKG_ESSENTIAL=true
 TERMUX_PKG_BREAKS="util-linux-dev"
 TERMUX_PKG_REPLACES="util-linux-dev"
+# Bionic không có struct file_handle (chỉ có trong glibc/musl) nên phải tắt
+# namespace id support, nếu không nsenter.c sẽ lỗi incomplete type.
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 ac_cv_func_setns=yes
 ac_cv_func_statx=no
@@ -34,6 +36,7 @@ ac_cv_func_unshare=yes
 ac_cv_func_uselocale=no
 ac_cv_type_struct_statx=no
 ac_cv_type_struct_fanotify_event_info_header=no
+ac_cv_type_struct_nsfs_file_handle=no
 --enable-setpriv
 --disable-agetty
 --disable-chmem
