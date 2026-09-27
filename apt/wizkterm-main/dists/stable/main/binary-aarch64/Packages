@@ -7,10 +7,10 @@ Depends: libblkid, libmount, libsmartcols, libuuid
 Breaks: util-linux (<< 2.38.1-1)
 Replaces: util-linux (<< 2.38.1-1)
 Filename: pool/main/b/blk-utils/blk-utils_2.42.1-5_aarch64.deb
-Size: 184076
-MD5sum: 83fdcbf8a9e5bf00fc82a590f5c4a469
-SHA1: 5515bd4cd6987f360c30a80aa615df19f1190724
-SHA256: 8b6da37cbaa4460c02a88c5e4ebb07d756b92cc01a0d91bf536023c01da40059
+Size: 183404
+MD5sum: cfdaf9304499cf908fd646218a29049b
+SHA1: d027b1fe04b3431eaacc5cd42d9ae6e2f1914ff9
+SHA256: f76d4af8b2ed87f9c087ecc20091f7b6a38e77db444d682f6b3e77926b9ac0ef
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for handling block device attributes
 
@@ -108,10 +108,10 @@ Maintainer: @termux
 Installed-Size: 472
 Depends: libfdisk, libmount, ncurses, readline, libsmartcols
 Filename: pool/main/f/fdisk/fdisk_2.42.1-5_aarch64.deb
-Size: 116744
-MD5sum: 3d498d2d8791950bc7206a2cf8f547ad
-SHA1: 69e35f7cec203c697468b9ee7aedcc24e7a90a43
-SHA256: eb183373799cd600f28231feb1ef4191928187e6079cd33b6bed5430a84d34b7
+Size: 116860
+MD5sum: 10d9514858a127da0d29b3a74773fd89
+SHA1: a7087da9529dabfef7902e6ac7e0d47c7b817489
+SHA256: 3e0d293d8108004ab9a9ca3efea652e8a310735135928ce145aa2358d86ba193
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities to manipulate disk partition tables
 
@@ -370,10 +370,10 @@ Depends: libandroid-posix-semaphore
 Breaks: util-linux (<< 2.38.1-1)
 Replaces: util-linux (<< 2.38.1-1)
 Filename: pool/main/l/libblkid/libblkid_2.42.1-5_aarch64.deb
-Size: 128320
-MD5sum: 1248272d4e9c7842dc3eca1f4c98e4f8
-SHA1: 5e8ef3566dd5feaea24f35fead59bd041c3ac7d4
-SHA256: 9cdf2fdfc80266cb3d35e135e39ba706963eaa9ffec516dc05e6d6497c7f7055
+Size: 128264
+MD5sum: 40e4abe67bf533f6bbda5af39e123cc2
+SHA1: 7683e59adb894cf2456c6c78cf47c465b2630070
+SHA256: 05de7bfa28c16f7a017a544cdc1cf68da778be5af3ad04e71884ef867a0f7c44
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Block device identification library
 
@@ -531,10 +531,10 @@ Maintainer: @termux
 Installed-Size: 508
 Depends: libblkid, libuuid
 Filename: pool/main/l/libfdisk/libfdisk_2.42.1-5_aarch64.deb
-Size: 159656
-MD5sum: 1ca5921f4354ab847c26156534f41995
-SHA1: 440b91f4e41f09b721cc385fb12be2a2ac236166
-SHA256: 3ef83bb57a3bd4ed38446312e258733f0297e6b6200e53fd598458cf5dd3b784
+Size: 159712
+MD5sum: 04a27c35dddbc5037c41b1f7d09404d2
+SHA1: acd9091bc76c67d9d37e554bd45054923bbe305e
+SHA256: 4aca9c3e3b3cae5b19e0743417aca63ef7ea577366edd72be277a28472514028
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for manipulating disk partition tables
 
@@ -694,10 +694,10 @@ Maintainer: @termux
 Installed-Size: 496
 Depends: libblkid, libsmartcols
 Filename: pool/main/l/libmount/libmount_2.42.1-5_aarch64.deb
-Size: 156756
-MD5sum: 92da8f2b6c9c0b385ef7e2e588e120e6
-SHA1: 7af6c908a63256fc625c94889cef9726bdc3b835
-SHA256: b34517007f8ba0a3dbe7e6f8ae3f15fa4019852f6dc731676dc6e7cc3ecce588
+Size: 156684
+MD5sum: 1a68b209bdac10da09fad94d7b12990e
+SHA1: 799b9a2fa6b85e8e0b84b6bb22a7d3ecebcada7d
+SHA256: 821e34f22fc5767ccd81273e5f06f27dd7e48c8d1c10d59357ee7474edc54a85
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for (un)mounting filesystems
 
@@ -754,10 +754,10 @@ Depends: libandroid-posix-semaphore
 Breaks: util-linux (<< 2.38.1-1)
 Replaces: util-linux (<< 2.38.1-1)
 Filename: pool/main/l/libsmartcols/libsmartcols_2.42.1-5_aarch64.deb
-Size: 103628
-MD5sum: 2dae18f5d111644c730908e29540b4b9
-SHA1: a073971f735fd0805bc695f570f65671a056f9fd
-SHA256: 68dfa27515e0324bd665cbef548ea4a6b69679dbf6ac6ce9a652677bbbf01c8f
+Size: 103544
+MD5sum: 0342a8545f91a20e5f5eece6c394a60f
+SHA1: 4baea516c24dfc0a88cfc35aa06b956201e5d822
+SHA256: 5a64596ab5953ee74050b1a33947b0cca4e7196049c7a5d943a5fdad46c432bf
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for smart adaptive formatting of tabular data
 
@@ -815,10 +815,10 @@ Depends: libandroid-posix-semaphore
 Breaks: libuuid-dev
 Replaces: libuuid-dev
 Filename: pool/main/l/libuuid/libuuid_2.42.1-5_aarch64.deb
-Size: 15516
-MD5sum: e30b339f2a09852f186c11cd87d646e3
-SHA1: 5186c45125e37f2c30cbd3c02933509f1b4c806c
-SHA256: 16618202550bd7146e56591b8ad1b947dd55ea1587e503cc2b78192339cc97fc
+Size: 15464
+MD5sum: a9578eec627047ddcd6cbbc5dd5a499e
+SHA1: bb7f96f4ff99b7a5b5e8ea87ebdd02f7ba067810
+SHA256: 690e254c9dd5c210cc2f8b50f059e42bc3716acdd2c00d70988df8841b79a5a7
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for handling universally unique identifiers
 
@@ -1151,10 +1151,10 @@ Installed-Size: 588
 Depends: libblkid, libsmartcols, libmount
 Breaks: termux-tools (<= 1.34.1)
 Filename: pool/main/m/mount-utils/mount-utils_2.42.1-5_aarch64.deb
-Size: 149308
-MD5sum: ce20033e11b5e8fa3157db955b534994
-SHA1: c4ec5bdf8f57be5a411e823666f011c30e29594b
-SHA256: 9dac2274ded25ccffdea3501ef46b3ae12dea3d48a649a1e367aacf4d7b72b21
+Size: 149212
+MD5sum: edfdc1a25994f34639b2fa28baf5d9fd
+SHA1: 6cd6d14d07327be7e5078886ebea167afbc324d0
+SHA256: 3d5998eee9d02cc78e32c68eef1fa4c4180e6b77a840e2f9bdd635781d45a635
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for (un)mounting filesystems
 
@@ -1526,10 +1526,10 @@ Depends: libandroid-glob, libandroid-posix-semaphore, libcap-ng, libsmartcols, n
 Breaks: util-linux-dev
 Replaces: util-linux-dev
 Filename: pool/main/u/util-linux/util-linux_2.42.1-5_aarch64.deb
-Size: 769260
-MD5sum: a13c6011c19e4972e958883c8fa99653
-SHA1: d08525d952f2c936bede41bbcc101364362b56e1
-SHA256: ab462088ad11b104e91a13df6c2ff7f56974d34840435ef924836c2e86581514
+Size: 768068
+MD5sum: eeeaa16792c41b027b3b6872330960b1
+SHA1: 57d8138121ae782de309c68252455769e3cfafa8
+SHA256: 1e1bb5fcfa6e9d8717b774bfd9d87f44190ac373fdc1377b09960d190ca2ca18
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Miscellaneous system utilities
 
@@ -1540,10 +1540,10 @@ Maintainer: @termux
 Installed-Size: 3284
 Depends: util-linux (= 2.42.1-5)
 Filename: pool/main/u/util-linux-static/util-linux-static_2.42.1-5_aarch64.deb
-Size: 436452
-MD5sum: 343817e5a0c4887f66dca96c77754006
-SHA1: cd70062b1d5afda60b832a006944fa8044be3415
-SHA256: a19894efbd98bdba2af6798055d64ae5512a57bd1afd6d9802ef7117dd450dc3
+Size: 436188
+MD5sum: 7f223f2b1d10f07baa1435468c44e841
+SHA1: 67acccba1381bc17e4d7338d7f2f0d778cf5e6fe
+SHA256: a35d8f407cd78961fe767db66cf341fef5658da21a6e8b0abda36aacead388cb
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Static libraries for util-linux
 
@@ -1554,10 +1554,10 @@ Maintainer: @termux
 Installed-Size: 236
 Depends: libsmartcols, libuuid
 Filename: pool/main/u/uuid-utils/uuid-utils_2.42.1-5_aarch64.deb
-Size: 41928
-MD5sum: 1707ba52d153d1f401ffab4c257013ca
-SHA1: 2243eed83a3e49f2a072a8a2f6ad27153a946348
-SHA256: 19a67f23173c25b39876c7ad6d9ec35ae761426dafe69eaf0dbb124479603124
+Size: 41880
+MD5sum: 6109cb3bd99f8c00395d5f5b14c29171
+SHA1: e4bf5855ef07259c79e23397d889377a9dfe017c
+SHA256: 921d3bc714d96ea7b61484c4be6a6a02770207584811b6095d97313bc9bac208
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for handling universally unique identifiers
 
