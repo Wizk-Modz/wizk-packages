@@ -137,6 +137,7 @@ data/data/com.wizkterm/files/usr/bin/fsfreeze		    util-linux
 data/data/com.wizkterm/files/usr/bin/fstrim		    mount-utils
 data/data/com.wizkterm/files/usr/bin/ftp		    inetutils
 data/data/com.wizkterm/files/usr/bin/funzip		    unzip
+data/data/com.wizkterm/files/usr/bin/fuser		    psmisc
 data/data/com.wizkterm/files/usr/bin/g++		    clang
 data/data/com.wizkterm/files/usr/bin/gawk		    gawk
 data/data/com.wizkterm/files/usr/bin/gcc		    clang
@@ -171,6 +172,7 @@ data/data/com.wizkterm/files/usr/bin/iptunnel		    net-tools
 data/data/com.wizkterm/files/usr/bin/irqtop		    util-linux
 data/data/com.wizkterm/files/usr/bin/ischroot		    debianutils
 data/data/com.wizkterm/files/usr/bin/isosize		    util-linux
+data/data/com.wizkterm/files/usr/bin/killall		    psmisc
 data/data/com.wizkterm/files/usr/bin/ld			    lld
 data/data/com.wizkterm/files/usr/bin/ld.lld		    lld
 data/data/com.wizkterm/files/usr/bin/ld64.lld		    lld
@@ -333,6 +335,7 @@ data/data/com.wizkterm/files/usr/bin/partx		    blk-utils
 data/data/com.wizkterm/files/usr/bin/patch		    patch
 data/data/com.wizkterm/files/usr/bin/pcre2-config	    pcre2
 data/data/com.wizkterm/files/usr/bin/pcre2grep		    pcre2grep
+data/data/com.wizkterm/files/usr/bin/peekfd		    psmisc
 data/data/com.wizkterm/files/usr/bin/pgrep		    procps
 data/data/com.wizkterm/files/usr/bin/pidof		    procps
 data/data/com.wizkterm/files/usr/bin/pipesz		    util-linux
@@ -341,8 +344,11 @@ data/data/com.wizkterm/files/usr/bin/plipconfig		    net-tools
 data/data/com.wizkterm/files/usr/bin/pmap		    procps
 data/data/com.wizkterm/files/usr/bin/pp-trace		    clang
 data/data/com.wizkterm/files/usr/bin/prlimit		    util-linux
+data/data/com.wizkterm/files/usr/bin/prtstat		    psmisc
 data/data/com.wizkterm/files/usr/bin/ps			    procps
 data/data/com.wizkterm/files/usr/bin/pscap		    libcap-ng
+data/data/com.wizkterm/files/usr/bin/pslog		    psmisc
+data/data/com.wizkterm/files/usr/bin/pstree		    psmisc
 data/data/com.wizkterm/files/usr/bin/pwdx		    procps
 data/data/com.wizkterm/files/usr/bin/py3clean		    python
 data/data/com.wizkterm/files/usr/bin/py3compile		    python
@@ -382,6 +388,7 @@ data/data/com.wizkterm/files/usr/bin/script		    util-linux
 data/data/com.wizkterm/files/usr/bin/scriptlive		    util-linux
 data/data/com.wizkterm/files/usr/bin/scriptreplay	    util-linux
 data/data/com.wizkterm/files/usr/bin/sdiff		    diffutils
+data/data/com.wizkterm/files/usr/bin/sed		    sed
 data/data/com.wizkterm/files/usr/bin/setarch		    util-linux
 data/data/com.wizkterm/files/usr/bin/setfacl		    libacl
 data/data/com.wizkterm/files/usr/bin/setfattr		    attr
@@ -14509,6 +14516,7 @@ data/data/com.wizkterm/files/usr/share/doc/procps-ng/FAQ    procps
 data/data/com.wizkterm/files/usr/share/doc/procps-ng/bugs.md procps
 data/data/com.wizkterm/files/usr/share/doc/procps-ng/libproc.supp procps
 data/data/com.wizkterm/files/usr/share/doc/procps/copyright procps
+data/data/com.wizkterm/files/usr/share/doc/psmisc/copyright psmisc
 data/data/com.wizkterm/files/usr/share/doc/python/LICENSE   python
 data/data/com.wizkterm/files/usr/share/doc/readline/CHANGES readline
 data/data/com.wizkterm/files/usr/share/doc/readline/INSTALL readline
@@ -14517,6 +14525,7 @@ data/data/com.wizkterm/files/usr/share/doc/readline/copyright readline
 data/data/com.wizkterm/files/usr/share/doc/readline/history.html readline
 data/data/com.wizkterm/files/usr/share/doc/readline/readline.html readline
 data/data/com.wizkterm/files/usr/share/doc/readline/rluserman.html readline
+data/data/com.wizkterm/files/usr/share/doc/sed/copyright    sed
 data/data/com.wizkterm/files/usr/share/doc/tar/copyright    tar
 data/data/com.wizkterm/files/usr/share/doc/tcl/license.terms tcl
 data/data/com.wizkterm/files/usr/share/doc/termux-am/copyright termux-am
@@ -14696,6 +14705,7 @@ data/data/com.wizkterm/files/usr/share/info/nano.info	    nano
 data/data/com.wizkterm/files/usr/share/info/pm-gawk.info    gawk
 data/data/com.wizkterm/files/usr/share/info/readline.info   readline
 data/data/com.wizkterm/files/usr/share/info/rluserman.info  readline
+data/data/com.wizkterm/files/usr/share/info/sed.info	    sed
 data/data/com.wizkterm/files/usr/share/info/tar.info	    tar
 data/data/com.wizkterm/files/usr/share/info/tar.info-1	    tar
 data/data/com.wizkterm/files/usr/share/info/tar.info-2	    tar
@@ -14753,6 +14763,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/free.1.gz   procps
 data/data/com.wizkterm/files/usr/share/man/man1/freetype-config.1.gz freetype
 data/data/com.wizkterm/files/usr/share/man/man1/ftp.1.gz    inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/funzip.1.gz unzip
+data/data/com.wizkterm/files/usr/share/man/man1/fuser.1.gz  psmisc
 data/data/com.wizkterm/files/usr/share/man/man1/gawk.1.gz   gawk
 data/data/com.wizkterm/files/usr/share/man/man1/gawkbug.1.gz gawk
 data/data/com.wizkterm/files/usr/share/man/man1/gdbm_dump.1.gz gdbm
@@ -14775,6 +14786,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/infotocap.1.gz ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/ionice.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/irqtop.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/ischroot.1.gz debianutils
+data/data/com.wizkterm/files/usr/share/man/man1/killall.1.gz psmisc
 data/data/com.wizkterm/files/usr/share/man/man1/ld.1.gz	    lld
 data/data/com.wizkterm/files/usr/share/man/man1/ld.lld.1.gz lld
 data/data/com.wizkterm/files/usr/share/man/man1/less.1.gz   less
@@ -14865,6 +14877,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/patch.1.gz  patch
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2-config.1.gz pcre2
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2grep.1.gz pcre2grep
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2test.1.gz pcre2
+data/data/com.wizkterm/files/usr/share/man/man1/peekfd.1.gz psmisc
 data/data/com.wizkterm/files/usr/share/man/man1/pgrep.1.gz  procps
 data/data/com.wizkterm/files/usr/share/man/man1/pidof.1.gz  procps
 data/data/com.wizkterm/files/usr/share/man/man1/pipesz.1.gz util-linux
@@ -14872,7 +14885,10 @@ data/data/com.wizkterm/files/usr/share/man/man1/pkill.1.gz  procps
 data/data/com.wizkterm/files/usr/share/man/man1/pm-gawk.1.gz gawk
 data/data/com.wizkterm/files/usr/share/man/man1/pmap.1.gz   procps
 data/data/com.wizkterm/files/usr/share/man/man1/prlimit.1.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/prtstat.1.gz psmisc
 data/data/com.wizkterm/files/usr/share/man/man1/ps.1.gz	    procps
+data/data/com.wizkterm/files/usr/share/man/man1/pslog.1.gz  psmisc
+data/data/com.wizkterm/files/usr/share/man/man1/pstree.1.gz psmisc
 data/data/com.wizkterm/files/usr/share/man/man1/pwdx.1.gz   procps
 data/data/com.wizkterm/files/usr/share/man/man1/python.1.gz python
 data/data/com.wizkterm/files/usr/share/man/man1/python3.1.gz python
@@ -14890,6 +14906,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/script.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/scriptlive.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/scriptreplay.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/sdiff.1.gz  diffutils
+data/data/com.wizkterm/files/usr/share/man/man1/sed.1.gz    sed
 data/data/com.wizkterm/files/usr/share/man/man1/setfacl.1.gz libacl
 data/data/com.wizkterm/files/usr/share/man/man1/setfattr.1.gz attr
 data/data/com.wizkterm/files/usr/share/man/man1/setpgid.1.gz util-linux

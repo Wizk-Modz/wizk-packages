@@ -1928,6 +1928,21 @@ SHA256: b3660d780af97bcf28691654d2f2f1a7e028c97deba65ed30cd96d85b06c7b73
 Homepage: https://gitlab.com/procps-ng/procps
 Description: Static libraries for procps
 
+Package: psmisc
+Version: 23.7-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 188
+Depends: ncurses
+Filename: pool/main/p/psmisc/psmisc_23.7-1_aarch64.deb
+Size: 41052
+MD5sum: b7bf0d33ad1ce566039978462b0b924c
+SHA1: 65a2804e52e8049d9af24cd8d3b22d5e19ba6aa5
+SHA256: bac024666911ab723ca1f1eb905f3dad4d504b5b2d20e72955da8f11983697de
+Homepage: https://gitlab.com/psmisc/psmisc
+Description: Some small useful utilities that use the proc filesystem
+
 Package: python
 Version: 3.14.6-1
 Architecture: aarch64
@@ -2053,6 +2068,20 @@ SHA1: a09000bd6fcc489464b315547389669f55e847f1
 SHA256: e60552b4cf6951557e8229132bc9fda80da5fa2a5c3573c76dbef40e6bd6dce2
 Homepage: https://tiswww.case.edu/php/chet/readline/rltop.html
 Description: Static libraries for readline
+
+Package: sed
+Version: 4.10
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 476
+Filename: pool/main/s/sed/sed_4.10_aarch64.deb
+Size: 123348
+MD5sum: 24ef6c75cd6205c2a0cb9fb28793b596
+SHA1: 29be79276b4cb8f266318aefecde906356d6b6cc
+SHA256: a95585c531a9190f310b363a8ac3c601a5b6e8ae6bad2718a6bcbd83093ebdf7
+Homepage: https://www.gnu.org/software/sed/
+Description: GNU stream editor for filtering/transforming text
 
 Package: sqlite
 Version: 3.53.4
