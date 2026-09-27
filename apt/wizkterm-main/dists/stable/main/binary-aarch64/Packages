@@ -278,10 +278,10 @@ Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
 Installed-Size: 136
 Depends: libc++
 Filename: pool/main/c/command-not-found/command-not-found_3.5.0-15_aarch64.deb
-Size: 24860
-MD5sum: 50f73ddff2cf49806a6d2c11188b7322
-SHA1: 20a07c99f339cb4dc589a55b7fdd3c9baa8e1b3c
-SHA256: ae8e210178e8711c7902cebcf502d3e6a96156e811fbe261902fa45babe6b435
+Size: 24852
+MD5sum: cb18dbe679df6e9ac645490fd1a2bcc2
+SHA1: 5b56833bc32aac796b060762e4f048a7607f154b
+SHA256: 16e3f5cedfbb60027d95362e246b472f6337620ec0bd822a4a48197c428aaa13
 Homepage: https://github.com/termux/command-not-found
 Description: Suggest installation of packages in interactive shell sessions
 
