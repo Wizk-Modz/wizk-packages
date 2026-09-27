@@ -160,6 +160,21 @@ SHA256: 8c5fbef97413cdbffca1f9f644225f256797be82e8243387f642c73c2a45649b
 Homepage: https://darwinsys.com/file/
 Description: Command-line tool that tells you in words what kind of data a file contains
 
+Package: findutils
+Version: 4.10.0-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 900
+Depends: libandroid-support
+Filename: pool/main/f/findutils/findutils_4.10.0-1_aarch64.deb
+Size: 261568
+MD5sum: 04bdd333f17906f16a7f2276619dfc99
+SHA1: 689c4abf34a654ffa833a2a4b079a0679a1e799b
+SHA256: af8761b8dd16c8b541f47241613a97cc8821d74df8f2617ff35522db13c225ca
+Homepage: https://www.gnu.org/software/findutils/
+Description: Utilities to find files meeting specified criteria and perform various actions on the files which are found
+
 Package: fontconfig
 Version: 2.18.3
 Architecture: aarch64
@@ -233,6 +248,37 @@ SHA1: a3629788f222f1df67b4f49fb25a7f83fbcf3920
 SHA256: 6916397d8f1959eb4eda9f60f56e4e7ef017e2143942cc72790cbc38c8d0ff1f
 Homepage: https://www.freetype.org
 Description: Static libraries for freetype
+
+Package: gawk
+Version: 5.3.2
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 3324
+Depends: libandroid-support, libgmp, libmpfr, readline
+Breaks: gawk-dev
+Replaces: gawk-dev
+Filename: pool/main/g/gawk/gawk_5.3.2_aarch64.deb
+Size: 873812
+MD5sum: 946dbe62319f25415df49f3b11b73bea
+SHA1: 342b11b16f423a1c2164077991dec3244bcc71c6
+SHA256: 07444ce68b17a8a4b46d5452cb01b2f0fe7bfb9fff9bf013ce153e4ad4e04703
+Homepage: https://www.gnu.org/software/gawk/
+Description: Programming language designed for text processing
+
+Package: gawk-static
+Version: 5.3.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 168
+Depends: gawk (= 5.3.2)
+Filename: pool/main/g/gawk-static/gawk-static_5.3.2_aarch64.deb
+Size: 24880
+MD5sum: 79805eb4880a547faa709a7eec8a68d8
+SHA1: 462dbca3a5f44f2421b36789a75798bc4c6bf981
+SHA256: 15480a3878d778fed863e844ca5bfe79406609c1bfc09a4394521471d76e6688
+Homepage: https://www.gnu.org/software/gawk/
+Description: Static libraries for gawk
 
 Package: gdbm
 Version: 1.26-1
@@ -625,6 +671,36 @@ SHA256: 4ac51e37bf210efa7fe7bbca3760abf4413b6e66e45945ad07fc36a6d80dad14
 Homepage: https://sourceware.org/libffi/
 Description: Static libraries for libffi
 
+Package: libgmp
+Version: 6.3.0-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1240
+Depends: libc++
+Breaks: libgmp-dev
+Replaces: libgmp-dev
+Filename: pool/main/l/libgmp/libgmp_6.3.0-2_aarch64.deb
+Size: 328344
+MD5sum: f185f857fb0e26a1ca2a7c5d510c8c19
+SHA1: 5966193ee3ec489883870ae0137a6e076ce29e3c
+SHA256: 3ec421b19a0c1e666de68c6138d6f74b1755e899a0e63bb0b1dfe32f9aeca6be
+Homepage: https://gmplib.org/
+Description: Library for arbitrary precision arithmetic
+
+Package: libgmp-static
+Version: 6.3.0-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1276
+Depends: libgmp (= 6.3.0-2)
+Filename: pool/main/l/libgmp-static/libgmp-static_6.3.0-2_aarch64.deb
+Size: 226508
+MD5sum: 377f67be33eb7336db22b9ab33db8c57
+SHA1: c911486d4a446585798b8c60cfe1389f0d000df7
+SHA256: f1d4e548bd20ec9fa280f98bfeb8b98dd7719063585fb6075053bfb705f77042
+Homepage: https://gmplib.org/
+Description: Static libraries for libgmp
+
 Package: libiconv
 Version: 1.19
 Architecture: aarch64
@@ -758,6 +834,36 @@ SHA1: 799b9a2fa6b85e8e0b84b6bb22a7d3ecebcada7d
 SHA256: 821e34f22fc5767ccd81273e5f06f27dd7e48c8d1c10d59357ee7474edc54a85
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for (un)mounting filesystems
+
+Package: libmpfr
+Version: 4.2.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1000
+Depends: libgmp
+Breaks: libmpfr-dev
+Replaces: libmpfr-dev
+Filename: pool/main/l/libmpfr/libmpfr_4.2.1-1_aarch64.deb
+Size: 271812
+MD5sum: 7a9cb0b91c59e31ed12cc3f9cd8d2956
+SHA1: 3cc1c04f9c4f043a726076365b2bbcbc8c062c2f
+SHA256: cfb83b74cafd176b3ee85a60be90bd3020ea0dbca4ce22ea30389b36acf94d33
+Homepage: https://www.mpfr.org/
+Description: C library for multiple-precision floating-point computations with correct rounding
+
+Package: libmpfr-static
+Version: 4.2.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1120
+Depends: libmpfr (= 4.2.1-1)
+Filename: pool/main/l/libmpfr-static/libmpfr-static_4.2.1-1_aarch64.deb
+Size: 208180
+MD5sum: b389afb0a276cf938e388404ef0c3b8a
+SHA1: 71715e9b7f54ef3219359bb98bb0190a61ffc96d
+SHA256: f958ee16ad090d96b0d3bf3b931202384f8ce6411a3982c17ce60bb99526b7f4
+Homepage: https://www.mpfr.org/
+Description: Static libraries for libmpfr
 
 Package: libpng
 Version: 1.6.58
