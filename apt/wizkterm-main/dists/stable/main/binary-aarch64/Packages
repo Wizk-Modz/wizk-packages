@@ -294,10 +294,10 @@ Essential: yes
 Maintainer: @termux
 Installed-Size: 76
 Filename: pool/main/l/libandroid-support/libandroid-support_29-1_aarch64.deb
-Size: 11004
-MD5sum: ec937cb6816af0594ca9e7349f1209d4
-SHA1: 70f34e868980da92a1d652d79d22a013345cc47b
-SHA256: 961bf0f4677771e99f8c87c9f4cf3d13e58cf0864f17e47c24bbabfbdf3eda7d
+Size: 10992
+MD5sum: 397704468f2f7284bff46c6fc79c1e82
+SHA1: f8d1db9c17729e21ba4e745d0a63d792013a69ab
+SHA256: de01850211407eb595db53d74c23ec9be5032a436a24b2cf4992ee423c0b15f8
 Homepage: https://github.com/termux/libandroid-support
 Description: Library extending the Android C library (Bionic) for additional multibyte, locale and math support
 
@@ -309,9 +309,9 @@ Installed-Size: 72
 Depends: libandroid-support (= 29-1)
 Filename: pool/main/l/libandroid-support-static/libandroid-support-static_29-1_aarch64.deb
 Size: 8636
-MD5sum: 4836d0cc48f4ab180034dd859c6da493
-SHA1: 5fbada71f04f9dfa1147bcc679be3353f4539a0c
-SHA256: 85b6d465ab61a0636bdc8c31bc2558f45c2bde6ce77f7b96d1341612d5117366
+MD5sum: 86e7f597f364165060ec2488c1e13a48
+SHA1: a6735dd4d996fc87e0850fcca282a61c0e04dfec
+SHA256: f0589aaae40ac9047a5962e826f5f858727175b08a1597b8dde3bc72673f34cb
 Homepage: https://github.com/termux/libandroid-support
 Description: Static libraries for libandroid-support
 
