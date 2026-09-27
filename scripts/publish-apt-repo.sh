@@ -52,36 +52,74 @@ if [[ -z "$GPG_KEY_FPR" ]]; then
 	exit 1
 fi
 
+# Kiểm tra tên package có thuộc repo <repo_path> hay không.
+# Nhận cả package chính (có thư mục build.sh) lẫn package con như
+# `<pkg>-static` hoặc subpackage (`<pkg>` khai báo trong
+# `<parent>/<pkg>.subpackage.sh`).
+package_belongs_to_repo() {
+	local repo_path="$1" pkg="$2" dir base
+
+	# Gói chính: có thư mục chứa build.sh.
+	[[ -f "$TERMUX_SCRIPTDIR/$repo_path/$pkg/build.sh" ]] && return 0
+
+	# Gói -static hoặc hậu tố khác: thử bỏ hậu tố sau dấu '-' cuối cùng.
+	dir="$TERMUX_SCRIPTDIR/$repo_path/${pkg%-*}"
+	[[ -f "$dir/build.sh" ]] && return 0
+
+	# Subpackage: tìm file <pkg>.subpackage.sh trong repo.
+	shopt -s nullglob
+	for base in "$TERMUX_SCRIPTDIR/$repo_path"/*/"$pkg".subpackage.sh; do
+		shopt -u nullglob
+		return 0
+	done
+	shopt -u nullglob
+
+	return 1
+}
+
 # Chép các *.deb mới của một repo vào pool/ của repo đó trong site.
+# Lấy tên package từ chính file .deb (field Package) để chép được cả các
+# gói phụ thuộc, không chỉ các gói chính trong built_<repo>_packages.txt.
+# Chỉ nhận các package thuộc <repo_path> để không chép nhầm gói của repo khác.
 # Xóa các *.deb cũ cùng tên package trước, để pool chỉ giữ một phiên bản
 # cho mỗi package: get_hash_from_file.py chỉ lấy entry đầu tiên trong
 # Packages nên nhiều phiên bản sẽ khiến nó chọn sai Filename.
 copy_new_debs() {
-	local repo_name="$1" component="$2" built_file="$DEBS_DIR/built_${repo_name}_packages.txt"
-	local pkg deb dest letter old
+	local repo_path="$1" repo_name="$2" component="$3"
+	local built_file="$DEBS_DIR/built_${repo_name}_packages.txt"
+	local deb pkg dest letter old count=0
 
 	[[ -f "$built_file" ]] || return 0
 
-	while IFS= read -r pkg; do
-		[[ -n "$pkg" ]] || continue
+	shopt -s nullglob
+	for deb in "$DEBS_DIR"/*.deb; do
+		pkg=$(dpkg-deb -f "$deb" Package) || {
+			echo "ERROR: không đọc được tên package từ '$deb'." 1>&2
+			exit 1
+		}
+		[[ -n "$pkg" ]] || {
+			echo "ERROR: package rỗng trong '$deb'." 1>&2
+			exit 1
+		}
+
+		# Bỏ qua gói không thuộc repo này.
+		package_belongs_to_repo "$repo_path" "$pkg" || continue
+
 		letter="${pkg:0:1}"
 		dest="$SITE_DIR/apt/$repo_name/pool/$component/$letter/$pkg"
 		mkdir -p "$dest"
 
 		# Xóa phiên bản cũ của package này (nếu có).
-		shopt -s nullglob
 		for old in "$dest/${pkg}"_*.deb; do
 			rm -f "$old"
 		done
-		shopt -u nullglob
 
-		shopt -s nullglob
-		for deb in "$DEBS_DIR/${pkg}"_*.deb; do
-			cp -f "$deb" "$dest/"
-			echo "Đã chép $(basename "$deb") vào pool của '$repo_name'"
-		done
-		shopt -u nullglob
-	done < "$built_file"
+		cp -f "$deb" "$dest/"
+		count=$((count + 1))
+	done
+	shopt -u nullglob
+
+	echo "Đã chép $count file .deb vào pool của '$repo_name'"
 }
 
 # Sinh Packages (cho mọi kiến trúc trong pool) và gzip lại cho một repo.
@@ -153,7 +191,7 @@ main() {
 
 		echo "==> Xử lý repo '$repo_name' (distribution=$distribution, component=$component)"
 
-		copy_new_debs "$repo_name" "$component"
+		copy_new_debs "$repo_path" "$repo_name" "$component"
 		generate_packages "$SITE_DIR/apt/$repo_name" "$distribution" "$component"
 		generate_release "$SITE_DIR/apt/$repo_name" "$distribution" "$component" \
 			"WizkTerm" "$repo_name"
