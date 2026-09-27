@@ -11837,6 +11837,11 @@ data/data/com.wizkterm/files/usr/include/openssl/x509_vfy.h openssl
 data/data/com.wizkterm/files/usr/include/openssl/x509err.h openssl
 data/data/com.wizkterm/files/usr/include/openssl/x509v3.h openssl
 data/data/com.wizkterm/files/usr/include/openssl/x509v3err.h openssl
+data/data/com.wizkterm/files/usr/include/opus/opus.h libopus
+data/data/com.wizkterm/files/usr/include/opus/opus_defines.h libopus
+data/data/com.wizkterm/files/usr/include/opus/opus_multistream.h libopus
+data/data/com.wizkterm/files/usr/include/opus/opus_projection.h libopus
+data/data/com.wizkterm/files/usr/include/opus/opus_types.h libopus
 data/data/com.wizkterm/files/usr/include/orc/c_api.h libcompiler-rt
 data/data/com.wizkterm/files/usr/include/out123.h libmpg123
 data/data/com.wizkterm/files/usr/include/p11-kit-1/p11-kit/deprecated.h p11-kit
@@ -14723,6 +14728,9 @@ data/data/com.wizkterm/files/usr/lib/libomp.a clang
 data/data/com.wizkterm/files/usr/lib/libonig.a oniguruma-static
 data/data/com.wizkterm/files/usr/lib/libonig.la oniguruma-static
 data/data/com.wizkterm/files/usr/lib/libonig.so oniguruma
+data/data/com.wizkterm/files/usr/lib/libopus.a libopus-static
+data/data/com.wizkterm/files/usr/lib/libopus.la libopus-static
+data/data/com.wizkterm/files/usr/lib/libopus.so libopus
 data/data/com.wizkterm/files/usr/lib/libout123.a libmpg123-static
 data/data/com.wizkterm/files/usr/lib/libout123.la libmpg123-static
 data/data/com.wizkterm/files/usr/lib/libout123.so libmpg123
@@ -19174,6 +19182,7 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/npth.pc libnpth
 data/data/com.wizkterm/files/usr/lib/pkgconfig/ogg.pc libogg
 data/data/com.wizkterm/files/usr/lib/pkgconfig/oniguruma.pc oniguruma
 data/data/com.wizkterm/files/usr/lib/pkgconfig/openssl.pc openssl
+data/data/com.wizkterm/files/usr/lib/pkgconfig/opus.pc libopus
 data/data/com.wizkterm/files/usr/lib/pkgconfig/p11-kit-1.pc p11-kit
 data/data/com.wizkterm/files/usr/lib/pkgconfig/panel.pc ncurses-ui-libs
 data/data/com.wizkterm/files/usr/lib/pkgconfig/panelw.pc ncurses-ui-libs
@@ -22166,6 +22175,7 @@ data/data/com.wizkterm/files/usr/share/aclocal/ltversion.m4 libtool
 data/data/com.wizkterm/files/usr/share/aclocal/lt~obsolete.m4 libtool
 data/data/com.wizkterm/files/usr/share/aclocal/npth.m4 libnpth
 data/data/com.wizkterm/files/usr/share/aclocal/ogg.m4 libogg
+data/data/com.wizkterm/files/usr/share/aclocal/opus.m4 libopus
 data/data/com.wizkterm/files/usr/share/aclocal/pkg.m4 pkg-config
 data/data/com.wizkterm/files/usr/share/aclocal/xorg-macros.m4 xorg-util-macros
 data/data/com.wizkterm/files/usr/share/aclocal/xtrans.m4 xtrans
@@ -23902,6 +23912,7 @@ data/data/com.wizkterm/files/usr/share/doc/libogg/stream.png libogg
 data/data/com.wizkterm/files/usr/share/doc/libogg/vorbisword2.png libogg
 data/data/com.wizkterm/files/usr/share/doc/libogg/white-ogg.png libogg
 data/data/com.wizkterm/files/usr/share/doc/libogg/white-xifish.png libogg
+data/data/com.wizkterm/files/usr/share/doc/libopus/copyright libopus
 data/data/com.wizkterm/files/usr/share/doc/libpng/copyright libpng
 data/data/com.wizkterm/files/usr/share/doc/libpopt/copyright libpopt
 data/data/com.wizkterm/files/usr/share/doc/libresolv-wrapper/copyright libresolv-wrapper

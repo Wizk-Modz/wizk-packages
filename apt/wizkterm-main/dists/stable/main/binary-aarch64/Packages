@@ -2323,6 +2323,35 @@ SHA256: b407946b3ce14cb24694235956c636c473eba9cfd92162f82fd6b703087020ee
 Homepage: https://xiph.org/ogg/
 Description: Static libraries for libogg
 
+Package: libopus
+Version: 1.6.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 568
+Breaks: libopus-dev
+Replaces: libopus-dev
+Filename: pool/main/l/libopus/libopus_1.6.1_aarch64.deb
+Size: 192588
+MD5sum: 6f40088ecef572c54f9c2f8719ce02d1
+SHA1: e0a00abbd5d092d2a24eb6baa07cafdcfa0cc827
+SHA256: f106bb3f4d5d7a2d8ed46eac246ece752b6234ffcc9780b396604541014caf16
+Homepage: https://www.opus-codec.org/
+Description: Reference implementation of the Opus codec
+
+Package: libopus-static
+Version: 1.6.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 684
+Depends: libopus (= 1.6.1)
+Filename: pool/main/l/libopus-static/libopus-static_1.6.1_aarch64.deb
+Size: 201856
+MD5sum: 4245ee463f93413f04360402b864099c
+SHA1: cc573896924b6308e4ba224cd86ddf801f14387f
+SHA256: d5b584d71e236acf6ed00621fc01bb1398121cac7a6e802814a4017b79525591
+Homepage: https://www.opus-codec.org/
+Description: Static libraries for libopus
+
 Package: libpng
 Version: 1.6.58
 Architecture: aarch64
