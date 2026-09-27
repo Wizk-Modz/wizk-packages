@@ -116,6 +116,23 @@ SHA256: c83a7ab374163977c1f3c5b332b0ec2c1873a4f09ca37be45679f2f61dd33dee
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
+Package: coreutils
+Version: 9.11-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 2788
+Depends: libandroid-selinux, libandroid-support, libgmp, libiconv, openssl (>= 1:3.5.0-1)
+Breaks: chroot, busybox (<< 1.30.1-4)
+Replaces: chroot, busybox (<< 1.30.1-4)
+Filename: pool/main/c/coreutils/coreutils_9.11-1_aarch64.deb
+Size: 814240
+MD5sum: 1b6ecd84ecd225157488f3084be5fc04
+SHA1: d922fa0da8c6fab963d178fcc956905737353a6d
+SHA256: 33150acc7fa8ed385a9c9817e9c39009d037c503855a010573425c7a00e36c27
+Homepage: https://www.gnu.org/software/coreutils/
+Description: Basic file, shell and text manipulation utilities from the GNU project
+
 Package: curl
 Version: 8.22.0
 Architecture: aarch64
@@ -157,6 +174,34 @@ SHA1: ad7138915c7c8503bf62c55ab1536e96d4f9561c
 SHA256: 78042fc05a4f8c4a46c9c2133f8b9c4f075c0ae12aef5517840d5e3da76d5c66
 Homepage: https://packages.debian.org/debianutils
 Description: Small utilities which are used primarily by the installation scripts of Debian packages
+
+Package: dialog
+Version: 1.3-20260721-0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 276
+Depends: libandroid-support, ncurses
+Filename: pool/main/d/dialog/dialog_1.3-20260721-0_aarch64.deb
+Size: 100532
+MD5sum: 1063e26350a57aac9d7f49d0fc2d41b8
+SHA1: 0cae13656deb2ed913efc624c05c966a0e1b1605
+SHA256: d80b3f5918028443fcb55d99b34570bf8cf4da8a9531be054c165085c99b2df4
+Homepage: https://invisible-island.net/dialog/
+Description: Application used in shell scripts which displays text user interface widgets
+
+Package: dialog-static
+Version: 1.3-20260721-0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 448
+Depends: dialog (= 1.3-20260721-0)
+Filename: pool/main/d/dialog-static/dialog-static_1.3-20260721-0_aarch64.deb
+Size: 93480
+MD5sum: 7edca2b61cc1883618d9522c46760376
+SHA1: 80c64aabc00b287b7c8564e4aaee20cb81877c81
+SHA256: b446f2cd4a4c900db90f2ca0682e2da8f9216a642e4a09a0eeacc9eeb8b91858
+Homepage: https://invisible-island.net/dialog/
+Description: Static libraries for dialog
 
 Package: diffutils
 Version: 3.12-2
@@ -1248,15 +1293,15 @@ Package: libssh2
 Version: 1.11.1-2
 Architecture: aarch64
 Maintainer: @termux
-Installed-Size: 1160
+Installed-Size: 1156
 Depends: openssl, zlib
 Breaks: libssh2-dev
 Replaces: libssh2-dev
 Filename: pool/main/l/libssh2/libssh2_1.11.1-2_aarch64.deb
 Size: 219236
-MD5sum: bc2f6b90a3903e575d78a6977da620db
-SHA1: 5a38421de525d7acb248b0c17fe8b67b032120c4
-SHA256: e9dd14a3a85e1f5020696ca945802b46bf5cf5236e87c387d5447273d2ac8b27
+MD5sum: a76e34ee8fc99a621bba14673d3cc443
+SHA1: a5f334321f4b2c5784cb4a4acbfb02ca2d99187b
+SHA256: 694d1e8aa2fabb44d3e27ee8206a29ae10d0872505bfecebb6c04e3bd779db07
 Homepage: https://www.libssh2.org
 Description: Client-side library implementing the SSH2 protocol
 
@@ -2076,10 +2121,10 @@ Essential: yes
 Maintainer: @termux
 Installed-Size: 476
 Filename: pool/main/s/sed/sed_4.10_aarch64.deb
-Size: 123348
-MD5sum: 24ef6c75cd6205c2a0cb9fb28793b596
-SHA1: 29be79276b4cb8f266318aefecde906356d6b6cc
-SHA256: a95585c531a9190f310b363a8ac3c601a5b6e8ae6bad2718a6bcbd83093ebdf7
+Size: 123780
+MD5sum: 38bdeeb12e97d0e2986437511e218f1a
+SHA1: d25efdc9b57b0ef7f5fd6879ffecf3a28a4ff7a1
+SHA256: 6c59b9514652102ab22d4bcb368752e1fa9f64b98c11acadac875b64f1244383
 Homepage: https://www.gnu.org/software/sed/
 Description: GNU stream editor for filtering/transforming text
 
@@ -2142,6 +2187,20 @@ SHA256: bb8421b3e282fdcf04929a8e86be25f80ed28cf7f5d63e5db853d212e0bc93d6
 Homepage: https://github.com/termux/TermuxAm
 Description: Android Oreo-compatible am command reimplementation
 
+Package: termux-am-socket
+Version: 1.5.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 88
+Depends: libc++
+Filename: pool/main/t/termux-am-socket/termux-am-socket_1.5.0-1_aarch64.deb
+Size: 16356
+MD5sum: 5345ee97816429ad899db1e4fef5fe9a
+SHA1: 0ab844e7b357449791309b9cb96ece9e50fbe36a
+SHA256: 58f1fcb876d6c39553271eb3ae456c80acd26df9ddfc53ac41a01de24527aeb7
+Homepage: https://github.com/termux/termux-am-socket
+Description: A faster version of am with less features that only works while Termux is running
+
 Package: termux-core
 Version: 0.4.0-1
 Architecture: aarch64
@@ -2183,6 +2242,53 @@ SHA1: 06107415035c66c12036342d570edf81091aedfd
 SHA256: 60f4549894f5c5041ad91e09cd103cf795bbc7e22e4a75ea6e333a3fbcd42c20
 Homepage: https://github.com/termux/termux-elf-cleaner
 Description: Cleaner of ELF files for Android
+
+Package: termux-exec
+Version: 1:2.5.0-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 2092
+Filename: pool/main/t/termux-exec/termux-exec_1:2.5.0-1_aarch64.deb
+Size: 286852
+MD5sum: e9e410d26b5227e9801a0d35103e2db7
+SHA1: d7220f831870dea27c660ab48fad0453d9f23362
+SHA256: 63462307aec43a57efe085f7f5be2fafaaf499da441f513ceb3df37b930a35a4
+Homepage: https://github.com/termux/termux-exec-package
+Description: Utils and libraries for Termux exec including a LD_PRELOAD shared library for proper functioning of the Termux execution environment
+
+Package: termux-exec-static
+Version: 1:2.5.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 76
+Depends: termux-exec (= 1:2.5.0-1)
+Filename: pool/main/t/termux-exec-static/termux-exec-static_1:2.5.0-1_aarch64.deb
+Size: 10576
+MD5sum: c793ed3018d1c05cc1bc11b14b4daa9f
+SHA1: cf0df26e77ded0c91fbf436c747086f806fa8900
+SHA256: 2b8c8752b1e2526290da8038910f5dda3420568a313f730014f2ac1bac2b2bfd
+Homepage: https://github.com/termux/termux-exec-package
+Description: Static libraries for termux-exec
+
+Package: termux-tools
+Version: 1.46.0+really1.45.0-1
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 552
+Depends: bzip2, coreutils, curl, dash, diffutils, findutils, gawk, grep, gzip, less, procps, psmisc, sed, tar, termux-am (>= 0.8.0), termux-am-socket (>= 1.5.0), termux-core, termux-exec, util-linux, xz-utils, dialog
+Recommends: ed, dos2unix, inetutils, net-tools, patch, unzip
+Suggests: termux-api
+Conflicts: procps (<< 3.3.15-2)
+Breaks: termux-keyring (<< 1.9)
+Filename: pool/main/t/termux-tools/termux-tools_1.46.0+really1.45.0-1_aarch64.deb
+Size: 33604
+MD5sum: e86c255f444e74b2fcdbb13a6ed721e3
+SHA1: b2a3685f2dd657dee713a515a1631585f8bc119b
+SHA256: 369c21184e1eb95aade01251cc4ad2900d96c160873b1d4ffa3fb7cf097aab16
+Homepage: https://termux.dev/
+Description: Basic system tools for Termux
 
 Package: tk
 Version: 8.6.14-1
