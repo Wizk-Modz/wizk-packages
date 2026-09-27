@@ -864,6 +864,33 @@ SHA256: 851982eedee43cb051ab6361f1525a500205fde31781e0190433b4e5634b505c
 Homepage: https://www.sqlite.org
 Description: tcl bindings for SQLite
 
+Package: libtirpc
+Version: 1.3.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 548
+Filename: pool/main/l/libtirpc/libtirpc_1.3.8_aarch64.deb
+Size: 124092
+MD5sum: d6960d74427c0b04deab9ce7170a8c46
+SHA1: ae7bffa50d789ff92148b9154c9118a5e30ed46e
+SHA256: 59377fc3e9b5b5cf62f378a0e22cb087ada58afb957b8955ceade2f3eb5ed893
+Homepage: http://git.linux-nfs.org/?p=steved/libtirpc.git
+Description: Transport Independent RPC library
+
+Package: libtirpc-static
+Version: 1.3.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 384
+Depends: libtirpc (= 1.3.8)
+Filename: pool/main/l/libtirpc-static/libtirpc-static_1.3.8_aarch64.deb
+Size: 69512
+MD5sum: 62c4284af691c0f1de15b3eaf02fc4ad
+SHA1: d977e227f34dda2bce2480bea63b2901c5bdc509
+SHA256: 2840d64cbf1ae8086fe6ef69af26b582d92bcca539fb10f54c7818d7f46b549e
+Homepage: http://git.linux-nfs.org/?p=steved/libtirpc.git
+Description: Static libraries for libtirpc
+
 Package: libuuid
 Version: 2.42.1-5
 Architecture: aarch64
@@ -1187,6 +1214,34 @@ SHA256: 543ccc86e854b2f8d5fc00722799c20defda905b515644b539c86beac0acb42d
 Homepage: https://clang.llvm.org/
 Description: LLVM Development Tools
 
+Package: lsof
+Version: 4.99.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 396
+Depends: libandroid-support, libtirpc
+Filename: pool/main/l/lsof/lsof_4.99.7_aarch64.deb
+Size: 124236
+MD5sum: 0dbc59cf6ea9f45ef8614817a2af10c2
+SHA1: b7100a32a94156b7ab291f42a42f18eaf1dc3f4f
+SHA256: 241abee165b56057f900eb036fee3bddfbd48ca27fb4e9535e7b5abbcd194401
+Homepage: https://github.com/lsof-org/lsof
+Description: Lists open files for running Unix processes
+
+Package: lsof-static
+Version: 4.99.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 260
+Depends: lsof (= 4.99.7)
+Filename: pool/main/l/lsof-static/lsof-static_4.99.7_aarch64.deb
+Size: 54624
+MD5sum: 706010773dd3b035762cd8fd79734a33
+SHA1: a9fd8642a689852193e1f8868cb68b3e5ba239df
+SHA256: c5eb28ea9bafd789bf8c92f2bfc107cdc25956d81d935d851b784448c3e8ec34
+Homepage: https://github.com/lsof-org/lsof
+Description: Static libraries for lsof
+
 Package: mlir
 Version: 21.1.8-3
 Architecture: aarch64
@@ -1317,6 +1372,19 @@ SHA1: a53db43e700836f136b9f0d97096198839179128
 SHA256: df366c9e35f7a9b2490ba9c6dcfd0b7ca9255de0fff0c3409ae2b46e839de5e2
 Homepage: https://developer.android.com/tools/sdk/ndk/index.html
 Description: System header and library files from the Android NDK needed for compiling C programs
+
+Package: net-tools
+Version: 2.10.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 568
+Filename: pool/main/n/net-tools/net-tools_2.10.0-1_aarch64.deb
+Size: 118460
+MD5sum: ac26f804a9c598fb8aeeb747df1a120b
+SHA1: c4b6498fd337f696f0da9b501a7cd64a0a35aed2
+SHA256: 4fbcaace468948f37010896d168acd91fa158e04ed50accad79b4532bbcfe159
+Homepage: http://net-tools.sourceforge.net/
+Description: Configuration tools for Linux networking
 
 Package: openssl
 Version: 1:3.6.3
