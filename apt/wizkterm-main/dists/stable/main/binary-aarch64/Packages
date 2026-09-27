@@ -2750,6 +2750,36 @@ SHA256: 690e254c9dd5c210cc2f8b50f059e42bc3716acdd2c00d70988df8841b79a5a7
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for handling universally unique identifiers
 
+Package: libvorbis
+Version: 1.3.7-4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1772
+Depends: libogg
+Breaks: libvorbis-dev
+Replaces: libvorbis-dev
+Filename: pool/main/l/libvorbis/libvorbis_1.3.7-4_aarch64.deb
+Size: 262316
+MD5sum: c508d63e80e057f7a7e11af048de75ad
+SHA1: d8461b0eeed0e7bdffbe36f5af2562d3bc8d4326
+SHA256: 0fcef3d8650de29cc0facab5a056402c8b1f6a36d03c2b26e30ba6b4ddebf05b
+Homepage: https://xiph.org/vorbis/
+Description: Library for using the Ogg Vorbis compressed audio format
+
+Package: libvorbis-static
+Version: 1.3.7-4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1020
+Depends: libvorbis (= 1.3.7-4)
+Filename: pool/main/l/libvorbis-static/libvorbis-static_1.3.7-4_aarch64.deb
+Size: 157168
+MD5sum: c899088af1faec30ee4cf7fe8c41e609
+SHA1: ab8841f9256823bf7b125fac2d2a600414913a2c
+SHA256: a923bba153d5db47f8f58754d4b18554656ad5004a9fdf2c9cff2f8bec3c3541
+Homepage: https://xiph.org/vorbis/
+Description: Static libraries for libvorbis
+
 Package: libwebrtc-audio-processing
 Version: 1.3-5
 Architecture: aarch64
