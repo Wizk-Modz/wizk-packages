@@ -86,10 +86,7 @@ package_belongs_to_repo() {
 # Packages nên nhiều phiên bản sẽ khiến nó chọn sai Filename.
 copy_new_debs() {
 	local repo_path="$1" repo_name="$2" component="$3"
-	local built_file="$DEBS_DIR/built_${repo_name}_packages.txt"
 	local deb pkg dest letter old count=0
-
-	[[ -f "$built_file" ]] || return 0
 
 	shopt -s nullglob
 	for deb in "$DEBS_DIR"/*.deb; do
