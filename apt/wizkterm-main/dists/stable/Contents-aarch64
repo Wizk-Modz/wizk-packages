@@ -930,6 +930,8 @@ data/data/com.wizkterm/files/usr/bin/uuidd uuid-utils
 data/data/com.wizkterm/files/usr/bin/uuidgen uuid-utils
 data/data/com.wizkterm/files/usr/bin/uuidparse uuid-utils
 data/data/com.wizkterm/files/usr/bin/uuserver krb5
+data/data/com.wizkterm/files/usr/bin/uv uv
+data/data/com.wizkterm/files/usr/bin/uvx uv
 data/data/com.wizkterm/files/usr/bin/vdir coreutils
 data/data/com.wizkterm/files/usr/bin/verify-uselistorder llvm
 data/data/com.wizkterm/files/usr/bin/vmstat procps
@@ -23438,6 +23440,7 @@ data/data/com.wizkterm/files/usr/share/bash-completion/completions/unshare util-
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/uuidd uuid-utils
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/uuidgen uuid-utils
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/uuidparse uuid-utils
+data/data/com.wizkterm/files/usr/share/bash-completion/completions/uv uv
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/waitpid util-linux
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/wdctl util-linux
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/whereis util-linux
@@ -24413,6 +24416,8 @@ data/data/com.wizkterm/files/usr/share/doc/unzip/copyright unzip
 data/data/com.wizkterm/files/usr/share/doc/utf8proc/copyright utf8proc
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.bash util-linux
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-linux
+data/data/com.wizkterm/files/usr/share/doc/uv/LICENSE-APACHE uv
+data/data/com.wizkterm/files/usr/share/doc/uv/LICENSE-MIT uv
 data/data/com.wizkterm/files/usr/share/doc/wget/copyright wget
 data/data/com.wizkterm/files/usr/share/doc/which/copyright which
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
@@ -24490,6 +24495,7 @@ data/data/com.wizkterm/files/usr/share/doc/xz/lzma-file-format.txt liblzma
 data/data/com.wizkterm/files/usr/share/doc/xz/xz-file-format.txt liblzma
 data/data/com.wizkterm/files/usr/share/doc/zlib/copyright zlib
 data/data/com.wizkterm/files/usr/share/doc/zstd/copyright zstd
+data/data/com.wizkterm/files/usr/share/elvish/lib/uv.elv uv
 data/data/com.wizkterm/files/usr/share/et/et_c.awk krb5
 data/data/com.wizkterm/files/usr/share/et/et_h.awk krb5
 data/data/com.wizkterm/files/usr/share/examples/krb5/kdc.conf krb5
@@ -24499,6 +24505,7 @@ data/data/com.wizkterm/files/usr/share/examples/termux/termux.properties termux-
 data/data/com.wizkterm/files/usr/share/fish/vendor_completions.d/gh.fish gh
 data/data/com.wizkterm/files/usr/share/fish/vendor_completions.d/pip.fish python-pip
 data/data/com.wizkterm/files/usr/share/fish/vendor_completions.d/proot-distro.fish proot-distro
+data/data/com.wizkterm/files/usr/share/fish/vendor_completions.d/uv.fish uv
 data/data/com.wizkterm/files/usr/share/fontconfig/conf.avail/05-reset-dirs-sample.conf fontconfig
 data/data/com.wizkterm/files/usr/share/fontconfig/conf.avail/09-autohint-if-no-hinting.conf fontconfig
 data/data/com.wizkterm/files/usr/share/fontconfig/conf.avail/10-autohint.conf fontconfig
@@ -38528,6 +38535,7 @@ data/data/com.wizkterm/files/usr/share/zsh/site-functions/_gh gh
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_p11-kit p11-kit
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_proot-distro proot-distro
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_trust p11-kit
+data/data/com.wizkterm/files/usr/share/zsh/site-functions/_uv uv
 data/data/com.wizkterm/files/usr/share/zsh/vendor-completions/_dpkg-parsechangelog dpkg
 data/data/com.wizkterm/files/usr/var/krb5kdc/kdc.conf krb5
 data/data/com.wizkterm/files/usr/var/procps/stat procps

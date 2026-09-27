@@ -4520,6 +4520,20 @@ SHA256: 921d3bc714d96ea7b61484c4be6a6a02770207584811b6095d97313bc9bac208
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for handling universally unique identifiers
 
+Package: uv
+Version: 0.12.19
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 46084
+Depends: zstd
+Filename: pool/main/u/uv/uv_0.12.19_aarch64.deb
+Size: 12138556
+MD5sum: 04e55df29ea225fc884e3eafd3f3aa87
+SHA1: 9104825fefcb4f69ef8915566ebe28fc8773e90e
+SHA256: 08c872d26481c47f604d99d4662a84df34a3a95c9dab4b84b52d2c1d8b67c380
+Homepage: https://docs.astral.sh/uv/
+Description: An extremely fast Python package installer and resolver, written in Rust.
+
 Package: wget
 Version: 1.25.0-1
 Architecture: aarch64
