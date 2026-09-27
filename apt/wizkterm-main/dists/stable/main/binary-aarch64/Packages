@@ -1363,6 +1363,19 @@ SHA256: 3ce0bf1cc1f3238054a01a3ce500bcf68ec553771110237a374b7fe1b346305a
 Homepage: https://www.openssl.org/
 Description: The openssl command line cryptographic tool
 
+Package: patch
+Version: 2.8-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 216
+Filename: pool/main/p/patch/patch_2.8-1_aarch64.deb
+Size: 73952
+MD5sum: 661c7628ecfa7bf4c0962392b039e06f
+SHA1: 77769fc675fd22f1234c148e0cbcd7173f483716
+SHA256: adf89929503922a9a544ffddd9614adde1ba131caaa1aaece973e334514ae287
+Homepage: https://savannah.gnu.org/projects/patch/
+Description: GNU patch which applies diff files to create patched files
+
 Package: pcre2
 Version: 10.47
 Architecture: aarch64
@@ -1616,6 +1629,20 @@ SHA1: 013d5866361d133b8e42dbb5e35c43ad8b09788b
 SHA256: bcf6d08d778e3e0b80dbdceb5bf790dcdd3f205dd5a1947358c3dd489f6c7ee1
 Homepage: https://dejavu-fonts.github.io/
 Description: Font family based on the Bitstream Vera Fonts with a wider range of characters
+
+Package: unzip
+Version: 6.0-10
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 328
+Depends: libbz2
+Filename: pool/main/u/unzip/unzip_6.0-10_aarch64.deb
+Size: 116780
+MD5sum: 3213074670ada2185ddd1323f12cf2dd
+SHA1: 6cd177dfe94616e423356f0ca80e15ec50ee5fc5
+SHA256: 9d206f5edb2c74322feb6d31ae30c83bbec9df18a6d3a35f32cc7c541e969cf2
+Homepage: https://sourceforge.net/projects/infozip/
+Description: Tools for working with zip files
 
 Package: util-linux
 Version: 2.42.1-5

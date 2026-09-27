@@ -124,6 +124,7 @@ data/data/com.wizkterm/files/usr/bin/fsck.cramfs	    util-linux
 data/data/com.wizkterm/files/usr/bin/fsck.minix		    util-linux
 data/data/com.wizkterm/files/usr/bin/fsfreeze		    util-linux
 data/data/com.wizkterm/files/usr/bin/fstrim		    mount-utils
+data/data/com.wizkterm/files/usr/bin/funzip		    unzip
 data/data/com.wizkterm/files/usr/bin/g++		    clang
 data/data/com.wizkterm/files/usr/bin/gcc		    clang
 data/data/com.wizkterm/files/usr/bin/gdbm_dump		    gdbm
@@ -301,6 +302,7 @@ data/data/com.wizkterm/files/usr/bin/offload-arch	    clang
 data/data/com.wizkterm/files/usr/bin/openssl		    openssl-tool
 data/data/com.wizkterm/files/usr/bin/opt		    llvm
 data/data/com.wizkterm/files/usr/bin/partx		    blk-utils
+data/data/com.wizkterm/files/usr/bin/patch		    patch
 data/data/com.wizkterm/files/usr/bin/pcre2-config	    pcre2
 data/data/com.wizkterm/files/usr/bin/pcre2grep		    pcre2grep
 data/data/com.wizkterm/files/usr/bin/pipesz		    util-linux
@@ -374,6 +376,8 @@ data/data/com.wizkterm/files/usr/bin/uncompress		    gzip
 data/data/com.wizkterm/files/usr/bin/unlzma		    xz-utils
 data/data/com.wizkterm/files/usr/bin/unshare		    util-linux
 data/data/com.wizkterm/files/usr/bin/unxz		    xz-utils
+data/data/com.wizkterm/files/usr/bin/unzip		    unzip
+data/data/com.wizkterm/files/usr/bin/unzipsfx		    unzip
 data/data/com.wizkterm/files/usr/bin/unzstd		    zstd
 data/data/com.wizkterm/files/usr/bin/uuidd		    uuid-utils
 data/data/com.wizkterm/files/usr/bin/uuidgen		    uuid-utils
@@ -409,6 +413,8 @@ data/data/com.wizkterm/files/usr/bin/zegrep		    gzip
 data/data/com.wizkterm/files/usr/bin/zfgrep		    gzip
 data/data/com.wizkterm/files/usr/bin/zforce		    gzip
 data/data/com.wizkterm/files/usr/bin/zgrep		    gzip
+data/data/com.wizkterm/files/usr/bin/zipgrep		    unzip
+data/data/com.wizkterm/files/usr/bin/zipinfo		    unzip
 data/data/com.wizkterm/files/usr/bin/zmore		    gzip
 data/data/com.wizkterm/files/usr/bin/znew		    gzip
 data/data/com.wizkterm/files/usr/bin/zramctl		    util-linux
@@ -14019,6 +14025,7 @@ data/data/com.wizkterm/files/usr/share/doc/nano/rnano.1.html nano
 data/data/com.wizkterm/files/usr/share/doc/ncurses/copyright ncurses
 data/data/com.wizkterm/files/usr/share/doc/ndk-sysroot/copyright ndk-sysroot
 data/data/com.wizkterm/files/usr/share/doc/openssl/copyright openssl
+data/data/com.wizkterm/files/usr/share/doc/patch/copyright  patch
 data/data/com.wizkterm/files/usr/share/doc/pcre2/AUTHORS.md pcre2
 data/data/com.wizkterm/files/usr/share/doc/pcre2/COPYING    pcre2
 data/data/com.wizkterm/files/usr/share/doc/pcre2/ChangeLog  pcre2
@@ -14148,6 +14155,7 @@ data/data/com.wizkterm/files/usr/share/doc/termux-am/copyright termux-am
 data/data/com.wizkterm/files/usr/share/doc/termux-elf-cleaner/copyright termux-elf-cleaner
 data/data/com.wizkterm/files/usr/share/doc/tk/license.terms tk
 data/data/com.wizkterm/files/usr/share/doc/ttf-dejavu/copyright ttf-dejavu
+data/data/com.wizkterm/files/usr/share/doc/unzip/copyright  unzip
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.bash util-linux
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-linux
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
@@ -14340,6 +14348,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/file.1.gz   file
 data/data/com.wizkterm/files/usr/share/man/man1/fincore.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/flock.1.gz  util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/freetype-config.1.gz freetype
+data/data/com.wizkterm/files/usr/share/man/man1/funzip.1.gz unzip
 data/data/com.wizkterm/files/usr/share/man/man1/gdbm_dump.1.gz gdbm
 data/data/com.wizkterm/files/usr/share/man/man1/gdbm_load.1.gz gdbm
 data/data/com.wizkterm/files/usr/share/man/man1/gdbmtool.1.gz gdbm
@@ -14435,6 +14444,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/nsenter.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/objcopy.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/objdump.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/opt.1.gz    llvm
+data/data/com.wizkterm/files/usr/share/man/man1/patch.1.gz  patch
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2-config.1.gz pcre2
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2grep.1.gz pcre2grep
 data/data/com.wizkterm/files/usr/share/man/man1/pcre2test.1.gz pcre2
@@ -14477,6 +14487,8 @@ data/data/com.wizkterm/files/usr/share/man/man1/ul.1.gz	    util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/unlzma.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/unshare.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/unxz.1.gz   xz-utils
+data/data/com.wizkterm/files/usr/share/man/man1/unzip.1.gz  unzip
+data/data/com.wizkterm/files/usr/share/man/man1/unzipsfx.1.gz unzip
 data/data/com.wizkterm/files/usr/share/man/man1/unzstd.1.gz zstd
 data/data/com.wizkterm/files/usr/share/man/man1/uuidgen.1.gz uuid-utils
 data/data/com.wizkterm/files/usr/share/man/man1/uuidparse.1.gz uuid-utils
@@ -14501,6 +14513,8 @@ data/data/com.wizkterm/files/usr/share/man/man1/zcmp.1.gz   gzip
 data/data/com.wizkterm/files/usr/share/man/man1/zdiff.1.gz  gzip
 data/data/com.wizkterm/files/usr/share/man/man1/zforce.1.gz gzip
 data/data/com.wizkterm/files/usr/share/man/man1/zgrep.1.gz  gzip
+data/data/com.wizkterm/files/usr/share/man/man1/zipgrep.1.gz unzip
+data/data/com.wizkterm/files/usr/share/man/man1/zipinfo.1.gz unzip
 data/data/com.wizkterm/files/usr/share/man/man1/zmore.1.gz  gzip
 data/data/com.wizkterm/files/usr/share/man/man1/znew.1.gz   gzip
 data/data/com.wizkterm/files/usr/share/man/man1/zstd.1.gz   zstd
