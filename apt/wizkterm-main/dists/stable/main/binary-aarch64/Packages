@@ -1,47 +1,47 @@
 Package: apt
-Version: 2.8.1-2
+Version: 2.8.1-3
 Architecture: aarch64
 Essential: yes
 Maintainer: @termux
 Installed-Size: 4064
-Depends: coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libiconv, libgcrypt, libgnutls, liblz4, liblzma, sed, termux-keyring, termux-licenses, xxhash, zlib, zstd
+Depends: coreutils, dpkg, findutils, gpgv, grep, libandroid-glob, libbz2, libc++, libiconv, libgcrypt, libgnutls, liblz4, liblzma, sed, wizkterm-keyring, termux-licenses, xxhash, zlib, zstd
 Suggests: gnupg
 Conflicts: apt-transport-https, libapt-pkg, unstable-repo, game-repo, science-repo
 Replaces: apt-transport-https, libapt-pkg, unstable-repo, game-repo, science-repo
 Provides: unstable-repo, game-repo, science-repo
-Filename: pool/main/a/apt/apt_2.8.1-2_aarch64.deb
-Size: 1043544
-MD5sum: b24206e48b48aec6c65b3e8d7e430e75
-SHA1: ecf1aa15515073ddaffb20dca354bffd7aed8481
-SHA256: 437d1ead19c46c3208362d850ba038b7e79ba63f07ceab4332b3d296f373f90b
+Filename: pool/main/a/apt/apt_2.8.1-3_aarch64.deb
+Size: 1042972
+MD5sum: 2704e81c664d773a32754f13be231249
+SHA1: 3765fc93aac62ef1cd74ed4ec9d2e783af299735
+SHA256: 6ed8fb3cadddba327e3305d26982cab79bc8296c4212f2de9e321a734bff1912
 Homepage: https://packages.debian.org/apt
 Description: Front-end for the dpkg package manager
 
 Package: apt-ftparchive
-Version: 2.8.1-2
+Version: 2.8.1-3
 Architecture: aarch64
 Maintainer: @termux
 Installed-Size: 316
-Depends: libdb, apt (= 2.8.1-2)
-Filename: pool/main/a/apt-ftparchive/apt-ftparchive_2.8.1-2_aarch64.deb
-Size: 96044
-MD5sum: 7bec1f6ece6abafa8bd71fc6974e02e0
-SHA1: 789e1de059912e31b501817e3e3893ca87ed83ca
-SHA256: de300d458e5441f4d400d95d5f3f2e7465a6fbcea65ffef557a7b12cf4e95ae1
+Depends: libdb, apt (= 2.8.1-3)
+Filename: pool/main/a/apt-ftparchive/apt-ftparchive_2.8.1-3_aarch64.deb
+Size: 95612
+MD5sum: cff5ec967a0eb0e2e91ca028a7272db7
+SHA1: 182bff3b29402546486ef8c0b51c250852b62b4e
+SHA256: c2fac7b78e000485a423a760b56be8314ad5ce617b44393248ee7574b74a2c7d
 Homepage: https://packages.debian.org/apt
 Description: apt-ftparchive is the command line tool that generates the index files that APT uses to access a distribution source
 
 Package: apt-transport-tor
-Version: 2.8.1-2
+Version: 2.8.1-3
 Architecture: all
 Maintainer: @termux
 Installed-Size: 44
-Depends: tor, apt (= 2.8.1-2)
-Filename: pool/main/a/apt-transport-tor/apt-transport-tor_2.8.1-2_all.deb
+Depends: tor, apt (= 2.8.1-3)
+Filename: pool/main/a/apt-transport-tor/apt-transport-tor_2.8.1-3_all.deb
 Size: 932
-MD5sum: b52fca93e106df42ccecb0e6fdf6bd54
-SHA1: 9224c93d692af3beb4669dd52031ddc2633af08c
-SHA256: ba94588088300843316ec15c21146cdbf044b82409be83f6fc177cd9c241fe1c
+MD5sum: f9350e79c2aeb5098e831e55299a8c15
+SHA1: d18c254d8acbd8c4967318aa11d6da8ad56bf0c3
+SHA256: 1f964d025b7e26ab9ff72fdc043fb72c90fe09af600bf8b1432b25a0c868428d
 Homepage: https://packages.debian.org/apt
 Description: APT transport for anonymous package downloads via Tor
 
@@ -2938,6 +2938,20 @@ SHA256: 892915efb1bcfa8041560f6d1874351740c96f4ceb6b63b0add8a2f17621cf6a
 Homepage: https://man7.org/linux/man-pages/man5/resolv.conf.5.html
 Description: Resolver configuration file
 
+Package: root-repo
+Version: 2.4-3
+Architecture: all
+Maintainer: Henrik Grimler @Grimler91
+Installed-Size: 52
+Depends: wizkterm-keyring
+Filename: pool/main/r/root-repo/root-repo_2.4-3_all.deb
+Size: 1220
+MD5sum: b322e0ced45165cbe4d6f7f0471c0f49
+SHA1: 769b4da4a951f15fae1783f21b98793ab11d09b8
+SHA256: b002f9477390cdc0f1b94ae08daf36110b31e69f09a866b3ba70488fbe128238
+Homepage: https://github.com/termux/termux-root-packages
+Description: Package repository containing programs for rooted devices
+
 Package: scdaemon
 Version: 2.5.17
 Architecture: aarch64
@@ -3299,6 +3313,20 @@ SHA1: 23952abe25622d93b89466400895bdb746d01459
 SHA256: 2f2fbf968a39b167e20b0e00bca41eb5a3b4c1a2dd3515a4a0ef38c7211a2f89
 Homepage: https://github.com/Wizk-Modz/wizk-packages
 Description: GPG public keys for the WizkTerm repositories
+
+Package: x11-repo
+Version: 8.4-2
+Architecture: all
+Maintainer: @termux
+Installed-Size: 52
+Depends: wizkterm-keyring
+Filename: pool/main/x/x11-repo/x11-repo_8.4-2_all.deb
+Size: 1204
+MD5sum: d55fe4557c8bdbfbf7b4e1d4514cf5d3
+SHA1: f1b87fbf16f2934baa7fe2544a9b279e6710bb16
+SHA256: d8c4fcf190bead46b8fa72e95ab70de3b87944398d5708701e4168b6984baeeb
+Homepage: https://github.com/termux/x11-packages
+Description: Package repository containing X11 programs and libraries
 
 Package: xcb-proto
 Version: 1.17.0-3

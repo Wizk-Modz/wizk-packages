@@ -774,6 +774,8 @@ data/data/com.wizkterm/files/usr/bin/zstdless		    zstd
 data/data/com.wizkterm/files/usr/bin/zstdmt		    zstd
 data/data/com.wizkterm/files/usr/etc/alternatives/README    dpkg
 data/data/com.wizkterm/files/usr/etc/apt/sources.list	    apt
+data/data/com.wizkterm/files/usr/etc/apt/sources.list.d/root.list root-repo
+data/data/com.wizkterm/files/usr/etc/apt/sources.list.d/x11.list x11-repo
 data/data/com.wizkterm/files/usr/etc/apt/trusted.gpg.d/2096779623.gpg termux-keyring
 data/data/com.wizkterm/files/usr/etc/apt/trusted.gpg.d/agnostic-apollo.gpg termux-keyring
 data/data/com.wizkterm/files/usr/etc/apt/trusted.gpg.d/grimler.gpg termux-keyring
@@ -18663,6 +18665,7 @@ data/data/com.wizkterm/files/usr/share/doc/readline/history.html readline
 data/data/com.wizkterm/files/usr/share/doc/readline/readline.html readline
 data/data/com.wizkterm/files/usr/share/doc/readline/rluserman.html readline
 data/data/com.wizkterm/files/usr/share/doc/resolv-conf/copyright resolv-conf
+data/data/com.wizkterm/files/usr/share/doc/root-repo/copyright root-repo
 data/data/com.wizkterm/files/usr/share/doc/sed/copyright    sed
 data/data/com.wizkterm/files/usr/share/doc/swig/COPYRIGHT   swig
 data/data/com.wizkterm/files/usr/share/doc/swig/LICENSE	    swig
@@ -18693,6 +18696,7 @@ data/data/com.wizkterm/files/usr/share/doc/unzip/copyright  unzip
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.bash util-linux
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-linux
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
+data/data/com.wizkterm/files/usr/share/doc/x11-repo/copyright x11-repo
 data/data/com.wizkterm/files/usr/share/doc/xcb-proto/copyright xcb-proto
 data/data/com.wizkterm/files/usr/share/doc/xorg-util-macros/copyright xorg-util-macros
 data/data/com.wizkterm/files/usr/share/doc/xorgproto/COPYING-bigreqsproto xorgproto
