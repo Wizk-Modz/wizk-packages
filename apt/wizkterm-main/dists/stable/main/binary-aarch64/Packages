@@ -27,6 +27,24 @@ SHA256: e04ad9a4f8e93a8a44dde8d978fca4ddee9584bb40c0a52358676aba49374c78
 Homepage: http://savannah.nongnu.org/projects/attr/
 Description: Static libraries for attr
 
+Package: bash
+Version: 5.3.20
+Architecture: aarch64
+Essential: yes
+Maintainer: Joshua Kahn <tom@termux.dev>
+Installed-Size: 4736
+Depends: libandroid-support, libiconv, readline (>= 8.3), termux-tools
+Recommends: command-not-found, bash-completion
+Breaks: bash-dev
+Replaces: bash-dev
+Filename: pool/main/b/bash/bash_5.3.20_aarch64.deb
+Size: 956588
+MD5sum: f0f694ad596670ccd069e2b5af908089
+SHA1: 6a9747b15d48adc113a459e1a1862c96d499357c
+SHA256: be335e64f40eec821bb54caaa5cf3515b2a889db273113919571795a1edc864a
+Homepage: https://www.gnu.org/software/bash/
+Description: A sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)
+
 Package: blk-utils
 Version: 2.42.1-5
 Architecture: aarch64
