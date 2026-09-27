@@ -426,8 +426,11 @@ jobs:
           echo "::error::secret GH_PAGES_TOKEN is not set"
           exit 1
         fi
-        mkdir -p site
-        cd site
+        # Dùng thư mục ngoài repo để tránh lẫn file của repo source vào gh-pages.
+        SITE="${RUNNER_TEMP}/site"
+        echo "SITE_DIR=${SITE}" >> "$GITHUB_ENV"
+        mkdir -p "$SITE"
+        cd "$SITE"
         git init -q
         git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${{ github.repository }}.git"
         git config user.name "Wizk-BOT"
@@ -445,10 +448,10 @@ jobs:
           tar xf "$archive"
         done
 
-        ./scripts/publish-apt-repo.sh site debs
+        ./scripts/publish-apt-repo.sh "$SITE_DIR" debs
     - name: Commit and push gh-pages
       run: |
-        cd site
+        cd "$SITE_DIR"
         git add -A
         if git diff --cached --quiet; then
           echo "No changes to publish"

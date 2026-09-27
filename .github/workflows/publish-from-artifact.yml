@@ -50,10 +50,15 @@ jobs:
         curl -sSL -H "Authorization: token ${GH_TOKEN}" \
           -o artifact.zip \
           "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip"
-        unzip -oq artifact.zip -d artifact-dl
-        for archive in artifact-dl/*.tar; do
-          tar xf "$archive" -C .
+        # Giải nén ra ngoài repo để không xung đột với checkout gh-pages.
+        mkdir -p "${RUNNER_TEMP}/debs-dl"
+        unzip -oq artifact.zip -d "${RUNNER_TEMP}/debs-dl"
+        mkdir -p debs
+        for archive in "${RUNNER_TEMP}/debs-dl"/*.tar; do
+          tar xf "$archive" -C "${RUNNER_TEMP}/debs-dl"
         done
+        cp -f "${RUNNER_TEMP}/debs-dl/debs"/*.deb debs/ 2>/dev/null || true
+        cp -f "${RUNNER_TEMP}/debs-dl/debs"/built_*_packages.txt debs/ 2>/dev/null || true
         echo "Số .deb: $(ls debs/*.deb 2>/dev/null | wc -l)"
     - name: Install publishing tools
       run: |
@@ -78,8 +83,11 @@ jobs:
           echo "::error::secret GH_PAGES_TOKEN is not set"
           exit 1
         fi
-        mkdir -p site
-        cd site
+        # Dùng thư mục ngoài repo để tránh lẫn file của repo source vào gh-pages.
+        SITE="${RUNNER_TEMP}/site"
+        echo "SITE_DIR=${SITE}" >> "$GITHUB_ENV"
+        mkdir -p "$SITE"
+        cd "$SITE"
         git init -q
         git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${{ github.repository }}.git"
         git config user.name "Wizk-BOT"
@@ -93,10 +101,10 @@ jobs:
         fi
     - name: Publish packages to gh-pages
       run: |
-        ./scripts/publish-apt-repo.sh site debs
+        ./scripts/publish-apt-repo.sh "$SITE_DIR" debs
     - name: Commit and push gh-pages
       run: |
-        cd site
+        cd "$SITE_DIR"
         git add -A
         if git diff --cached --quiet; then
           echo "No changes to publish"
