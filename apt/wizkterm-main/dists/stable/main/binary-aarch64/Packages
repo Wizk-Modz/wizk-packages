@@ -1,0 +1,28 @@
+Package: termux-am
+Version: 0.8.1-1
+Architecture: all
+Maintainer: Michal Bednarski @michalbednarski
+Installed-Size: 620
+Conflicts: termux-tools (<< 0.51)
+Filename: pool/main/t/termux-am/termux-am_0.8.1-1_all.deb
+Size: 576188
+MD5sum: 93818c5fb5cbe4633682da8ec5ad8b58
+SHA1: 96bd34b5873eccab7b7e6ce047469fce621411eb
+SHA256: bb8421b3e282fdcf04929a8e86be25f80ed28cf7f5d63e5db853d212e0bc93d6
+Homepage: https://github.com/termux/TermuxAm
+Description: Android Oreo-compatible am command reimplementation
+
+Package: wizkterm-keyring
+Version: 1.0
+Architecture: all
+Essential: yes
+Maintainer: @Wizk-Modz
+Installed-Size: 72
+Filename: pool/main/w/wizkterm-keyring/wizkterm-keyring_1.0_all.deb
+Size: 2208
+MD5sum: 56ce70dae5cb84fc065818bd872436c8
+SHA1: 23952abe25622d93b89466400895bdb746d01459
+SHA256: 2f2fbf968a39b167e20b0e00bca41eb5a3b4c1a2dd3515a4a0ef38c7211a2f89
+Homepage: https://github.com/Wizk-Modz/wizk-packages
+Description: GPG public keys for the WizkTerm repositories
+
