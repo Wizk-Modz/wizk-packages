@@ -1045,10 +1045,10 @@ Installed-Size: 28436
 Conflicts: libutil-dev, libgcc, libandroid-support-dev
 Replaces: libutil-dev, libgcc, libandroid-support-dev, ndk-stl
 Filename: pool/main/n/ndk-sysroot/ndk-sysroot_30_aarch64.deb
-Size: 1996904
-MD5sum: 552baa19829951e1914bebe5a1f37a20
-SHA1: 5a121cda80af4223641fd066ee222610054b5c1f
-SHA256: bf5d1f19bd1a937e5d33d301b0f68e800a48fa28392792eb2622a67c8aa2a3d7
+Size: 1996704
+MD5sum: a2065084fb32488d5cf130f86e63b0a0
+SHA1: a53db43e700836f136b9f0d97096198839179128
+SHA256: df366c9e35f7a9b2490ba9c6dcfd0b7ca9255de0fff0c3409ae2b46e839de5e2
 Homepage: https://developer.android.com/tools/sdk/ndk/index.html
 Description: System header and library files from the Android NDK needed for compiling C programs
 
