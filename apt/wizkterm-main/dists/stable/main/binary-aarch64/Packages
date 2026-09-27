@@ -696,6 +696,20 @@ SHA256: 7dbe8ce57f526876f400d091ef59c89aff5651eeb972a7130a961079bee5dba6
 Homepage: https://www.gnu.org.ua/software/gdbm/
 Description: Static libraries for gdbm
 
+Package: gh
+Version: 2.101.0
+Architecture: aarch64
+Maintainer: Krishna kanhaiya @kcubeterm
+Installed-Size: 43032
+Recommends: openssh
+Filename: pool/main/g/gh/gh_2.101.0_aarch64.deb
+Size: 10071572
+MD5sum: 3bcde8b02844bd27193370c104c15b2e
+SHA1: 37e8354e383bf99f6a0966e8cea49ec942d0b28f
+SHA256: 96325b386da674403baaf69db08ce3c9806639a0137fc6974a337b415297d90a
+Homepage: https://cli.github.com/
+Description: GitHub’s official command line tool
+
 Package: git
 Version: 2.55.0
 Architecture: aarch64
@@ -3811,6 +3825,20 @@ SHA1: b5b273f79324ce8e064d1532cf89d1f3befb6618
 SHA256: bc324ed507459b89a908d687bc7fecfe3bdeab247244c87c3409d8fff455e2e3
 Homepage: https://www.torproject.org
 Description: The Onion Router anonymizing overlay network
+
+Package: tree
+Version: 2.3.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 140
+Depends: libandroid-support
+Filename: pool/main/t/tree/tree_2.3.2_aarch64.deb
+Size: 36012
+MD5sum: 1e6a371ca77b8d7c8bd3972fee7c3c32
+SHA1: 8b2145adbbbce648687165d678d0d92318eb3400
+SHA256: c7a67fbb18da42a9dd21535af6104d0afff6b0ccac52f45e9d32ef5d8335881b
+Homepage: http://mama.indstate.edu/users/ice/tree/
+Description: Recursive directory lister producing a depth indented listing of files
 
 Package: ttf-dejavu
 Version: 2.37-8
