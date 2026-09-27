@@ -115,6 +115,22 @@ SHA256: eb183373799cd600f28231feb1ef4191928187e6079cd33b6bed5430a84d34b7
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities to manipulate disk partition tables
 
+Package: file
+Version: 5.48-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 76
+Depends: libmagic (= 5.48-3)
+Breaks: file-dev
+Replaces: file-dev
+Filename: pool/main/f/file/file_5.48-3_aarch64.deb
+Size: 17620
+MD5sum: 244b7f82d835e8f88e02eda769bcbcf2
+SHA1: 659d3ac3186e1e7d4dfd564b8d4d7b526b53c989
+SHA256: 8c5fbef97413cdbffca1f9f644225f256797be82e8243387f642c73c2a45649b
+Homepage: https://darwinsys.com/file/
+Description: Command-line tool that tells you in words what kind of data a file contains
+
 Package: fontconfig
 Version: 2.18.3
 Architecture: aarch64
@@ -641,6 +657,36 @@ SHA256: acba3678eada50f011ccd41c474ba74a6d26c5697ae635a6ac99381fa9ffe510
 Homepage: https://tukaani.org/xz/
 Description: Static libraries for liblzma
 
+Package: libmagic
+Version: 5.48-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 10776
+Depends: zlib
+Breaks: file (<< 5.48-2)
+Replaces: file (<< 5.48-2)
+Filename: pool/main/l/libmagic/libmagic_5.48-3_aarch64.deb
+Size: 396520
+MD5sum: a11f3e503b07d9a79d18b6b88d4f8d2b
+SHA1: 883f7a9d478a8d2ff710b05e509755c7d052389d
+SHA256: dd99e3e2a67d0ab3081524c26256054d80f24d7a59182691611011d3acff22cb
+Homepage: https://darwinsys.com/file/
+Description: File type identification library
+
+Package: libmagic-static
+Version: 5.48-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 284
+Depends: libmagic (= 5.48-3)
+Filename: pool/main/l/libmagic-static/libmagic-static_5.48-3_aarch64.deb
+Size: 69012
+MD5sum: 2be73f10a48b730f701b4088a5ab0923
+SHA1: 44433d761c488161c1b7ab275bf6da1d4f69f13a
+SHA256: bdd76528a6b655e6df1bddb75f90c3eee239b2adb7168fdf28a824885c9603bf
+Homepage: https://darwinsys.com/file/
+Description: Static libraries for libmagic
+
 Package: libmount
 Version: 2.42.1-5
 Architecture: aarch64
@@ -1111,6 +1157,20 @@ SHA1: c4ec5bdf8f57be5a411e823666f011c30e29594b
 SHA256: 9dac2274ded25ccffdea3501ef46b3ae12dea3d48a649a1e367aacf4d7b72b21
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for (un)mounting filesystems
+
+Package: nano
+Version: 9.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1040
+Depends: libandroid-support, ncurses, libmagic
+Filename: pool/main/n/nano/nano_9.2-1_aarch64.deb
+Size: 242248
+MD5sum: c9d88fe701372404df3147f70f0cc73c
+SHA1: 93c8f8f4a96eee932dd636541aafbd1bb795079a
+SHA256: e7cd288ba4802f1be0e1f37d9f2d700ffc41cbecccd1abc59b74931275316d2b
+Homepage: https://www.nano-editor.org/
+Description: Small, free and friendly text editor
 
 Package: ncurses
 Version: 6.6.20260307+really6.5.20250830
