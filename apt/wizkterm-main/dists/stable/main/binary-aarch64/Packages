@@ -248,10 +248,10 @@ Depends: libcompiler-rt, lld, llvm, ndk-sysroot, libllvm (= 21.1.8-3)
 Breaks: libllvm (<< 16.0.0), clangd
 Replaces: libllvm (<< 16.0.0), clangd
 Filename: pool/main/c/clang/clang_21.1.8-3_aarch64.deb
-Size: 30785560
-MD5sum: 170eb302123f84eaa4d4294eb177dd1d
-SHA1: 8f91b43341a2f8604c62bd1cb0dd677a3d220e42
-SHA256: c83a7ab374163977c1f3c5b332b0ec2c1873a4f09ca37be45679f2f61dd33dee
+Size: 30786740
+MD5sum: 8d12861311123b14f604e16069991e1b
+SHA1: cb2d845b60fef12d237296d8bb69c6c4c2e2bfde
+SHA256: d649d5d94d808424e46d40ba4b0369a5d21d58cc04f05cf6d8c6d975a7d1b1eb
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
@@ -1254,10 +1254,10 @@ Installed-Size: 33964
 Depends: libc++
 Conflicts: libllvm (<< 21.1.3), ndk-multilib (<< 23b-6)
 Filename: pool/main/l/libcompiler-rt/libcompiler-rt_21.1.8-3_aarch64.deb
-Size: 3020616
-MD5sum: ead6b92b24121f5cd5025e96524eb851
-SHA1: 2fae9a2b678569f65827698c0e28532edf281529
-SHA256: f76037afdb520e2813b0c06d5c26af315ba0e80463523e08ede3b89bd5b5eec5
+Size: 3021076
+MD5sum: 023267445aa1d55a0202854a24203741
+SHA1: 23c985be7fc6b83f357e0ac5e52b7c633be02e65
+SHA256: 4382d0c8837b3360f58866d33aa621c774d17c4542c53383ea754cd6cc0ae2f4
 Homepage: https://clang.llvm.org/
 Description: Compiler runtime libraries for clang
 
@@ -1668,16 +1668,16 @@ Package: libllvm
 Version: 21.1.8-3
 Architecture: aarch64
 Maintainer: @finagolfin
-Installed-Size: 170296
+Installed-Size: 170292
 Depends: libc++, libffi, libxml2, ncurses, zlib, zstd
 Conflicts: gcc, clang (<< 3.9.1-3)
 Breaks: libclang, libclang-dev, libllvm-dev
 Replaces: gcc, libclang, libclang-dev, libllvm-dev
 Filename: pool/main/l/libllvm/libllvm_21.1.8-3_aarch64.deb
-Size: 30878324
-MD5sum: ec39fcfb56e725471da59c9c69b04578
-SHA1: 4f4d593cd0684ce1db648609068f583249623edf
-SHA256: eaf098d5b2f187a01550db9ca5409c18040fc17164723415ab9068c7819b586e
+Size: 30877956
+MD5sum: 1762529c96794eb16e9765819fe18e18
+SHA1: c9547964f9cf285bfd41bd164c5f1bf43877e341
+SHA256: 2a8170a9cc6c53f5f2dbecfeca53a2d2fd52bf7c796cd839bced28e2940a965f
 Homepage: https://clang.llvm.org/
 Description: Modular compiler and toolchain technologies library
 
@@ -1688,10 +1688,10 @@ Maintainer: @finagolfin
 Installed-Size: 914176
 Depends: libllvm (= 21.1.8-3)
 Filename: pool/main/l/libllvm-static/libllvm-static_21.1.8-3_aarch64.deb
-Size: 89458664
-MD5sum: 8cb397fad76095d0769ccc9aa4a0bce2
-SHA1: 37ff1a60f33277c94df72b5d778ffbe40679f180
-SHA256: 1519f24268f8af6a1b27ce684ff228c87796715d09d9c206465afe4993884289
+Size: 89428320
+MD5sum: 767c044fd6c385e26d1beacfa3453700
+SHA1: 39a396be3edf105803c9796a4c16d4961401f5c3
+SHA256: 93b82a84b62d85cb4005ea0946703dd77559fd768b12296de0ed45fef23f925f
 Homepage: https://clang.llvm.org/
 Description: Static libraries for libllvm
 
@@ -2022,10 +2022,10 @@ Maintainer: @finagolfin
 Installed-Size: 5832
 Depends: libllvm (= 21.1.8-3)
 Filename: pool/main/l/libpolly/libpolly_21.1.8-3_aarch64.deb
-Size: 1228664
-MD5sum: f907ac5908080e5d791a019a8f86cd52
-SHA1: 8b38940c77826bd38d9e4735e4569f09631f20d9
-SHA256: 9cd7f80892bc4d783a528d7597fcf5339fee8a49b2e09c6da48db931605aa44e
+Size: 1228196
+MD5sum: 92ae70ba3b693a6fdfbb4218d11422d8
+SHA1: 8bbc40e53d898ec81667342b8ade7c4a6e1c8ae7
+SHA256: 37ab996de3138e337db1321b92dc2a585b008618785ab228dfe1a0aabc6821db
 Homepage: https://clang.llvm.org/
 Description: High-level loop and data-locality optimizer for clang
 
@@ -2619,10 +2619,10 @@ Conflicts: binutils (<< 2.46.0-3), binutils-is-llvm
 Breaks: binutils (<< 2.46.0-3), binutils-is-llvm
 Replaces: binutils-is-llvm
 Filename: pool/main/l/lld/lld_21.1.8-3_aarch64.deb
-Size: 2807764
-MD5sum: c6b65fbf411490b7c878594dfe9dead2
-SHA1: 11213e190cc51afb4c1485bc79565a2123825de2
-SHA256: c37a18e2c7d29c571b53b3fc101d94227efecf785836021798c1fa606c20f1cb
+Size: 2810332
+MD5sum: 55be7a15d0893ec9e4581ea0942284d5
+SHA1: 1aa386b59174bb95ff8cb14ff04ffe6ce3f8c976
+SHA256: a6d27d717acd63f3416ba132165fafe3d4504c51be6cf31eb5c7374c68f5905e
 Homepage: https://clang.llvm.org/
 Description: LLVM-based linker
 
@@ -2635,10 +2635,10 @@ Depends: clang, libandroid-spawn, libc++, libedit, libxml2, python, ncurses-ui-l
 Breaks: lldb-dev, lldb-static
 Replaces: lldb-dev, lldb-static
 Filename: pool/main/l/lldb/lldb_21.1.8-3_aarch64.deb
-Size: 5499832
-MD5sum: 12ee5aba03cf4e07978ccfb55dcf45ff
-SHA1: da644fa7a18606c5952e77131f89e90e83bd62cd
-SHA256: eecd71756dab555b09b2807171cabf9669cd280b17a68b6153ff160e028a533a
+Size: 5494456
+MD5sum: 9b6d86e6e09930d981ea8daf3bfaae2b
+SHA1: b55051760d47086ef0b6b3673c0cfae2509d9601
+SHA256: c38e18ddadfcb8cf8e1e56dc9825921553fdfc0fb8b102ae7dd82eb1138bfff4
 Homepage: https://clang.llvm.org/
 Description: LLVM-based debugger
 
@@ -2652,10 +2652,10 @@ Conflicts: binutils (<< 2.46.0-3), binutils-is-llvm
 Breaks: binutils (<< 2.46.0-3), binutils-is-llvm, libllvm (<< 11.0.0-1)
 Replaces: binutils-is-llvm, libllvm (<< 11.0.0-1)
 Filename: pool/main/l/llvm/llvm_21.1.8-3_aarch64.deb
-Size: 14965924
-MD5sum: decdb23595ea51da11479498a4403826
-SHA1: 756a748a3706b35325fa4054cea59e9e14bee63a
-SHA256: 7bc9a5b0cd35595806aa80756a9996bbb8b63fa3146dc1fa5c14a5533c8e09af
+Size: 14968120
+MD5sum: b10753081d6cc0bfc3f9b1fe09fb5b01
+SHA1: 5b420be85b37cdb12a7586d33cf4c9b817b9e392
+SHA256: d8b295b25d8a96cfeec92f8a3afb96ebbce5471c2e4c93a09f27ca55cecae137
 Homepage: https://clang.llvm.org/
 Description: LLVM modular compiler and toolchain executables
 
@@ -2668,10 +2668,10 @@ Depends: libc++, ncurses, zlib, zstd
 Breaks: libllvm (<< 16.0.0)
 Replaces: libllvm (<< 16.0.0)
 Filename: pool/main/l/llvm-tools/llvm-tools_21.1.8-3_aarch64.deb
-Size: 2380980
-MD5sum: 742a4c76e286e5119709f2e5ce4d1718
-SHA1: 17e08fb5b469ddc6d4faa85391260fd9c36a6199
-SHA256: 543ccc86e854b2f8d5fc00722799c20defda905b515644b539c86beac0acb42d
+Size: 2383432
+MD5sum: 0cb3214b610bd9e4bf12c1572f3e1f7f
+SHA1: 96d4126ee806364803e92f5e86494f914ada0998
+SHA256: 0684dad41bb4061caf993f7f4c02377d85cc6cd538bdf3d99564fd9ccadd1fa1
 Homepage: https://clang.llvm.org/
 Description: LLVM Development Tools
 
@@ -2737,13 +2737,13 @@ Package: mlir
 Version: 21.1.8-3
 Architecture: aarch64
 Maintainer: @finagolfin
-Installed-Size: 269196
+Installed-Size: 269192
 Depends: libc++, ncurses, libllvm (= 21.1.8-3)
 Filename: pool/main/m/mlir/mlir_21.1.8-3_aarch64.deb
-Size: 29969912
-MD5sum: 9b596b1942da7faebcfef67d5a8ce961
-SHA1: 2c4722a9fe4184963bf9be648bfe0dd3fa371cae
-SHA256: f3083e85850556b513e876654afb0bf6dafdb5a19f4151545ec34c534d9f93e9
+Size: 29969188
+MD5sum: 4d08e99f68066335286baa1b9f25185f
+SHA1: c574176e0be51eca292b64a594e977e4878460ba
+SHA256: 4d17e43a20f4624ccae7f4b2cfbece678251771dc32afdc4533a08322acc8721
 Homepage: https://clang.llvm.org/
 Description: A Multi-Level Intermediate Representation for compilers from LLVM
 
