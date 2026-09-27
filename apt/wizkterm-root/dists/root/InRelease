@@ -4,52 +4,52 @@ Hash: SHA512
 Architectures: aarch64
 Codename: root
 Components: stable
-Date: Sun, 27 Sep 2026 11:21:21 +0000
+Date: Sun, 27 Sep 2026 11:52:04 +0000
 Description: wizkterm-root APT repository
 Label: wizkterm-root
 Origin: WizkTerm
 Suite: root
 MD5Sum:
  d41d8cd98f00b204e9800998ecf8427e                0 Contents-aarch64
- 83b5b3d31933b9e66a49f5cbb1c0956f               37 Contents-aarch64.gz
- cead53e1b2101302d2494a6621769def             2837 Release
+ 94e0fff1f9825de4715eeacd4aaabd2a               37 Contents-aarch64.gz
+ b1ad2279a979f6c3fb1aa50605a1d582             2837 Release
  d41d8cd98f00b204e9800998ecf8427e                0 stable/binary-aarch64/Packages
  4059d198768f9f8dc9372dc1c54bc3c3               14 stable/binary-aarch64/Packages.bz2
- e0edd8f8ab526dda595660bdcf37a8b8               29 stable/binary-aarch64/Packages.gz
+ 07de4f8aa24bc85123a6adb105c31666               29 stable/binary-aarch64/Packages.gz
 SHA1:
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Contents-aarch64
- 96629e10c2747f33f48f7232e86e570c0fa46a20               37 Contents-aarch64.gz
- aebcf23fb46161a2f48f5f456be0654ab325dd06             2837 Release
+ 16461f3c603ee86ecae195856a270f83db2ffb78               37 Contents-aarch64.gz
+ 1b179cdb4a9484447bf933a9cb49b12375f218b5             2837 Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 stable/binary-aarch64/Packages
  64a543afbb5f4bf728636bdcbbe7a2ed0804adc2               14 stable/binary-aarch64/Packages.bz2
- efec89429ba0f3d8897a0a5a7ec0f3e9bb651fe7               29 stable/binary-aarch64/Packages.gz
+ 167e738a599bd0e4a7637a303a49b2a24c0f2de2               29 stable/binary-aarch64/Packages.gz
 SHA256:
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Contents-aarch64
- 5fa9f5b874dbeda773929cef67d9ec2db151074367964a176f1373543c0aeb27               37 Contents-aarch64.gz
- 9428c5a2ae972389db034da6b9ac2b8625ac438b77358a6ae160be533680e57f             2837 Release
+ f9a66bf81349367c1df94a9d1511789d2ae2f1f63aedb86c0cdc03a9b816440d               37 Contents-aarch64.gz
+ c4f7991caecc2bdd7d21024a1145f31d3d9db2c144882990b28da76c311ef50b             2837 Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 stable/binary-aarch64/Packages
  d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058               14 stable/binary-aarch64/Packages.bz2
- 7898eb379c2fea1dca82b5f2279e7640916f3edce0a9dc120d01a44ce8dee810               29 stable/binary-aarch64/Packages.gz
+ 28c75cece683c15002c681c0d82631e3585029fb78a5055fa6d7995d0535d432               29 stable/binary-aarch64/Packages.gz
 SHA512:
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Contents-aarch64
- 217af17bc3db25deb3b08723b6933f69f622988494e499de866bcf1110fb7618cf2256ceb7346848f79044f5b578c0552e136d507e167130becdd9b9ac6dfc0c               37 Contents-aarch64.gz
- 08108fa4221e3f0f1a68db52f94f2c2bd83e1681a7f2ec0bac23da161cd0c6d3bd79eecc5d684443b762945f75c320d66fc3939439b91763aff2f861c753cc13             2837 Release
+ c9908ae5ab0c07fa06d8f3f1aeb040d09d8560763a621a5363be1cfb82b108d27a0b9d93ee010158c3223d9745c54bab042f863af8087b7695357e3245501b0e               37 Contents-aarch64.gz
+ 34ead4ddce2231c529f16099466f39819652404664231c7aadcb25426cb9002f50fbd2d6323434ecd6860a75da2ff7efc6f81af9e4a79bfce2d51229b6412e15             2837 Release
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 stable/binary-aarch64/Packages
  6de201dfed1d45412509c65deb34690dc2d09c6aafccfe491fd2f440f92842b9c755b61dc7bcdd4cc0c9f18cf46c2b3a1241e99c4c2a33fff5555e7b2f0b6348               14 stable/binary-aarch64/Packages.bz2
- 8c212d3267f396d487a63a4c478bfef57c4cadf33341424d84c86dae07887a73a60fd5d72a98e47c204b5bb6c01e31657b30455f4e32d767c25817f7f689b954               29 stable/binary-aarch64/Packages.gz
+ fece69d6a60654cc888eee5d0ac2ed132ff12dcf8dfe949b990bcd9082cd1c53c46e1847b227ad83c1f052a26330b5fa4a6946dffc0980a91bbf6f510d4b2814               29 stable/binary-aarch64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEuYSDSgohB1o+z8/aS7X2/n36vfMFAmq4/DEACgkQS7X2/n36
-vfP/7BAAjYeYU+Gmqs0JACJ8eEGe2W4xxQRH1pPLh//bSK1iit6Eq45Ay8MYDBJd
-ecwzKVrVEd27E7SZAACTZcqKESh3AxFv2iy1ocM99iqbNeUby4RTGAeb1B5xZ1aK
-dozqnI6eN9cJNxdtBm7yeL9f5erOd6pf/ksEdaylK52OYHlyuP2Q1ghcaM3R7VFv
-ty7J1M4BBlfYFArBebnQ2bDIhi2pPaqP74qHruXNj1I9ngQZ31YEqWOOhqbT+a4U
-rz11us25yGleKet+8+TRNYFMOQSGldd05OAqmxASqM1fNAlCcfBUr0ESNKdwNh4y
-ZgRTtgTxn4yuz6QUaeCt6Bk2KkXbS7b3aX0YkUOMVnbYkPRIEH4TMmSVWpuoxmTV
-KAOdE6mEeHRlNRJ6JKhJ44NQw9VVHBLGi3UwLTonFPSl/58Kfe510Mj6Dr2UwdAj
-C5/40LN7hknl2tRFJBsnsBiM64gkCKKFGKywou14hC1ToIQWQF+8eC3qFvTvieIQ
-qHvH/Fig+mXAJsvuU6AME8Tbpsw12KetM0dYt4RuFlDcjK+ORXIttJGWuLLAJNbA
-HNmt9bx+417XETY/Tqu7mSMbuT3TKT2KFeaNMtvd4tC64NTZ1SFRkvGJve88LVKq
-dL91Tl4kT9RNh/QSV31szhbZVGEfdNgazsJagf7dE+sF50fVHhk=
-=/x48
+iQIzBAEBCgAdFiEEuYSDSgohB1o+z8/aS7X2/n36vfMFAmq5A2QACgkQS7X2/n36
+vfP8IRAAspnYDLozEieOCnEzphAtMHMebpSjH7XTVq0DU2KMEa/uicNkib91KHCQ
+gNc/+CV85cZMIJuwKM01i4AV0A8yv5V4MrtBRPy6pOq1SdfhljMjXw6T9fsncWAm
+mOCMRsXb9fIZwBh8Wr6ImnfO+rIZMuSoPU4SaxDxXJeifLCdISMeQyfzp3VIe5wq
+yCYb6F/JOh8uzZvC5R6LSs9wvDYSwV9dDmeMxo3VwJA84rgK7BnQDZmqnXNhfD9Q
+NJubkKFnHrWpUrDZjzj/Hp29378g0r0REtQ5q2sVHmUp1kj5LA5aw+jJPpev9YUP
+0MCK+CaygDbPwuaMLDXPgfgnUz8Ci2Dv3EMAS5IXedPX5KWr7xaU0KlpnidM0RAo
+JgzSq5Ao13G+gj9G6HFe3L/tL1fJFz79qFElKA5F32IubnZRTk1l/33gjMAnk7fU
+a4fUcGfoedmuSCwlTRzmu/8R4Q4flKj/zQAffHR10qxJ158z9VUmv+yrjZf3zppp
+P0dCZFSVk9hOItRCKHSYO38xn4PVFkV2JLQNMoIyaWH9r5ul6BsMbTq4imQZ/9LE
+LLw50Aoq2Y3qN6PitGvqKz6ZZvsD5MuaT8bAKTYQT7FbtbjQO/MwxQuciaMpXw+s
+hGdB1zJ6jBaVQaJJ9Q/G+v6CT8J16xyVJ83QwxWSHJrGrM+6tPg=
+=RF/E
 -----END PGP SIGNATURE-----
