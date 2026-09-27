@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-26.04
     strategy:
       matrix:
-        target_arch: [aarch64, arm, i686, x86_64]
+        target_arch: [aarch64]
       fail-fast: false
     steps:
     - name: Clone repository
@@ -352,23 +352,10 @@ jobs:
       env:
         TERMUX_ARCH: aarch64
       run: ./scripts/bin/test-buildorder-random
-    - name: Randomise buildorder.py test (arm)
-      env:
-        TERMUX_ARCH: arm
-      run: ./scripts/bin/test-buildorder-random
-    - name: Randomise buildorder.py test (i686)
-      env:
-        TERMUX_ARCH: i686
-      run: ./scripts/bin/test-buildorder-random
-    - name: Randomise buildorder.py test (x86_64)
-      env:
-        TERMUX_ARCH: x86_64
-      run: ./scripts/bin/test-buildorder-random
 
   upload-test:
     permissions:
       contents: read
-    if: github.repository == 'termux/termux-packages' && github.ref != 'refs/heads/master'
     needs: build
     runs-on: ubuntu-slim
     steps:
@@ -391,22 +378,24 @@ jobs:
           fi
         fi
 
-        for archive in debs-*/debs-{aarch64,arm,i686,x86_64}-${{ github.sha }}.tar; do
+        for archive in debs-*/debs-aarch64-${{ github.sha }}.tar; do
           tar xf "$archive"
         done
 
         ./scripts/utils/termux_check_file_conflicts.sh debs
 
-  upload:
+  # Publish *.deb files to a static APT repository hosted on the
+  # `gh-pages` branch, which is served by GitHub Pages.
+  publish:
     concurrency:
-      group: ${{ github.workflow }}-upload
+      group: ${{ github.workflow }}-publish
       cancel-in-progress: false
       queue: max
     permissions:
-      contents: read
-    if: github.repository == 'termux/termux-packages' && github.ref == 'refs/heads/master'
+      contents: write # for git push to gh-pages
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev/apt-repo-ghpages'
     needs: build
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
@@ -414,58 +403,56 @@ jobs:
       uses: actions/download-artifact@v8
       with:
         path: ./
-    - name: Upload to packages.termux.dev
-      env:
-        REPOSITORY_URL: https://packages.termux.dev/aptly-api
-        GITHUB_SHA: ${{ github.sha }}
-        APTLY_API_AUTH: ${{ secrets.APTLY_API_AUTH }}
-        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+    - name: Install publishing tools
       run: |
-        source scripts/aptly_api.sh
-
-        for archive in debs-*/debs-{aarch64,arm,i686,x86_64}-${{ github.sha }}.tar; do
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends dpkg-dev apt-utils gnupg bzip2
+    - name: Import GPG signing key
+      env:
+        GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      run: |
+        if [ -z "$GPG_PRIVATE_KEY" ]; then
+          echo "::error::secret GPG_PRIVATE_KEY is not set, refusing to publish an unsigned repository"
+          exit 1
+        fi
+        echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+        gpg --list-secret-keys --with-colons | awk -F: '/^fpr:/{print $10; exit}' > /tmp/gpg-fpr
+        echo "GPG_KEY_FPR=$(cat /tmp/gpg-fpr)" >> "$GITHUB_ENV"
+    - name: Checkout gh-pages branch
+      env:
+        GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+      run: |
+        if [ -z "$GH_PAGES_TOKEN" ]; then
+          echo "::error::secret GH_PAGES_TOKEN is not set"
+          exit 1
+        fi
+        mkdir -p site
+        cd site
+        git init -q
+        git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${{ github.repository }}.git"
+        git config user.name "Wizk-BOT"
+        git config user.email "wizk-bot@users.noreply.github.com"
+        if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
+          git fetch -q origin gh-pages
+          git checkout -q -b gh-pages origin/gh-pages
+        else
+          echo "gh-pages branch does not exist yet, creating an orphan branch"
+          git checkout -q --orphan gh-pages
+        fi
+    - name: Publish packages to gh-pages
+      run: |
+        for archive in debs-*/debs-aarch64-${{ github.sha }}.tar; do
           tar xf "$archive"
         done
 
-        for repo in $(jq --raw-output 'del(.pkg_format) | keys | .[]' repo.json); do
-          export REPOSITORY_NAME=$(jq --raw-output '.["'$repo'"].name' repo.json)
-          export REPOSITORY_DISTRIBUTION=$(jq --raw-output '.["'$repo'"].distribution' repo.json)
-
-          # Upload file to temporary directory.
-          uploaded_files=false
-          shopt -s nullglob
-
-          if [ -f debs/built_${REPOSITORY_NAME}_packages.txt ]; then
-            for filename in $(cat debs/built_${REPOSITORY_NAME}_packages.txt | sed -E 's/(..*)/debs\/\1_\*.deb debs\/\1-static_\*.deb/g'); do
-              if ! aptly_upload_file "$filename"; then
-                exit 1
-              fi
-
-              uploaded_files=true
-            done
-            shopt -u nullglob
-
-            # Publishing repository changes.
-            if [ "$uploaded_files" = "true" ]; then
-              if ! aptly_add_to_repo; then
-                exit 1
-              fi
-
-              # Usually temporary directory is deleted automatically, but in certain cases it is left.
-              aptly_delete_dir
-
-              # Final part to make changes appear in web root.
-              if ! aptly_publish_repo; then
-                exit 1
-              fi
-
-              # Publish to staging repo if we haven't already
-              if [[ "$REPOSITORY_DISTRIBUTION" != "staging" ]]; then
-                REPOSITORY_DISTRIBUTION=staging
-                if ! aptly_publish_repo; then
-                  exit 1
-                fi
-              fi
-            fi
-          fi
-        done
+        ./scripts/publish-apt-repo.sh site debs
+    - name: Commit and push gh-pages
+      run: |
+        cd site
+        git add -A
+        if git diff --cached --quiet; then
+          echo "No changes to publish"
+          exit 0
+        fi
+        git commit -q -m "publish: update APT repository [skip ci]"
+        git push -q origin gh-pages

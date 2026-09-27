@@ -20,9 +20,6 @@ jobs:
       matrix:
         arch:
           - aarch64
-          - arm
-          - i686
-          - x86_64
     if: github.repository == 'termux/termux-packages'
     steps:
       - name: Git clone

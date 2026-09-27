@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        target_arch: [aarch64, arm, i686, x86_64]
+        target_arch: [aarch64]
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target_arch: [aarch64, arm, i686, x86_64]
+        target_arch: [aarch64]
         batch: ${{ fromJson(needs.planning.outputs.batch) }}
       fail-fast: false
     steps:

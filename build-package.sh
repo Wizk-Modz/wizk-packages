@@ -518,7 +518,7 @@ _show_usage() {
 	echo "Build a package by creating a .deb file in the output/ folder."
 	echo
 	echo "Available options:"
-	[[ "$TERMUX_ON_DEVICE_BUILD" == "false" ]] && echo "  -a The architecture to build for: aarch64(default), arm, i686, x86_64 or all."
+	[[ "$TERMUX_ON_DEVICE_BUILD" == "false" ]] && echo "  -a The architecture to build for: aarch64(default) or all."
 	echo "  -c Continue previous build."
 	echo "  -C Cleanup already built packages on low disk space."
 	echo "  -d Build with debug symbols."
@@ -667,6 +667,13 @@ if [[ "${TERMUX_INSTALL_DEPS-false}" == "true" || "${TERMUX_PACKAGE_LIBRARY-bion
 		gpg --import "$TERMUX_SCRIPTDIR/packages/termux-keyring/termux-pacman.gpg"
 		gpg --no-tty --command-file <(echo -e "trust\n5\ny") --edit-key 998DE27318E867EA976BA877389CEED64573DFCA
 	}
+	# Khóa ký repository của WizkTerm, dùng để verify metadata khi tải dependency.
+	if [[ -f "$TERMUX_SCRIPTDIR/packages/wizkterm-keyring/wizkterm.gpg" ]]; then
+		gpg --list-keys B984834A0A21075A3ECFCFDA4BB5F6FE7DFABDF3 > /dev/null 2>&1 || {
+			gpg --import "$TERMUX_SCRIPTDIR/packages/wizkterm-keyring/wizkterm.gpg"
+			gpg --no-tty --command-file <(echo -e "trust\n5\ny") --edit-key B984834A0A21075A3ECFCFDA4BB5F6FE7DFABDF3
+		}
+	fi
 fi
 
 for (( i=0; i < ${#PACKAGE_LIST[@]}; i++ )); do
@@ -698,7 +705,7 @@ for (( i=0; i < ${#PACKAGE_LIST[@]}; i++ )); do
 			[[ -n "${TERMUX_PACKAGE_FORMAT:-}" ]] && _SELF_ARGS+=("--format" "$TERMUX_PACKAGE_FORMAT")
 			[[ -n "${TERMUX_PACKAGE_LIBRARY:-}" ]] && _SELF_ARGS+=("--library" "$TERMUX_PACKAGE_LIBRARY")
 
-			for arch in 'aarch64' 'arm' 'i686' 'x86_64'; do
+			for arch in 'aarch64'; do
 				env TERMUX_ARCH="$arch" TERMUX_BUILD_IGNORE_LOCK=true ./build-package.sh \
 					"${_SELF_ARGS[@]}" "${PACKAGE_LIST[i]}"
 			done
