@@ -173,6 +173,20 @@ SHA256: 1da49886937ae9bcfc441fc04072ef8fdb3796037aa0dc4a69ed008bcdde2f8a
 Homepage: https://www.gnu.org/software/diffutils/
 Description: Programs (cmp, diff, diff3 and sdiff) related to finding differences between files
 
+Package: dos2unix
+Version: 7.5.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 352
+Depends: libandroid-support
+Filename: pool/main/d/dos2unix/dos2unix_7.5.7_aarch64.deb
+Size: 66020
+MD5sum: bf52d4a23ce80f1404a43ab8ed34f5c7
+SHA1: 28468ff2f1d952f4e2aceec68022308d66b166da
+SHA256: e0b6fb3e3938f905057f18b974fa51e5e8b735eff33455cb2647a3d66067be39
+Homepage: https://waterlander.net/dos2unix/
+Description: Converts between DOS and Unix text files
+
 Package: doxygen
 Version: 1.18.0
 Architecture: aarch64
@@ -422,6 +436,21 @@ SHA1: b636d7e17f010c86b14bd10cc7b4d361a4e26b71
 SHA256: ccd42159d196d5e292a0d31cebb195ffa7db484928afdea0fa6e65dbe6982148
 Homepage: https://www.gnu.org/software/libiconv/
 Description: Utility converting between different character encodings
+
+Package: inetutils
+Version: 2.8-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1136
+Depends: readline
+Suggests: whois
+Filename: pool/main/i/inetutils/inetutils_2.8-1_aarch64.deb
+Size: 239008
+MD5sum: 9880be6cf0c291cad830a63c05d9fbfb
+SHA1: 2fa4a7b8615eb3e6ab8ea0ebc352a34ea1a3a4c6
+SHA256: 48fb90747bd20f1131012264ac404ba78d477c92beb2f4c8c62308a295b7efd0
+Homepage: https://www.gnu.org/software/inetutils/
+Description: Collection of common network programs
 
 Package: less
 Version: 710

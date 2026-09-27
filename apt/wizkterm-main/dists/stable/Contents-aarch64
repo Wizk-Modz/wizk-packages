@@ -97,6 +97,8 @@ data/data/com.wizkterm/files/usr/bin/diff		    diffutils
 data/data/com.wizkterm/files/usr/bin/diff3		    diffutils
 data/data/com.wizkterm/files/usr/bin/dlltool		    libllvm
 data/data/com.wizkterm/files/usr/bin/dmesg		    util-linux
+data/data/com.wizkterm/files/usr/bin/dnsdomainname	    inetutils
+data/data/com.wizkterm/files/usr/bin/dos2unix		    dos2unix
 data/data/com.wizkterm/files/usr/bin/doxygen		    doxygen
 data/data/com.wizkterm/files/usr/bin/doxyparse		    doxygen
 data/data/com.wizkterm/files/usr/bin/dsymutil		    llvm
@@ -133,6 +135,7 @@ data/data/com.wizkterm/files/usr/bin/fsck.cramfs	    util-linux
 data/data/com.wizkterm/files/usr/bin/fsck.minix		    util-linux
 data/data/com.wizkterm/files/usr/bin/fsfreeze		    util-linux
 data/data/com.wizkterm/files/usr/bin/fstrim		    mount-utils
+data/data/com.wizkterm/files/usr/bin/ftp		    inetutils
 data/data/com.wizkterm/files/usr/bin/funzip		    unzip
 data/data/com.wizkterm/files/usr/bin/g++		    clang
 data/data/com.wizkterm/files/usr/bin/gawk		    gawk
@@ -151,6 +154,7 @@ data/data/com.wizkterm/files/usr/bin/gzip		    gzip
 data/data/com.wizkterm/files/usr/bin/hardlink		    util-linux
 data/data/com.wizkterm/files/usr/bin/hexdump		    util-linux
 data/data/com.wizkterm/files/usr/bin/hmaptool		    clang
+data/data/com.wizkterm/files/usr/bin/hostname		    inetutils
 data/data/com.wizkterm/files/usr/bin/hugetop		    procps
 data/data/com.wizkterm/files/usr/bin/hwclock		    util-linux
 data/data/com.wizkterm/files/usr/bin/iconv		    iconv
@@ -260,6 +264,7 @@ data/data/com.wizkterm/files/usr/bin/llvm-tli-checker	    llvm
 data/data/com.wizkterm/files/usr/bin/llvm-undname	    llvm
 data/data/com.wizkterm/files/usr/bin/llvm-windres	    llvm
 data/data/com.wizkterm/files/usr/bin/llvm-xray		    llvm
+data/data/com.wizkterm/files/usr/bin/logger		    inetutils
 data/data/com.wizkterm/files/usr/bin/look		    util-linux
 data/data/com.wizkterm/files/usr/bin/losetup		    util-linux
 data/data/com.wizkterm/files/usr/bin/lsblk		    blk-utils
@@ -282,6 +287,7 @@ data/data/com.wizkterm/files/usr/bin/lzma		    xz-utils
 data/data/com.wizkterm/files/usr/bin/lzmadec		    xz-utils
 data/data/com.wizkterm/files/usr/bin/lzmainfo		    xz-utils
 data/data/com.wizkterm/files/usr/bin/lzmore		    xz-utils
+data/data/com.wizkterm/files/usr/bin/mac2unix		    dos2unix
 data/data/com.wizkterm/files/usr/bin/mcookie		    util-linux
 data/data/com.wizkterm/files/usr/bin/mii-tool		    net-tools
 data/data/com.wizkterm/files/usr/bin/mkfs		    util-linux
@@ -402,6 +408,7 @@ data/data/com.wizkterm/files/usr/bin/tblgen-lsp-server	    mlir
 data/data/com.wizkterm/files/usr/bin/tblgen-to-irdl	    mlir
 data/data/com.wizkterm/files/usr/bin/tclsh		    tcl
 data/data/com.wizkterm/files/usr/bin/tclsh8.6		    tcl
+data/data/com.wizkterm/files/usr/bin/telnet		    inetutils
 data/data/com.wizkterm/files/usr/bin/tempfile		    debianutils
 data/data/com.wizkterm/files/usr/bin/termux-apps-info-app-version-name termux-core
 data/data/com.wizkterm/files/usr/bin/termux-apps-info-app-version-name.bash termux-core
@@ -413,6 +420,7 @@ data/data/com.wizkterm/files/usr/bin/termux-elf-cleaner	    termux-elf-cleaner
 data/data/com.wizkterm/files/usr/bin/termux-scoped-env-variable termux-core
 data/data/com.wizkterm/files/usr/bin/termux-scoped-env-variable.bash termux-core
 data/data/com.wizkterm/files/usr/bin/termux-scoped-env-variable.sh termux-core
+data/data/com.wizkterm/files/usr/bin/tftp		    inetutils
 data/data/com.wizkterm/files/usr/bin/tic		    ncurses-utils
 data/data/com.wizkterm/files/usr/bin/tload		    procps
 data/data/com.wizkterm/files/usr/bin/toe		    ncurses-utils
@@ -423,6 +431,8 @@ data/data/com.wizkterm/files/usr/bin/ul			    util-linux
 data/data/com.wizkterm/files/usr/bin/umount		    mount-utils
 data/data/com.wizkterm/files/usr/bin/uname26		    util-linux
 data/data/com.wizkterm/files/usr/bin/uncompress		    gzip
+data/data/com.wizkterm/files/usr/bin/unix2dos		    dos2unix
+data/data/com.wizkterm/files/usr/bin/unix2mac		    dos2unix
 data/data/com.wizkterm/files/usr/bin/unlzma		    xz-utils
 data/data/com.wizkterm/files/usr/bin/unshare		    util-linux
 data/data/com.wizkterm/files/usr/bin/unxz		    xz-utils
@@ -13744,6 +13754,7 @@ data/data/com.wizkterm/files/usr/libexec/awk/pwcat	    gawk
 data/data/com.wizkterm/files/usr/libexec/c++-analyzer	    clang
 data/data/com.wizkterm/files/usr/libexec/ccc-analyzer	    clang
 data/data/com.wizkterm/files/usr/libexec/frcode		    findutils
+data/data/com.wizkterm/files/usr/libexec/inetd		    inetutils
 data/data/com.wizkterm/files/usr/libexec/installed-tests/termux-core/app/main/scripts/termux-core-main-app_runtime-script-tests termux-core
 data/data/com.wizkterm/files/usr/libexec/installed-tests/termux-core/app/main/scripts/termux/shell/command/environment/termux-apps-info-app-version-name_runtime-script-tests termux-core
 data/data/com.wizkterm/files/usr/libexec/installed-tests/termux-core/app/main/scripts/termux/shell/command/environment/termux-apps-info-env-variable_runtime-script-tests termux-core
@@ -13760,7 +13771,10 @@ data/data/com.wizkterm/files/usr/libexec/intercept-cc	    clang
 data/data/com.wizkterm/files/usr/libexec/less-osc8-open	    less
 data/data/com.wizkterm/files/usr/libexec/lessecho	    less
 data/data/com.wizkterm/files/usr/libexec/rmt		    tar
+data/data/com.wizkterm/files/usr/libexec/syslogd	    inetutils
+data/data/com.wizkterm/files/usr/libexec/telnetd	    inetutils
 data/data/com.wizkterm/files/usr/libexec/termux-am/am.apk   termux-am
+data/data/com.wizkterm/files/usr/libexec/tftpd		    inetutils
 data/data/com.wizkterm/files/usr/share/X11/XErrorDB	    libx11
 data/data/com.wizkterm/files/usr/share/X11/Xcms.txt	    libx11
 data/data/com.wizkterm/files/usr/share/X11/locale/C/Compose libx11
@@ -14121,6 +14135,16 @@ data/data/com.wizkterm/files/usr/share/doc/ca-certificates/copyright ca-certific
 data/data/com.wizkterm/files/usr/share/doc/dash/copyright   dash
 data/data/com.wizkterm/files/usr/share/doc/debianutils/copyright debianutils
 data/data/com.wizkterm/files/usr/share/doc/diffutils/copyright diffutils
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/BUGS.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/COPYING.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/ChangeLog.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/INSTALL.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/NEWS.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/README.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/TODO.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/dos2unix.htm dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix-7.5.7/dos2unix.txt dos2unix
+data/data/com.wizkterm/files/usr/share/doc/dos2unix/COPYING.txt dos2unix
 data/data/com.wizkterm/files/usr/share/doc/doxygen/copyright doxygen
 data/data/com.wizkterm/files/usr/share/doc/ed/copyright	    ed
 data/data/com.wizkterm/files/usr/share/doc/expat/AUTHORS    libexpat
@@ -14138,6 +14162,7 @@ data/data/com.wizkterm/files/usr/share/doc/iconv_close.3.html libiconv
 data/data/com.wizkterm/files/usr/share/doc/iconv_open.3.html libiconv
 data/data/com.wizkterm/files/usr/share/doc/iconv_open_into.3.html libiconv
 data/data/com.wizkterm/files/usr/share/doc/iconvctl.3.html  libiconv
+data/data/com.wizkterm/files/usr/share/doc/inetutils/copyright inetutils
 data/data/com.wizkterm/files/usr/share/doc/less/COPYING	    less
 data/data/com.wizkterm/files/usr/share/doc/less/LICENSE	    less
 data/data/com.wizkterm/files/usr/share/doc/libX11/XIM/dynamicflow.svg libx11
@@ -14664,6 +14689,7 @@ data/data/com.wizkterm/files/usr/share/info/gmp.info-2	    libgmp
 data/data/com.wizkterm/files/usr/share/info/grep.info	    grep
 data/data/com.wizkterm/files/usr/share/info/gzip.info	    gzip
 data/data/com.wizkterm/files/usr/share/info/history.info    readline
+data/data/com.wizkterm/files/usr/share/info/inetutils.info  inetutils
 data/data/com.wizkterm/files/usr/share/info/libffi.info	    libffi
 data/data/com.wizkterm/files/usr/share/info/mpfr.info	    libmpfr
 data/data/com.wizkterm/files/usr/share/info/nano.info	    nano
@@ -14709,7 +14735,9 @@ data/data/com.wizkterm/files/usr/share/man/man1/diagtool.1.gz clang
 data/data/com.wizkterm/files/usr/share/man/man1/diff.1.gz   diffutils
 data/data/com.wizkterm/files/usr/share/man/man1/diff3.1.gz  diffutils
 data/data/com.wizkterm/files/usr/share/man/man1/dmesg.1.gz  util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/dnsdomainname.1.gz inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/domainname.1.gz net-tools
+data/data/com.wizkterm/files/usr/share/man/man1/dos2unix.1.gz dos2unix
 data/data/com.wizkterm/files/usr/share/man/man1/doxygen.1.gz doxygen
 data/data/com.wizkterm/files/usr/share/man/man1/dsymutil.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/ed.1.gz	    ed
@@ -14723,6 +14751,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/find.1.gz   findutils
 data/data/com.wizkterm/files/usr/share/man/man1/flock.1.gz  util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/free.1.gz   procps
 data/data/com.wizkterm/files/usr/share/man/man1/freetype-config.1.gz freetype
+data/data/com.wizkterm/files/usr/share/man/man1/ftp.1.gz    inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/funzip.1.gz unzip
 data/data/com.wizkterm/files/usr/share/man/man1/gawk.1.gz   gawk
 data/data/com.wizkterm/files/usr/share/man/man1/gawkbug.1.gz gawk
@@ -14738,6 +14767,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/gzexe.1.gz  gzip
 data/data/com.wizkterm/files/usr/share/man/man1/gzip.1.gz   gzip
 data/data/com.wizkterm/files/usr/share/man/man1/hardlink.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/hexdump.1.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/hostname.1.gz inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/hugetop.1.gz procps
 data/data/com.wizkterm/files/usr/share/man/man1/iconv.1.gz  libiconv
 data/data/com.wizkterm/files/usr/share/man/man1/infocmp.1.gz ncurses-utils
@@ -14800,6 +14830,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/llvm-tblgen.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/llvm-test-mustache-spec.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/llvm-tli-checker.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/locate.1.gz findutils
+data/data/com.wizkterm/files/usr/share/man/man1/logger.1.gz inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/look.1.gz   util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/lsclocks.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/lscpu.1.gz  util-linux
@@ -14817,6 +14848,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/lzma.1.gz   xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzmadec.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzmainfo.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzmore.1.gz xz-utils
+data/data/com.wizkterm/files/usr/share/man/man1/mac2unix.1.gz dos2unix
 data/data/com.wizkterm/files/usr/share/man/man1/mcookie.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/mlir-tblgen.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/more.1.gz   util-linux
@@ -14875,7 +14907,9 @@ data/data/com.wizkterm/files/usr/share/man/man1/tar.1.gz    tar
 data/data/com.wizkterm/files/usr/share/man/man1/taskset.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/tblgen.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/tclsh.1.gz  tcl
+data/data/com.wizkterm/files/usr/share/man/man1/telnet.1.gz inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/tempfile.1.gz debianutils
+data/data/com.wizkterm/files/usr/share/man/man1/tftp.1.gz   inetutils
 data/data/com.wizkterm/files/usr/share/man/man1/tic.1.gz    ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/tload.1.gz  procps
 data/data/com.wizkterm/files/usr/share/man/man1/toe.1.gz    ncurses-utils
@@ -14884,6 +14918,8 @@ data/data/com.wizkterm/files/usr/share/man/man1/tput.1.gz   ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/tset.1.gz   ncurses
 data/data/com.wizkterm/files/usr/share/man/man1/uclampset.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/ul.1.gz	    util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/unix2dos.1.gz dos2unix
+data/data/com.wizkterm/files/usr/share/man/man1/unix2mac.1.gz dos2unix
 data/data/com.wizkterm/files/usr/share/man/man1/unlzma.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/unshare.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/unxz.1.gz   xz-utils
@@ -21074,6 +21110,7 @@ data/data/com.wizkterm/files/usr/share/man/man8/fsfreeze.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/fstrim.8.gz mount-utils
 data/data/com.wizkterm/files/usr/share/man/man8/hwclock.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/ifconfig.8.gz net-tools
+data/data/com.wizkterm/files/usr/share/man/man8/inetd.8.gz  inetutils
 data/data/com.wizkterm/files/usr/share/man/man8/ipmaddr.8.gz net-tools
 data/data/com.wizkterm/files/usr/share/man/man8/iptunnel.8.gz net-tools
 data/data/com.wizkterm/files/usr/share/man/man8/isosize.8.gz util-linux
@@ -21112,6 +21149,9 @@ data/data/com.wizkterm/files/usr/share/man/man8/swaplabel.8.gz blk-utils
 data/data/com.wizkterm/files/usr/share/man/man8/swapoff.8.gz mount-utils
 data/data/com.wizkterm/files/usr/share/man/man8/swapon.8.gz mount-utils
 data/data/com.wizkterm/files/usr/share/man/man8/sysctl.8.gz procps
+data/data/com.wizkterm/files/usr/share/man/man8/syslogd.8.gz inetutils
+data/data/com.wizkterm/files/usr/share/man/man8/telnetd.8.gz inetutils
+data/data/com.wizkterm/files/usr/share/man/man8/tftpd.8.gz  inetutils
 data/data/com.wizkterm/files/usr/share/man/man8/umount.8.gz mount-utils
 data/data/com.wizkterm/files/usr/share/man/man8/uname26.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/uuidd.8.gz  uuid-utils
