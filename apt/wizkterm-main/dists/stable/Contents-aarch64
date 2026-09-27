@@ -541,6 +541,9 @@ data/data/com.wizkterm/files/usr/bin/mlir-translate mlir
 data/data/com.wizkterm/files/usr/bin/modularize clang
 data/data/com.wizkterm/files/usr/bin/more util-linux
 data/data/com.wizkterm/files/usr/bin/mount mount-utils
+data/data/com.wizkterm/files/usr/bin/mpg123 mpg123
+data/data/com.wizkterm/files/usr/bin/mpg123-id3dump mpg123
+data/data/com.wizkterm/files/usr/bin/mpg123-strip mpg123
 data/data/com.wizkterm/files/usr/bin/mpicalc libgcrypt
 data/data/com.wizkterm/files/usr/bin/mv coreutils
 data/data/com.wizkterm/files/usr/bin/namei util-linux
@@ -573,6 +576,7 @@ data/data/com.wizkterm/files/usr/bin/offload-arch clang
 data/data/com.wizkterm/files/usr/bin/onig-config oniguruma
 data/data/com.wizkterm/files/usr/bin/openssl openssl-tool
 data/data/com.wizkterm/files/usr/bin/opt llvm
+data/data/com.wizkterm/files/usr/bin/out123 mpg123
 data/data/com.wizkterm/files/usr/bin/p11-kit p11-kit
 data/data/com.wizkterm/files/usr/bin/p11tool gnutls
 data/data/com.wizkterm/files/usr/bin/partx blk-utils
@@ -5280,6 +5284,7 @@ data/data/com.wizkterm/files/usr/include/features.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/fenv.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/ffi.h libffi
 data/data/com.wizkterm/files/usr/include/ffitarget.h libffi
+data/data/com.wizkterm/files/usr/include/fmt123.h libmpg123
 data/data/com.wizkterm/files/usr/include/fnmatch.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/fontconfig/fcfreetype.h fontconfig
 data/data/com.wizkterm/files/usr/include/fontconfig/fcprivate.h fontconfig
@@ -11428,6 +11433,7 @@ data/data/com.wizkterm/files/usr/include/mlir/Transforms/WalkPatternRewriteDrive
 data/data/com.wizkterm/files/usr/include/mntent.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/mpf2mpfr.h libmpfr
 data/data/com.wizkterm/files/usr/include/mpfr.h libmpfr
+data/data/com.wizkterm/files/usr/include/mpg123.h libmpg123
 data/data/com.wizkterm/files/usr/include/mtd/inftl-user.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/mtd/mtd-abi.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/mtd/mtd-user.h ndk-sysroot
@@ -11832,6 +11838,7 @@ data/data/com.wizkterm/files/usr/include/openssl/x509err.h openssl
 data/data/com.wizkterm/files/usr/include/openssl/x509v3.h openssl
 data/data/com.wizkterm/files/usr/include/openssl/x509v3err.h openssl
 data/data/com.wizkterm/files/usr/include/orc/c_api.h libcompiler-rt
+data/data/com.wizkterm/files/usr/include/out123.h libmpg123
 data/data/com.wizkterm/files/usr/include/p11-kit-1/p11-kit/deprecated.h p11-kit
 data/data/com.wizkterm/files/usr/include/p11-kit-1/p11-kit/iter.h p11-kit
 data/data/com.wizkterm/files/usr/include/p11-kit-1/p11-kit/p11-kit.h p11-kit
@@ -12479,6 +12486,7 @@ data/data/com.wizkterm/files/usr/include/subversion-1/svn_version.h subversion
 data/data/com.wizkterm/files/usr/include/subversion-1/svn_wc.h subversion
 data/data/com.wizkterm/files/usr/include/subversion-1/svn_x509.h subversion
 data/data/com.wizkterm/files/usr/include/subversion-1/svn_xml.h subversion
+data/data/com.wizkterm/files/usr/include/syn123.h libmpg123
 data/data/com.wizkterm/files/usr/include/sys/_system_properties.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/sys/acl.h libacl
 data/data/com.wizkterm/files/usr/include/sys/auxv.h ndk-sysroot
@@ -14680,6 +14688,9 @@ data/data/com.wizkterm/files/usr/lib/libmount.so libmount
 data/data/com.wizkterm/files/usr/lib/libmpfr.a libmpfr-static
 data/data/com.wizkterm/files/usr/lib/libmpfr.la libmpfr-static
 data/data/com.wizkterm/files/usr/lib/libmpfr.so libmpfr
+data/data/com.wizkterm/files/usr/lib/libmpg123.a libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libmpg123.la libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libmpg123.so libmpg123
 data/data/com.wizkterm/files/usr/lib/libncurses.a ncurses-static
 data/data/com.wizkterm/files/usr/lib/libncurses.so ncurses
 data/data/com.wizkterm/files/usr/lib/libncurses.so.6 ncurses
@@ -14712,6 +14723,9 @@ data/data/com.wizkterm/files/usr/lib/libomp.a clang
 data/data/com.wizkterm/files/usr/lib/libonig.a oniguruma-static
 data/data/com.wizkterm/files/usr/lib/libonig.la oniguruma-static
 data/data/com.wizkterm/files/usr/lib/libonig.so oniguruma
+data/data/com.wizkterm/files/usr/lib/libout123.a libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libout123.la libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libout123.so libmpg123
 data/data/com.wizkterm/files/usr/lib/libp11-kit.so p11-kit
 data/data/com.wizkterm/files/usr/lib/libpanel.a ncurses-ui-libs-static
 data/data/com.wizkterm/files/usr/lib/libpanel.so ncurses-ui-libs
@@ -14834,6 +14848,9 @@ data/data/com.wizkterm/files/usr/lib/libsvn_swig_perl-1.so subversion-perl
 data/data/com.wizkterm/files/usr/lib/libsvn_wc-1.a subversion-static
 data/data/com.wizkterm/files/usr/lib/libsvn_wc-1.la subversion-static
 data/data/com.wizkterm/files/usr/lib/libsvn_wc-1.so subversion
+data/data/com.wizkterm/files/usr/lib/libsyn123.a libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libsyn123.la libmpg123-static
+data/data/com.wizkterm/files/usr/lib/libsyn123.so libmpg123
 data/data/com.wizkterm/files/usr/lib/libtalloc.a libtalloc-static
 data/data/com.wizkterm/files/usr/lib/libtalloc.so libtalloc
 data/data/com.wizkterm/files/usr/lib/libtalloc.so.2 libtalloc
@@ -14988,6 +15005,8 @@ data/data/com.wizkterm/files/usr/lib/libz.so.1.3.2 zlib
 data/data/com.wizkterm/files/usr/lib/libzstd.so zstd
 data/data/com.wizkterm/files/usr/lib/libzstd.so.1 zstd
 data/data/com.wizkterm/files/usr/lib/libzstd.so.1.5.7 zstd
+data/data/com.wizkterm/files/usr/lib/mpg123/output_dummy.so mpg123
+data/data/com.wizkterm/files/usr/lib/mpg123/output_oss.so mpg123
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/LICENSE npm
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/README.md npm
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/bin/node-gyp-bin/node-gyp npm
@@ -19117,10 +19136,12 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/liblz4.pc liblz4
 data/data/com.wizkterm/files/usr/lib/pkgconfig/liblzma.pc liblzma
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libmagic.pc libmagic
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libmd.pc libmd
+data/data/com.wizkterm/files/usr/lib/pkgconfig/libmpg123.pc libmpg123
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libnghttp2.pc libnghttp2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libnghttp3.pc libnghttp3
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libngtcp2.pc libngtcp2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libngtcp2_crypto_ossl.pc libngtcp2
+data/data/com.wizkterm/files/usr/lib/pkgconfig/libout123.pc libmpg123
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libpcre2-16.pc pcre2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libpcre2-32.pc pcre2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libpcre2-8.pc pcre2
@@ -19130,6 +19151,7 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/libpng16.pc libpng
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libproc2.pc procps
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libssh2.pc libssh2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libssl.pc openssl
+data/data/com.wizkterm/files/usr/lib/pkgconfig/libsyn123.pc libmpg123
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libtasn1.pc libtasn1
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libtirpc.pc libtirpc
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libunbound.pc libunbound
@@ -23789,6 +23811,7 @@ data/data/com.wizkterm/files/usr/share/doc/liblzma/COPYING.LGPLv2.1 liblzma
 data/data/com.wizkterm/files/usr/share/doc/libmagic/copyright libmagic
 data/data/com.wizkterm/files/usr/share/doc/libmd/COPYING libmd
 data/data/com.wizkterm/files/usr/share/doc/libmpfr/copyright libmpfr
+data/data/com.wizkterm/files/usr/share/doc/libmpg123/copyright libmpg123
 data/data/com.wizkterm/files/usr/share/doc/libnettle/copyright libnettle
 data/data/com.wizkterm/files/usr/share/doc/libnettle/copyright.1 libnettle
 data/data/com.wizkterm/files/usr/share/doc/libnghttp2/copyright libnghttp2
@@ -25354,6 +25377,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/mknod.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/mktemp.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/mlir-tblgen.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/more.1.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/mpg123.1.gz mpg123
 data/data/com.wizkterm/files/usr/share/man/man1/mv.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/namei.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/nano.1.gz nano
@@ -25445,6 +25469,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/objcopy.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/objdump.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/od.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/opt.1.gz llvm
+data/data/com.wizkterm/files/usr/share/man/man1/out123.1.gz mpg123
 data/data/com.wizkterm/files/usr/share/man/man1/paste.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/patch.1.gz patch
 data/data/com.wizkterm/files/usr/share/man/man1/pathchk.1.gz coreutils

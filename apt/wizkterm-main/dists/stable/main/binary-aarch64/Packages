@@ -2121,6 +2121,35 @@ SHA256: f958ee16ad090d96b0d3bf3b931202384f8ce6411a3982c17ce60bb99526b7f4
 Homepage: https://www.mpfr.org/
 Description: Static libraries for libmpfr
 
+Package: libmpg123
+Version: 1.33.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 616
+Breaks: mpg123 (<< 1.33.1-1)
+Replaces: mpg123 (<< 1.33.1-1)
+Filename: pool/main/l/libmpg123/libmpg123_1.33.7_aarch64.deb
+Size: 174752
+MD5sum: d1f64f18bb7a1167856f57b498cd265b
+SHA1: 3e297a29c9a735c885797fd99daddf3addeafbeb
+SHA256: cf3288c715541b50aab4063f208e6f3c2ac4a1237a9a0f37a20fa1e2383c9df4
+Homepage: https://mpg123.org/
+Description: Fast console MPEG Audio Player and decoder library
+
+Package: libmpg123-static
+Version: 1.33.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 616
+Depends: libmpg123 (= 1.33.7)
+Filename: pool/main/l/libmpg123-static/libmpg123-static_1.33.7_aarch64.deb
+Size: 151280
+MD5sum: b08a8834dd63f1cfecaf2a98ea4db0f3
+SHA1: acecb9ceb094b767240b38a4353a2b24d9b5e4d5
+SHA256: 7280b1c4ef702203131bc4b54d56b12038a3a90c1cdd2208904efa7e7cf13438
+Homepage: https://mpg123.org/
+Description: Static libraries for libmpg123
+
 Package: libnettle
 Version: 4.0+really3.10.2
 Architecture: aarch64
@@ -3115,6 +3144,20 @@ SHA1: 6cd6d14d07327be7e5078886ebea167afbc324d0
 SHA256: 3d5998eee9d02cc78e32c68eef1fa4c4180e6b77a840e2f9bdd635781d45a635
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for (un)mounting filesystems
+
+Package: mpg123
+Version: 1.33.7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 328
+Depends: pulseaudio, libmpg123 (= 1.33.7)
+Filename: pool/main/m/mpg123/mpg123_1.33.7_aarch64.deb
+Size: 91980
+MD5sum: df2e02c9554c689be319feaf59d1f402
+SHA1: 716c2b5b9c02946f02ce4e1f5f2b955a3a98b177
+SHA256: 414b96953035f1396fd58b5b85c7b1d9a12338c89b9f14e61ce629344f708204
+Homepage: https://mpg123.org/
+Description: Fast console MPEG Audio Player based on libmpg123
 
 Package: nano
 Version: 9.2-1
