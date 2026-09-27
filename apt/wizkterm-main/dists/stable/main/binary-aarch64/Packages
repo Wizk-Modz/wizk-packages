@@ -4322,6 +4322,20 @@ SHA256: 51cae8c7f16987dabdb142425de23e348fc2c7ad338858c253902a5550ff633a
 Homepage: https://www.gnu.org/software/wget/
 Description: Commandline tool for retrieving files using HTTP, HTTPS and FTP
 
+Package: which
+Version: 2.25
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 84
+Conflicts: debianutils (<< 5.7-1)
+Filename: pool/main/w/which/which_2.25_aarch64.deb
+Size: 12668
+MD5sum: 374cf83f21583b79f17de8a28a4fe223
+SHA1: bb68efc125e097c82c10c3c5e8665bdda6e1070a
+SHA256: c9e9f3ff5190eb86048e138055695d4714071b474a4a392cf49e1eb1f411895f
+Homepage: https://savannah.gnu.org/projects/which/
+Description: Shows the full path of (shell) commands
+
 Package: wizkterm-keyring
 Version: 1.0
 Architecture: all

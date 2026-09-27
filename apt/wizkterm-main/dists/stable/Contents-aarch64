@@ -864,6 +864,7 @@ data/data/com.wizkterm/files/usr/bin/wcurl libcurl
 data/data/com.wizkterm/files/usr/bin/wdctl util-linux
 data/data/com.wizkterm/files/usr/bin/wget wget
 data/data/com.wizkterm/files/usr/bin/whereis util-linux
+data/data/com.wizkterm/files/usr/bin/which which
 data/data/com.wizkterm/files/usr/bin/whoami coreutils
 data/data/com.wizkterm/files/usr/bin/windres libllvm
 data/data/com.wizkterm/files/usr/bin/wipefs blk-utils
@@ -24124,6 +24125,7 @@ data/data/com.wizkterm/files/usr/share/doc/utf8proc/copyright utf8proc
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.bash util-linux
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-linux
 data/data/com.wizkterm/files/usr/share/doc/wget/copyright wget
+data/data/com.wizkterm/files/usr/share/doc/which/copyright which
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
 data/data/com.wizkterm/files/usr/share/doc/x11-repo/copyright x11-repo
 data/data/com.wizkterm/files/usr/share/doc/xcb-proto/copyright xcb-proto
@@ -24470,6 +24472,7 @@ data/data/com.wizkterm/files/usr/share/info/texinfo.info-2 texinfo
 data/data/com.wizkterm/files/usr/share/info/texinfo.info-3 texinfo
 data/data/com.wizkterm/files/usr/share/info/texinfo.info-4 texinfo
 data/data/com.wizkterm/files/usr/share/info/wget.info wget
+data/data/com.wizkterm/files/usr/share/info/which.info which
 data/data/com.wizkterm/files/usr/share/libgpg-error/errorref.txt libgpg-error
 data/data/com.wizkterm/files/usr/share/libtool/COPYING.LIB libtool
 data/data/com.wizkterm/files/usr/share/libtool/Makefile.am libtool
@@ -25767,6 +25770,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/wc.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/wcurl.1.gz libcurl
 data/data/com.wizkterm/files/usr/share/man/man1/wget.1.gz wget
 data/data/com.wizkterm/files/usr/share/man/man1/whereis.1.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/which.1.gz which
 data/data/com.wizkterm/files/usr/share/man/man1/whoami.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/wish.1.gz tk
 data/data/com.wizkterm/files/usr/share/man/man1/xargs.1.gz findutils
