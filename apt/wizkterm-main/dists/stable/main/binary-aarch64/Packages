@@ -3927,6 +3927,20 @@ SHA256: 921d3bc714d96ea7b61484c4be6a6a02770207584811b6095d97313bc9bac208
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Utilities for handling universally unique identifiers
 
+Package: wget
+Version: 1.25.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 792
+Depends: libandroid-support, libiconv, libidn2, libuuid, openssl, pcre2, zlib
+Filename: pool/main/w/wget/wget_1.25.0-1_aarch64.deb
+Size: 281800
+MD5sum: b8079be7a0b9760874979e80e2e4e914
+SHA1: e34b9ff7ba99f0f14c53589cdbec7b854ddf1e78
+SHA256: 51cae8c7f16987dabdb142425de23e348fc2c7ad338858c253902a5550ff633a
+Homepage: https://www.gnu.org/software/wget/
+Description: Commandline tool for retrieving files using HTTP, HTTPS and FTP
+
 Package: wizkterm-keyring
 Version: 1.0
 Architecture: all

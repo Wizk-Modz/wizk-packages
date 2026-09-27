@@ -816,6 +816,7 @@ data/data/com.wizkterm/files/usr/bin/watchgnupg		    gnupg
 data/data/com.wizkterm/files/usr/bin/wc			    coreutils
 data/data/com.wizkterm/files/usr/bin/wcurl		    libcurl
 data/data/com.wizkterm/files/usr/bin/wdctl		    util-linux
+data/data/com.wizkterm/files/usr/bin/wget		    wget
 data/data/com.wizkterm/files/usr/bin/whereis		    util-linux
 data/data/com.wizkterm/files/usr/bin/whoami		    coreutils
 data/data/com.wizkterm/files/usr/bin/windres		    libllvm
@@ -1010,6 +1011,7 @@ data/data/com.wizkterm/files/usr/etc/tls/cert.pem	    ca-certificates
 data/data/com.wizkterm/files/usr/etc/tls/openssl.cnf	    openssl
 data/data/com.wizkterm/files/usr/etc/tor/torrc		    tor
 data/data/com.wizkterm/files/usr/etc/unbound/unbound.conf   unbound
+data/data/com.wizkterm/files/usr/etc/wgetrc		    wget
 data/data/com.wizkterm/files/usr/etc/xattr.conf		    attr
 data/data/com.wizkterm/files/usr/etc/xml/docbook-xml	    docbook-xml
 data/data/com.wizkterm/files/usr/include/GL/glxint.h	    xorgproto
@@ -22214,6 +22216,7 @@ data/data/com.wizkterm/files/usr/share/doc/unzip/copyright  unzip
 data/data/com.wizkterm/files/usr/share/doc/utf8proc/copyright utf8proc
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.bash util-linux
 data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-linux
+data/data/com.wizkterm/files/usr/share/doc/wget/copyright   wget
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
 data/data/com.wizkterm/files/usr/share/doc/x11-repo/copyright x11-repo
 data/data/com.wizkterm/files/usr/share/doc/xcb-proto/copyright xcb-proto
@@ -22521,6 +22524,7 @@ data/data/com.wizkterm/files/usr/share/info/tar.info	    tar
 data/data/com.wizkterm/files/usr/share/info/tar.info-1	    tar
 data/data/com.wizkterm/files/usr/share/info/tar.info-2	    tar
 data/data/com.wizkterm/files/usr/share/info/tar.info-3	    tar
+data/data/com.wizkterm/files/usr/share/info/wget.info	    wget
 data/data/com.wizkterm/files/usr/share/libgpg-error/errorref.txt libgpg-error
 data/data/com.wizkterm/files/usr/share/licenses/python-pip/LICENSE.txt python-pip
 data/data/com.wizkterm/files/usr/share/man/man1/FileCheck.1.gz llvm-tools
@@ -23501,6 +23505,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/watch.1.gz  procps
 data/data/com.wizkterm/files/usr/share/man/man1/watchgnupg.1.gz gnupg
 data/data/com.wizkterm/files/usr/share/man/man1/wc.1.gz	    coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/wcurl.1.gz  libcurl
+data/data/com.wizkterm/files/usr/share/man/man1/wget.1.gz   wget
 data/data/com.wizkterm/files/usr/share/man/man1/whereis.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/whoami.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/wish.1.gz   tk
