@@ -1,3 +1,19 @@
+Package: blk-utils
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 924
+Depends: libblkid, libmount, libsmartcols, libuuid
+Breaks: util-linux (<< 2.38.1-1)
+Replaces: util-linux (<< 2.38.1-1)
+Filename: pool/main/b/blk-utils/blk-utils_2.42.1-5_aarch64.deb
+Size: 184076
+MD5sum: 83fdcbf8a9e5bf00fc82a590f5c4a469
+SHA1: 5515bd4cd6987f360c30a80aa615df19f1190724
+SHA256: 8b6da37cbaa4460c02a88c5e4ebb07d756b92cc01a0d91bf536023c01da40059
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Utilities for handling block device attributes
+
 Package: brotli
 Version: 1.2.0
 Architecture: aarch64
@@ -84,6 +100,20 @@ SHA1: 4fb8b8967896f902aa54902026e2552fdb047995
 SHA256: 99501ded6549bef835c067f878733136f44972def85fb9d9048f8179aa09f82e
 Homepage: http://www.doxygen.org
 Description: A documentation system for C++, C, Java, IDL and PHP
+
+Package: fdisk
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 472
+Depends: libfdisk, libmount, ncurses, readline, libsmartcols
+Filename: pool/main/f/fdisk/fdisk_2.42.1-5_aarch64.deb
+Size: 116744
+MD5sum: 3d498d2d8791950bc7206a2cf8f547ad
+SHA1: 69e35f7cec203c697468b9ee7aedcc24e7a90a43
+SHA256: eb183373799cd600f28231feb1ef4191928187e6079cd33b6bed5430a84d34b7
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Utilities to manipulate disk partition tables
 
 Package: fontconfig
 Version: 2.18.3
@@ -315,6 +345,22 @@ SHA256: f0589aaae40ac9047a5962e826f5f858727175b08a1597b8dde3bc72673f34cb
 Homepage: https://github.com/termux/libandroid-support
 Description: Static libraries for libandroid-support
 
+Package: libblkid
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 408
+Depends: libandroid-posix-semaphore
+Breaks: util-linux (<< 2.38.1-1)
+Replaces: util-linux (<< 2.38.1-1)
+Filename: pool/main/l/libblkid/libblkid_2.42.1-5_aarch64.deb
+Size: 128320
+MD5sum: 1248272d4e9c7842dc3eca1f4c98e4f8
+SHA1: 5e8ef3566dd5feaea24f35fead59bd041c3ac7d4
+SHA256: 9cdf2fdfc80266cb3d35e135e39ba706963eaa9ffec516dc05e6d6497c7f7055
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Block device identification library
+
 Package: libbz2
 Version: 1.0.8-8
 Architecture: aarch64
@@ -344,6 +390,33 @@ SHA1: 07dea89ffeb8635d80789cab70131ba09ce21e6d
 SHA256: a912bc2139c2e381c57e5950d672fefd0da4880d80200888efba591deb0f9ec0
 Homepage: https://libcxx.llvm.org/
 Description: C++ Standard Library
+
+Package: libcap-ng
+Version: 2:0.9.6
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 316
+Filename: pool/main/l/libcap-ng/libcap-ng_2:0.9.6_aarch64.deb
+Size: 57680
+MD5sum: e0f3285d015b0b728039dd7b28726853
+SHA1: ca94111af9c59f23660a7a2b858be6adadb69f69
+SHA256: 2549003f71570f95805d6d1654f787403889bd6d8cf31c08fc6aa6d9cfb44d4d
+Homepage: https://people.redhat.com/sgrubb/libcap-ng/
+Description: Library making programming with POSIX capabilities easier than traditional libcap
+
+Package: libcap-ng-static
+Version: 2:0.9.6
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 72
+Depends: libcap-ng (= 2:0.9.6)
+Filename: pool/main/l/libcap-ng-static/libcap-ng-static_2:0.9.6_aarch64.deb
+Size: 9920
+MD5sum: ac0f973241d221f1398d0ca35a23e509
+SHA1: d1b181c596249d4d7d8cf1e0633eb93d0c48d627
+SHA256: 3ac6e9d72e1d175aa566a9d5809bdbfdc7cf6468e25b9237ef8c586888d391d1
+Homepage: https://people.redhat.com/sgrubb/libcap-ng/
+Description: Static libraries for libcap-ng
 
 Package: libcompiler-rt
 Version: 21.1.8-3
@@ -434,6 +507,20 @@ SHA1: a73e509bd1519793cf04abfe06764621d6669ea7
 SHA256: ac23b0dcd35c6b078f9589a4f456c9f98015fd88a5e8ca22dfc8cc46bb475ef3
 Homepage: https://libexpat.github.io/
 Description: Static libraries for libexpat
+
+Package: libfdisk
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 508
+Depends: libblkid, libuuid
+Filename: pool/main/l/libfdisk/libfdisk_2.42.1-5_aarch64.deb
+Size: 159656
+MD5sum: 1ca5921f4354ab847c26156534f41995
+SHA1: 440b91f4e41f09b721cc385fb12be2a2ac236166
+SHA256: 3ef83bb57a3bd4ed38446312e258733f0297e6b6200e53fd598458cf5dd3b784
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Library for manipulating disk partition tables
 
 Package: libffi
 Version: 3.8.0
@@ -554,6 +641,20 @@ SHA256: acba3678eada50f011ccd41c474ba74a6d26c5697ae635a6ac99381fa9ffe510
 Homepage: https://tukaani.org/xz/
 Description: Static libraries for liblzma
 
+Package: libmount
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 496
+Depends: libblkid, libsmartcols
+Filename: pool/main/l/libmount/libmount_2.42.1-5_aarch64.deb
+Size: 156756
+MD5sum: 92da8f2b6c9c0b385ef7e2e588e120e6
+SHA1: 7af6c908a63256fc625c94889cef9726bdc3b835
+SHA256: b34517007f8ba0a3dbe7e6f8ae3f15fa4019852f6dc731676dc6e7cc3ecce588
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Library for (un)mounting filesystems
+
 Package: libpng
 Version: 1.6.58
 Architecture: aarch64
@@ -597,6 +698,22 @@ SHA1: 8b38940c77826bd38d9e4735e4569f09631f20d9
 SHA256: 9cd7f80892bc4d783a528d7597fcf5339fee8a49b2e09c6da48db931605aa44e
 Homepage: https://clang.llvm.org/
 Description: High-level loop and data-locality optimizer for clang
+
+Package: libsmartcols
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 332
+Depends: libandroid-posix-semaphore
+Breaks: util-linux (<< 2.38.1-1)
+Replaces: util-linux (<< 2.38.1-1)
+Filename: pool/main/l/libsmartcols/libsmartcols_2.42.1-5_aarch64.deb
+Size: 103628
+MD5sum: 2dae18f5d111644c730908e29540b4b9
+SHA1: a073971f735fd0805bc695f570f65671a056f9fd
+SHA256: 68dfa27515e0324bd665cbef548ea4a6b69679dbf6ac6ce9a652677bbbf01c8f
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Library for smart adaptive formatting of tabular data
 
 Package: libsqlite
 Version: 3.53.4
@@ -642,6 +759,22 @@ SHA1: 9bf153f6dd7c98fa7fef69188cb38bbca0f6f86c
 SHA256: 851982eedee43cb051ab6361f1525a500205fde31781e0190433b4e5634b505c
 Homepage: https://www.sqlite.org
 Description: tcl bindings for SQLite
+
+Package: libuuid
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 84
+Depends: libandroid-posix-semaphore
+Breaks: libuuid-dev
+Replaces: libuuid-dev
+Filename: pool/main/l/libuuid/libuuid_2.42.1-5_aarch64.deb
+Size: 15516
+MD5sum: e30b339f2a09852f186c11cd87d646e3
+SHA1: 5186c45125e37f2c30cbd3c02933509f1b4c806c
+SHA256: 16618202550bd7146e56591b8ad1b947dd55ea1587e503cc2b78192339cc97fc
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Library for handling universally unique identifiers
 
 Package: libx11
 Version: 1.8.13-1
@@ -963,6 +1096,21 @@ SHA1: 2c4722a9fe4184963bf9be648bfe0dd3fa371cae
 SHA256: f3083e85850556b513e876654afb0bf6dafdb5a19f4151545ec34c534d9f93e9
 Homepage: https://clang.llvm.org/
 Description: A Multi-Level Intermediate Representation for compilers from LLVM
+
+Package: mount-utils
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 588
+Depends: libblkid, libsmartcols, libmount
+Breaks: termux-tools (<= 1.34.1)
+Filename: pool/main/m/mount-utils/mount-utils_2.42.1-5_aarch64.deb
+Size: 149308
+MD5sum: ce20033e11b5e8fa3157db955b534994
+SHA1: c4ec5bdf8f57be5a411e823666f011c30e29594b
+SHA256: 9dac2274ded25ccffdea3501ef46b3ae12dea3d48a649a1e367aacf4d7b72b21
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Utilities for (un)mounting filesystems
 
 Package: ncurses
 Version: 6.6.20260307+really6.5.20250830
@@ -1293,6 +1441,51 @@ SHA1: 013d5866361d133b8e42dbb5e35c43ad8b09788b
 SHA256: bcf6d08d778e3e0b80dbdceb5bf790dcdd3f205dd5a1947358c3dd489f6c7ee1
 Homepage: https://dejavu-fonts.github.io/
 Description: Font family based on the Bitstream Vera Fonts with a wider range of characters
+
+Package: util-linux
+Version: 2.42.1-5
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 4436
+Depends: libandroid-glob, libandroid-posix-semaphore, libcap-ng, libsmartcols, ncurses, zlib
+Breaks: util-linux-dev
+Replaces: util-linux-dev
+Filename: pool/main/u/util-linux/util-linux_2.42.1-5_aarch64.deb
+Size: 769260
+MD5sum: a13c6011c19e4972e958883c8fa99653
+SHA1: d08525d952f2c936bede41bbcc101364362b56e1
+SHA256: ab462088ad11b104e91a13df6c2ff7f56974d34840435ef924836c2e86581514
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Miscellaneous system utilities
+
+Package: util-linux-static
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 3284
+Depends: util-linux (= 2.42.1-5)
+Filename: pool/main/u/util-linux-static/util-linux-static_2.42.1-5_aarch64.deb
+Size: 436452
+MD5sum: 343817e5a0c4887f66dca96c77754006
+SHA1: cd70062b1d5afda60b832a006944fa8044be3415
+SHA256: a19894efbd98bdba2af6798055d64ae5512a57bd1afd6d9802ef7117dd450dc3
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Static libraries for util-linux
+
+Package: uuid-utils
+Version: 2.42.1-5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 236
+Depends: libsmartcols, libuuid
+Filename: pool/main/u/uuid-utils/uuid-utils_2.42.1-5_aarch64.deb
+Size: 41928
+MD5sum: 1707ba52d153d1f401ffab4c257013ca
+SHA1: 2243eed83a3e49f2a072a8a2f6ad27153a946348
+SHA256: 19a67f23173c25b39876c7ad6d9ec35ae761426dafe69eaf0dbb124479603124
+Homepage: https://en.wikipedia.org/wiki/Util-linux
+Description: Utilities for handling universally unique identifiers
 
 Package: wizkterm-keyring
 Version: 1.0
