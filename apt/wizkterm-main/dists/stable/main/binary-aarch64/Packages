@@ -272,16 +272,16 @@ Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
 Package: command-not-found
-Version: 3.5.0-14
+Version: 3.5.0-15
 Architecture: aarch64
 Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
-Installed-Size: 132
+Installed-Size: 136
 Depends: libc++
-Filename: pool/main/c/command-not-found/command-not-found_3.5.0-14_aarch64.deb
-Size: 25004
-MD5sum: 718fbde333afe7913b4d1952832dfa0f
-SHA1: 72e4358c4d2b254490c588c9635789a11b4b5893
-SHA256: 52c2ceed5219d93776d00cd37ffb721a0bd9bc07d29b7cf6be02497d80934d5f
+Filename: pool/main/c/command-not-found/command-not-found_3.5.0-15_aarch64.deb
+Size: 24860
+MD5sum: 50f73ddff2cf49806a6d2c11188b7322
+SHA1: 20a07c99f339cb4dc589a55b7fdd3c9baa8e1b3c
+SHA256: ae8e210178e8711c7902cebcf502d3e6a96156e811fbe261902fa45babe6b435
 Homepage: https://github.com/termux/command-not-found
 Description: Suggest installation of packages in interactive shell sessions
 
