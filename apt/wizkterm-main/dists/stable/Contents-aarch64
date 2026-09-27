@@ -97,6 +97,7 @@ data/data/com.wizkterm/files/usr/bin/doxygen		    doxygen
 data/data/com.wizkterm/files/usr/bin/doxyparse		    doxygen
 data/data/com.wizkterm/files/usr/bin/dsymutil		    llvm
 data/data/com.wizkterm/files/usr/bin/dwp		    libllvm
+data/data/com.wizkterm/files/usr/bin/ed			    ed
 data/data/com.wizkterm/files/usr/bin/egrep		    grep
 data/data/com.wizkterm/files/usr/bin/enosys		    util-linux
 data/data/com.wizkterm/files/usr/bin/exch		    util-linux
@@ -156,6 +157,7 @@ data/data/com.wizkterm/files/usr/bin/ionice		    util-linux
 data/data/com.wizkterm/files/usr/bin/ipmaddr		    net-tools
 data/data/com.wizkterm/files/usr/bin/iptunnel		    net-tools
 data/data/com.wizkterm/files/usr/bin/irqtop		    util-linux
+data/data/com.wizkterm/files/usr/bin/ischroot		    debianutils
 data/data/com.wizkterm/files/usr/bin/isosize		    util-linux
 data/data/com.wizkterm/files/usr/bin/ld			    lld
 data/data/com.wizkterm/files/usr/bin/ld.lld		    lld
@@ -338,6 +340,7 @@ data/data/com.wizkterm/files/usr/bin/rarp		    net-tools
 data/data/com.wizkterm/files/usr/bin/readelf		    llvm
 data/data/com.wizkterm/files/usr/bin/readprofile	    util-linux
 data/data/com.wizkterm/files/usr/bin/readtapi		    libllvm
+data/data/com.wizkterm/files/usr/bin/red		    ed
 data/data/com.wizkterm/files/usr/bin/reduce-chunk-list	    llvm
 data/data/com.wizkterm/files/usr/bin/rename		    util-linux
 data/data/com.wizkterm/files/usr/bin/renice		    util-linux
@@ -347,8 +350,10 @@ data/data/com.wizkterm/files/usr/bin/rev		    util-linux
 data/data/com.wizkterm/files/usr/bin/route		    net-tools
 data/data/com.wizkterm/files/usr/bin/rtcwake		    util-linux
 data/data/com.wizkterm/files/usr/bin/run-clang-tidy	    clang
+data/data/com.wizkterm/files/usr/bin/run-parts		    debianutils
 data/data/com.wizkterm/files/usr/bin/sancov		    llvm
 data/data/com.wizkterm/files/usr/bin/sanstats		    llvm
+data/data/com.wizkterm/files/usr/bin/savelog		    debianutils
 data/data/com.wizkterm/files/usr/bin/scan-build		    clang
 data/data/com.wizkterm/files/usr/bin/scan-build-py	    clang
 data/data/com.wizkterm/files/usr/bin/scan-view		    clang
@@ -378,6 +383,7 @@ data/data/com.wizkterm/files/usr/bin/tblgen-lsp-server	    mlir
 data/data/com.wizkterm/files/usr/bin/tblgen-to-irdl	    mlir
 data/data/com.wizkterm/files/usr/bin/tclsh		    tcl
 data/data/com.wizkterm/files/usr/bin/tclsh8.6		    tcl
+data/data/com.wizkterm/files/usr/bin/tempfile		    debianutils
 data/data/com.wizkterm/files/usr/bin/termux-elf-cleaner	    termux-elf-cleaner
 data/data/com.wizkterm/files/usr/bin/tic		    ncurses-utils
 data/data/com.wizkterm/files/usr/bin/toe		    ncurses-utils
@@ -13950,8 +13956,10 @@ data/data/com.wizkterm/files/usr/share/clang/run-find-all-symbols.py clang
 data/data/com.wizkterm/files/usr/share/doc/brotli/copyright brotli
 data/data/com.wizkterm/files/usr/share/doc/ca-certificates/copyright ca-certificates
 data/data/com.wizkterm/files/usr/share/doc/dash/copyright   dash
+data/data/com.wizkterm/files/usr/share/doc/debianutils/copyright debianutils
 data/data/com.wizkterm/files/usr/share/doc/diffutils/copyright diffutils
 data/data/com.wizkterm/files/usr/share/doc/doxygen/copyright doxygen
+data/data/com.wizkterm/files/usr/share/doc/ed/copyright	    ed
 data/data/com.wizkterm/files/usr/share/doc/expat/AUTHORS    libexpat
 data/data/com.wizkterm/files/usr/share/doc/expat/changelog  libexpat
 data/data/com.wizkterm/files/usr/share/doc/findutils/copyright findutils
@@ -14453,6 +14461,7 @@ data/data/com.wizkterm/files/usr/share/fonts/TTF/DejaVuSerifCondensed.ttf ttf-de
 data/data/com.wizkterm/files/usr/share/gettext/its/fontconfig.its fontconfig
 data/data/com.wizkterm/files/usr/share/gettext/its/fontconfig.loc fontconfig
 data/data/com.wizkterm/files/usr/share/info/diffutils.info  diffutils
+data/data/com.wizkterm/files/usr/share/info/ed.info	    ed
 data/data/com.wizkterm/files/usr/share/info/find-maint.info findutils
 data/data/com.wizkterm/files/usr/share/info/find.info	    findutils
 data/data/com.wizkterm/files/usr/share/info/gawk.info	    gawk
@@ -14512,6 +14521,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/dmesg.1.gz  util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/domainname.1.gz net-tools
 data/data/com.wizkterm/files/usr/share/man/man1/doxygen.1.gz doxygen
 data/data/com.wizkterm/files/usr/share/man/man1/dsymutil.1.gz llvm
+data/data/com.wizkterm/files/usr/share/man/man1/ed.1.gz	    ed
 data/data/com.wizkterm/files/usr/share/man/man1/enosys.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/exch.1.gz   util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/fadvise.1.gz util-linux
@@ -14539,6 +14549,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/infocmp.1.gz ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/infotocap.1.gz ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/ionice.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/irqtop.1.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man1/ischroot.1.gz debianutils
 data/data/com.wizkterm/files/usr/share/man/man1/ld.1.gz	    lld
 data/data/com.wizkterm/files/usr/share/man/man1/ld.lld.1.gz lld
 data/data/com.wizkterm/files/usr/share/man/man1/lit.1.gz    libllvm
@@ -14633,6 +14644,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/python3.1.gz python
 data/data/com.wizkterm/files/usr/share/man/man1/python3.14.1.gz python
 data/data/com.wizkterm/files/usr/share/man/man1/ranlib.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/readelf.1.gz llvm
+data/data/com.wizkterm/files/usr/share/man/man1/red.1.gz    ed
 data/data/com.wizkterm/files/usr/share/man/man1/rename.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/renice.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/reset.1.gz  ncurses
@@ -14656,6 +14668,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/tabs.1.gz   ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/taskset.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/tblgen.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/tclsh.1.gz  tcl
+data/data/com.wizkterm/files/usr/share/man/man1/tempfile.1.gz debianutils
 data/data/com.wizkterm/files/usr/share/man/man1/tic.1.gz    ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/toe.1.gz    ncurses-utils
 data/data/com.wizkterm/files/usr/share/man/man1/tput.1.gz   ncurses-utils
@@ -20106,6 +20119,7 @@ data/data/com.wizkterm/files/usr/share/man/man8/readprofile.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/resizepart.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/route.8.gz  net-tools
 data/data/com.wizkterm/files/usr/share/man/man8/rtcwake.8.gz util-linux
+data/data/com.wizkterm/files/usr/share/man/man8/savelog.8.gz debianutils
 data/data/com.wizkterm/files/usr/share/man/man8/setarch.8.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man8/sfdisk.8.gz fdisk
 data/data/com.wizkterm/files/usr/share/man/man8/slattach.8.gz net-tools
