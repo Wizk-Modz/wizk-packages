@@ -37,9 +37,21 @@ jobs:
         fi
         echo "Dùng run-id=$RUN_ID sha=$SHA"
         ARTIFACT_NAME="debs-aarch64-${SHA}"
-        gh run download "$RUN_ID" --repo "${{ github.repository }}" -n "$ARTIFACT_NAME"
-        mkdir -p debs
-        for archive in ${ARTIFACT_NAME}/*.tar; do
+
+        # Không dùng `gh run download` vì nó từ chối artifact chứa tên file
+        # có ký tự đặc biệt (lỗi path traversal). Tải trực tiếp qua API.
+        ARTIFACT_ID=$(gh api "repos/${{ github.repository }}/actions/runs/${RUN_ID}/artifacts" \
+          --jq ".artifacts[] | select(.name == \"${ARTIFACT_NAME}\") | .id")
+        if [ -z "$ARTIFACT_ID" ]; then
+          echo "::error::không tìm thấy artifact '${ARTIFACT_NAME}' trong run ${RUN_ID}"
+          exit 1
+        fi
+
+        curl -sSL -H "Authorization: token ${GH_TOKEN}" \
+          -o artifact.zip \
+          "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip"
+        unzip -oq artifact.zip -d artifact-dl
+        for archive in artifact-dl/*.tar; do
           tar xf "$archive" -C .
         done
         echo "Số .deb: $(ls debs/*.deb 2>/dev/null | wc -l)"
