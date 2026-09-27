@@ -16588,6 +16588,7 @@ data/data/com.wizkterm/files/usr/libexec/scdaemon	    scdaemon
 data/data/com.wizkterm/files/usr/libexec/syslogd	    inetutils
 data/data/com.wizkterm/files/usr/libexec/telnetd	    inetutils
 data/data/com.wizkterm/files/usr/libexec/termux-am/am.apk   termux-am
+data/data/com.wizkterm/files/usr/libexec/termux/command-not-found command-not-found
 data/data/com.wizkterm/files/usr/libexec/tftpd		    inetutils
 data/data/com.wizkterm/files/usr/share/LICENSES/AGPL-3.0-only.txt termux-licenses
 data/data/com.wizkterm/files/usr/share/LICENSES/AGPL-3.0-or-later.txt termux-licenses
@@ -18124,6 +18125,7 @@ data/data/com.wizkterm/files/usr/share/doc/bash/bashref.html bash
 data/data/com.wizkterm/files/usr/share/doc/bash/copyright   bash
 data/data/com.wizkterm/files/usr/share/doc/brotli/copyright brotli
 data/data/com.wizkterm/files/usr/share/doc/ca-certificates/copyright ca-certificates
+data/data/com.wizkterm/files/usr/share/doc/command-not-found/copyright command-not-found
 data/data/com.wizkterm/files/usr/share/doc/coreutils/copyright coreutils
 data/data/com.wizkterm/files/usr/share/doc/dash/copyright   dash
 data/data/com.wizkterm/files/usr/share/doc/debianutils/copyright debianutils

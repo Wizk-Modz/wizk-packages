@@ -195,6 +195,20 @@ SHA256: c83a7ab374163977c1f3c5b332b0ec2c1873a4f09ca37be45679f2f61dd33dee
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
+Package: command-not-found
+Version: 3.5.0-13
+Architecture: aarch64
+Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
+Installed-Size: 128
+Depends: libc++
+Filename: pool/main/c/command-not-found/command-not-found_3.5.0-13_aarch64.deb
+Size: 24188
+MD5sum: 5393b552e217c8e5593bf529b53c98bb
+SHA1: c1bd23859d2e10421d39fa5c4f24c9c158f49496
+SHA256: 9a4edd0dc53729286019869b080f69f2c36e65b31f184e5f2a150314e4bd7d30
+Homepage: https://github.com/termux/command-not-found
+Description: Suggest installation of packages in interactive shell sessions
+
 Package: coreutils
 Version: 9.11-1
 Architecture: aarch64
