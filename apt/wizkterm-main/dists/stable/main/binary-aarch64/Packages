@@ -87,6 +87,21 @@ SHA256: c83a7ab374163977c1f3c5b332b0ec2c1873a4f09ca37be45679f2f61dd33dee
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
 
+Package: curl
+Version: 8.22.0
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 424
+Depends: libcurl (= 8.22.0)
+Filename: pool/main/c/curl/curl_8.22.0_aarch64.deb
+Size: 245544
+MD5sum: 365fc6d02dd6edf03e91d676aa2ed7a3
+SHA1: 77ebe495e30dfa37a7d1a5e77c455f62fab8ef0f
+SHA256: 2cf62e6905cf7dd70a07240e161189e5974edb4986f11fcee6d2efafa21a0c3d
+Homepage: https://curl.se/
+Description: Command line tool for transferring data with URL syntax
+
 Package: dash
 Version: 0.5.12-2
 Architecture: aarch64
@@ -595,6 +610,38 @@ SHA256: 0822a1dc75d99862b19429957b21a128495c5bcc5fe90c5be62678da418f3303
 Homepage: http://michael.dipperstein.com/crypt/
 Description: A crypt(3) implementation
 
+Package: libcurl
+Version: 8.22.0
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 3540
+Depends: libnghttp2, libnghttp3, libngtcp2, libssh2, openssl (>= 1:3.2.1-1), zlib
+Conflicts: apt (<< 1.4.8-8)
+Breaks: libcurl-dev
+Replaces: libcurl-dev
+Filename: pool/main/l/libcurl/libcurl_8.22.0_aarch64.deb
+Size: 1033388
+MD5sum: f9cbffde0068785ef6cd875fc7a27654
+SHA1: 19fe0b71fef911b6707edd265050b845733bf17e
+SHA256: 669dcf9a8dd5b65a508e12bc4b5bd1f875d540ca98302202ac335839cb59b46a
+Homepage: https://curl.se/
+Description: Easy-to-use client-side URL transfer library
+
+Package: libcurl-static
+Version: 8.22.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2068
+Depends: libcurl (= 8.22.0)
+Filename: pool/main/l/libcurl-static/libcurl-static_8.22.0_aarch64.deb
+Size: 426772
+MD5sum: 09e630eb48d4321008aff0aca34895f9
+SHA1: 2b6f71e24390c6b0ebdee8b7ee7de980f7b75da6
+SHA256: bd749bc0fbd77c4ef6eebcb59c51dbfa4bc2327d41148708d8de09429ca3c642
+Homepage: https://curl.se/
+Description: Static libraries for libcurl
+
 Package: libedit
 Version: 20260512-3.1-0
 Architecture: aarch64
@@ -891,6 +938,91 @@ SHA256: f958ee16ad090d96b0d3bf3b931202384f8ce6411a3982c17ce60bb99526b7f4
 Homepage: https://www.mpfr.org/
 Description: Static libraries for libmpfr
 
+Package: libnghttp2
+Version: 1.70.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 520
+Breaks: libnghttp2-dev
+Replaces: libnghttp2-dev
+Filename: pool/main/l/libnghttp2/libnghttp2_1.70.0_aarch64.deb
+Size: 95940
+MD5sum: 672eefb83c99cb3ec30fe606af0384cc
+SHA1: 32a8031d5f02b720cdc42271cca7ead3121c6669
+SHA256: 22242b79b11127c66dc94166259a5e9c028fcd2b45a14dc11100bbcb560a4cb8
+Homepage: https://nghttp2.org/
+Description: nghttp HTTP 2.0 library
+
+Package: libnghttp2-static
+Version: 1.70.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 324
+Depends: libnghttp2 (= 1.70.0)
+Filename: pool/main/l/libnghttp2-static/libnghttp2-static_1.70.0_aarch64.deb
+Size: 64080
+MD5sum: ca5e2eb02a2c5c67eb4de0b6802fc909
+SHA1: 4371d75bcb74c0d084e74f56033959609b554fff
+SHA256: 37d8238ca81df1ec656c120abbc166be2ee2f36e8e4fbc71d07ed6266f82e31c
+Homepage: https://nghttp2.org/
+Description: Static libraries for libnghttp2
+
+Package: libnghttp3
+Version: 1.18.0
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 348
+Filename: pool/main/l/libnghttp3/libnghttp3_1.18.0_aarch64.deb
+Size: 69824
+MD5sum: 4d3fb703f46b39f39f7b349137aa707b
+SHA1: 6360f1d3ed86e0d7f341ffb5637df9482fda9b31
+SHA256: 81a5e9f2f516dfb5a71daedf40255777cce515307675d661613ba4008fed14f9
+Homepage: https://nghttp2.org/nghttp3/
+Description: HTTP/3 library written in C
+
+Package: libnghttp3-static
+Version: 1.18.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 336
+Depends: libnghttp3 (= 1.18.0)
+Filename: pool/main/l/libnghttp3-static/libnghttp3-static_1.18.0_aarch64.deb
+Size: 63720
+MD5sum: c6f6e3e9952ea1f624ca2e10ba2e6734
+SHA1: 7cfc037066617bb80b5ed5e67dc0cadad90d4df4
+SHA256: 8601e7f202ca417d0d6176228dab4664aad176665d8520a31715a1da85671be4
+Homepage: https://nghttp2.org/nghttp3/
+Description: Static libraries for libnghttp3
+
+Package: libngtcp2
+Version: 1.25.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 792
+Depends: openssl
+Filename: pool/main/l/libngtcp2/libngtcp2_1.25.0_aarch64.deb
+Size: 174256
+MD5sum: 0fa78ca7751798a88eadb0a5d47a5a1f
+SHA1: ceb6cd88c6f956a7f30daea9a83bcc7ef3b8858d
+SHA256: 42ca0c2eac744402de8eef165aa665b1efab963cb76a5533ede94eacbf0fed1e
+Homepage: https://github.com/ngtcp2/ngtcp2
+Description: Implementation of IETF QUIC protocol
+
+Package: libngtcp2-static
+Version: 1.25.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 852
+Depends: libngtcp2 (= 1.25.0)
+Filename: pool/main/l/libngtcp2-static/libngtcp2-static_1.25.0_aarch64.deb
+Size: 154680
+MD5sum: 488d858520103833e4f9df9c6e3f32c6
+SHA1: 7e6052326718d0421004b562da43906a6d3f617d
+SHA256: b1b3d952cb26d40cc313b06e8fa05f18524dda59e2f1ed07e15046ed0f33953e
+Homepage: https://github.com/ngtcp2/ngtcp2
+Description: Static libraries for libngtcp2
+
 Package: libpng
 Version: 1.6.58
 Architecture: aarch64
@@ -995,6 +1127,36 @@ SHA1: 9bf153f6dd7c98fa7fef69188cb38bbca0f6f86c
 SHA256: 851982eedee43cb051ab6361f1525a500205fde31781e0190433b4e5634b505c
 Homepage: https://www.sqlite.org
 Description: tcl bindings for SQLite
+
+Package: libssh2
+Version: 1.11.1-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1160
+Depends: openssl, zlib
+Breaks: libssh2-dev
+Replaces: libssh2-dev
+Filename: pool/main/l/libssh2/libssh2_1.11.1-2_aarch64.deb
+Size: 219236
+MD5sum: bc2f6b90a3903e575d78a6977da620db
+SHA1: 5a38421de525d7acb248b0c17fe8b67b032120c4
+SHA256: e9dd14a3a85e1f5020696ca945802b46bf5cf5236e87c387d5447273d2ac8b27
+Homepage: https://www.libssh2.org
+Description: Client-side library implementing the SSH2 protocol
+
+Package: libssh2-static
+Version: 1.11.1-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 488
+Depends: libssh2 (= 1.11.1-2)
+Filename: pool/main/l/libssh2-static/libssh2-static_1.11.1-2_aarch64.deb
+Size: 111740
+MD5sum: 9ae5d2e11c00eca0bf024412b4426a83
+SHA1: bed1927b4246583a3dbede5d45df5cac412279e3
+SHA256: 89c7ff68249190b02fdef1062d80e6192d707c754a789f503d8710309ad76063
+Homepage: https://www.libssh2.org
+Description: Static libraries for libssh2
 
 Package: libtirpc
 Version: 1.3.8
