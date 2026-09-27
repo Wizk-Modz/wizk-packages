@@ -2796,10 +2796,10 @@ Breaks: python2 (<= 2.7.15), python-dev
 Replaces: python-dev
 Provides: python3
 Filename: pool/main/p/python/python_3.14.6-1_aarch64.deb
-Size: 4825428
-MD5sum: a791cc7fb59cef9fc85fb99b767924cc
-SHA1: 2691ce2993a9e6afd1f0ec0ffee225c632671775
-SHA256: da0929e1eb83147d80e91fff8bc1b0b00b268c5d8717f591d332923fdd28ae32
+Size: 4820076
+MD5sum: ab16ccb58248e1d5c4150e8f8ec581a3
+SHA1: dfd1b643b21a2e410f8a1f780536e34d5982ea24
+SHA256: 86d11522c3cea824c0808bfd705afc6284af59a308b96bf1107d5f0ab3d82227
 Homepage: https://python.org/
 Description: Python 3 programming language intended to enable clear programs
 
@@ -2812,10 +2812,10 @@ Depends: python (= 3.14.6-1)
 Breaks: python (<< 3.11.1-3)
 Replaces: python (<< 3.11.1-3)
 Filename: pool/main/p/python-ensurepip-wheels/python-ensurepip-wheels_3.14.6-1_all.deb
-Size: 1740100
-MD5sum: a406a8b331cf16f7678856d86e12ae5e
-SHA1: 352c7831cc00925b036157eb875a1373f2130bf8
-SHA256: e72549bb747b3650f08496c28c474d56fb635d0433d74e1083115aadc8bd02d8
+Size: 1740112
+MD5sum: 0f8576a3ff99802c037c4a1c97e4df4d
+SHA1: 43f96ea2a711a177b614b5d9ddeb74993ae1edc5
+SHA256: 99347215e4844eeeeaa7dd8787b6c54bb1aa5b3b35e5c20596140ffae80c8304
 Homepage: https://python.org/
 Description: Wheels for Python ensurepip
 
@@ -2842,10 +2842,10 @@ Maintainer: Yaksh Bariya <thunder-coding@termux.dev>
 Installed-Size: 51996
 Depends: python (= 3.14.6-1)
 Filename: pool/main/p/python-static/python-static_3.14.6-1_aarch64.deb
-Size: 7735420
-MD5sum: be9fd3b8291effcca7a9e035e15571dc
-SHA1: f7df9604fc03193455b7d9ff7273c2f65ab7780b
-SHA256: d96f3c44ac8a79bb5f35d9fdf5ac512df8fa36016112b71415c6b40d51a68f69
+Size: 7735552
+MD5sum: b7b02338fd920c2ee21268d1aaf1178b
+SHA1: b4f4e00ec6352a5afb95bba633f83a2cf4382a95
+SHA256: a4568fad9e360d37efe9727c23233abd210cf7d946fea1c0d921048d16bbdbb9
 Homepage: https://python.org/
 Description: Static libraries for python
 
@@ -2858,10 +2858,10 @@ Depends: tcl, tk, python (= 3.14.6-1)
 Breaks: python (<< 3.11.1-3)
 Replaces: python (<< 3.11.1-3)
 Filename: pool/main/p/python-tkinter/python-tkinter_3.14.6-1_aarch64.deb
-Size: 507204
-MD5sum: 9a9a35205c0150d6135ded372da3c662
-SHA1: acb9af94b531b00b5472f04324ce8984af700ca6
-SHA256: 8e3899162c6604a3c096a6f2513414f55320cfbfea82bf4cc17713073251ade9
+Size: 507108
+MD5sum: e6d1a6f9267426ad7661c92f3e599ea2
+SHA1: 58d6fe40b1daac9d6e8aeb381c6b481c672e334a
+SHA256: 3fe6e9b5b98524bce1a27ce81b34fd711a60ff49dab2693a7fa0ffec725e2dc8
 Homepage: https://python.org/
 Description: Tkinter support for Python 3
 
