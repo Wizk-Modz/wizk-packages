@@ -3798,6 +3798,21 @@ SHA256: 9d2da6d58e57d3982e0787fbbcf705e72a79a8e250b99a06740868631fbd51b2
 Homepage: https://termux.dev/
 Description: Basic system tools for Termux
 
+Package: texinfo
+Version: 7.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 10868
+Depends: gawk, libiconv, ncurses, perl
+Recommends: update-info-dir
+Filename: pool/main/t/texinfo/texinfo_7.3_aarch64.deb
+Size: 1160844
+MD5sum: 06ad6b3a32aaba69da9be0370779ebfd
+SHA1: eb769930abaa4a9650f633e8bc914007c109349a
+SHA256: bcb794dbd6c7a140689265e8995b78cc08ec9263a3a03df7040634b0a6eb61cc
+Homepage: https://www.gnu.org/software/texinfo/
+Description: Documentation system for on-line information and printed output
+
 Package: tk
 Version: 8.6.14-1
 Architecture: aarch64
@@ -3880,6 +3895,20 @@ SHA1: 6cd177dfe94616e423356f0ca80e15ec50ee5fc5
 SHA256: 9d206f5edb2c74322feb6d31ae30c83bbec9df18a6d3a35f32cc7c541e969cf2
 Homepage: https://sourceforge.net/projects/infozip/
 Description: Tools for working with zip files
+
+Package: update-info-dir
+Version: 7.3
+Architecture: all
+Maintainer: @termux
+Installed-Size: 48
+Depends: texinfo (= 7.3)
+Filename: pool/main/u/update-info-dir/update-info-dir_7.3_all.deb
+Size: 2488
+MD5sum: 4b7516d5076e8a610a34ec32893f0163
+SHA1: 684929c31b7efc19cabefc0eeb4f3f6546d152c5
+SHA256: 53eb8711b1e6073af8358f6b5e7794d1cc8bd059457e0147df0c5fe1a54854f9
+Homepage: https://www.gnu.org/software/texinfo/
+Description: Update or create index file from all installed info files in directory
 
 Package: utf8proc
 Version: 2.12.0
