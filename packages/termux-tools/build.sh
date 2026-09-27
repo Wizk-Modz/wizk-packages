@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Basic system tools for Termux"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.46.0+really1.45.0"
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL=https://github.com/termux/termux-tools/archive/refs/tags/v1.45.0.tar.gz
 TERMUX_PKG_SHA256=1ae29b1b875d95cc626dae323b45a2ace759969862d96094b2fa6d13bffe20d2
 TERMUX_PKG_ESSENTIAL=true
@@ -22,6 +22,12 @@ TERMUX_PKG_DEPENDS="bzip2, coreutils, curl, dash, diffutils, findutils, gawk, gr
 TERMUX_PKG_RECOMMENDS="ed, dos2unix, inetutils, net-tools, patch, unzip"
 
 termux_step_pre_configure() {
+	# configure.ac mặc định app package là com.termux và prefix là
+	# /data/data/com.termux/files/usr nếu các biến này chưa được export,
+	# khiến các script (pkg, termux-setup-storage, ...) hardcode sai prefix.
+	export TERMUX_APP_PACKAGE
+	export TERMUX_BASE_DIR
+	export TERMUX_PREFIX
 	autoreconf -vfi
 }
 
