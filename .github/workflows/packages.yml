@@ -378,7 +378,7 @@ jobs:
           fi
         fi
 
-        for archive in debs-*/debs-{aarch64}-${{ github.sha }}.tar; do
+        for archive in debs-*/debs-aarch64-${{ github.sha }}.tar; do
           tar xf "$archive"
         done
 
