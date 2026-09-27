@@ -120,6 +120,20 @@ SHA256: 4031c130a8546b19e334f5c86c89eb986119ff93041433cfcdb665661e00849c
 Homepage: https://packages.debian.org/apt
 Description: APT transport for anonymous package downloads via Tor
 
+Package: aria2
+Version: 1.37.0-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2696
+Depends: libc++, c-ares, openssl, libxml2, zlib
+Filename: pool/main/a/aria2/aria2_1.37.0-3_aarch64.deb
+Size: 680280
+MD5sum: 5682bdf7199d6141803915bde82c4b60
+SHA1: 7d2e2aab80d6a2c31a980b090c928d42ac1024e3
+SHA256: 982e3ee90740d4ad03e5ef93ab111d1d622dd8fefd07ee976966155c33b7b962
+Homepage: https://aria2.github.io
+Description: Download utility supporting HTTP/HTTPS, FTP, BitTorrent and Metalink
+
 Package: attr
 Version: 2.6.0
 Architecture: aarch64
@@ -3755,6 +3769,33 @@ SHA256: 45ebf433f440122ffd905abcda53bd900de9a115c5e4ca946ef6764f00ec736e
 Homepage: https://rsync.samba.org/
 Description: Fast incremental file transfer utility
 
+Package: runit
+Version: 2.1.2-4
+Architecture: aarch64
+Maintainer: Henrik Grimler @Grimler91
+Installed-Size: 280
+Filename: pool/main/r/runit/runit_2.1.2-4_aarch64.deb
+Size: 54392
+MD5sum: b6897e8bea1aaa864876abb7f43ce33d
+SHA1: c4dae2ed32dde47b1a11afdf83deea512c580fba
+SHA256: 45244e0b4f358e1fdc18a0d676c0baae1179d88fd92dd977b87c645f085fb1a3
+Homepage: http://smarden.org/runit
+Description: Tools to provide service supervision and to manage services
+
+Package: runit-static
+Version: 2.1.2-4
+Architecture: aarch64
+Maintainer: Henrik Grimler @Grimler91
+Installed-Size: 160
+Depends: runit (= 2.1.2-4)
+Filename: pool/main/r/runit-static/runit-static_2.1.2-4_aarch64.deb
+Size: 15932
+MD5sum: c98e86af96d00c46ad5d345f70562a3f
+SHA1: 6c39671fffb02eaa429a18b056e0b885659b2c9d
+SHA256: 432ef732ac77ebd58c6313e8a2294fb00f1cc242da2c223520d925b87671104d
+Homepage: http://smarden.org/runit
+Description: Static libraries for runit
+
 Package: scdaemon
 Version: 2.5.17
 Architecture: aarch64
@@ -3857,6 +3898,19 @@ SHA1: ba88435911d816c34fb103d343ecdaf00592bd99
 SHA256: 90aa0ad489bd073ffd1be603f28db73b46ee85edcc5aee9c5b34c721a65e8237
 Homepage: https://www.sqlite.org
 Description: Command line shell for SQLite
+
+Package: sshpass
+Version: 1.10-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 68
+Filename: pool/main/s/sshpass/sshpass_1.10-1_aarch64.deb
+Size: 8520
+MD5sum: 42c802fc05c818bc7edc3453f7633ff1
+SHA1: 0de9d2c05a03d6e47d75240fe37d48bc2ca30926
+SHA256: 46fc9613f50b608aad1ebcbfd6a231c32af932326e26b3ba71edd1dca06fc0b6
+Homepage: https://sourceforge.net/projects/sshpass/
+Description: Noninteractive ssh password provider
 
 Package: subversion
 Version: 1.14.5-3
@@ -3989,6 +4043,34 @@ SHA256: 58f1fcb876d6c39553271eb3ae456c80acd26df9ddfc53ac41a01de24527aeb7
 Homepage: https://github.com/termux/termux-am-socket
 Description: A faster version of am with less features that only works while Termux is running
 
+Package: termux-api
+Version: 0.60.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 364
+Depends: bash, util-linux, termux-am (>= 0.8.0)
+Filename: pool/main/t/termux-api/termux-api_0.60.0_aarch64.deb
+Size: 30112
+MD5sum: 4e1fd074142e6c4557d6528ef99bd22c
+SHA1: 8e6f3a118484e0001e979b610dc9e62b23240510
+SHA256: da249cb7df18029e5cf6a1335a35402295964091219ec288ada0bdc82eac98df
+Homepage: https://wiki.termux.com/wiki/Termux:API
+Description: Termux API commands (install also the Termux:API app)
+
+Package: termux-api-static
+Version: 0.60.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 48
+Depends: termux-api (= 0.60.0)
+Filename: pool/main/t/termux-api-static/termux-api-static_0.60.0_aarch64.deb
+Size: 6152
+MD5sum: a37c259ae3e9a151bdb397769931b8de
+SHA1: 83277ff038bbcb867b18299699cf6ed31547f6de
+SHA256: cec1da8ea12b46facc0679d4a1985415ba78b043613948e6cbd4b094b61301e7
+Homepage: https://wiki.termux.com/wiki/Termux:API
+Description: Static libraries for termux-api
+
 Package: termux-auth
 Version: 1.5.0-1
 Architecture: aarch64
@@ -4103,6 +4185,20 @@ SHA256: 34d86f7a5d20303f2e38a2ecee608c9c5802265c02f06d5e7dd3823efae202d8
 Homepage: https://termux.dev
 Description: Contains LICENSE files for common licenses
 
+Package: termux-services
+Version: 0.13-1
+Architecture: all
+Maintainer: Henrik Grimler @Grimler91
+Installed-Size: 84
+Depends: coreutils, dpkg, runit
+Filename: pool/main/t/termux-services/termux-services_0.13-1_all.deb
+Size: 1944
+MD5sum: 7ab2f2426aa72836baf8d7f615f845e5
+SHA1: daf0320c5ab9ca1961b4ea45604ae5322e189c79
+SHA256: 136b16713cd25237a850257166d949dc19c037b6d80cf04c506f821bfba04fd8
+Homepage: https://github.com/termux/termux-services/
+Description: Service daemon for Termux
+
 Package: termux-tools
 Version: 1.46.0+really1.45.0-3
 Architecture: aarch64
@@ -4150,6 +4246,20 @@ SHA1: 1b50ca4f70e4e79723bd4fa5ef69e0263c7b249a
 SHA256: e6ec703b19275e496db9bd677b740e0396a7f63edfe7dc05b9d7bbac426c36b7
 Homepage: https://tcl.sourceforge.net/
 Description: A windowing toolkit for use with tcl
+
+Package: tmux
+Version: 3.7c-1
+Architecture: aarch64
+Maintainer: Joshua Kahn <tom@termux.dev>
+Installed-Size: 1192
+Depends: ncurses, libevent, libandroid-support, libandroid-glob, utf8proc
+Filename: pool/main/t/tmux/tmux_3.7c-1_aarch64.deb
+Size: 386436
+MD5sum: f20435a05ccb4cae6f4c2036469181fa
+SHA1: ea24d548cf8a271052a8c64e2fcc4f40cf05af2f
+SHA256: ff666994cf318fee2a7cba6c61f33d8c107dd87c969d4d4a14a859750555da2f
+Homepage: https://tmux.github.io/
+Description: Terminal multiplexer
 
 Package: tor
 Version: 0.4.9.13
