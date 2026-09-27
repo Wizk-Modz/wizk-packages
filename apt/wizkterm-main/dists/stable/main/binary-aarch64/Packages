@@ -423,6 +423,22 @@ SHA256: ccd42159d196d5e292a0d31cebb195ffa7db484928afdea0fa6e65dbe6982148
 Homepage: https://www.gnu.org/software/libiconv/
 Description: Utility converting between different character encodings
 
+Package: less
+Version: 710
+Architecture: aarch64
+Essential: yes
+Maintainer: Joshua Kahn <tom@termux.dev>
+Installed-Size: 420
+Depends: ncurses, pcre2
+Replaces: lazyread
+Filename: pool/main/l/less/less_710_aarch64.deb
+Size: 143736
+MD5sum: 05882a7631544875b86a777593f325bb
+SHA1: cfa7976f1487888902a6ae5b532c8ed4988bb02d
+SHA256: 39df23fb5c125b91e3a1c0a5c7494c41c7b727633de823e1321b3b4332241628
+Homepage: https://www.greenwoodsoftware.com/less/
+Description: Terminal pager program used to view the contents of a text file one screen at a time
+
 Package: libacl
 Version: 2.4.0
 Architecture: aarch64
@@ -1658,10 +1674,10 @@ Installed-Size: 1600
 Breaks: ncurses-dev, ncurses-utils (<< 6.1.20190511-4)
 Replaces: ncurses-dev, ncurses-utils (<< 6.1.20190511-4)
 Filename: pool/main/n/ncurses/ncurses_6.6.20260307+really6.5.20250830_aarch64.deb
-Size: 557964
-MD5sum: 1f90e5c26821a81835bba130e43e3ee9
-SHA1: 839a5700d27b6604e29a15f677bbebc6392b0468
-SHA256: b54124c89bd8919e7e51d17798468eb8cadbbefd423451321510fde795addbbd
+Size: 558140
+MD5sum: 7e787c4ad04d917f22219f7d32b8f725
+SHA1: 3b81f275868b3f4da379ec9858bb5bc7716efc86
+SHA256: ef3655113866d06ebebbcc8e0678242c7835e8aa24f88e51babefbf2b3786282
 Homepage: https://invisible-island.net/ncurses/
 Description: Library for text-based user interfaces in a terminal-independent manner
 
@@ -1672,10 +1688,10 @@ Maintainer: @termux
 Installed-Size: 784
 Depends: ncurses (= 6.6.20260307+really6.5.20250830)
 Filename: pool/main/n/ncurses-static/ncurses-static_6.6.20260307+really6.5.20250830_aarch64.deb
-Size: 154332
-MD5sum: ca4b3ae086dac87bafcc372de58aab46
-SHA1: 81799011bcc2c7208a727a5dbf47d5a3de2c1265
-SHA256: fd8eee5c3db6b842ddd4b4f1ba09e7c5e899d9635b8d956e52eedd0d2c7160cb
+Size: 154164
+MD5sum: f7c07881dd48dcddbbbcf969a3004f32
+SHA1: 3a33b0890bcf7fe8a4d41178b900b791e5f927cc
+SHA256: ab5021c5a1e5fcdd247e2cd2aaf11ceea4a624276d44401637b500e5cb98ccc6
 Homepage: https://invisible-island.net/ncurses/
 Description: Static libraries for ncurses
 
@@ -1688,10 +1704,10 @@ Depends: ncurses (= 6.6.20260307+really6.5.20250830)
 Breaks: ncurses (<< 6.4)
 Replaces: ncurses (<< 6.4)
 Filename: pool/main/n/ncurses-ui-libs/ncurses-ui-libs_6.6.20260307+really6.5.20250830_aarch64.deb
-Size: 33020
-MD5sum: d04d3b5386cdb05fccb9efca450c1372
-SHA1: 662fd02145934118712a02e868f0d683c282c073
-SHA256: 16dda096c989dab6351433e821ab5a76810517f322b0b3e518db00e81a2c97e8
+Size: 33024
+MD5sum: 92862cf9844b492c8c9ed1d80581749e
+SHA1: 56d5039d7bb9fec4dc0364963dd56116cc2034c8
+SHA256: 68a7b6587899dfa7fb84ccd847860ce2df9277a2a743ebf75c4d8a3e87688c03
 Homepage: https://invisible-island.net/ncurses/
 Description: Libraries for terminal user interfaces based on ncurses
 
@@ -1702,10 +1718,10 @@ Maintainer: @termux
 Installed-Size: 260
 Depends: ncurses-ui-libs, ncurses (= 6.6.20260307+really6.5.20250830)
 Filename: pool/main/n/ncurses-ui-libs-static/ncurses-ui-libs-static_6.6.20260307+really6.5.20250830_aarch64.deb
-Size: 39516
-MD5sum: d3f9348466c063a5fd3db5f013fe024c
-SHA1: 82a2f67c8a91257a71561c511859768ea07f33d5
-SHA256: 2fa8103080662e2944fcb59f3d533b8e5a84a09343eee1c6c4e9e57c4f4236c1
+Size: 39572
+MD5sum: 9dfba01680cdbf49137cf7e8e433d83b
+SHA1: e2a9c6ed9f49ead5029a6f0cea397255d65621b6
+SHA256: a33207af90dd0a6c63ffc634b00386f2c840140b844f7fc0b0c86107c45b484b
 Homepage: https://invisible-island.net/ncurses/
 Description: Static libraries for terminal user interfaces based on ncurses
 
@@ -1716,10 +1732,10 @@ Maintainer: @termux
 Installed-Size: 272
 Depends: ncurses (= 6.6.20260307+really6.5.20250830)
 Filename: pool/main/n/ncurses-utils/ncurses-utils_6.6.20260307+really6.5.20250830_aarch64.deb
-Size: 89068
-MD5sum: 48ed96ac79c5eedd896d33949dd8cc3c
-SHA1: 75831034c310c6ef9f8a4a5d86989c4e9e7c4818
-SHA256: b412b395181d53556419f55c7d850aac786d1f44e022755eb37d273995dfbe7d
+Size: 89128
+MD5sum: fd4827a2282ad49d71016de69c9ee5ed
+SHA1: 552b3d44c12965c3b300990885a39ee3d8498ed3
+SHA256: 3240480fc4f70af890525dabc0e6de828d7808aea9dc7a5d3fa9265a26b9f5cf
 Homepage: https://invisible-island.net/ncurses/
 Description: Tools for working with terminals
 
@@ -1851,6 +1867,37 @@ SHA1: ecf82b89919d4ab9deb1b42e12b5f5bfae3969f7
 SHA256: 2bfe108871dd8997a32ec4a7febb6bb3b4fcb7e8d4664b1fe99661e2c9c0f949
 Homepage: https://pcre2project.github.io/pcre2/
 Description: A grep with Perl-compatible regular expressions
+
+Package: procps
+Version: 4.0.7-2
+Architecture: aarch64
+Essential: yes
+Maintainer: @termux
+Installed-Size: 912
+Depends: libandroid-glob, libandroid-support, ncurses
+Breaks: procps-dev
+Replaces: procps-dev
+Filename: pool/main/p/procps/procps_4.0.7-2_aarch64.deb
+Size: 226692
+MD5sum: 33c37fa56bd398f2ab9af0f6722c32e9
+SHA1: 4defcf6f3b479d0ee910135cd49cc0a85db140ed
+SHA256: fef281d6610955155d1cf43cef51de28c52d612a9c3a1ffb64c9ed99304cfd58
+Homepage: https://gitlab.com/procps-ng/procps
+Description: Utilities that give information about processes using the /proc filesystem
+
+Package: procps-static
+Version: 4.0.7-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 348
+Depends: procps (= 4.0.7-2)
+Filename: pool/main/p/procps-static/procps-static_4.0.7-2_aarch64.deb
+Size: 53344
+MD5sum: d7df27004e88c8a103d4ea0ac64f2f5f
+SHA1: 30f0c28fb681f14faa5625e049eece52ff83a995
+SHA256: b3660d780af97bcf28691654d2f2f1a7e028c97deba65ed30cd96d85b06c7b73
+Homepage: https://gitlab.com/procps-ng/procps
+Description: Static libraries for procps
 
 Package: python
 Version: 3.14.6-1
