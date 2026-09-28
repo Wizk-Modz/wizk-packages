@@ -1208,6 +1208,20 @@ SHA256: 43c923880b3c858a0adb1e8948de4e0ecf08c8e9d03bd20f99e8e5dcb000c237
 Homepage: https://web.mit.edu/kerberos
 Description: The Kerberos network authentication system
 
+Package: lame
+Version: 4.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 632
+Depends: ncurses, libmp3lame (= 4.0-1)
+Filename: pool/main/l/lame/lame_4.0-1_aarch64.deb
+Size: 179032
+MD5sum: 953782ee83915ab0bb08ab3951661925
+SHA1: cbd1b01c5221bb48eff8191599fe1d552a4a6373
+SHA256: aee8b7295260a19ab31312fa6d73b4f8a6db4b045e4336300271074f8a6e0b2f
+Homepage: https://lame.sourceforge.io/
+Description: High quality MPEG Audio Layer III (MP3) encoder - frontend
+
 Package: ldns
 Version: 1.9.2
 Architecture: aarch64
@@ -2280,6 +2294,36 @@ SHA1: 799b9a2fa6b85e8e0b84b6bb22a7d3ecebcada7d
 SHA256: 821e34f22fc5767ccd81273e5f06f27dd7e48c8d1c10d59357ee7474edc54a85
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for (un)mounting filesystems
+
+Package: libmp3lame
+Version: 4.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 304
+Depends: libiconv, libmpg123
+Breaks: libmp3lame-dev
+Replaces: libmp3lame-dev
+Filename: pool/main/l/libmp3lame/libmp3lame_4.0-1_aarch64.deb
+Size: 98616
+MD5sum: 1f4bc0749c1cc8f9ce07fc1068628eea
+SHA1: 549b7cc807fca672f6d4e9ca6416d977fcfbfcad
+SHA256: 80b21b25e067757eaf2f85a487cfbaf2809511df525177eb6f95ff46333cf641
+Homepage: https://lame.sourceforge.io/
+Description: High quality MPEG Audio Layer III (MP3) encoder
+
+Package: libmp3lame-static
+Version: 4.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 352
+Depends: libmp3lame (= 4.0-1)
+Filename: pool/main/l/libmp3lame-static/libmp3lame-static_4.0-1_aarch64.deb
+Size: 100592
+MD5sum: 54fb371b9d0a99fe0bd4e6b3b73392f1
+SHA1: 9891570fd666a014336235676c26ef96f0063da6
+SHA256: c855dca96f0f293e56fc1bbd4d85f81efc38cd2380e773983add872923cb8cf8
+Homepage: https://lame.sourceforge.io/
+Description: Static libraries for libmp3lame
 
 Package: libmpfr
 Version: 4.2.1-1
@@ -3964,6 +4008,36 @@ SHA1: 65a2804e52e8049d9af24cd8d3b22d5e19ba6aa5
 SHA256: bac024666911ab723ca1f1eb905f3dad4d504b5b2d20e72955da8f11983697de
 Homepage: https://gitlab.com/psmisc/psmisc
 Description: Some small useful utilities that use the proc filesystem
+
+Package: pulseaudio
+Version: 17.0-4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4024
+Depends: dbus, libandroid-stub, libandroid-execinfo, libandroid-glob, libc++, libltdl, libsndfile, libsoxr, libwebrtc-audio-processing, speexdsp
+Breaks: libpulseaudio-dev, libpulseaudio
+Replaces: libpulseaudio-dev, libpulseaudio
+Filename: pool/main/p/pulseaudio/pulseaudio_17.0-4_aarch64.deb
+Size: 848604
+MD5sum: b686c2ad6bc95f2d0a1205bb07cdd7ba
+SHA1: d5f7a42b0a276c7696e6df7e2701f57637e8bbe8
+SHA256: 04fa1da0e55f9f4806bee8cc687912e005a946ff50ff1ac405d7f5f5a3de99ae
+Homepage: https://www.freedesktop.org/wiki/Software/PulseAudio
+Description: A featureful, general-purpose sound server
+
+Package: pulseaudio-glib
+Version: 17.0-4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 84
+Depends: glib, pulseaudio (= 17.0-4)
+Filename: pool/main/p/pulseaudio-glib/pulseaudio-glib_17.0-4_aarch64.deb
+Size: 6852
+MD5sum: e7632e109b250a6d36f626b24e22baab
+SHA1: 2df46830121a7faa38dd4e018b186a87439dbb00
+SHA256: e3bb89bf61c7466a5b7f2fe8976ffb46f06c6e352efc3d310eb4d0e8eda44d15
+Homepage: https://www.freedesktop.org/wiki/Software/PulseAudio
+Description: PulseAudio GLIB mainloop component
 
 Package: python
 Version: 3.14.6-1
