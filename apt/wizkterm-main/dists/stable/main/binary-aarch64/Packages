@@ -2632,6 +2632,36 @@ SHA256: 5a64596ab5953ee74050b1a33947b0cca4e7196049c7a5d943a5fdad46c432bf
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for smart adaptive formatting of tabular data
 
+Package: libsndfile
+Version: 1.2.2-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 676
+Depends: libflac, libmp3lame, libmpg123, libogg, libopus, libvorbis
+Breaks: libsndfile-dev
+Replaces: libsndfile-dev
+Filename: pool/main/l/libsndfile/libsndfile_1.2.2-3_aarch64.deb
+Size: 201632
+MD5sum: 82795b4c6b9d51174ac6e4c268dc110d
+SHA1: e15bbaa0a6b393cd995238bc6574276b6b566baa
+SHA256: c0c6253d93716468ba4ebc2bcae5d5c13c2fd67d0b92a81aaa27af62befc19d7
+Homepage: http://www.mega-nerd.com/libsndfile
+Description: Library for reading/writing audio files
+
+Package: libsndfile-static
+Version: 1.2.2-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 796
+Depends: libsndfile (= 1.2.2-3)
+Filename: pool/main/l/libsndfile-static/libsndfile-static_1.2.2-3_aarch64.deb
+Size: 167840
+MD5sum: b58e6822535b94e451e5c12263a62e34
+SHA1: c4b8d4483e18efda65fdbaea0ecbca5ce270157d
+SHA256: e71393d65b10fca7b717234f0bbd8579f50039c0ee7e85a0610eda653362c89d
+Homepage: http://www.mega-nerd.com/libsndfile
+Description: Static libraries for libsndfile
+
 Package: libsodium
 Version: 1.0.22-1
 Architecture: aarch64
