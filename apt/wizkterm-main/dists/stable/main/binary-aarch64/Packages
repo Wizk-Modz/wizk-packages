@@ -2363,10 +2363,10 @@ Installed-Size: 616
 Breaks: mpg123 (<< 1.33.1-1)
 Replaces: mpg123 (<< 1.33.1-1)
 Filename: pool/main/l/libmpg123/libmpg123_1.33.7_aarch64.deb
-Size: 174580
-MD5sum: 25e9bf0f62b33d6fb747320907454596
-SHA1: 1e945e36da77a58264cd1cda9e26da0d4126e6f9
-SHA256: 3c1e6cbe5e1ec6ee7f4a46f83ef7f615117e4ae56bda86911f2b8ace60635c9b
+Size: 174436
+MD5sum: 2308f5974aa10a0bf5292828167510c6
+SHA1: 87e9e11c2651105578122a2b4b40281401840e83
+SHA256: b97aa9deeb27c3495c86f963711edf5f3f79619aacfa49ab00e13bc8e2040c11
 Homepage: https://mpg123.org/
 Description: Fast console MPEG Audio Player and decoder library
 
@@ -2377,10 +2377,10 @@ Maintainer: @termux
 Installed-Size: 616
 Depends: libmpg123 (= 1.33.7)
 Filename: pool/main/l/libmpg123-static/libmpg123-static_1.33.7_aarch64.deb
-Size: 151288
-MD5sum: 39665f95170b06e9e8ea5a8060aea243
-SHA1: 70a29363f25c8264257e137c0d0695bdc7e7e150
-SHA256: c108665fbe7e58c4469fb73272e1164594c2d572ffc715ca7bb77582789fdbc1
+Size: 151248
+MD5sum: 5fbd3084fa2ae7883107fada7cc07299
+SHA1: c3c29ff32160f05240015497a288427ed31d26b9
+SHA256: cab5bca23b86e28677c8410a7f47ca469c8c1bc3bf521073c9837b95b3b8366a
 Homepage: https://mpg123.org/
 Description: Static libraries for libmpg123
 
@@ -3544,13 +3544,13 @@ Package: mpg123
 Version: 1.33.7
 Architecture: aarch64
 Maintainer: @termux
-Installed-Size: 328
-Depends: libmpg123 (= 1.33.7)
+Installed-Size: 340
+Depends: pulseaudio, libmpg123 (= 1.33.7)
 Filename: pool/main/m/mpg123/mpg123_1.33.7_aarch64.deb
-Size: 91948
-MD5sum: 3c34d02d4eb8d142cc8db93b628e308d
-SHA1: e5a0bbb0c7c11c46a5d83695cee652b06aad9b8f
-SHA256: 64b81226353a145bb1aaf22e53f35d47f5850fa4110988f8e8a4825449c5df71
+Size: 93744
+MD5sum: 71012213cb0de6bfd47f206ea57b690a
+SHA1: 8f9fec44336b6614673a53c292e6e008e6ebcd25
+SHA256: 90c221de192b8c46907198285ebc5402ab2ecf038855153dc35a42f6a91339b5
 Homepage: https://mpg123.org/
 Description: Fast console MPEG Audio Player based on libmpg123
 

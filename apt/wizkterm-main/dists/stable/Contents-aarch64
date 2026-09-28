@@ -15267,6 +15267,7 @@ data/data/com.wizkterm/files/usr/lib/libzstd.so.1 zstd
 data/data/com.wizkterm/files/usr/lib/libzstd.so.1.5.7 zstd
 data/data/com.wizkterm/files/usr/lib/mpg123/output_dummy.so mpg123
 data/data/com.wizkterm/files/usr/lib/mpg123/output_oss.so mpg123
+data/data/com.wizkterm/files/usr/lib/mpg123/output_pulse.so mpg123
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/LICENSE npm
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/README.md npm
 data/data/com.wizkterm/files/usr/lib/node_modules/npm/bin/node-gyp-bin/node-gyp npm
