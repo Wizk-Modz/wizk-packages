@@ -190,6 +190,20 @@ SHA256: 9351b02c5c534f650473f606f57fe90ec8b26cfe2a843c20e654e3b4d6b91dbf
 Homepage: https://www.gnu.org/software/autoconf/autoconf.html
 Description: Creator of shell scripts to configure source code packages
 
+Package: automake
+Version: 1.19
+Architecture: all
+Maintainer: @termux
+Installed-Size: 2900
+Depends: autoconf
+Filename: pool/main/a/automake/automake_1.19_all.deb
+Size: 582452
+MD5sum: 3f6c15975b02b5d572ead0ef1e401489
+SHA1: bf5d98b9acbef4aebd0ccaaabf5f2627d7457f33
+SHA256: 466976598056b1962028b75fb29715654f7b0aa47672fb0678e10b52005a2f66
+Homepage: https://www.gnu.org/software/automake/
+Description: Tool for automatically generating Makefile.in files
+
 Package: bash
 Version: 5.3.20
 Architecture: aarch64
