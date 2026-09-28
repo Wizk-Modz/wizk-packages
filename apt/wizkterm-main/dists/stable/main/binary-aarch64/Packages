@@ -1195,6 +1195,35 @@ SHA256: 23839867b95d612026c79de4e6c04f4fdf2a65d81ce38333658ccd1cf128c0fc
 Homepage: https://gi.readthedocs.io/
 Description: Uniform machine readable API
 
+Package: golang
+Version: 3:1.27.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 223812
+Depends: clang
+Recommends: resolv-conf
+Filename: pool/main/g/golang/golang_3:1.27.1_aarch64.deb
+Size: 38090052
+MD5sum: 350e3b346850bddd11d35c7cdda7d564
+SHA1: b0629e69e07b92401c9027c19c21549426708f96
+SHA256: 5dfce21272d7819c9cc93bb6c00158fe79f98182f03920ad5b7383587b4101e1
+Homepage: https://go.dev/
+Description: Go programming language compiler
+
+Package: golang-doc
+Version: 3:1.27.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 476
+Depends: golang (= 3:1.27.1)
+Filename: pool/main/g/golang-doc/golang-doc_3:1.27.1_aarch64.deb
+Size: 94636
+MD5sum: 043c0899eac95b6617831d017347013d
+SHA1: 2dfdb710985e4fc6f195e369ab8737f9225ab442
+SHA256: cdfc7def758f8cbfaeb786d7cbabdf7be6170c0553b9ac430ab5a320b8072a21
+Homepage: https://go.dev/
+Description: Go programming language - documentation
+
 Package: gpgme
 Version: 2.2.0
 Architecture: aarch64
