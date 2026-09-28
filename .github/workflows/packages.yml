@@ -24,6 +24,10 @@ on:
         description: "Free space even if not building large package (useful when building a large number of packages)"
         type: boolean
         default: false
+      skip-depcheck:
+        description: "Seed mode: build without checking dependencies. Dùng để đưa một gói nằm trong chu trình phụ thuộc (ví dụ libmpg123) vào repo trống, sau đó chạy lại build bình thường để phá vỡ chu trình."
+        type: boolean
+        default: false
 
 permissions: {} # none
 
@@ -288,8 +292,16 @@ jobs:
 
         echo "packages: ${packages[*]}"
 
+        # Chế độ seed: build không kiểm tra dependency (-s) để đưa gói nằm
+        # trong chu trình phụ thuộc vào repo trống, phá vỡ chu trình.
+        build_flags=(-I -C)
+        if [ "${{ github.event.inputs.skip-depcheck }}" == "true" ]; then
+          echo "Seed mode: building without dependency check (-s)"
+          build_flags=(-s -C)
+        fi
+
         if [[ "${#packages[@]}" -gt 0 ]]; then
-          ./scripts/run-docker.sh -d ./build-package.sh -I -C -a "${{ matrix.target_arch }}" "${packages[@]}"
+          ./scripts/run-docker.sh -d ./build-package.sh "${build_flags[@]}" -a "${{ matrix.target_arch }}" "${packages[@]}"
         fi
 
     - name: Generate build artifacts
