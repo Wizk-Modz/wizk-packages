@@ -4345,10 +4345,10 @@ Depends: zlib
 Breaks: tcl-dev, tcl-static
 Replaces: tcl-dev, tcl-static
 Filename: pool/main/t/tcl/tcl_8.6.16_aarch64.deb
-Size: 2261156
-MD5sum: c26c98704ec9de7cc1adc35b6163a744
-SHA1: f47699e83ad345872d57ee3145c681448462d300
-SHA256: fccc26fab869a988f6df2cac252d5a6c86a7994146d5dd007f922f7197c36ba1
+Size: 2262600
+MD5sum: 38823b94b880c7da8fdcea4fb231f47a
+SHA1: 249af357880dd68c76ef8b7b57d3cb23efce00f1
+SHA256: e8ee36c7a20e9a2eb55282167e6cd9739dda31fc6fa11109812f119b2e482b67
 Homepage: https://www.tcl.tk/
 Description: Powerful but easy to learn dynamic programming language
 
