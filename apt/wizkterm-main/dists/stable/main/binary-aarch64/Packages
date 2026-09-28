@@ -13,6 +13,36 @@ SHA256: 3980321f72e598a6e169a223ac965636e82750a164f96e5e9420632b295749fa
 Homepage: https://abseil.io/
 Description: Abseil C++ Common Libraries
 
+Package: aom-tools
+Version: 3.15.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 860
+Depends: libc++, libaom (= 3.15.1)
+Filename: pool/main/a/aom-tools/aom-tools_3.15.1_aarch64.deb
+Size: 202448
+MD5sum: a5ef55a4998c74fa6868069380abba28
+SHA1: 41c25a5909b8497af95188340640b93207a93a8f
+SHA256: b8921b5cc1934ede7b955a39ce3a4cb8c42893470112ffdb5e3a3ff9f9df76d7
+Homepage: https://aomedia.org/
+Description: Command-line tools using AOMedia library
+
+Package: apache2
+Version: 1:2.4.68
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 32792
+Depends: apr, apr-util, libandroid-support, libcrypt, libnghttp2, libuuid, openssl, pcre2, zlib
+Breaks: apache2-dev
+Replaces: apache2-dev
+Filename: pool/main/a/apache2/apache2_1:2.4.68_aarch64.deb
+Size: 5256384
+MD5sum: 4a907dd5ca37f66e3aa58c35be917990
+SHA1: 5cae676b906161b18c185ae3517bd077aa7122e6
+SHA256: 80f47b134387f51700eb0fc75432da0eeb7b0b2acc9dab7006f8f4561a9bcc96
+Homepage: https://httpd.apache.org
+Description: Apache Web Server
+
 Package: apr
 Version: 1.7.6-2
 Architecture: aarch64
@@ -236,6 +266,35 @@ SHA256: 55b68f65db5c478e63508dad6c66009839f273463e5656959e091b778d270fa7
 Homepage: https://github.com/scop/bash-completion
 Description: Programmable completion for the bash shell
 
+Package: binutils
+Version: 2.47
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 19728
+Depends: libc++, zlib, zstd
+Breaks: binutils (<< 2.46), binutils-bin, binutils-libs, binutils-dev
+Replaces: binutils (<< 2.46), binutils-bin, binutils-libs, binutils-dev
+Filename: pool/main/b/binutils/binutils_2.47_aarch64.deb
+Size: 2452548
+MD5sum: ded54bfb99c9eb28ac965ac37f9fb201
+SHA1: 523cae6c51060f315dbabc10c7a14f925c316dc0
+SHA256: 46921de7de7b1b067764a922a7c55e38d98eedcefd0da7007a5bda654c673c9c
+Homepage: https://www.gnu.org/software/binutils/
+Description: A GNU collection of binary utilities
+
+Package: binutils-cross
+Version: 2.47
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 17892
+Filename: pool/main/b/binutils-cross/binutils-cross_2.47_aarch64.deb
+Size: 2336384
+MD5sum: b722673239d73e308588fd58c58d25dd
+SHA1: e773ca98c94cca8bb7dad0c6b346ea0a2480619d
+SHA256: 4ca8826dd39222d4a5e47a27554d6f1bd6d77f94b4e43703d8bcf883e71c7616
+Homepage: https://www.gnu.org/software/binutils/
+Description: GNU Binutils for cross build on the host (NOT for Termux)
+
 Package: blk-utils
 Version: 2.42.1-5
 Architecture: aarch64
@@ -354,6 +413,35 @@ SHA1: 0d89252c2d8ad8b0c2e05d4ff7c4dcf5bc74c490
 SHA256: dafc057119260642fcc28ad95d2cfeaf8d1cf5c044e8914337214bf370269bf3
 Homepage: https://curl.se/docs/caextract.html
 Description: Common CA certificates (java keystore format)
+
+Package: capstone
+Version: 5.0.9
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 18532
+Breaks: capstone-dev
+Replaces: capstone-dev
+Filename: pool/main/c/capstone/capstone_5.0.9_aarch64.deb
+Size: 1470540
+MD5sum: 440c4e9b57fda94668458386c9dcfc99
+SHA1: ba12720bbd068a529b90996cc8c59772649e5c6d
+SHA256: e1a720dfc205e0442de52f444ea234424d5dccc910ce42b3f238828a41d52259
+Homepage: https://www.capstone-engine.org/
+Description: Lightweight multi-platform, multi-architecture disassembly framework
+
+Package: capstone-static
+Version: 5.0.9
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 10188
+Depends: capstone (= 5.0.9)
+Filename: pool/main/c/capstone-static/capstone-static_5.0.9_aarch64.deb
+Size: 732384
+MD5sum: 28a576ec77bced53e21038a6010b41be
+SHA1: 0f005e2edf04ec49065436bd7c7f89936332f77c
+SHA256: f53d905943ba4900887dde4585a2de07cbd76758f969d9703ba042ae7014dadd
+Homepage: https://www.capstone-engine.org/
+Description: Static libraries for capstone
 
 Package: check
 Version: 0.15.2-3
@@ -822,6 +910,22 @@ SHA256: 6916397d8f1959eb4eda9f60f56e4e7ef017e2143942cc72790cbc38c8d0ff1f
 Homepage: https://www.freetype.org
 Description: Static libraries for freetype
 
+Package: g-ir-scanner
+Version: 1.86.0-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1076
+Depends: ldd, python, gobject-introspection (= 1.86.0-2)
+Breaks: gobject-introspection (<< 1.74.0-1)
+Replaces: gobject-introspection (<< 1.74.0-1)
+Filename: pool/main/g/g-ir-scanner/g-ir-scanner_1.86.0-2_aarch64.deb
+Size: 130552
+MD5sum: 40251f54032adb1c29dc0531f9dbc632
+SHA1: a13d73149a5ef4ac22ea9b8d094a035c1349c8d4
+SHA256: 18fd3edc60ea0ba58025c157bb642494761d2bf573d706865e48e56b8b5ed1ef
+Homepage: https://gi.readthedocs.io/
+Description: A tool which generates GIR XML files
+
 Package: gawk
 Version: 5.3.2
 Architecture: aarch64
@@ -883,6 +987,22 @@ SHA256: 7dbe8ce57f526876f400d091ef59c89aff5651eeb972a7130a961079bee5dba6
 Homepage: https://www.gnu.org.ua/software/gdbm/
 Description: Static libraries for gdbm
 
+Package: gdk-pixbuf
+Version: 2.44.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 960
+Depends: glib, libpng, libtiff, libjpeg-turbo, zstd
+Breaks: gdk-pixbuf-dev
+Replaces: gdk-pixbuf-dev
+Filename: pool/main/g/gdk-pixbuf/gdk-pixbuf_2.44.8_aarch64.deb
+Size: 153268
+MD5sum: 077ce2f6c024943b4bbcaa6f31ca59c8
+SHA1: f270ce205e3b9a0873dcacde7c4f613040768e1c
+SHA256: 8a6ad680d788606de405713ef3cbfd819b41cc9213e4a5e8692fe3597c9d2cbd
+Homepage: https://wiki.gnome.org/Projects/GdkPixbuf
+Description: Library for image loading and manipulation
+
 Package: gh
 Version: 2.101.0
 Architecture: aarch64
@@ -896,6 +1016,50 @@ SHA1: 37e8354e383bf99f6a0966e8cea49ec942d0b28f
 SHA256: 96325b386da674403baaf69db08ce3c9806639a0137fc6974a337b415297d90a
 Homepage: https://cli.github.com/
 Description: GitHub’s official command line tool
+
+Package: giflib
+Version: 6.1.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 252
+Breaks: giflib-dev
+Replaces: giflib-dev
+Filename: pool/main/g/giflib/giflib_6.1.3_aarch64.deb
+Size: 43888
+MD5sum: b0e9a8a6c11698cf0686e1747062481e
+SHA1: cfdd1da6776326508ff670d087a93d1eb2b0e8d4
+SHA256: 1edcf0f4a89771adea4ab6264c13ba19758bc25082b11d7ce9440a94f87f960b
+Homepage: https://giflib.sourceforge.net/
+Description: A library for reading and writing gif images
+
+Package: giflib-static
+Version: 6.1.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 84
+Depends: giflib (= 6.1.3)
+Filename: pool/main/g/giflib-static/giflib-static_6.1.3_aarch64.deb
+Size: 17196
+MD5sum: 959151bf36394e33411e495da68ae71e
+SHA1: cf8d1e3744d1223251bcdedbb933342401a9b62b
+SHA256: 83177fc35f8ead3ec2cad290b96dbf3396dcad92792cc2a7c934df079820fbc0
+Homepage: https://giflib.sourceforge.net/
+Description: Static libraries for giflib
+
+Package: giflib-utils
+Version: 6.1.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 264
+Depends: giflib (= 6.1.3)
+Conflicts: giflib (<< 5.1.4-4)
+Filename: pool/main/g/giflib-utils/giflib-utils_6.1.3_aarch64.deb
+Size: 45512
+MD5sum: 7e638c4954b872b52d60186f7c694455
+SHA1: e3c784a78f5592a0307b1cba39c3bf6830ea3b5e
+SHA256: 6d1436d88d321fe03ee69e383952a50c4e1e38bfd939563f7cfafcb214f2d5fe
+Homepage: https://giflib.sourceforge.net/
+Description: A set of utilities that comes with giflib package
 
 Package: git
 Version: 2.55.0
@@ -1015,6 +1179,21 @@ SHA1: 8c0bda4d88dd1a0cbe381b300084baa4838b26d9
 SHA256: 51f5ade480231c523724c048e0da66ba36b3bf4b310f03084524795e3595a49f
 Homepage: https://www.gnutls.org/
 Description: Commandline utilities for interfacing with the gnutls library
+
+Package: gobject-introspection
+Version: 1.86.0-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1456
+Depends: glib, libffi
+Suggests: g-ir-scanner
+Filename: pool/main/g/gobject-introspection/gobject-introspection_1.86.0-2_aarch64.deb
+Size: 203940
+MD5sum: 576806f2e9e07a332406369c58af0686
+SHA1: 1791ee6b8c09c19b93502cbb4129263ecc036d5c
+SHA256: 23839867b95d612026c79de4e6c04f4fdf2a65d81ce38333658ccd1cf128c0fc
+Homepage: https://gi.readthedocs.io/
+Description: Uniform machine readable API
 
 Package: gpgme
 Version: 2.2.0
@@ -1221,6 +1400,21 @@ SHA1: cbd1b01c5221bb48eff8191599fe1d552a4a6373
 SHA256: aee8b7295260a19ab31312fa6d73b4f8a6db4b045e4336300271074f8a6e0b2f
 Homepage: https://lame.sourceforge.io/
 Description: High quality MPEG Audio Layer III (MP3) encoder - frontend
+
+Package: ldd
+Version: 0.3-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 44
+Depends: bash, binutils
+Conflicts: binutils (<< 2.39-1)
+Filename: pool/main/l/ldd/ldd_0.3-2_aarch64.deb
+Size: 1828
+MD5sum: 1f5e8bcafffff37e0984163596dd7dce
+SHA1: 6ebb966e3e8621353b0cbd82f0b3edefc540dd8b
+SHA256: 8d2b7a93ed2d0a377e116adf2fec3d5c16d7947ba0d410d471e064a2ca2e9e21
+Homepage: https://github.com/termux/termux-packages
+Description: Fake ldd command
 
 Package: ldns
 Version: 1.9.2
@@ -1522,6 +1716,33 @@ SHA256: 9cee5b37d45da827979e7311c22de8cbcbad937afcc2b7e9658f2a646324b19a
 Homepage: https://github.com/termux/libandroid-utimes
 Description: Static libraries for libandroid-utimes
 
+Package: libaom
+Version: 3.15.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 7384
+Filename: pool/main/l/libaom/libaom_3.15.1_aarch64.deb
+Size: 2081488
+MD5sum: c7ecd32e0096856ba50e013caa0fc047
+SHA1: c7204f7ec4ab445c14d14c11f0c8b30945cebd04
+SHA256: b6765e98d12650354e8e3c99d5993bb0028a609ef5c40cba39fb701e1d68bdd8
+Homepage: https://aomedia.org/
+Description: AV1 Video Codec Library
+
+Package: libaom-static
+Version: 3.15.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 9176
+Depends: libaom (= 3.15.1)
+Filename: pool/main/l/libaom-static/libaom-static_3.15.1_aarch64.deb
+Size: 2223368
+MD5sum: 6a89ed4767ef7bb9650563ae2d05419a
+SHA1: ca78104506730b7490a1a300986a7a03305c7e64
+SHA256: bcf7078df809127124eb495861b7265c1baa95e68b834d876b2358457694fcc3
+Homepage: https://aomedia.org/
+Description: Static libraries for libaom
+
 Package: libarchive
 Version: 3.8.9
 Architecture: aarch64
@@ -1581,6 +1802,20 @@ SHA1: 6388be5c705ba834ea0bd32c05688ee5b8820982
 SHA256: 2dbadabc71b2ff383a11e0179cebe3442dfc73c4157dc5d4eab5aa8dd9cbdef2
 Homepage: https://www.gnupg.org/related_software/libassuan/
 Description: Static libraries for libassuan
+
+Package: libavif
+Version: 1.4.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1480
+Depends: libaom, libc++, libdav1d, libjpeg-turbo, libpng, libwebp, librav1e, svt-av1
+Filename: pool/main/l/libavif/libavif_1.4.2_aarch64.deb
+Size: 384812
+MD5sum: f46afb466b11251aa60a918d472ef7bd
+SHA1: 87e35bea64043b2ee5bae27366fcddf30bb407de
+SHA256: d0025bab102dfc6fff71c3ed6e8ba5e37be77951d7441a9f2729a760a06104fb
+Homepage: https://github.com/AOMediaCodec/libavif
+Description: Library for encoding and decoding .avif files
 
 Package: libblkid
 Version: 2.42.1-5
@@ -1718,6 +1953,19 @@ SHA256: bd749bc0fbd77c4ef6eebcb59c51dbfa4bc2327d41148708d8de09429ca3c642
 Homepage: https://curl.se/
 Description: Static libraries for libcurl
 
+Package: libdav1d
+Version: 1.5.4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 840
+Filename: pool/main/l/libdav1d/libdav1d_1.5.4_aarch64.deb
+Size: 266064
+MD5sum: 7c17b021adf4a90381d2810ea85fd559
+SHA1: 13338da3311d1d8939f5f4c6ea0ca7b9c7a53cbf
+SHA256: d662765d2b3650347f158c4bf554acbd99939aa69269b82040ae8e9e673a8ccf
+Homepage: https://code.videolan.org/videolan/dav1d/
+Description: AV1 cross-platform decoder focused on speed and correctness
+
 Package: libdb
 Version: 18.1.40-6
 Architecture: aarch64
@@ -1747,6 +1995,20 @@ SHA1: 7409ee479842835638c81f668f41e6dd53c2943a
 SHA256: 26fe20b96f743b72871b571f9a0b95e022729ba8488260d18549e85af9f1441a
 Homepage: https://www.oracle.com/database/berkeley-db
 Description: Static libraries for libdb
+
+Package: libde265
+Version: 1.1.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 628
+Depends: libc++
+Filename: pool/main/l/libde265/libde265_1.1.3_aarch64.deb
+Size: 198544
+MD5sum: bbf230994682b778bccf41afa292d672
+SHA1: f28306fd5257b8f75b4f7a8f9749cbc12ea64917
+SHA256: 7567208bae52e464159ca90844400d5a84cc311622e473f4a713465f07cea3ef
+Homepage: https://github.com/strukturag/libde265
+Description: H.265/HEVC video stream decoder library
 
 Package: libedit
 Version: 20260512-3.1-0
@@ -1925,6 +2187,36 @@ SHA256: 50507110025ec550e473c6e3816659d2ab04297a541b6f2c6efe8e555399c3be
 Homepage: https://www.gnu.org/software/libgcrypt/
 Description: Static libraries for libgcrypt
 
+Package: libgd
+Version: 1:2.3.3-7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 676
+Depends: fontconfig, freetype, libavif, libheif, libiconv, libjpeg-turbo, libpng, libtiff, libwebp, zlib
+Breaks: libgd-dev
+Replaces: libgd-dev
+Filename: pool/main/l/libgd/libgd_1:2.3.3-7_aarch64.deb
+Size: 126068
+MD5sum: ef0c5c6cf3a1ed1ba7c47af0ffb6bd66
+SHA1: 02aac599e7db8f8b6c63f11622b4f0062c33dce0
+SHA256: e66122050e6d766ea3f16acb71a72770f5332d964d32727f3b8a4cc8db2c518e
+Homepage: https://libgd.github.io/
+Description: GD is an open source code library for the dynamic creation of images by programmers
+
+Package: libgd-static
+Version: 1:2.3.3-7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 544
+Depends: libgd (= 1:2.3.3-7)
+Filename: pool/main/l/libgd-static/libgd-static_1:2.3.3-7_aarch64.deb
+Size: 102532
+MD5sum: f6fd3b26534bdc1d7f4c617108dccbcc
+SHA1: e2b52f8056e3dd5d7800bd6ed455edf920941886
+SHA256: fa92ad702cb532d33e16ecf1ac924e7cfc27dbb2ad1f87ac9a83d7ed963991db
+Homepage: https://libgd.github.io/
+Description: Static libraries for libgd
+
 Package: libgmp
 Version: 6.3.0-2
 Architecture: aarch64
@@ -2014,6 +2306,34 @@ SHA256: 8db943231e08d23d88927c8c00a2f990db88523d11a484fdeeab6d28fa446c43
 Homepage: https://www.gnupg.org/related_software/libgpg-error/
 Description: Static libraries for libgpg-error
 
+Package: libheif
+Version: 1.23.5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2464
+Depends: gdk-pixbuf, glib, libaom, libc++, libdav1d, libde265, librav1e, libx264, libx265
+Filename: pool/main/l/libheif/libheif_1.23.5_aarch64.deb
+Size: 599064
+MD5sum: 987fd45ca9262c422f724da20f13bc78
+SHA1: b0797ed6976f67066bc68969920db21f6f3bd667
+SHA256: 53d24c6eeb918e74f3905acc522e55c85629fa1a40dc6d8e186e44650814234d
+Homepage: https://github.com/strukturag/libheif
+Description: HEIF (HEIC/AVIF) image encoding and decoding library
+
+Package: libheif-progs
+Version: 1.23.5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 624
+Depends: libjpeg-turbo, libpng, libheif (= 1.23.5)
+Filename: pool/main/l/libheif-progs/libheif-progs_1.23.5_aarch64.deb
+Size: 154760
+MD5sum: 8fa67384179e2231783a8ea642fbe73f
+SHA1: 6d5e38a5f040ce64bb6726913e82ff8b263be11e
+SHA256: 379f4d743f27ea81b37f55e6f986cbb4ec985fa89717b49779e43a624d21eadf
+Homepage: https://github.com/strukturag/libheif
+Description: Programs for manipulating HEIF (HEIC/AVIF) image files
+
 Package: libiconv
 Version: 1.19
 Architecture: aarch64
@@ -2102,6 +2422,49 @@ SHA1: 8a02f74c278437ff42ccb4f6a2cc7be3700ef5de
 SHA256: b10d4946f369b0f8a383491f37ad6269fcf938a71b71388192848ed8e04994bd
 Homepage: https://www.gnu.org/software/libidn/#libidn2
 Description: Static libraries for libidn2
+
+Package: libjpeg-turbo
+Version: 3.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2300
+Breaks: libjpeg-turbo-dev
+Replaces: libjpeg-turbo-dev
+Filename: pool/main/l/libjpeg-turbo/libjpeg-turbo_3.2.0_aarch64.deb
+Size: 453468
+MD5sum: 4c448b7c2646e4ef42f82ba87d0d7edf
+SHA1: 2fe1c975ae6050aecc92afc4f8a23685e18e9422
+SHA256: 8714b10770ece99b756d7865b21e7a513c780d73675001b8c5889920d53df06d
+Homepage: https://libjpeg-turbo.virtualgl.org
+Description: Library for reading and writing JPEG image files
+
+Package: libjpeg-turbo-progs
+Version: 3.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 636
+Depends: libjpeg-turbo (= 3.2.0)
+Filename: pool/main/l/libjpeg-turbo-progs/libjpeg-turbo-progs_3.2.0_aarch64.deb
+Size: 165764
+MD5sum: f28535f2155fe1d9ff2ca19a73e43214
+SHA1: b058773fa493a0ecf71af9bfa1724232fe4dde2a
+SHA256: 4e576c8656744b3ed9bb3085ce78b55bbc4ca8459b816569cd8eabe2acd49211
+Homepage: https://libjpeg-turbo.virtualgl.org
+Description: Programs for manipulating JPEG files
+
+Package: libjpeg-turbo-static
+Version: 3.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2400
+Depends: libjpeg-turbo (= 3.2.0)
+Filename: pool/main/l/libjpeg-turbo-static/libjpeg-turbo-static_3.2.0_aarch64.deb
+Size: 339808
+MD5sum: 156914407e62fd15a8a70839c9931397
+SHA1: 401e87986f507d2088a40c950859e2910b24cb1d
+SHA256: 0ebad3b0299cda91f2172ad838284a6d662ca20dfe94afc863c4a236d1adea24
+Homepage: https://libjpeg-turbo.virtualgl.org
+Description: Static libraries for libjpeg-turbo
 
 Package: libksba
 Version: 1.8.1
@@ -2660,6 +3023,65 @@ SHA256: c9e4d94389a1734c137715d2efc8bdaa8cdbe6d119095b59456e53506baeede0
 Homepage: https://www.linuxfromscratch.org/blfs/view/svn/general/popt.html
 Description: Static libraries for libpopt
 
+Package: libpq
+Version: 18.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 356
+Depends: openssl
+Breaks: postgresql (<< 18.2-1)
+Replaces: postgresql (<< 18.2-1)
+Filename: pool/main/l/libpq/libpq_18.2-1_aarch64.deb
+Size: 102960
+MD5sum: d3eb533b59098ba311718f9b5d62078a
+SHA1: a0f0c45b3925a326e30f2c68408837d119350cff
+SHA256: 439f1d8b976ad36591751b36e2206579e93de3dd6f98a070b103c44087460d57
+Homepage: https://www.postgresql.org
+Description: PostgreSQL client library (libpq) without the server
+
+Package: libpq-static
+Version: 18.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 348
+Depends: libpq
+Breaks: postgresql-static (<< 18.2-1)
+Replaces: postgresql-static (<< 18.2-1)
+Filename: pool/main/l/libpq-static/libpq-static_18.2-1_aarch64.deb
+Size: 75708
+MD5sum: ff0a6c9d3716ee9a91f31090cb59a036
+SHA1: 0eb3d5cc3a29a06f738245ad51caeafdc0b57960
+SHA256: 3e003ae134a465e3a5f63cf8fa5436787a1f9a440a2dc413dd5b10d9a5fbc718
+Homepage: https://www.postgresql.org
+Description: Static library for libpq
+
+Package: librav1e
+Version: 0.8.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2292
+Filename: pool/main/l/librav1e/librav1e_0.8.1_aarch64.deb
+Size: 688552
+MD5sum: 560e8534027939dee3b4c518d0cc0963
+SHA1: a68f291417ebfba9c197aa5031b9201adf19dd0e
+SHA256: 4f98227a7ba2626f30def144ce8dc3d27b875a66b9677dced763716177e5236e
+Homepage: https://github.com/xiph/rav1e/
+Description: An AV1 encoder library focused on speed and safety
+
+Package: librav1e-static
+Version: 0.8.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 83236
+Depends: librav1e (= 0.8.1)
+Filename: pool/main/l/librav1e-static/librav1e-static_0.8.1_aarch64.deb
+Size: 7926944
+MD5sum: 5d00448bffc1cc98b009d049ff62baae
+SHA1: fd76feab19b783dac522423f2856625b26615392
+SHA256: 0ca6269a4d062dcf4742729c225ec5963287be0590e0cf97abd1ab3ae6905438
+Homepage: https://github.com/xiph/rav1e/
+Description: Static libraries for librav1e
+
 Package: libresolv-wrapper
 Version: 1.1.7-6
 Architecture: aarch64
@@ -2673,6 +3095,36 @@ SHA1: c7327cdb61c62eae7684e910e0ec1aa447d76268
 SHA256: f908624638a77029ded6ce5f15718c4fa1be34e443b8fed0289cf90c8e2d6d82
 Homepage: https://cwrap.org/resolv_wrapper.html
 Description: A wrapper for DNS name resolving or DNS faking
+
+Package: libsasl
+Version: 2.1.28-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 616
+Depends: libcrypt
+Breaks: libsasl-dev
+Replaces: libsasl-dev
+Filename: pool/main/l/libsasl/libsasl_2.1.28-3_aarch64.deb
+Size: 95716
+MD5sum: 3ff410d1c55fa2baf67b52109827da20
+SHA1: 67d9493ade68d7a00f124f2f3443842cf1913bea
+SHA256: f0a55b09d8dc830398fc3457a9bb657a084ff10f2f5c0df14833cea0ff797229
+Homepage: https://www.cyrusimap.org/sasl/
+Description: Cyrus SASL - authentication abstraction library
+
+Package: libsasl-static
+Version: 2.1.28-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 576
+Depends: libsasl (= 2.1.28-3)
+Filename: pool/main/l/libsasl-static/libsasl-static_2.1.28-3_aarch64.deb
+Size: 76680
+MD5sum: 38819d986d58dcfe1e1ed191b68e3c05
+SHA1: 255e4e2b01b50bd7b572031a13e6fea83248a9fd
+SHA256: b1cce0441c3afd95042cdfb0e84f0aa662a04fcb336c67b2333d1faaaea9f298
+Homepage: https://www.cyrusimap.org/sasl/
+Description: Static libraries for libsasl
 
 Package: libsmartcols
 Version: 2.42.1-5
@@ -2895,6 +3347,50 @@ SHA256: 9e5d6168c73e6ccaa0bba51660a6216cfb76447c634349d726723eb77aa60726
 Homepage: https://www.gnu.org/software/libtasn1/
 Description: Static libraries for libtasn1
 
+Package: libtiff
+Version: 4.7.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 6644
+Depends: libc++, libjpeg-turbo, liblzma, zlib, zstd
+Breaks: libtiff-dev
+Replaces: libtiff-dev
+Filename: pool/main/l/libtiff/libtiff_4.7.2_aarch64.deb
+Size: 870316
+MD5sum: 1c06e97f1e3d77e12bb4796e509544b1
+SHA1: c754e52d988cd1f556ea470433b18135e1c644e2
+SHA256: 747c20691bf604eb1f9ca22ac1cdced26f87e9eace5f32ba8b6e0ce0c8623175
+Homepage: http://www.simplesystems.org/libtiff/
+Description: Support for the Tag Image File Format (TIFF) for storing image data
+
+Package: libtiff-static
+Version: 4.7.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 880
+Depends: libtiff (= 4.7.2)
+Filename: pool/main/l/libtiff-static/libtiff-static_4.7.2_aarch64.deb
+Size: 174188
+MD5sum: 7adbf304cf0927e31edb897c40797fbe
+SHA1: ff0d1d4d5f42400ba62d2f73f534f04b1d3cdc19
+SHA256: 92569fc51a524ca2610cde962787884ee5f7d97d28e5b7ffa49be07a374cffed
+Homepage: http://www.simplesystems.org/libtiff/
+Description: Static libraries for libtiff
+
+Package: libtiff-utils
+Version: 4.7.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 860
+Depends: libtiff (= 4.7.2)
+Filename: pool/main/l/libtiff-utils/libtiff-utils_4.7.2_aarch64.deb
+Size: 270712
+MD5sum: e8d7b36467b07437aa6cc007fcbbbe91
+SHA1: dbd7809a518966439cd7b2748edc0688ae384f1a
+SHA256: 868e9760beeca63ee1a46ef4a30bd3a805857d946cfb9f2596362eba53fe05b6
+Homepage: http://www.simplesystems.org/libtiff/
+Description: Tools for working with tiff files
+
 Package: libtirpc
 Version: 1.3.8
 Architecture: aarch64
@@ -3103,6 +3599,22 @@ SHA256: a923bba153d5db47f8f58754d4b18554656ad5004a9fdf2c9cff2f8bec3c3541
 Homepage: https://xiph.org/vorbis/
 Description: Static libraries for libvorbis
 
+Package: libwebp
+Version: 1.6.0-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1252
+Depends: giflib, libjpeg-turbo, libpng, libtiff, zlib
+Breaks: libwebp-dev
+Replaces: libwebp-dev
+Filename: pool/main/l/libwebp/libwebp_1.6.0-1_aarch64.deb
+Size: 330352
+MD5sum: 4640168d855284960a8485cffbe1fedd
+SHA1: 0767778890329a359f515189b6a886c668174449
+SHA256: a9bd8e7761ece3cdf91ba10752dac45d3cb002bdd1baedf343b5330ab6356804
+Homepage: https://github.com/webmproject/libwebp
+Description: Library to encode and decode images in WebP format
+
 Package: libwebrtc-audio-processing
 Version: 1.3-5
 Architecture: aarch64
@@ -3145,6 +3657,65 @@ SHA1: 18b8e2bc29b2ed3bb2c41dc21ac3a8c128e98bb1
 SHA256: 8b5bc3e3593d3a7ed6c9c81d15f5dfe4c9289f9103b0833b76a83a7f947b07d2
 Homepage: https://xorg.freedesktop.org/
 Description: Static libraries for libx11
+
+Package: libx264
+Version: 1:0.164.3191-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1260
+Breaks: libx264-dev
+Replaces: libx264-dev
+Filename: pool/main/l/libx264/libx264_1:0.164.3191-1_aarch64.deb
+Size: 397740
+MD5sum: f6ce9678ffc4fae157fffe4827849812
+SHA1: 5bab88a2b75e29695a6fddd81c3b466cb864921c
+SHA256: 28a17ebc0efabcf13181d809878ef0cb2e79ebf229b3b6d7b36f1f805da73d1e
+Homepage: https://www.videolan.org/developers/x264.html
+Description: Library for encoding video streams into the H.264/MPEG-4 AVC format
+
+Package: libx264-static
+Version: 1:0.164.3191-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1852
+Depends: libx264 (= 1:0.164.3191-1)
+Filename: pool/main/l/libx264-static/libx264-static_1:0.164.3191-1_aarch64.deb
+Size: 434768
+MD5sum: e53d2e8c2ac3bd8466761d4b33ade75a
+SHA1: 8996f1486289a698dcbeea21f1069fb633a1b577
+SHA256: e27eb47d265d8fa13be8f332b322436652d06cf7d5db07d7313665477a5167c4
+Homepage: https://www.videolan.org/developers/x264.html
+Description: Static libraries for libx264
+
+Package: libx265
+Version: 4.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 9744
+Depends: libandroid-posix-semaphore, libc++
+Breaks: libx265-dev
+Replaces: libx265-dev
+Filename: pool/main/l/libx265/libx265_4.3_aarch64.deb
+Size: 1618976
+MD5sum: 331cda2a93a8b18063b72c71d741afc5
+SHA1: cfdee8e297bd40ed85b0c1a5d3c3afe7e952aabb
+SHA256: a2d77205241cadcfc15d59c6624ba9aae3e6ae472fe2cd5675bbe1974422cc65
+Homepage: https://www.x265.org/
+Description: H.265/HEVC video stream encoder library
+
+Package: libx265-static
+Version: 4.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4896
+Depends: libx265 (= 4.3)
+Filename: pool/main/l/libx265-static/libx265-static_4.3_aarch64.deb
+Size: 927900
+MD5sum: 475b04068ca707358f9a53727da7c1e8
+SHA1: 5c9f01f0530fab298ce9d7bb237377ebe75cf18b
+SHA256: 69c2d5983b4c423ca65e53ba223c87d3b8dfe046b28247910b3eb99661ada94c
+Homepage: https://www.x265.org/
+Description: Static libraries for libx265
 
 Package: libxau
 Version: 1.0.12-2
@@ -3373,6 +3944,22 @@ SHA1: b48f8d341adeb1dd510c3c14e49f2351d27224c3
 SHA256: 615ab4ab82046700e100ff6aae27209c7c1cb85ad74e65a0cc81500641305b56
 Homepage: https://xorg.freedesktop.org/
 Description: Static libraries for libxss
+
+Package: libzip
+Version: 1.11.4-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 932
+Depends: libbz2, liblzma, openssl, zlib, zstd
+Breaks: libzip-dev
+Replaces: libzip-dev
+Filename: pool/main/l/libzip/libzip_1.11.4-1_aarch64.deb
+Size: 242388
+MD5sum: 323f440c87911e8b90034a72490698b0
+SHA1: 1d38b24c171eed8e975255354ba8ed24fec684bf
+SHA256: f779e31121f01a82a68900b87d7d34b5168b664312100d24a1dc851f03887b46
+Homepage: https://libzip.org/
+Description: Library for reading, creating, and modifying zip archives
 
 Package: lld
 Version: 21.1.8-3
@@ -3683,6 +4270,20 @@ SHA256: 17cd635b08cc5fe020ea35184a62766b55727ec6e866c2537fa3480e1a7523ee
 Homepage: https://www.lysator.liu.se/~nisse/nettle/
 Description: Low level cryptographic tools
 
+Package: nginx
+Version: 1.31.6
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1620
+Depends: libandroid-glob, libcrypt, pcre2, openssl, zlib
+Filename: pool/main/n/nginx/nginx_1.31.6_aarch64.deb
+Size: 447620
+MD5sum: 4f4e238311992fcccf728631d0a60070
+SHA1: f4f375fac84bf3b055bf5794f3b00f3748d07679
+SHA256: 0f530d5eb6bed573866e0cd626ae5d38a5356076185b1cde8954a5e473bac472
+Homepage: https://www.nginx.org
+Description: Lightweight HTTP server
+
 Package: nodejs
 Version: 26.4.0-1
 Architecture: aarch64
@@ -3743,6 +4344,36 @@ SHA1: bd08e5a9b76fb23716afd15fde4bf30ea3a437d5
 SHA256: 8b99f378bde4677e770c4cc078c92bb0601c39fbbdafbce3720441330b4ee025
 Homepage: https://github.com/kkos/oniguruma
 Description: Static libraries for oniguruma
+
+Package: openldap
+Version: 2.7.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 3868
+Depends: libsasl, libuuid, openssl
+Breaks: openldap-dev
+Replaces: openldap-dev
+Filename: pool/main/o/openldap/openldap_2.7.1_aarch64.deb
+Size: 1138176
+MD5sum: 53393509003ac305920ed1c42a6e99e0
+SHA1: 016a2f902c5a1f32c4d15e1efdb5c5353d0f794c
+SHA256: c3dd6b14e813e50174aaa540f294df1fe056d1c228dac22c99f337bb0f8ec545
+Homepage: https://openldap.org
+Description: OpenLDAP server
+
+Package: openldap-static
+Version: 2.7.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 808
+Depends: openldap (= 2.7.1)
+Filename: pool/main/o/openldap-static/openldap-static_2.7.1_aarch64.deb
+Size: 159984
+MD5sum: bf61feb89c224fe8ad27c65ed6fe4e98
+SHA1: 02d27e8b5acdd61fa1eb8a31114a526cfb113f95
+SHA256: 73ef55f72c029aa89703d84d3dea4290470fae50549e69c776e047efeb2874c0
+Homepage: https://openldap.org
+Description: Static libraries for openldap
 
 Package: openssh
 Version: 10.5p1
@@ -3905,6 +4536,150 @@ SHA256: f52eb4922c72527bbb94be5f046a0c9246adb0718309e231cf1db14433f3a3df
 Homepage: https://www.perl.org/
 Description: Capable, feature-rich programming language
 
+Package: php
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 75972
+Depends: capstone, libandroid-glob, libandroid-support, libbz2, libc++, libcurl, libffi, libgmp, libiconv, libicu, libresolv-wrapper, libsqlite, libxml2, libxslt, libzip, oniguruma, openssl, pcre2, readline, tidy, zlib
+Conflicts: php-mysql, php-dev
+Replaces: php-mysql, php-dev
+Filename: pool/main/p/php/php_8.5.1_aarch64.deb
+Size: 11750188
+MD5sum: bc643b4ca3b5319a24300569df554512
+SHA1: 426e55783ef06e57723ec6f714391285b99b33da
+SHA256: 0eb9492f1ac4dc689e826698c357c92fd950d5b34e91d057e7fe59508eef58fc
+Homepage: https://php.net
+Description: Server-side, HTML-embedded scripting language
+
+Package: php-apache
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 22296
+Depends: apache2, apr-util, php (= 8.5.1)
+Filename: pool/main/p/php-apache/php-apache_8.5.1_aarch64.deb
+Size: 3625764
+MD5sum: f6342fb7b9b1d11a5c48fc57bdd1638d
+SHA1: 0a1b45fd1d3d615cb657f3005bba57ac907b23a1
+SHA256: 16397c8f834bee12c5bb4dd0b050ebae3d5995b6fd01b6948f94c76cb6fbca3d
+Homepage: https://php.net
+Description: Apache 2.0 Handler module for PHP
+
+Package: php-apache-ldap
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 168
+Depends: openldap, php-apache, php (= 8.5.1)
+Filename: pool/main/p/php-apache-ldap/php-apache-ldap_8.5.1_aarch64.deb
+Size: 26008
+MD5sum: 2d4238c851f057357ed6823e489f1f90
+SHA1: 0a441e107c34e6131633de12466095f552b01dbf
+SHA256: 7b50762b52a4a7a40c23d868f22c20c6b41c2a2a4b0d2d12809042b1090dc09e
+Homepage: https://php.net
+Description: LDAP module for PHP/Apache
+
+Package: php-apache-pgsql
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 444
+Depends: php-apache, postgresql, php (= 8.5.1)
+Filename: pool/main/p/php-apache-pgsql/php-apache-pgsql_8.5.1_aarch64.deb
+Size: 59108
+MD5sum: fb16f5f7d8191c8e6e41593edff31314
+SHA1: 7a162030002cd3578326d74b42028626ece5e5cb
+SHA256: 74eb94bc65650b8729c0431b8984620cba8575b6e94ce70f9384c0489ee6ee30
+Homepage: https://php.net
+Description: PostgreSQL modules for PHP/Apache
+
+Package: php-apache-sodium
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 240
+Depends: libsodium, php-apache, php (= 8.5.1)
+Filename: pool/main/p/php-apache-sodium/php-apache-sodium_8.5.1_aarch64.deb
+Size: 22384
+MD5sum: ca429d3cd3fd7541428f8bc6405e5385
+SHA1: 7ba22b8ab0f4eadf1cb79a5b335e85c69c9c041a
+SHA256: 7b1499a51ce83d78534e334e9e477f9677232be0a85d26a1adbb621056492314
+Homepage: https://php.net
+Description: Sodium module for PHP/Apache
+
+Package: php-fpm
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 22348
+Depends: php (= 8.5.1)
+Breaks: php (<< 8.1.12)
+Replaces: php (<< 8.1.12)
+Filename: pool/main/p/php-fpm/php-fpm_8.5.1_aarch64.deb
+Size: 3679920
+MD5sum: ea22c08d5a140b125b46eb1be54b1669
+SHA1: a2d4da97b84ee812022db125280658be5b87a7d7
+SHA256: 4910503dd9919a9c88bb40b7dd0dc566b7595103c48210bae28a41a145b83103
+Homepage: https://php.net
+Description: FastCGI Process Manager for PHP
+
+Package: php-gd
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 168
+Depends: libgd, php (= 8.5.1)
+Filename: pool/main/p/php-gd/php-gd_8.5.1_aarch64.deb
+Size: 30580
+MD5sum: 0317c572743610b6e09c3cc526b0a061
+SHA1: 099c46e35891533cc34d74fefd09799327235ed6
+SHA256: f4ebdeb74ddb2b7726a82d52352e00964e6a2cdcefe89a88a33f1c682d737885
+Homepage: https://php.net
+Description: gd module for PHP
+
+Package: php-ldap
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 136
+Depends: openldap, php (= 8.5.1)
+Filename: pool/main/p/php-ldap/php-ldap_8.5.1_aarch64.deb
+Size: 25720
+MD5sum: 60af86c82302edc10b9e9b74b10b9955
+SHA1: 6643e7b6cd2f9b798b7b264ec1d9fa8a7a569981
+SHA256: 764dc62c4e33ba9a54cb1d8a6af907e57c7b3b8d3ee774cfc3f979927361aa10
+Homepage: https://php.net
+Description: LDAP module for PHP
+
+Package: php-pgsql
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 256
+Depends: postgresql, php (= 8.5.1)
+Filename: pool/main/p/php-pgsql/php-pgsql_8.5.1_aarch64.deb
+Size: 57872
+MD5sum: 0f27adae1447839c0ea88a4282616177
+SHA1: f2364cf35af9dc45af807fa83677a534effe6db1
+SHA256: 6f6093e4f2d5b4d1d3742c7c3ee569b407548832e2355f8554ffa25dde147ec8
+Homepage: https://php.net
+Description: PostgreSQL modules for PHP
+
+Package: php-sodium
+Version: 8.5.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 144
+Depends: libsodium, php (= 8.5.1)
+Filename: pool/main/p/php-sodium/php-sodium_8.5.1_aarch64.deb
+Size: 22136
+MD5sum: 0b573983ba5a38e4cac7e642f60176f7
+SHA1: 38cfc077424dbc49f5058d50dc9fdcda06b70680
+SHA256: 63e34945f3c64f47ec525a12be20354804085933223f63636da01cd361b64e92
+Homepage: https://php.net
+Description: Sodium module for PHP
+
 Package: pinentry
 Version: 1.3.3
 Architecture: aarch64
@@ -3932,6 +4707,36 @@ SHA1: 938537e82b38ff820540553b56f99d9d6721baf9
 SHA256: e5c5741e44647543c7f29f73144ffa3531807c06ec09e6554455d2800b6a912a
 Homepage: https://www.freedesktop.org/wiki/Software/pkg-config/
 Description: Helper tool used when compiling applications and libraries
+
+Package: postgresql
+Version: 18.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 30628
+Depends: libandroid-execinfo, libandroid-shmem, libicu, libpq, libuuid, libxml2, openssl, readline, zlib
+Breaks: postgresql-contrib (<= 10.3-1), postgresql-dev
+Replaces: postgresql-contrib (<= 10.3-1), postgresql-dev
+Filename: pool/main/p/postgresql/postgresql_18.2-1_aarch64.deb
+Size: 6242036
+MD5sum: 567b11774ce2780d620ee4e966c3123e
+SHA1: bad4c9bcc41376d9e20467655faafad6b21b2325
+SHA256: bc84908fdd2190b93b956d5bf857438006e3e656da29ab0b72cb784bb3afd22c
+Homepage: https://www.postgresql.org
+Description: Object-relational SQL database
+
+Package: postgresql-static
+Version: 18.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1456
+Depends: postgresql (= 18.2-1)
+Filename: pool/main/p/postgresql-static/postgresql-static_18.2-1_aarch64.deb
+Size: 199308
+MD5sum: f76ba7257f38d19e376f68c83797180b
+SHA1: 7619df95d53859b21e479db2bdb2cac4d57e0089
+SHA256: 0061f3ebeaddc7f5e8e2f4002ad41dc9d71a4d0c00b698e23b144e64f9755f08
+Homepage: https://www.postgresql.org
+Description: Static libraries for postgresql
 
 Package: procps
 Version: 4.0.7-2
@@ -4165,6 +4970,19 @@ SHA1: 8ba6da157409bfc8b06ebb85f5425ee69fa26e54
 SHA256: 5607f2faa5c2c0e00549135f7009be4c4fabd7cf61a54355bd005a357de29d49
 Homepage: https://github.com/facebook/zstd
 Description: A Pigz-like tool for Zstandard
+
+Package: rav1e
+Version: 0.8.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 3252
+Filename: pool/main/r/rav1e/rav1e_0.8.1_aarch64.deb
+Size: 987056
+MD5sum: 1758e552ff26944af23bca411af2c7f4
+SHA1: f54a11396bb786d25595061121102fcb9cb6bf23
+SHA256: 52d09c07070d362283856ef3a4e4af2c404f9228d466e29f7c168049e954a5cd
+Homepage: https://github.com/xiph/rav1e/
+Description: An AV1 encoder program focused on speed and safety
 
 Package: readline
 Version: 8.3.6
@@ -4468,6 +5286,19 @@ SHA256: c3327f2ef12dd54365cdf92333e6d37866c774384c6ab4db424d406ca0613158
 Homepage: https://subversion.apache.org
 Description: Static libraries for subversion
 
+Package: svt-av1
+Version: 4.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4400
+Filename: pool/main/s/svt-av1/svt-av1_4.2.0_aarch64.deb
+Size: 1489752
+MD5sum: c6c868e8e28e2cdfaa4c82dfedf18fc0
+SHA1: f54c37afebf396f43fde448dbfa1e8f8031650f1
+SHA256: 911b346c33c97802fc8d02165a524dda74e57cb268308a6b9db7e17fb4f26513
+Homepage: https://gitlab.com/AOMediaCodec/SVT-AV1
+Description: Scalable Video Technology for AV1 (SVT-AV1 Encoder and Decoder)
+
 Package: swig
 Version: 4.5.1
 Architecture: aarch64
@@ -4730,6 +5561,36 @@ SHA1: eb769930abaa4a9650f633e8bc914007c109349a
 SHA256: bcb794dbd6c7a140689265e8995b78cc08ec9263a3a03df7040634b0a6eb61cc
 Homepage: https://www.gnu.org/software/texinfo/
 Description: Documentation system for on-line information and printed output
+
+Package: tidy
+Version: 5.9.14-next-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2356
+Depends: libxslt
+Breaks: tidy-dev
+Replaces: tidy-dev
+Filename: pool/main/t/tidy/tidy_5.9.14-next-3_aarch64.deb
+Size: 308116
+MD5sum: 629458d507f47352e9cdf4edd2d08465
+SHA1: c8a9e5f4a29bc93562f7d7daec49c1065ed83208
+SHA256: 3fbb977c269405467ad782bd9faad4d79fac96c6f8ec5cfc503c53b6b89902cc
+Homepage: http://www.html-tidy.org/
+Description: A tool to tidy down your HTML code to a clean style
+
+Package: tidy-static
+Version: 5.9.14-next-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1356
+Depends: tidy (= 5.9.14-next-3)
+Filename: pool/main/t/tidy-static/tidy-static_5.9.14-next-3_aarch64.deb
+Size: 214884
+MD5sum: 529a7ba86f0fba71f125066af6d8f174
+SHA1: 9e2c457ce2de9567cea0f4887dab61fe77f22668
+SHA256: 280bccef3a1da0bea1b46cc5dd6d3ef1f5b5a9a54dc82d4673b01326c9f85c94
+Homepage: http://www.html-tidy.org/
+Description: Static libraries for tidy
 
 Package: tk
 Version: 8.6.14-1
@@ -5013,6 +5874,34 @@ SHA1: a87ff85628b05e867a8d56e123b7dc9aa6bd3e1c
 SHA256: 7ac7ed2ca9d0c5a3f9f5a2000641026ada52ec8aff4b7b90c16eac41ce652341
 Homepage: https://github.com/termux/x11-packages
 Description: Package repository containing X11 programs and libraries
+
+Package: x264
+Version: 1:0.164.3191-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1276
+Depends: libx264 (= 1:0.164.3191-1)
+Filename: pool/main/x/x264/x264_1:0.164.3191-1_aarch64.deb
+Size: 413352
+MD5sum: ad9d51fc5ecc6950a2148664c3d52cc7
+SHA1: c71ef0467a647ba51e806b9585a7a4ef05bbea64
+SHA256: 8857ce0f62d7fffe8038917fd73a9904610185aff1dcfee3c48084d9a9792a1f
+Homepage: https://www.videolan.org/developers/x264.html
+Description: Commandline video encoder for the H.264/MPEG-4 AVC format
+
+Package: x265
+Version: 4.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 184
+Depends: libx265 (= 4.3)
+Filename: pool/main/x/x265/x265_4.3_aarch64.deb
+Size: 44572
+MD5sum: a38cfa0dfb4637659a10037cdb67462d
+SHA1: 25822291e39fc28005434e7570926a92c6dc1d09
+SHA256: d9e9814a9b8a4781d2aee481aca6665dbb8e5efd13d8adc1dd992fc03ea26ea3
+Homepage: https://www.x265.org/
+Description: H.265/HEVC video stream encoder tool
 
 Package: xcb-proto
 Version: 1.17.0-3
