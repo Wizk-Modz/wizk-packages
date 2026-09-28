@@ -297,7 +297,7 @@ jobs:
         build_flags=(-I -C)
         if [ "${{ github.event.inputs.skip-depcheck }}" == "true" ]; then
           echo "Seed mode: building without dependency check (-s)"
-          build_flags=(-C)
+          build_flags=(-s -C)
         fi
 
         if [[ "${#packages[@]}" -gt 0 ]]; then
