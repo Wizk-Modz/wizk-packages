@@ -3848,16 +3848,16 @@ Homepage: https://pcre2project.github.io/pcre2/
 Description: A grep with Perl-compatible regular expressions
 
 Package: perl
-Version: 5.42.2-1
+Version: 5.42.2
 Architecture: aarch64
 Maintainer: @termux
 Installed-Size: 69360
 Depends: libandroid-utimes
-Filename: pool/main/p/perl/perl_5.42.2-1_aarch64.deb
-Size: 15444652
-MD5sum: 01115b8d527bce0aaa16d9ba50c54ba9
-SHA1: 4269821ebed281ddbaf0b683019ec94f91759c0a
-SHA256: 773cdeaeecbab3cd1e8ae65feab71d0440cc221bf40de98b9a4f5de5ea9837f6
+Filename: pool/main/p/perl/perl_5.42.2_aarch64.deb
+Size: 15453856
+MD5sum: d608cd0d3a49f893ec5a4303f1868ba8
+SHA1: 621e7eec0ae726c71fb0c845f59c30506fb10339
+SHA256: f52eb4922c72527bbb94be5f046a0c9246adb0718309e231cf1db14433f3a3df
 Homepage: https://www.perl.org/
 Description: Capable, feature-rich programming language
 
