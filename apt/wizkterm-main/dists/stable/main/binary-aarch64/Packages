@@ -163,6 +163,20 @@ SHA256: e04ad9a4f8e93a8a44dde8d978fca4ddee9584bb40c0a52358676aba49374c78
 Homepage: http://savannah.nongnu.org/projects/attr/
 Description: Static libraries for attr
 
+Package: autoconf
+Version: 2.73
+Architecture: all
+Maintainer: @termux
+Installed-Size: 3680
+Depends: m4, make, perl
+Filename: pool/main/a/autoconf/autoconf_2.73_all.deb
+Size: 624708
+MD5sum: e1e647dfccded751662679b98dcad2be
+SHA1: 7592a4270fe71bf26b66ee341be7a1e1cb8ae947
+SHA256: 9351b02c5c534f650473f606f57fe90ec8b26cfe2a843c20e654e3b4d6b91dbf
+Homepage: https://www.gnu.org/software/autoconf/autoconf.html
+Description: Creator of shell scripts to configure source code packages
+
 Package: bash
 Version: 5.3.20
 Architecture: aarch64
@@ -3174,6 +3188,19 @@ SHA1: 35597785979cfe30867c443b338d6e004f658dea
 SHA256: 3f7e2f7f614cc46819b74693c104cc33260b1c4b6e923cf44445b179c455f8e2
 Homepage: https://lz4.github.io/lz4/
 Description: Fast LZ compression algorithm tool
+
+Package: m4
+Version: 1.4.21
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 716
+Filename: pool/main/m/m4/m4_1.4.21_aarch64.deb
+Size: 203708
+MD5sum: 06271e85c4c4e4d72bceff6cd410bdc5
+SHA1: abf9260ef80eff8d5dcaa64f64523208cc5d5c11
+SHA256: d60acc1feafd43e9f0f959671283db0a5ff8abe229d16e8bf78152c24395e318
+Homepage: https://www.gnu.org/software/m4/m4.html
+Description: Traditional Unix macro processor
 
 Package: make
 Version: 4.4.1-1
