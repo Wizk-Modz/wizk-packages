@@ -2647,32 +2647,32 @@ Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for smart adaptive formatting of tabular data
 
 Package: libsndfile
-Version: 1.2.2-3
+Version: 1.2.2
 Architecture: aarch64
 Maintainer: @termux
 Installed-Size: 676
 Depends: libflac, libmp3lame, libmpg123, libogg, libopus, libvorbis
 Breaks: libsndfile-dev
 Replaces: libsndfile-dev
-Filename: pool/main/l/libsndfile/libsndfile_1.2.2-3_aarch64.deb
-Size: 201632
-MD5sum: 82795b4c6b9d51174ac6e4c268dc110d
-SHA1: e15bbaa0a6b393cd995238bc6574276b6b566baa
-SHA256: c0c6253d93716468ba4ebc2bcae5d5c13c2fd67d0b92a81aaa27af62befc19d7
+Filename: pool/main/l/libsndfile/libsndfile_1.2.2_aarch64.deb
+Size: 201692
+MD5sum: 016b7ce2ab06ae45951eb093b5acfb6f
+SHA1: 75637ce911a7188d777b907f58829392ef87ee5b
+SHA256: 82cd2304a3a39e98da3989cc21885a07bebae97c93d8b35699ace8891c956860
 Homepage: http://www.mega-nerd.com/libsndfile
 Description: Library for reading/writing audio files
 
 Package: libsndfile-static
-Version: 1.2.2-3
+Version: 1.2.2
 Architecture: aarch64
 Maintainer: @termux
 Installed-Size: 796
-Depends: libsndfile (= 1.2.2-3)
-Filename: pool/main/l/libsndfile-static/libsndfile-static_1.2.2-3_aarch64.deb
-Size: 167840
-MD5sum: b58e6822535b94e451e5c12263a62e34
-SHA1: c4b8d4483e18efda65fdbaea0ecbca5ce270157d
-SHA256: e71393d65b10fca7b717234f0bbd8579f50039c0ee7e85a0610eda653362c89d
+Depends: libsndfile (= 1.2.2)
+Filename: pool/main/l/libsndfile-static/libsndfile-static_1.2.2_aarch64.deb
+Size: 167736
+MD5sum: 68640e25805caf15d5ec268951f14a1a
+SHA1: fb8f56b2932dbf7d1c50fed90563a05e4f8580d0
+SHA256: 9beae08fc99a10f8ce63ae1803aa3fcec3b5ff6bd104e3f239327d072dbe4b81
 Homepage: http://www.mega-nerd.com/libsndfile
 Description: Static libraries for libsndfile
 
