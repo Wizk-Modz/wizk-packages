@@ -226,6 +226,22 @@ SHA256: 5b6d84de64444b2fec6ece8a8b0f1180a49440717e9e8cce80bae14af32dfcc7
 Homepage: https://github.com/google/brotli
 Description: lossless compression algorithm and format (command line utility)
 
+Package: build-essential
+Version: 4.1
+Architecture: all
+Maintainer: @termux
+Installed-Size: 4
+Depends: clang, make, pkg-config
+Recommends: autoconf, automake, bc, bison, cmake, flex, gperf, libtool, m4
+Suggests: git, golang, nodejs, patchelf, proot, python, ruby, rust, subversion
+Filename: pool/main/b/build-essential/build-essential_4.1_all.deb
+Size: 824
+MD5sum: 8e7d38c4c1f286e2c6e3de9bd1ff418e
+SHA1: 98583bfefde7b1147011cd407a1f6e1e7b829fd3
+SHA256: 85bff36252c215a6e9e8ab469c51763dc5d74db7ef256eb05b5f6f705fa958d2
+Homepage: https://github.com/termux/termux-packages
+Description: A metapackage that installs essential development tools
+
 Package: bzip2
 Version: 1.0.8-8
 Architecture: aarch64
