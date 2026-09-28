@@ -240,6 +240,20 @@ SHA256: 5b6d84de64444b2fec6ece8a8b0f1180a49440717e9e8cce80bae14af32dfcc7
 Homepage: https://github.com/google/brotli
 Description: lossless compression algorithm and format (command line utility)
 
+Package: bsdtar
+Version: 3.8.9
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1516
+Depends: libarchive (= 3.8.9)
+Filename: pool/main/b/bsdtar/bsdtar_3.8.9_aarch64.deb
+Size: 352048
+MD5sum: 7c0859d540466c558d3c0f1665f90642
+SHA1: 873fa9058c504fed5a28004c0a70d6958ed7d68a
+SHA256: f5f61564497e8e0b3daa16e4d0da4cd95b29c7eada1242968d95b888a20a4479
+Homepage: https://www.libarchive.org/
+Description: The tar(1) and cpio(1) programs from FreeBSD, using libarchive
+
 Package: build-essential
 Version: 4.1
 Architecture: all
@@ -357,6 +371,35 @@ SHA1: cb2d845b60fef12d237296d8bb69c6c4c2e2bfde
 SHA256: d649d5d94d808424e46d40ba4b0369a5d21d58cc04f05cf6d8c6d975a7d1b1eb
 Homepage: https://clang.llvm.org/
 Description: C language frontend for LLVM
+
+Package: cmake
+Version: 4.4.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 55844
+Depends: libarchive, libc++, libcurl, libexpat, jsoncpp, libuv, rhash, zlib
+Recommends: clang, make
+Filename: pool/main/c/cmake/cmake_4.4.3_aarch64.deb
+Size: 10646240
+MD5sum: d88b3469d9d324141c04f30b72ee97d8
+SHA1: 7ad5585152394d8b1b27c97034e54afb4e5db7bf
+SHA256: 47559f096b1868aa949fbc9eb9c2f9eb827e8e2aa3c2fd915e856564c1cc7e4e
+Homepage: https://cmake.org/
+Description: Family of tools designed to build, test and package software
+
+Package: cmake-curses-gui
+Version: 4.4.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 9436
+Depends: ncurses-ui-libs, cmake (= 4.4.3)
+Filename: pool/main/c/cmake-curses-gui/cmake-curses-gui_4.4.3_aarch64.deb
+Size: 2476352
+MD5sum: a0869f86fc7f284a9fc86bd31bf0b624
+SHA1: d0bb58f7a2aa73b861615389a7930aeca5d41d5d
+SHA256: 942445fe638414425f795f0bfd45d5f0940963041e4160155f2fd6eab4eaf908
+Homepage: https://cmake.org/
+Description: Curses based user interface for CMake (ccmake)
 
 Package: command-not-found
 Version: 3.5.0-15
@@ -1062,6 +1105,36 @@ SHA256: 13e4050aa9cd1b55f466e362e03ce5060ee91cef1c0241c956690d83aab6e789
 Homepage: https://jqlang.org/
 Description: Static libraries for jq
 
+Package: jsoncpp
+Version: 1.9.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 452
+Depends: libc++
+Breaks: jsoncpp-dev
+Replaces: jsoncpp-dev
+Filename: pool/main/j/jsoncpp/jsoncpp_1.9.8_aarch64.deb
+Size: 96264
+MD5sum: 770a1a5ff4c077b310c256f397179de0
+SHA1: 07d2574e7d5114c24736c0158669c2ab5c8529cd
+SHA256: 53b4c14c5f43e6154b56c6c472e231b6cc4073c7280f57ca5bfe300d4ba57534
+Homepage: https://github.com/open-source-parsers/jsoncpp
+Description: C++ library for interacting with JSON
+
+Package: jsoncpp-static
+Version: 1.9.8
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 472
+Depends: jsoncpp (= 1.9.8)
+Filename: pool/main/j/jsoncpp-static/jsoncpp-static_1.9.8_aarch64.deb
+Size: 73236
+MD5sum: 7925a22474040ec10aeba54575c98bcd
+SHA1: ad43b966d715598889dd7ca772aa40c8c07bbf3a
+SHA256: 3f958b25360767c09c55e411829d8854a04d129caf6e24d6384cf3709b67b996
+Homepage: https://github.com/open-source-parsers/jsoncpp
+Description: Static libraries for jsoncpp
+
 Package: krb5
 Version: 1.22.2
 Architecture: aarch64
@@ -1377,6 +1450,36 @@ SHA1: be03ef3d7ca76b67bb375c086148325fc3dd3da1
 SHA256: 9cee5b37d45da827979e7311c22de8cbcbad937afcc2b7e9658f2a646324b19a
 Homepage: https://github.com/termux/libandroid-utimes
 Description: Static libraries for libandroid-utimes
+
+Package: libarchive
+Version: 3.8.9
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1040
+Depends: libbz2, libiconv, liblzma, libxml2, openssl, zlib
+Breaks: libarchive-dev
+Replaces: libarchive-dev
+Filename: pool/main/l/libarchive/libarchive_3.8.9_aarch64.deb
+Size: 394684
+MD5sum: 5417fa4ab645d6e98653cf18708f38ef
+SHA1: 4d81d57b88cfbf1d2c4d50b42371e90ab8c1c9d0
+SHA256: 2e6936198e60cd1cf021e87262cd31f3f163005d21a9661cb8f75274f9ce722f
+Homepage: https://www.libarchive.org/
+Description: Multi-format archive and compression library
+
+Package: libarchive-static
+Version: 3.8.9
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2044
+Depends: libarchive (= 3.8.9)
+Filename: pool/main/l/libarchive-static/libarchive-static_3.8.9_aarch64.deb
+Size: 363320
+MD5sum: 5aaf229fb0359c5e9e6e0c9cc5817ab8
+SHA1: c11fd7604e5f341462e3bf35871af4bfe92cc31e
+SHA256: db4771cea05903140372ed19654b53e87e02bdf43364c5e3936c455a0615d1b7
+Homepage: https://www.libarchive.org/
+Description: Static libraries for libarchive
 
 Package: libassuan
 Version: 3.0.2-1
@@ -2809,6 +2912,36 @@ SHA256: 690e254c9dd5c210cc2f8b50f059e42bc3716acdd2c00d70988df8841b79a5a7
 Homepage: https://en.wikipedia.org/wiki/Util-linux
 Description: Library for handling universally unique identifiers
 
+Package: libuv
+Version: 1.53.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 364
+Depends: libandroid-spawn
+Breaks: libuv-dev
+Replaces: libuv-dev
+Filename: pool/main/l/libuv/libuv_1.53.0_aarch64.deb
+Size: 84084
+MD5sum: f11009cbce697f677e457693e76a3afa
+SHA1: 0347e405e3600e6124ce9451a092441eea18bf60
+SHA256: 90bdc97779fda0fd83698c76779bbebe9d33b33f56e5a45f1f51d4657e0a7747
+Homepage: https://libuv.org
+Description: Support library with a focus on asynchronous I/O
+
+Package: libuv-static
+Version: 1.53.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1608
+Depends: libuv (= 1.53.0)
+Filename: pool/main/l/libuv-static/libuv-static_1.53.0_aarch64.deb
+Size: 295620
+MD5sum: 6b04e793ec98408f0ba2186dae28b02f
+SHA1: a07aaa4c06c5790403262152f8b67e20ec177222
+SHA256: bfb0b93a4afa55c70492c1502f01f1b411ec902f071167f5d7b155302a9d0d62
+Homepage: https://libuv.org
+Description: Static libraries for libuv
+
 Package: libvorbis
 Version: 1.3.7-4
 Architecture: aarch64
@@ -3914,6 +4047,36 @@ SHA1: 574180f1a1a836981cfe622693117b399d979f2a
 SHA256: 892915efb1bcfa8041560f6d1874351740c96f4ceb6b63b0add8a2f17621cf6a
 Homepage: https://man7.org/linux/man-pages/man5/resolv.conf.5.html
 Description: Resolver configuration file
+
+Package: rhash
+Version: 1.4.6-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 384
+Depends: openssl
+Conflicts: librhash, rhash-dev
+Replaces: librhash, rhash-dev
+Filename: pool/main/r/rhash/rhash_1.4.6-1_aarch64.deb
+Size: 160492
+MD5sum: 9bf8aadfaad9ce2e4fb573d37618e0f1
+SHA1: 7f898b2e01d3b3d4cb695088e7ba1a5a6a175194
+SHA256: bcb9ccbaad9e2747564f66a75927a27ff264f3839007045902aebf9af0f6fe2a
+Homepage: https://github.com/rhash/RHash
+Description: Console utility for calculation and verification of magnet links and a wide range of hash sums
+
+Package: rhash-static
+Version: 1.4.6-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 352
+Depends: rhash (= 1.4.6-1)
+Filename: pool/main/r/rhash-static/rhash-static_1.4.6-1_aarch64.deb
+Size: 128816
+MD5sum: 448b70b941ce1908a1c40f76c015a430
+SHA1: a6de8e1962ad10c18f0a5116d2492a8bf0fd42fa
+SHA256: b286a676038353a12e7bbda6f525c7a972e42559d08f9bb0dd3773addafba2d8
+Homepage: https://github.com/rhash/RHash
+Description: Static libraries for rhash
 
 Package: root-repo
 Version: 2.4-3
