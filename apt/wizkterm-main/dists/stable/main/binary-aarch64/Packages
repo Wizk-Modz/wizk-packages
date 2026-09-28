@@ -120,6 +120,19 @@ SHA256: 4031c130a8546b19e334f5c86c89eb986119ff93041433cfcdb665661e00849c
 Homepage: https://packages.debian.org/apt
 Description: APT transport for anonymous package downloads via Tor
 
+Package: aptly
+Version: 1.6.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 72644
+Filename: pool/main/a/aptly/aptly_1.6.3_aarch64.deb
+Size: 14266160
+MD5sum: f1df3775ade7e4b31093fdb113c9043c
+SHA1: bbe7e617fb95276b400db90025f4f8e2c3dd2589
+SHA256: f855a9ff70025ad2519d3607f90d262d3594ae8debfb171f7c93f88e4e425bac
+Homepage: https://www.aptly.info
+Description: A Swiss Army knife for Debian repository management
+
 Package: aria2
 Version: 1.37.0-3
 Architecture: aarch64
@@ -988,6 +1001,36 @@ SHA1: 8c0bda4d88dd1a0cbe381b300084baa4838b26d9
 SHA256: 51f5ade480231c523724c048e0da66ba36b3bf4b310f03084524795e3595a49f
 Homepage: https://www.gnutls.org/
 Description: Commandline utilities for interfacing with the gnutls library
+
+Package: gpgme
+Version: 2.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1240
+Depends: gnupg (>= 2.2.9-1), libassuan, libgpg-error
+Breaks: gpgme-dev
+Replaces: gpgme-dev
+Filename: pool/main/g/gpgme/gpgme_2.2.0_aarch64.deb
+Size: 263908
+MD5sum: b9ccce454a42a55dc8b65e470fb4d919
+SHA1: 609eb82bad59db21c48f387c79102526e6655227
+SHA256: 8aa27c5202b7a7c8ab1e4a33486c74ba2343cfc63a5e8998ae48e80b9c490389
+Homepage: https://www.gnupg.org/related_software/gpgme/
+Description: Library designed to make access to GnuPG easier
+
+Package: gpgme-static
+Version: 2.2.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 704
+Depends: gpgme (= 2.2.0)
+Filename: pool/main/g/gpgme-static/gpgme-static_2.2.0_aarch64.deb
+Size: 128448
+MD5sum: f157ab9205c79e3bd65e8759c7cf4ed5
+SHA1: 96ac36062fc1a66b3197e4c17c480fca885b3c8f
+SHA256: a2545d256c90ea7c27b4863d80d153711d2a15840261c3854ee259a8bf4b7524
+Homepage: https://www.gnupg.org/related_software/gpgme/
+Description: Static libraries for gpgme
 
 Package: gpgv
 Version: 2.5.17
@@ -4782,6 +4825,34 @@ SHA1: e34b9ff7ba99f0f14c53589cdbec7b854ddf1e78
 SHA256: 51cae8c7f16987dabdb142425de23e348fc2c7ad338858c253902a5550ff633a
 Homepage: https://www.gnu.org/software/wget/
 Description: Commandline tool for retrieving files using HTTP, HTTPS and FTP
+
+Package: wget2
+Version: 2.3.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1484
+Depends: brotli, gpgme, libandroid-glob, openssl, libiconv, libidn2, libnghttp2, pcre2, zlib, zstd
+Filename: pool/main/w/wget2/wget2_2.3.0_aarch64.deb
+Size: 302560
+MD5sum: 71bed12f861356b12ef55006330d6072
+SHA1: e265494beb64d08798027885860efc61380babd9
+SHA256: 9eb941d58cdf521193cb72a82d060cd9721a0cf16501f8139d386ebc50d4a64d
+Homepage: https://gitlab.com/gnuwget/wget2
+Description: The successor of GNU Wget, a file and recursive website downloader
+
+Package: wget2-static
+Version: 2.3.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1216
+Depends: wget2 (= 2.3.0)
+Filename: pool/main/w/wget2-static/wget2-static_2.3.0_aarch64.deb
+Size: 229996
+MD5sum: 6f0f76dd58944a625e2515ac97caacaa
+SHA1: e3448dc1738ecd63c652acda3371b8f2b490fdcf
+SHA256: 9d1c567ce8e483aa22b2d97c23bd62bfd44eec3861d31a41c8441f313a28595c
+Homepage: https://gitlab.com/gnuwget/wget2
+Description: Static libraries for wget2
 
 Package: which
 Version: 2.25

@@ -29,6 +29,7 @@ data/data/com.wizkterm/files/usr/bin/apt-ftparchive apt-ftparchive
 data/data/com.wizkterm/files/usr/bin/apt-get apt
 data/data/com.wizkterm/files/usr/bin/apt-key apt
 data/data/com.wizkterm/files/usr/bin/apt-mark apt
+data/data/com.wizkterm/files/usr/bin/aptly aptly
 data/data/com.wizkterm/files/usr/bin/apu-1-config apr-util
 data/data/com.wizkterm/files/usr/bin/ar llvm
 data/data/com.wizkterm/files/usr/bin/aria2c aria2
@@ -300,6 +301,7 @@ data/data/com.wizkterm/files/usr/bin/glib-compile-resources glib
 data/data/com.wizkterm/files/usr/bin/glib-compile-schemas glib
 data/data/com.wizkterm/files/usr/bin/glib-genmarshal glib
 data/data/com.wizkterm/files/usr/bin/glib-mkenums glib
+data/data/com.wizkterm/files/usr/bin/gnupg-key-manage gpgme
 data/data/com.wizkterm/files/usr/bin/gnutls-cli gnutls
 data/data/com.wizkterm/files/usr/bin/gnutls-cli-debug gnutls
 data/data/com.wizkterm/files/usr/bin/gnutls-serv gnutls
@@ -317,6 +319,9 @@ data/data/com.wizkterm/files/usr/bin/gpg-mail-tube gnupg
 data/data/com.wizkterm/files/usr/bin/gpg-wks-client gnupg
 data/data/com.wizkterm/files/usr/bin/gpg2 gnupg
 data/data/com.wizkterm/files/usr/bin/gpgconf gnupg
+data/data/com.wizkterm/files/usr/bin/gpgme-config gpgme
+data/data/com.wizkterm/files/usr/bin/gpgme-json gpgme
+data/data/com.wizkterm/files/usr/bin/gpgme-tool gpgme
 data/data/com.wizkterm/files/usr/bin/gpgparsemail gnupg
 data/data/com.wizkterm/files/usr/bin/gpgrt-config libgpg-error
 data/data/com.wizkterm/files/usr/bin/gpgscm gnupg
@@ -970,6 +975,8 @@ data/data/com.wizkterm/files/usr/bin/wc coreutils
 data/data/com.wizkterm/files/usr/bin/wcurl libcurl
 data/data/com.wizkterm/files/usr/bin/wdctl util-linux
 data/data/com.wizkterm/files/usr/bin/wget wget
+data/data/com.wizkterm/files/usr/bin/wget2 wget2
+data/data/com.wizkterm/files/usr/bin/wget2_noinstall wget2
 data/data/com.wizkterm/files/usr/bin/whereis util-linux
 data/data/com.wizkterm/files/usr/bin/which which
 data/data/com.wizkterm/files/usr/bin/whirlpool-hash rhash
@@ -5717,6 +5724,7 @@ data/data/com.wizkterm/files/usr/include/gnutls/urls.h libgnutls
 data/data/com.wizkterm/files/usr/include/gnutls/x509-ext.h libgnutls
 data/data/com.wizkterm/files/usr/include/gnutls/x509.h libgnutls
 data/data/com.wizkterm/files/usr/include/gpg-error.h libgpg-error
+data/data/com.wizkterm/files/usr/include/gpgme.h gpgme
 data/data/com.wizkterm/files/usr/include/gpgrt.h libgpg-error
 data/data/com.wizkterm/files/usr/include/grp.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/gssapi.h krb5
@@ -13100,6 +13108,8 @@ data/data/com.wizkterm/files/usr/include/webrtc-audio-processing-1/rtc_base/type
 data/data/com.wizkterm/files/usr/include/webrtc-audio-processing-1/system_wrappers/include/cpu_features_wrapper.h libwebrtc-audio-processing
 data/data/com.wizkterm/files/usr/include/webrtc-audio-processing-1/system_wrappers/include/metrics.h libwebrtc-audio-processing
 data/data/com.wizkterm/files/usr/include/webrtc-audio-processing-1/system_wrappers/include/sleep.h libwebrtc-audio-processing
+data/data/com.wizkterm/files/usr/include/wget.h wget2
+data/data/com.wizkterm/files/usr/include/wgetver.h wget2
 data/data/com.wizkterm/files/usr/include/x86_64-linux-android/asm/a.out.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/x86_64-linux-android/asm/amd_hsmp.h ndk-sysroot
 data/data/com.wizkterm/files/usr/include/x86_64-linux-android/asm/auxvec.h ndk-sysroot
@@ -14707,6 +14717,9 @@ data/data/com.wizkterm/files/usr/lib/libgobject-2.0.so.0.9000.0 glib
 data/data/com.wizkterm/files/usr/lib/libgpg-error.a libgpg-error-static
 data/data/com.wizkterm/files/usr/lib/libgpg-error.la libgpg-error-static
 data/data/com.wizkterm/files/usr/lib/libgpg-error.so libgpg-error
+data/data/com.wizkterm/files/usr/lib/libgpgme.a gpgme-static
+data/data/com.wizkterm/files/usr/lib/libgpgme.la gpgme-static
+data/data/com.wizkterm/files/usr/lib/libgpgme.so gpgme
 data/data/com.wizkterm/files/usr/lib/libgssapi_krb5.so krb5
 data/data/com.wizkterm/files/usr/lib/libgssapi_krb5.so.2 krb5
 data/data/com.wizkterm/files/usr/lib/libgssapi_krb5.so.2.2 krb5
@@ -15083,6 +15096,9 @@ data/data/com.wizkterm/files/usr/lib/libvorbisfile.la libvorbis-static
 data/data/com.wizkterm/files/usr/lib/libvorbisfile.so libvorbis
 data/data/com.wizkterm/files/usr/lib/libwebrtc-audio-coding-1.so libwebrtc-audio-processing
 data/data/com.wizkterm/files/usr/lib/libwebrtc-audio-processing-1.so libwebrtc-audio-processing
+data/data/com.wizkterm/files/usr/lib/libwget.a wget2-static
+data/data/com.wizkterm/files/usr/lib/libwget.la wget2-static
+data/data/com.wizkterm/files/usr/lib/libwget.so wget2
 data/data/com.wizkterm/files/usr/lib/libxcb-composite.a libxcb-static
 data/data/com.wizkterm/files/usr/lib/libxcb-composite.la libxcb-static
 data/data/com.wizkterm/files/usr/lib/libxcb-composite.so libxcb
@@ -19262,6 +19278,8 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/gnutls-dane.pc libgnutls
 data/data/com.wizkterm/files/usr/lib/pkgconfig/gnutls.pc libgnutls
 data/data/com.wizkterm/files/usr/lib/pkgconfig/gobject-2.0.pc glib
 data/data/com.wizkterm/files/usr/lib/pkgconfig/gpg-error.pc libgpg-error
+data/data/com.wizkterm/files/usr/lib/pkgconfig/gpgme-glib.pc gpgme
+data/data/com.wizkterm/files/usr/lib/pkgconfig/gpgme.pc gpgme
 data/data/com.wizkterm/files/usr/lib/pkgconfig/gssrpc.pc krb5
 data/data/com.wizkterm/files/usr/lib/pkgconfig/gthread-2.0.pc glib
 data/data/com.wizkterm/files/usr/lib/pkgconfig/history.pc readline
@@ -19330,6 +19348,7 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/libunbound.pc libunbound
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libusb-1.0.pc libusb
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libutf8proc.pc utf8proc
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libuv.pc libuv
+data/data/com.wizkterm/files/usr/lib/pkgconfig/libwget.pc wget2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libxml-2.0.pc libxml2
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libxslt.pc libxslt
 data/data/com.wizkterm/files/usr/lib/pkgconfig/libxxhash.pc xxhash
@@ -22327,6 +22346,7 @@ data/data/com.wizkterm/files/usr/share/aclocal/freetype2.m4 freetype
 data/data/com.wizkterm/files/usr/share/aclocal/glib-2.0.m4 glib
 data/data/com.wizkterm/files/usr/share/aclocal/glib-gettext.m4 glib
 data/data/com.wizkterm/files/usr/share/aclocal/gpg-error.m4 libgpg-error
+data/data/com.wizkterm/files/usr/share/aclocal/gpgme.m4 gpgme
 data/data/com.wizkterm/files/usr/share/aclocal/gpgrt.m4 libgpg-error
 data/data/com.wizkterm/files/usr/share/aclocal/gsettings.m4 glib
 data/data/com.wizkterm/files/usr/share/aclocal/ksba.m4 libksba
@@ -23533,6 +23553,7 @@ data/data/com.wizkterm/files/usr/share/bash-completion/completions-fallback/zola
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/README.md bash-completion
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/addpart util-linux
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/apt apt
+data/data/com.wizkterm/files/usr/share/bash-completion/completions/aptly aptly
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/bits util-linux
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/blkdiscard blk-utils
 data/data/com.wizkterm/files/usr/share/bash-completion/completions/blkid blk-utils
@@ -27811,6 +27832,10 @@ data/data/com.wizkterm/files/usr/share/cmake-4.4/Templates/Windows/StoreLogo.png
 data/data/com.wizkterm/files/usr/share/cmake-4.4/Templates/Windows/Windows_TemporaryKey.pfx cmake
 data/data/com.wizkterm/files/usr/share/cmake/bash-completion/bash-completion-config-version.cmake bash-completion
 data/data/com.wizkterm/files/usr/share/cmake/bash-completion/bash-completion-config.cmake bash-completion
+data/data/com.wizkterm/files/usr/share/common-lisp/source/gpgme/gpgme-grovel.lisp gpgme
+data/data/com.wizkterm/files/usr/share/common-lisp/source/gpgme/gpgme-package.lisp gpgme
+data/data/com.wizkterm/files/usr/share/common-lisp/source/gpgme/gpgme.asd gpgme
+data/data/com.wizkterm/files/usr/share/common-lisp/source/gpgme/gpgme.lisp gpgme
 data/data/com.wizkterm/files/usr/share/dbus-1/session.conf dbus
 data/data/com.wizkterm/files/usr/share/dbus-1/system.conf dbus
 data/data/com.wizkterm/files/usr/share/doc/abseil-cpp/copyright abseil-cpp
@@ -27822,6 +27847,7 @@ data/data/com.wizkterm/files/usr/share/doc/acl/libacl.txt libacl
 data/data/com.wizkterm/files/usr/share/doc/apr-util/copyright apr-util
 data/data/com.wizkterm/files/usr/share/doc/apr/copyright apr
 data/data/com.wizkterm/files/usr/share/doc/apt/copyright apt
+data/data/com.wizkterm/files/usr/share/doc/aptly/copyright aptly
 data/data/com.wizkterm/files/usr/share/doc/aria2/README aria2
 data/data/com.wizkterm/files/usr/share/doc/aria2/README.html aria2
 data/data/com.wizkterm/files/usr/share/doc/aria2/README.rst aria2
@@ -27961,6 +27987,9 @@ data/data/com.wizkterm/files/usr/share/doc/gnupg/examples/pwpattern.list gnupg
 data/data/com.wizkterm/files/usr/share/doc/gnupg/examples/qualified.txt gnupg
 data/data/com.wizkterm/files/usr/share/doc/gnupg/examples/scd-event gnupg
 data/data/com.wizkterm/files/usr/share/doc/gnupg/examples/trustlist.txt gnupg
+data/data/com.wizkterm/files/usr/share/doc/gpgme/COPYING gpgme
+data/data/com.wizkterm/files/usr/share/doc/gpgme/COPYING.LESSER gpgme
+data/data/com.wizkterm/files/usr/share/doc/gpgme/LICENSES gpgme
 data/data/com.wizkterm/files/usr/share/doc/grep/copyright grep
 data/data/com.wizkterm/files/usr/share/doc/gzip/copyright gzip
 data/data/com.wizkterm/files/usr/share/doc/iconv.1.html libiconv
@@ -28766,6 +28795,8 @@ data/data/com.wizkterm/files/usr/share/doc/util-linux/getopt-example.tcsh util-l
 data/data/com.wizkterm/files/usr/share/doc/uv/LICENSE-APACHE uv
 data/data/com.wizkterm/files/usr/share/doc/uv/LICENSE-MIT uv
 data/data/com.wizkterm/files/usr/share/doc/wget/copyright wget
+data/data/com.wizkterm/files/usr/share/doc/wget2/copyright wget2
+data/data/com.wizkterm/files/usr/share/doc/wget2/copyright.1 wget2
 data/data/com.wizkterm/files/usr/share/doc/which/copyright which
 data/data/com.wizkterm/files/usr/share/doc/wizkterm-keyring/copyright wizkterm-keyring
 data/data/com.wizkterm/files/usr/share/doc/x11-repo/copyright x11-repo
@@ -29077,6 +29108,9 @@ data/data/com.wizkterm/files/usr/share/info/gnupg.info gnupg
 data/data/com.wizkterm/files/usr/share/info/gnupg.info-1 gnupg
 data/data/com.wizkterm/files/usr/share/info/gnupg.info-2 gnupg
 data/data/com.wizkterm/files/usr/share/info/gnupg.info-3 gnupg
+data/data/com.wizkterm/files/usr/share/info/gpgme.info gpgme
+data/data/com.wizkterm/files/usr/share/info/gpgme.info-1 gpgme
+data/data/com.wizkterm/files/usr/share/info/gpgme.info-2 gpgme
 data/data/com.wizkterm/files/usr/share/info/gpgrt.info libgpg-error
 data/data/com.wizkterm/files/usr/share/info/grep.info grep
 data/data/com.wizkterm/files/usr/share/info/gzip.info gzip
@@ -29176,6 +29210,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/apt-sortpkgs.1.gz apt
 data/data/com.wizkterm/files/usr/share/man/man1/apt-transport-http.1.gz apt
 data/data/com.wizkterm/files/usr/share/man/man1/apt-transport-https.1.gz apt
 data/data/com.wizkterm/files/usr/share/man/man1/apt-transport-mirror.1.gz apt
+data/data/com.wizkterm/files/usr/share/man/man1/aptly.1.gz aptly
 data/data/com.wizkterm/files/usr/share/man/man1/ar.1.gz llvm
 data/data/com.wizkterm/files/usr/share/man/man1/aria2c.1.gz aria2
 data/data/com.wizkterm/files/usr/share/man/man1/asn1Coding.1.gz libtasn1
@@ -30450,6 +30485,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/watchgnupg.1.gz gnupg
 data/data/com.wizkterm/files/usr/share/man/man1/wc.1.gz coreutils
 data/data/com.wizkterm/files/usr/share/man/man1/wcurl.1.gz libcurl
 data/data/com.wizkterm/files/usr/share/man/man1/wget.1.gz wget
+data/data/com.wizkterm/files/usr/share/man/man1/wget2.1.gz wget2
 data/data/com.wizkterm/files/usr/share/man/man1/whereis.1.gz util-linux
 data/data/com.wizkterm/files/usr/share/man/man1/which.1.gz which
 data/data/com.wizkterm/files/usr/share/man/man1/whirlpool-hash.1.gz rhash
@@ -42978,6 +43014,7 @@ data/data/com.wizkterm/files/usr/share/xml/docbook/xsl-stylesheets-1.79.2/xhtml5
 data/data/com.wizkterm/files/usr/share/xml/docbook/xsl-stylesheets-1.79.2/xhtml5/xhtml-profile-docbook.xsl docbook-xsl
 data/data/com.wizkterm/files/usr/share/xml/docbook/xsl-stylesheets-1.79.2/xhtml5/xhtml2xhtml5.xsl docbook-xsl
 data/data/com.wizkterm/files/usr/share/xml/fontconfig/fonts.dtd fontconfig
+data/data/com.wizkterm/files/usr/share/zsh/site-functions/_aptly aptly
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_gh gh
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_p11-kit p11-kit
 data/data/com.wizkterm/files/usr/share/zsh/site-functions/_proot-distro proot-distro
