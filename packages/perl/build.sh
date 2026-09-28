@@ -13,6 +13,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 # - vim-gtk
 TERMUX_PKG_VERSION=(5.42.2
                     1.6.4)
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SHA256=(0a585eeb9e363c0f80482ddb3571625250c2c86aeb408853e8ea50805cfb14bb
 		b176522bceb1fc3533eb85e4435e5ab06f7473633979122a8f5b18a2b4fc865a)
 TERMUX_PKG_SRCURL=("https://www.cpan.org/src/5.0/perl-${TERMUX_PKG_VERSION[0]}.tar.xz"
@@ -60,6 +61,9 @@ termux_step_configure() {
 		export CFLAGS="-D_BSD_SOURCE=1"
 
 		cd "$TERMUX_PKG_BUILDDIR"
+		# -fno-strict-aliasing là bắt buộc với Clang: perl-cross chỉ tự thêm
+		# cờ này khi compiler là gcc, còn Clang 21 tối ưu vi phạm
+		# strict-aliasing gây panic magic_killbackrefs khi dùng warnings.pm.
 		"$TERMUX_PKG_SRCDIR/configure" \
 			--target="$TERMUX_HOST_PLATFORM" \
 			--with-cc="$ORIG_CC" \
@@ -73,7 +77,7 @@ termux_step_configure() {
 			-Duseshrplib \
 			-Duseithreads \
 			-Dusemultiplicity \
-			-Doptimize="-O2" \
+			-Doptimize="-O2 -fno-strict-aliasing" \
 			--with-libs="-lm -L$TERMUX_PREFIX/lib -landroid-utimes"
 	)
 }
