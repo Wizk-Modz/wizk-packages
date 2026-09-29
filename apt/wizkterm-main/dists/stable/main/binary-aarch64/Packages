@@ -6074,6 +6074,20 @@ SHA256: 94c34e1165e8ef5de86b0e54c741e11e9c1fb62ae2707dd2aacab5f08dfb758f
 Homepage: https://tukaani.org/xz/
 Description: XZ-format compression tools
 
+Package: zip
+Version: 3.0-7
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 548
+Depends: libandroid-support, libbz2
+Filename: pool/main/z/zip/zip_3.0-7_aarch64.deb
+Size: 142552
+MD5sum: 35c88c401ecdf2ca2df272bad56345ee
+SHA1: 0d4a370aa24cbb75e340a3857ebdfec42a0af50e
+SHA256: 893c317ffea0432db2a06c35cf71d91ec37b90da88acc5b21cb0aef43e8d7c0b
+Homepage: https://sourceforge.net/projects/infozip/
+Description: Tools for working with zip files
+
 Package: zlib
 Version: 1.3.2
 Architecture: aarch64
