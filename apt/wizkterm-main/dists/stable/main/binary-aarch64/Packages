@@ -4098,6 +4098,20 @@ SHA256: 3f7e2f7f614cc46819b74693c104cc33260b1c4b6e923cf44445b179c455f8e2
 Homepage: https://lz4.github.io/lz4/
 Description: Fast LZ compression algorithm tool
 
+Package: lzip
+Version: 1.26
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 240
+Depends: libc++
+Filename: pool/main/l/lzip/lzip_1.26_aarch64.deb
+Size: 66880
+MD5sum: b0c1fff3045b02513f7f70a28ffe7eeb
+SHA1: 710cb71a78a333c66e884767f0d567c21c08378b
+SHA256: 3eac5a890e11d4c04498f62bb2208bc60e723845929a27f1e03d9b3ba40aaf9d
+Homepage: https://www.nongnu.org/lzip/
+Description: Lossless data compressor similar to gzip and bzip2
+
 Package: m4
 Version: 1.4.21
 Architecture: aarch64

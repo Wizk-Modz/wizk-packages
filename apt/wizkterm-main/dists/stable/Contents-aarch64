@@ -627,6 +627,7 @@ data/data/com.wizkterm/files/usr/bin/lzdiff xz-utils
 data/data/com.wizkterm/files/usr/bin/lzegrep xz-utils
 data/data/com.wizkterm/files/usr/bin/lzfgrep xz-utils
 data/data/com.wizkterm/files/usr/bin/lzgrep xz-utils
+data/data/com.wizkterm/files/usr/bin/lzip lzip
 data/data/com.wizkterm/files/usr/bin/lzless xz-utils
 data/data/com.wizkterm/files/usr/bin/lzma xz-utils
 data/data/com.wizkterm/files/usr/bin/lzmadec xz-utils
@@ -41267,6 +41268,7 @@ data/data/com.wizkterm/files/usr/share/doc/libxslt/xsltproc.xml libxslt
 data/data/com.wizkterm/files/usr/share/doc/libxss/copyright libxss
 data/data/com.wizkterm/files/usr/share/doc/libzip/copyright libzip
 data/data/com.wizkterm/files/usr/share/doc/lsof/COPYING lsof
+data/data/com.wizkterm/files/usr/share/doc/lzip/copyright lzip
 data/data/com.wizkterm/files/usr/share/doc/m4/copyright m4
 data/data/com.wizkterm/files/usr/share/doc/make/copyright make
 data/data/com.wizkterm/files/usr/share/doc/mpfr/AUTHORS libmpfr
@@ -42236,6 +42238,7 @@ data/data/com.wizkterm/files/usr/share/info/libtool.info libtool
 data/data/com.wizkterm/files/usr/share/info/libtool.info-1 libtool
 data/data/com.wizkterm/files/usr/share/info/libtool.info-2 libtool
 data/data/com.wizkterm/files/usr/share/info/libunistring.info libunistring
+data/data/com.wizkterm/files/usr/share/info/lzip.info lzip
 data/data/com.wizkterm/files/usr/share/info/m4.info m4
 data/data/com.wizkterm/files/usr/share/info/m4.info-1 m4
 data/data/com.wizkterm/files/usr/share/info/m4.info-2 m4
@@ -43123,6 +43126,7 @@ data/data/com.wizkterm/files/usr/share/man/man1/lzdiff.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzegrep.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzfgrep.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzgrep.1.gz xz-utils
+data/data/com.wizkterm/files/usr/share/man/man1/lzip.1.gz lzip
 data/data/com.wizkterm/files/usr/share/man/man1/lzless.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzma.1.gz xz-utils
 data/data/com.wizkterm/files/usr/share/man/man1/lzmadec.1.gz xz-utils
