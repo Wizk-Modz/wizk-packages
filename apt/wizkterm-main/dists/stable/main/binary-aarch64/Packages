@@ -5057,6 +5057,21 @@ SHA256: e60552b4cf6951557e8229132bc9fda80da5fa2a5c3573c76dbef40e6bd6dce2
 Homepage: https://tiswww.case.edu/php/chet/readline/rltop.html
 Description: Static libraries for readline
 
+Package: reprepro
+Version: 5.4.2
+Architecture: aarch64
+Maintainer: @Wizk-Modz
+Installed-Size: 960
+Depends: gpgme, libarchive, libbz2, libc++, libdb, libgpg-error, liblzma, zlib
+Recommends: zstd
+Filename: pool/main/r/reprepro/reprepro_5.4.2_aarch64.deb
+Size: 307332
+MD5sum: de2482528a470781ddf8eba810e7d90a
+SHA1: 564d07a056afe51309277b7ee56045c81cdba936
+SHA256: 69c851a4649cce5f391820d707b8cdb90c9b9c53b754003e5e352b3520a8c342
+Homepage: https://salsa.debian.org/debian/reprepro
+Description: Debian package repository producer
+
 Package: resolv-conf
 Version: 1.3
 Architecture: aarch64
