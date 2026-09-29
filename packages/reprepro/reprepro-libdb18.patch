@@ -1,0 +1,36 @@
+--- a/database.c	2026-09-29 04:31:39.622490646 +0000
++++ b/database.c	2026-09-29 04:31:39.686490646 +0000
+@@ -264,7 +264,11 @@
+ 	DB_HASH
+ };
+ 
++#if DB_VERSION_MAJOR >= 6
++static int debianversioncompare(UNUSED(DB *db), const DBT *a, const DBT *b, UNUSED(size_t *locp));
++#else
+ static int debianversioncompare(UNUSED(DB *db), const DBT *a, const DBT *b);
++#endif
+ #if DB_VERSION_MAJOR >= 6
+ static int paireddatacompare(UNUSED(DB *db), const DBT *a, const DBT *b, size_t *locp);
+ #else
+@@ -312,7 +316,7 @@
+ 		}
+ 	}
+ 
+-#if DB_VERSION_MAJOR == 5 || DB_VERSION_MAJOR == 6
++#if DB_VERSION_MAJOR >= 5
+ #define DB_OPEN(database, filename, name, type, flags) \
+ 	database->open(database, NULL, filename, name, type, flags, 0664)
+ #else
+@@ -1962,7 +1966,11 @@
+ 	return RET_OK;
+ }
+ 
+-static int debianversioncompare(UNUSED(DB *db), const DBT *a, const DBT *b) {
++static int debianversioncompare(UNUSED(DB *db), const DBT *a, const DBT *b
++#if DB_VERSION_MAJOR >= 6
++	, UNUSED(size_t *locp)
++#endif
++) {
+ 	const char *a_version;
+ 	const char *b_version;
+ 	int versioncmp;
