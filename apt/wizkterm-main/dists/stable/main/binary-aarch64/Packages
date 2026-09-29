@@ -13,6 +13,20 @@ SHA256: 3980321f72e598a6e169a223ac965636e82750a164f96e5e9420632b295749fa
 Homepage: https://abseil.io/
 Description: Abseil C++ Common Libraries
 
+Package: alsa-lib
+Version: 1.2.16.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2296
+Depends: libandroid-sysv-semaphore, libandroid-shmem
+Filename: pool/main/a/alsa-lib/alsa-lib_1.2.16.1_aarch64.deb
+Size: 450660
+MD5sum: 9498fc1459b31eb4356ce9f85e533462
+SHA1: 184c412a97f3b336157e2aab4cc34bcdd056c2dd
+SHA256: 958b992317c554dd60411bb7fcf6de4baae14bd5f59686de4893db3cb4c60d1a
+Homepage: https://www.alsa-project.org
+Description: The Advanced Linux Sound Architecture (ALSA) - library
+
 Package: aom-tools
 Version: 3.15.1
 Architecture: aarch64
@@ -1717,6 +1731,33 @@ SHA1: a6735dd4d996fc87e0850fcca282a61c0e04dfec
 SHA256: f0589aaae40ac9047a5962e826f5f858727175b08a1597b8dde3bc72673f34cb
 Homepage: https://github.com/termux/libandroid-support
 Description: Static libraries for libandroid-support
+
+Package: libandroid-sysv-semaphore
+Version: 0.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 64
+Filename: pool/main/l/libandroid-sysv-semaphore/libandroid-sysv-semaphore_0.1-1_aarch64.deb
+Size: 3660
+MD5sum: 2b69221b7c51e0939a9836c03e42b533
+SHA1: 3639936fa07f8b18ec191fbdc0e6daf97e4cf4a6
+SHA256: fb85225f239919fdf4121dcf936d84d0911fe4820065aec62b12cefc01a9f8a5
+Homepage: https://android.googlesource.com/platform/bionic/+/refs/heads/master/libc/bionic/sys_sem.cpp
+Description: A shared library providing System V semaphores
+
+Package: libandroid-sysv-semaphore-static
+Version: 0.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 32
+Depends: libandroid-sysv-semaphore (= 0.1-1)
+Filename: pool/main/l/libandroid-sysv-semaphore-static/libandroid-sysv-semaphore-static_0.1-1_aarch64.deb
+Size: 1708
+MD5sum: 084f755bed316896591970b7fd1fb7dd
+SHA1: 5141972e428e1df0b0c967939ac57cc0d7b111a2
+SHA256: 07fe54dc293a1c01f00161b4a65bbf70e9fe636e2afe2c6d40da2b65b066ec37
+Homepage: https://android.googlesource.com/platform/bionic/+/refs/heads/master/libc/bionic/sys_sem.cpp
+Description: Static libraries for libandroid-sysv-semaphore
 
 Package: libandroid-utimes
 Version: 0.4
