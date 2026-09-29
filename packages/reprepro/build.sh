@@ -20,6 +20,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 # - reprepro-index-rindex.patch: index()/rindex() là hàm chỉ có trên glibc
 # - reprepro-libdb18.patch: mở rộng kiểm tra DB_VERSION_MAJOR cho libdb 18
 # - reprepro-sourceextraction-nested-functions.patch: bỏ nested function
+# - reprepro-strcmp2-inline.patch: đổi strcmp2 thành static inline, vì
+#   inline trần trong header không tạo symbol ngoài theo chuẩn C99 trở lên
 termux_step_pre_configure() {
 	./autogen.sh
 }

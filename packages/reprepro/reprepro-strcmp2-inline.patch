@@ -1,0 +1,11 @@
+--- a/globals.h	2026-09-29 06:06:44.829327985 +0000
++++ b/globals.h	2026-09-29 06:06:44.881327985 +0000
+@@ -94,7 +94,7 @@
+ #define arrayinsert(type, array, position, length) ({type *__var = array; memmove(__var + (position) + 1, __var + (position), sizeof(type) * ((length) - (position)));})
+ 
+ // strcmp2 behaves like strcmp, but allows both strings to be NULL
+-inline int strcmp2(const char *s1, const char *s2) {
++static inline int strcmp2(const char *s1, const char *s2) {
+ 	if (s1 == NULL || s2 == NULL) {
+ 		if (s1 == NULL && s2 == NULL) {
+ 			return 0;
