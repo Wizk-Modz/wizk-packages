@@ -16,6 +16,10 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --with-libarchive
 "
 
+# Các patch dưới đây để build được bằng Clang/bionic:
+# - reprepro-index-rindex.patch: index()/rindex() là hàm chỉ có trên glibc
+# - reprepro-libdb18.patch: mở rộng kiểm tra DB_VERSION_MAJOR cho libdb 18
+# - reprepro-sourceextraction-nested-functions.patch: bỏ nested function
 termux_step_pre_configure() {
 	./autogen.sh
 }

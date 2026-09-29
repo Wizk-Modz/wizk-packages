@@ -1,0 +1,43 @@
+--- a/main.c	2026-09-29 05:55:22.765327944 +0000
++++ b/main.c	2026-09-29 05:55:22.913327944 +0000
+@@ -250,9 +250,9 @@
+ 	char *version;
+ 	retvalue r;
+ 
+-	version = index(nameandversion, '=');
++	version = strchr(nameandversion, '=');
+ 	if (version != NULL) {
+-		if (index(version+1, '=') != NULL) {
++		if (strchr(version+1, '=') != NULL) {
+ 			fprintf(stderr,
+ "Cannot parse '%s': more than one '='\n",
+ 					nameandversion);
+@@ -938,7 +938,7 @@
+ 		data[0].sourceversion = NULL;
+ 	else
+ 		data[0].sourceversion = argv[3];
+-	if (index(data[0].sourcename, '=') != NULL && verbose >= 0) {
++	if (strchr(data[0].sourcename, '=') != NULL && verbose >= 0) {
+ 		fputs(
+ "Warning: removesrc treats '=' as normal character.\n"
+ "Did you want to use removesrcs?\n",
+--- a/tool.c	2026-09-29 05:55:22.849327944 +0000
++++ b/tool.c	2026-09-29 05:55:22.981327944 +0000
+@@ -343,7 +343,7 @@
+ static retvalue findfile(const char *filename, const struct changes *c, /*@null@*/const struct strlist *searchpath, /*@null@*/const char *searchfirstin, char **result) {
+ 	char *fullfilename;
+ 
+-	if (rindex(filename, '/') == NULL) {
++	if (strrchr(filename, '/') == NULL) {
+ 		retvalue r;
+ 
+ 		r = searchforfile(c->basedir, filename,
+@@ -2948,7 +2948,7 @@
+ 	retvalue r;
+ 	const char *next;
+ 
+-	while ((next = index(path, ':')) != NULL) {
++	while ((next = strchr(path, ':')) != NULL) {
+ 		if (next > path) {
+ 			char *dir = strndup(path, next-path);
+ 			if (FAILEDTOALLOC(dir)) {
