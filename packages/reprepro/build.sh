@@ -22,6 +22,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 # - reprepro-sourceextraction-nested-functions.patch: bỏ nested function
 # - reprepro-strcmp2-inline.patch: đổi strcmp2 thành static inline, vì
 #   inline trần trong header không tạo symbol ngoài theo chuẩn C99 trở lên
+# - reprepro-db-private-segfault.patch: bỏ DB_PRIVATE khỏi DB_ENV->open,
+#   vì DB_PRIVATE + DB_INIT_LOCK làm DB_ENV->close() segfault trên libdb 18
 termux_step_pre_configure() {
 	./autogen.sh
 }

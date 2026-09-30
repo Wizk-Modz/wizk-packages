@@ -1,0 +1,14 @@
+--- a/database.c	2026-09-30 00:28:30.646618105 +0000
++++ b/database.c	2026-09-30 00:28:31.042618105 +0000
+@@ -98,8 +98,10 @@
+ 	}
+ 
+ 	// DB_INIT_LOCK is needed to open multiple databases in one file (e.g. for move command)
++	// DB_PRIVATE is deliberately not passed: on Termux's Berkeley DB 18.1,
++	// combining DB_PRIVATE with DB_INIT_LOCK makes DB_ENV->close() segfault.
+ 	dbret = rdb_env->open(rdb_env, global.dbdir,
+-	                      DB_CREATE | DB_INIT_MPOOL | DB_PRIVATE | DB_INIT_LOCK, 0664);
++	                      DB_CREATE | DB_INIT_MPOOL | DB_INIT_LOCK, 0664);
+ 	if (dbret != 0) {
+ 		rdb_env->err(rdb_env, dbret, "environment open: %s", global.dbdir);
+ 		return RET_ERROR;
