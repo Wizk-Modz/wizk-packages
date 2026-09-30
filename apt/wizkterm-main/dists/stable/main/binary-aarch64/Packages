@@ -3957,6 +3957,34 @@ SHA256: f179322be752ceda62a5501026d10e6df118d13f064f3a2d1b34b51b0e555ce2
 Homepage: https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
 Description: XML utilities
 
+Package: libxrandr
+Version: 1.5.5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 196
+Depends: libx11, libxext, libxrender
+Filename: pool/main/l/libxrandr/libxrandr_1.5.5_aarch64.deb
+Size: 22320
+MD5sum: 376420232aae58ac460cfc1fb2f02589
+SHA1: 22829599b2cf5a0aaf4c44f91fab125f9b85e341
+SHA256: a2c68dccf9c0ab5b1e4c1922a08e90d43a1022610ee90598990146bb2c7fd4dc
+Homepage: https://xorg.freedesktop.org/
+Description: X11 RandR extension library
+
+Package: libxrandr-static
+Version: 1.5.5
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 100
+Depends: libxrandr (= 1.5.5)
+Filename: pool/main/l/libxrandr-static/libxrandr-static_1.5.5_aarch64.deb
+Size: 14788
+MD5sum: 4d93d857c43a025881a7b2772af5e579
+SHA1: 75fe3f6127bc9998dd3cd395203b220d8f0a84fa
+SHA256: 636fe7c7d36fb87917a51bf6d47792a5bef8669f5c4e0e25bf8eaee19a446cab
+Homepage: https://xorg.freedesktop.org/
+Description: Static libraries for libxrandr
+
 Package: libxrender
 Version: 0.9.12-1
 Architecture: aarch64

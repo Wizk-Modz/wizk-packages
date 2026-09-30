@@ -1488,6 +1488,7 @@ data/data/com.wizkterm/files/usr/include/X11/extensions/Xdbe.h libxext
 data/data/com.wizkterm/files/usr/include/X11/extensions/Xeviestr.h xorgproto
 data/data/com.wizkterm/files/usr/include/X11/extensions/Xext.h libxext
 data/data/com.wizkterm/files/usr/include/X11/extensions/Xge.h libxext
+data/data/com.wizkterm/files/usr/include/X11/extensions/Xrandr.h libxrandr
 data/data/com.wizkterm/files/usr/include/X11/extensions/Xrender.h libxrender
 data/data/com.wizkterm/files/usr/include/X11/extensions/Xv.h xorgproto
 data/data/com.wizkterm/files/usr/include/X11/extensions/XvMC.h xorgproto
@@ -24593,6 +24594,9 @@ data/data/com.wizkterm/files/usr/lib/libXext.so libxext
 data/data/com.wizkterm/files/usr/lib/libXft.a libxft-static
 data/data/com.wizkterm/files/usr/lib/libXft.la libxft-static
 data/data/com.wizkterm/files/usr/lib/libXft.so libxft
+data/data/com.wizkterm/files/usr/lib/libXrandr.a libxrandr-static
+data/data/com.wizkterm/files/usr/lib/libXrandr.la libxrandr-static
+data/data/com.wizkterm/files/usr/lib/libXrandr.so libxrandr
 data/data/com.wizkterm/files/usr/lib/libXrender.la libxrender
 data/data/com.wizkterm/files/usr/lib/libXrender.so libxrender
 data/data/com.wizkterm/files/usr/lib/libXss.a libxss-static
@@ -29856,6 +29860,7 @@ data/data/com.wizkterm/files/usr/lib/pkgconfig/xft.pc libxft
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xineramaproto.pc xorgproto
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xproto.pc xorgproto
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xproxymngproto.pc xorgproto
+data/data/com.wizkterm/files/usr/lib/pkgconfig/xrandr.pc libxrandr
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xrender.pc libxrender
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xscrnsaver.pc libxss
 data/data/com.wizkterm/files/usr/lib/pkgconfig/xwaylandproto.pc xorgproto
@@ -41348,6 +41353,7 @@ data/data/com.wizkterm/files/usr/share/doc/libxdmcp/copyright libxdmcp
 data/data/com.wizkterm/files/usr/share/doc/libxext/copyright libxext
 data/data/com.wizkterm/files/usr/share/doc/libxft/copyright libxft
 data/data/com.wizkterm/files/usr/share/doc/libxml2/copyright libxml2
+data/data/com.wizkterm/files/usr/share/doc/libxrandr/copyright libxrandr
 data/data/com.wizkterm/files/usr/share/doc/libxrender/copyright libxrender
 data/data/com.wizkterm/files/usr/share/doc/libxslt/EXSLT/devhelp/devhelp2.xsl libxslt
 data/data/com.wizkterm/files/usr/share/doc/libxslt/EXSLT/devhelp/general.html libxslt
@@ -46589,6 +46595,20 @@ data/data/com.wizkterm/files/usr/share/man/man3/XQueryPointer.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XQueryTextExtents.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XQueryTextExtents16.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XQueryTree.3.gz libx11
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigCurrentConfiguration.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigCurrentRate.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigRates.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigRotations.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigSizes.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRConfigTimes.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRFreeScreenConfigInfo.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRGetScreenInfo.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRQueryExtension.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRQueryVersion.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRRootToScreen.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRSelectInput.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRSetScreenConfig.3.gz libxrandr
+data/data/com.wizkterm/files/usr/share/man/man3/XRRSetScreenConfigAndRate.3.gz libxrandr
 data/data/com.wizkterm/files/usr/share/man/man3/XRaiseWindow.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XReadBitmapFile.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XReadBitmapFileData.3.gz libx11
@@ -47132,6 +47152,7 @@ data/data/com.wizkterm/files/usr/share/man/man3/XmbufGetScreenInfo.3.gz libxext
 data/data/com.wizkterm/files/usr/share/man/man3/XmbufGetVersion.3.gz libxext
 data/data/com.wizkterm/files/usr/share/man/man3/XmbufGetWindowAttributes.3.gz libxext
 data/data/com.wizkterm/files/usr/share/man/man3/XmbufQueryExtension.3.gz libxext
+data/data/com.wizkterm/files/usr/share/man/man3/Xrandr.3.gz libxrandr
 data/data/com.wizkterm/files/usr/share/man/man3/XrmCombineDatabase.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XrmCombineFileDatabase.3.gz libx11
 data/data/com.wizkterm/files/usr/share/man/man3/XrmDestroyDatabase.3.gz libx11
