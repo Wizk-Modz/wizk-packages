@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Debian package repository producer"
 TERMUX_PKG_LICENSE="GPL-2.0-only"
 TERMUX_PKG_MAINTAINER="@Wizk-Modz"
 TERMUX_PKG_VERSION=5.4.2
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://snapshot.debian.org/archive/debian/20230303T030402Z/pool/main/r/reprepro/reprepro_${TERMUX_PKG_VERSION}.orig.tar.xz
 TERMUX_PKG_SHA256=8955df21b88cf0d48387c7e259ba83b743cce18eef6465f9a6f0174f2861c4fb
 TERMUX_PKG_DEPENDS="gpgme, libarchive, libbz2, libc++, libdb, libgpg-error, liblzma, zlib"
@@ -22,6 +23,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 # - reprepro-sourceextraction-nested-functions.patch: bỏ nested function
 # - reprepro-strcmp2-inline.patch: đổi strcmp2 thành static inline, vì
 #   inline trần trong header không tạo symbol ngoài theo chuẩn C99 trở lên
+# - reprepro-db-private-segfault.patch: bỏ DB_PRIVATE khỏi DB_ENV->open,
+#   vì DB_PRIVATE + DB_INIT_LOCK làm DB_ENV->close() segfault trên libdb 18
 termux_step_pre_configure() {
 	./autogen.sh
 }
