@@ -5099,17 +5099,17 @@ Homepage: https://tiswww.case.edu/php/chet/readline/rltop.html
 Description: Static libraries for readline
 
 Package: reprepro
-Version: 5.4.2
+Version: 5.4.2-1
 Architecture: aarch64
 Maintainer: @Wizk-Modz
 Installed-Size: 960
 Depends: gpgme, libarchive, libbz2, libc++, libdb, libgpg-error, liblzma, zlib
 Recommends: zstd
-Filename: pool/main/r/reprepro/reprepro_5.4.2_aarch64.deb
-Size: 307332
-MD5sum: de2482528a470781ddf8eba810e7d90a
-SHA1: 564d07a056afe51309277b7ee56045c81cdba936
-SHA256: 69c851a4649cce5f391820d707b8cdb90c9b9c53b754003e5e352b3520a8c342
+Filename: pool/main/r/reprepro/reprepro_5.4.2-1_aarch64.deb
+Size: 307200
+MD5sum: 01d2c042f16dd0b75a76a4d68f5a26f7
+SHA1: 6272f457a154a73677266efbbdd28dc3a9dabcd6
+SHA256: 89c64693c2142e2dc07c3fd6c1d443267eb2cd559e2695fe6cf0284181604670
 Homepage: https://salsa.debian.org/debian/reprepro
 Description: Debian package repository producer
 
