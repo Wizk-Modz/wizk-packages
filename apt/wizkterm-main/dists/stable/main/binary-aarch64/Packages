@@ -2017,6 +2017,19 @@ SHA256: 4382d0c8837b3360f58866d33aa621c774d17c4542c53383ea754cd6cc0ae2f4
 Homepage: https://clang.llvm.org/
 Description: Compiler runtime libraries for clang
 
+Package: libcpufeatures
+Version: 0.11.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 328
+Filename: pool/main/l/libcpufeatures/libcpufeatures_0.11.0_aarch64.deb
+Size: 28080
+MD5sum: 08d868f1a295798c9f585d2d3cc80b36
+SHA1: e1ebdd26d0392ea00c175b7f6a2820bdafbce44b
+SHA256: 8bbafd78c8f1f67cef9d76a10239e8d7f68d028b06e80fe609ef1a655474e400
+Homepage: https://github.com/google/cpu_features
+Description: A cross-platform C library to retrieve CPU features (such as available instructions) at runtime
+
 Package: libcrypt
 Version: 0.2-6
 Architecture: aarch64
@@ -3250,6 +3263,34 @@ SHA1: 255e4e2b01b50bd7b572031a13e6fea83248a9fd
 SHA256: b1cce0441c3afd95042cdfb0e84f0aa662a04fcb336c67b2333d1faaaea9f298
 Homepage: https://www.cyrusimap.org/sasl/
 Description: Static libraries for libsasl
+
+Package: libsass
+Version: 3.6.6-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 2664
+Depends: libc++
+Filename: pool/main/l/libsass/libsass_3.6.6-1_aarch64.deb
+Size: 526232
+MD5sum: 01db472a414247a40b738f54ca530459
+SHA1: 72d87c4c89fcd722a182e4280be8972015969127
+SHA256: f51f2598cc026c858a814ffc39feda44f093a08b9bd231adf6673ce2c0b7b9e8
+Homepage: https://github.com/sass/libsass
+Description: Sass compiler written in C++
+
+Package: libsass-static
+Version: 3.6.6-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 10320
+Depends: libsass (= 3.6.6-1)
+Filename: pool/main/l/libsass-static/libsass-static_3.6.6-1_aarch64.deb
+Size: 926660
+MD5sum: bfbdc3bb673d41ee1d5516af2b3bd05e
+SHA1: a3d1968e4e505c099e3bfff31a8e05d792421777
+SHA256: b4e0ac938371ff56f4ca07ef164863e6b0e8570c6b327d2c0abc6e6eac2b9d26
+Homepage: https://github.com/sass/libsass
+Description: Static libraries for libsass
 
 Package: libsm
 Version: 1.2.6-1
@@ -5242,6 +5283,62 @@ SHA256: 86d11522c3cea824c0808bfd705afc6284af59a308b96bf1107d5f0ab3d82227
 Homepage: https://python.org/
 Description: Python 3 programming language intended to enable clear programs
 
+Package: python-apsw
+Version: 3.53.4.0
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 3180
+Depends: libsqlite, python
+Filename: pool/main/p/python-apsw/python-apsw_3.53.4.0_aarch64.deb
+Size: 747960
+MD5sum: 940d125653c6a5c6621ecb0c57f8e2ab
+SHA1: 1478f5b94a16f983d8a88d33867d563040c93288
+SHA256: 727d43fcdb2931f136de10ce5989d87d2dbd0dbfa6ff137bc0007f4c2752ad05
+Homepage: https://rogerbinns.github.io/apsw/
+Description: Another Python SQLite Wrapper
+
+Package: python-bcrypt
+Version: 5.0.0-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 552
+Depends: python, python-pip
+Filename: pool/main/p/python-bcrypt/python-bcrypt_5.0.0-3_aarch64.deb
+Size: 182520
+MD5sum: 757f05f1e06bfaf6d5f766280cbdd33d
+SHA1: 44fc7dada34e0cfcd259ff2f951612db1775fc9a
+SHA256: 22ab866196981e8afee9cdea70dae9e256bbfc9f66d4f9a3955706eade919f09
+Homepage: https://github.com/pyca/bcrypt
+Description: Acceptable password hashing for your software and your servers
+
+Package: python-brotli
+Version: 1.2.0-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 836
+Depends: python, python-pip
+Filename: pool/main/p/python-brotli/python-brotli_1.2.0-2_aarch64.deb
+Size: 283484
+MD5sum: 4298feeaeaaabb068664822228d55aac
+SHA1: 1fc8c231332c14bed65bfbd2b7dee6217275c0d4
+SHA256: 567aa6c62491f9e4e0255bd358cbd78e85108085b59424c7d31f08c2a1af4638
+Homepage: https://github.com/google/brotli
+Description: lossless compression algorithm and format (Python bindings)
+
+Package: python-crc32c
+Version: 2.9.post0+really2.8
+Architecture: aarch64
+Maintainer: Gouranga Das Samrat <gouranga.das.khulna@gmail.com>
+Installed-Size: 308
+Depends: python, python-pip
+Filename: pool/main/p/python-crc32c/python-crc32c_2.9.post0+really2.8_aarch64.deb
+Size: 48108
+MD5sum: 53b235aa264bd62391b1523e24600929
+SHA1: 97871f4e410dce75fd4501c74864acbd8cedc2d2
+SHA256: 56a7f2ac4120af83e9e09910057873bad36167f4cbd63e8e8cc009c092281ce0
+Homepage: https://github.com/ICRAR/crc32c
+Description: Python package implementing the crc32c checksum algorithm in hardware and software
+
 Package: python-ensurepip-wheels
 Version: 3.14.6-1
 Architecture: all
@@ -5258,6 +5355,76 @@ SHA256: 99347215e4844eeeeaa7dd8787b6c54bb1aa5b3b35e5c20596140ffae80c8304
 Homepage: https://python.org/
 Description: Wheels for Python ensurepip
 
+Package: python-greenlet
+Version: 3.5.6
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 1076
+Depends: libc++, python, python-pip
+Filename: pool/main/p/python-greenlet/python-greenlet_3.5.6_aarch64.deb
+Size: 175900
+MD5sum: ccdccb5a16b68df7c3c61dec77b0da78
+SHA1: d5ac47f01432c8f3c6143b54a7692a85fe0ecb60
+SHA256: d4df69d70ab34c5633ff8c1ab49f5935cb79e90c6b7b11e7123b9d8ac5256d58
+Homepage: https://github.com/python-greenlet/greenlet
+Description: Lightweight coroutines for in-process concurrent programming
+
+Package: python-jellyfish
+Version: 1.2.1
+Architecture: aarch64
+Maintainer: Gouranga Das Samrat <gouranga.das.khulna@gmail.com>
+Installed-Size: 800
+Depends: python, python-pip
+Filename: pool/main/p/python-jellyfish/python-jellyfish_1.2.1_aarch64.deb
+Size: 238684
+MD5sum: a29aa173132e82b6e783dff786c4fc6a
+SHA1: 31ae06794e855dd16abbce96ba629b2cf53899c0
+SHA256: 5ea45dd2615229a6d54d90e4a58ec2c6ecce9dad77e9d8f485b8894162f39bd5
+Homepage: https://codeberg.org/jpt/jellyfish
+Description: Library for approximate and phonetic matching of strings
+
+Package: python-lameenc
+Version: 1.8.4-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 104
+Depends: libandroid-support, libmp3lame, python
+Filename: pool/main/p/python-lameenc/python-lameenc_1.8.4-1_aarch64.deb
+Size: 8972
+MD5sum: 2281930ac8766b65cb4429d0a90d4e89
+SHA1: e609fbaaab11e940f91a1565f029c491af4a355f
+SHA256: 515d7b2df4c0b5029953c1cf714cc93854b44e96f301488282a62f58081d61b6
+Homepage: https://github.com/chrisstaite/lameenc
+Description: Python bindings around the LAME encoder
+
+Package: python-libsass
+Version: 0.23.0-3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 260
+Depends: libsass, python
+Filename: pool/main/p/python-libsass/python-libsass_0.23.0-3_aarch64.deb
+Size: 32664
+MD5sum: 3dd832c5a3330094a1e16d8f0ff52517
+SHA1: 1608dabc689c971d609da6d1b3b5650142ddfafa
+SHA256: d99e0ef56ac85e0f0c1a724e575c6c71d65000ddb5f77919a3438b90f7e538e4
+Homepage: https://github.com/sass/libsass-python
+Description: A straightforward binding of libsass for Python
+
+Package: python-msgpack
+Version: 1.2.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 284
+Depends: libc++, python
+Filename: pool/main/p/python-msgpack/python-msgpack_1.2.2_aarch64.deb
+Size: 58488
+MD5sum: 70001e9d8c6902a35c01fa4aca021d0a
+SHA1: 8cb43a8e7916578fe2dcb91878acf21d3a085d64
+SHA256: cf09950f0588b3abdf5d653a8fcc88c6dda32e46300f16dc11cd9eac7ed448fc
+Homepage: https://github.com/msgpack/msgpack-python
+Description: MessagePack serializer implementation for Python
+
 Package: python-pip
 Version: 26.2.1
 Architecture: all
@@ -5273,6 +5440,90 @@ SHA1: 946d5242ad2ab2a5ebd107f9d7e8494ea781fbd4
 SHA256: 871e88e1042c7551ae96d2bd1bccf7fb9bf99b4204d48835bde87c947b7c3bf2
 Homepage: https://pip.pypa.io/
 Description: The PyPA recommended tool for installing Python packages
+
+Package: python-pipcl
+Version: 12
+Architecture: all
+Maintainer: @termux
+Installed-Size: 288
+Depends: python, python-pip
+Filename: pool/main/p/python-pipcl/python-pipcl_12_all.deb
+Size: 48772
+MD5sum: 2d5d6c78e1006df489bca035d069c945
+SHA1: 3a3071342a3a99e98058b0bb02ce1710f67da5dd
+SHA256: c95a9de5af7e35f1fb6ab5f1869dc066dbdba1f0cae3812582a5fb2903c42764
+Homepage: https://github.com/ArtifexSoftware/pipcl
+Description: Python packaging operations for use by python-mupdf and python-pymupdf
+
+Package: python-psutil
+Version: 7.2.2-2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 492
+Depends: python, python-pip
+Filename: pool/main/p/python-psutil/python-psutil_7.2.2-2_aarch64.deb
+Size: 82676
+MD5sum: d5dd56ef0d344bff28024025ccbc0857
+SHA1: 49c441779e8743c4823bdef927c39b7fb1dd1445
+SHA256: e3938e218a19d58d08a1deeb1a87b41308f4db5d5f83e0e77d46018db4dfc554
+Homepage: https://github.com/giampaolo/psutil
+Description: Cross-platform process and system utilities module for Python
+
+Package: python-pycryptodomex
+Version: 3.23.0-4
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4544
+Depends: python, python-pip
+Filename: pool/main/p/python-pycryptodomex/python-pycryptodomex_3.23.0-4_aarch64.deb
+Size: 1066512
+MD5sum: b9e40d8a46bab5ab9dc4fe89b48f7f8e
+SHA1: 90f302a542c189cc56aa47bdf12d3569a7092523
+SHA256: 64cb1ef7fbb9304578b7201b66ce0bd5b0069e74dc03453f24431e47581903d9
+Homepage: https://www.pycryptodome.org/
+Description: A self-contained Python package of low-level cryptographic primitives
+
+Package: python-pyppmd
+Version: 1.3.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 212
+Depends: python, python-pip
+Filename: pool/main/p/python-pyppmd/python-pyppmd_1.3.1-1_aarch64.deb
+Size: 36900
+MD5sum: b795209a6b829aac88bc502d7c2049b9
+SHA1: 93651656628654bea4ccb14dbc68dd6c38f2bfae
+SHA256: 97978292068a429570c0effd8689865f6a148e559ced3fe3da6dc342d9d63908
+Homepage: https://github.com/miurahr/pyppmd
+Description: PPM compression/decompression library
+
+Package: python-rpds-py
+Version: 2026.6.3
+Architecture: aarch64
+Maintainer: Gouranga Das Samrat <gouranga.das.khulna@gmail.com>
+Installed-Size: 840
+Depends: python, python-pip
+Filename: pool/main/p/python-rpds-py/python-rpds-py_2026.6.3_aarch64.deb
+Size: 233400
+MD5sum: 7ef51a79d92e5b7f3451e4390f876f46
+SHA1: 8dc70ca084b039f8760317228d9bff269098bfd4
+SHA256: 9bbf43b79ab979e7eacc81b5cb8ab440f976e7709f1bbe5f3beeaaeabb45cd83
+Homepage: https://github.com/crate-py/rpds
+Description: Python bindings to Rust's persistent data structures (rpds)
+
+Package: python-sabyenc3
+Version: 9.7.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 196
+Depends: libc++, python
+Filename: pool/main/p/python-sabyenc3/python-sabyenc3_9.7.1_aarch64.deb
+Size: 43132
+MD5sum: a3b3c0d23924a4cb9ecbf12e77c57590
+SHA1: 99a8f95ec57020f1c709ab5d68643fc1e3f8e263
+SHA256: 7b304549f3d79c63626a6c0ca6103e3f87677e64749f331373f949060a14471b
+Homepage: https://github.com/sabnzbd/sabctools
+Description: C implementations of functions for use within SABnzbd
 
 Package: python-static
 Version: 3.14.6-1
@@ -5304,6 +5555,20 @@ SHA256: 3fe6e9b5b98524bce1a27ce81b34fd711a60ff49dab2693a7fa0ffec725e2dc8
 Homepage: https://python.org/
 Description: Tkinter support for Python 3
 
+Package: python-tldp
+Version: 0.7.5-8
+Architecture: all
+Maintainer: @termux
+Installed-Size: 324
+Depends: python, python-pip
+Filename: pool/main/p/python-tldp/python-tldp_0.7.5-8_all.deb
+Size: 34464
+MD5sum: ca4c1805f1db53b1eff14f1b953daf7c
+SHA1: 087eb49f18fb12be5057e65bcea4a69efe24b080
+SHA256: a1b6653dcbd0803b75ffdd4ec0223930a462763bf5bc67fbefd63979b81afb12
+Homepage: https://github.com/tLDP/python-tldp
+Description: Tools for publishing from TLDP sources
+
 Package: python-xcbgen
 Version: 1.17.0-3
 Architecture: all
@@ -5320,6 +5585,20 @@ SHA1: f8cf879d0e22e18d40f061427f344e15328cdf3b
 SHA256: c8de091f7c83c8d95abaa3f7756ce5ebf3394218eece4b9ba14aa61cac93365b
 Homepage: https://xcb.freedesktop.org/
 Description: The xcbgen Python module
+
+Package: python-xlib
+Version: 0.33-4
+Architecture: all
+Maintainer: @termux
+Installed-Size: 944
+Depends: python, python-pip
+Filename: pool/main/p/python-xlib/python-xlib_0.33-4_all.deb
+Size: 122808
+MD5sum: dbecd09dc897957207ed718cb8dce1e2
+SHA1: 0b699b1a5f979e9321513c961362579b5fed52b7
+SHA256: b35f3fb3866d6e3b199968760d57febf835aebd87fa7ab063cdd98ca8f429331
+Homepage: https://github.com/python-xlib/python-xlib
+Description: The Python X Library
 
 Package: pyunbound
 Version: 1.26.1
