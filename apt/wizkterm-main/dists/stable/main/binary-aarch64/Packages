@@ -27,6 +27,20 @@ SHA256: 958b992317c554dd60411bb7fcf6de4baae14bd5f59686de4893db3cb4c60d1a
 Homepage: https://www.alsa-project.org
 Description: The Advanced Linux Sound Architecture (ALSA) - library
 
+Package: alsa-plugins
+Version: 1.2.12-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 268
+Depends: libandroid-sysv-semaphore, libandroid-shmem, alsa-lib, pulseaudio
+Filename: pool/main/a/alsa-plugins/alsa-plugins_1.2.12-1_aarch64.deb
+Size: 25436
+MD5sum: 8c218a50b595c7e5d2157f9f1d56d999
+SHA1: 9e84d5f570a413ed926acec951c40511500070a4
+SHA256: e41e75f1dd70be6f68a558d1f329ae604b5be8d461d1285e22fd2b0220d74854
+Homepage: https://www.alsa-project.org
+Description: The Advanced Linux Sound Architecture (ALSA) - plugins
+
 Package: aom-tools
 Version: 3.15.1
 Architecture: aarch64
@@ -560,6 +574,34 @@ SHA1: d922fa0da8c6fab963d178fcc956905737353a6d
 SHA256: 33150acc7fa8ed385a9c9817e9c39009d037c503855a010573425c7a00e36c27
 Homepage: https://www.gnu.org/software/coreutils/
 Description: Basic file, shell and text manipulation utilities from the GNU project
+
+Package: cups
+Version: 2.4.19
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 11872
+Depends: libc++, libcrypt, libgnutls, libiconv, zlib
+Filename: pool/main/c/cups/cups_2.4.19_aarch64.deb
+Size: 5161136
+MD5sum: 328509e5152730d3c0581834fc88afbf
+SHA1: e3bc79b889e98ad7a9b00b87c5519ed1ae4ea3a7
+SHA256: 6c7932cfe51ab10a8f388966381d6c1473055ecd7203b959906b41e3e47a2719
+Homepage: https://www.cups.org/
+Description: Common UNIX Printing System
+
+Package: cups-static
+Version: 2.4.19
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 4148
+Depends: cups (= 2.4.19)
+Filename: pool/main/c/cups-static/cups-static_2.4.19_aarch64.deb
+Size: 729136
+MD5sum: a1f50a1c0b9b3413e7bbe888baa53fd3
+SHA1: fa4b3d0196d7b79125ae30963d302588948eff10
+SHA256: e2fe1e9fd0de180010cf7ef2a5f6f05a7749e0f50072a16f370e4ef163958ef5
+Homepage: https://www.cups.org/
+Description: Static libraries for cups
 
 Package: curl
 Version: 8.22.0
@@ -2404,6 +2446,19 @@ SHA256: 379f4d743f27ea81b37f55e6f986cbb4ec985fa89717b49779e43a624d21eadf
 Homepage: https://github.com/strukturag/libheif
 Description: Programs for manipulating HEIF (HEIC/AVIF) image files
 
+Package: libice
+Version: 1.1.2-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 436
+Filename: pool/main/l/libice/libice_1.1.2-1_aarch64.deb
+Size: 68776
+MD5sum: 01e8fa65b49248d6751af6012769dfa8
+SHA1: 3afb53f6da65f0fd6e3d9b8aaf092fdd04405089
+SHA256: 8c5d94161451be5027ac3b3659ec314598d973e628a8171626fcc520755fc101
+Homepage: https://xorg.freedesktop.org/
+Description: X11 Inter-Client Exchange library
+
 Package: libiconv
 Version: 1.19
 Architecture: aarch64
@@ -3196,6 +3251,20 @@ SHA256: b1cce0441c3afd95042cdfb0e84f0aa662a04fcb336c67b2333d1faaaea9f298
 Homepage: https://www.cyrusimap.org/sasl/
 Description: Static libraries for libsasl
 
+Package: libsm
+Version: 1.2.6-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 336
+Depends: libice, libuuid
+Filename: pool/main/l/libsm/libsm_1.2.6-1_aarch64.deb
+Size: 41216
+MD5sum: 8dd4df92ce5f49adc14f69718a067671
+SHA1: 6f2e467a2ac777f3f81c819c55c8968f6a99900e
+SHA256: 3b258115944b42c112217b307b80e6dc1c51a6d5431e17dc0a91808a8eb29eb0
+Homepage: https://xorg.freedesktop.org/
+Description: X11 Session Management library
+
 Package: libsmartcols
 Version: 2.42.1-5
 Architecture: aarch64
@@ -3884,6 +3953,34 @@ SHA256: e4516bc2c29f6cd4f2a06806b7ae85ab1338a86d0cbf5387f26ff92406f1cfe2
 Homepage: https://xorg.freedesktop.org/
 Description: Static libraries for libxext
 
+Package: libxfixes
+Version: 6.0.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 104
+Depends: libx11
+Filename: pool/main/l/libxfixes/libxfixes_6.0.2_aarch64.deb
+Size: 11596
+MD5sum: 7f1e6ed6018de27cf33336672aa2e2ff
+SHA1: c095765d7bc3421e778aa68fdbe8c7e18ea135fb
+SHA256: ebaacceb731b61d601a22931224eeafe3446aa040f09194ae66de8f9388b6a9b
+Homepage: https://xorg.freedesktop.org/
+Description: X11 miscellaneous 'fixes' extension library
+
+Package: libxfixes-static
+Version: 6.0.2
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 64
+Depends: libxfixes (= 6.0.2)
+Filename: pool/main/l/libxfixes-static/libxfixes-static_6.0.2_aarch64.deb
+Size: 7920
+MD5sum: 74169debef7702339f9a8c38d8c97ca4
+SHA1: 6063873816dc55c0d86c4b33adcbb87346626bc0
+SHA256: 1e4bc661c87b3ed6bf7efb12f6fa883cd42a9979535735b949810e25171ca99b
+Homepage: https://xorg.freedesktop.org/
+Description: Static libraries for libxfixes
+
 Package: libxft
 Version: 2.3.9-1
 Architecture: aarch64
@@ -3911,6 +4008,34 @@ SHA1: 7d554e4eedbbaa6bd15fc3ab3557b683b2039597
 SHA256: 8393454ac300a11b915fa4a2854ee33a6fdc53870357a44c224777b12018fb9a
 Homepage: https://xorg.freedesktop.org/
 Description: Static libraries for libxft
+
+Package: libxi
+Version: 1.8.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 788
+Depends: libx11, libxext
+Filename: pool/main/l/libxi/libxi_1.8.3_aarch64.deb
+Size: 141552
+MD5sum: 8266b6934012c31f52a8ee91fbaf252e
+SHA1: d6b66d7365496819cf42b06bc415a9a159dd3159
+SHA256: 0784c67cc8de67e6c00c568dccb6652d0ea8af6ca9d74d5308ed6f200e83afb4
+Homepage: https://xorg.freedesktop.org/
+Description: X11 Input extension library
+
+Package: libxi-static
+Version: 1.8.3
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 184
+Depends: libxi (= 1.8.3)
+Filename: pool/main/l/libxi-static/libxi-static_1.8.3_aarch64.deb
+Size: 27064
+MD5sum: 679ffca0cf2a403f4af11c102fcac71a
+SHA1: c797d0a9eab39dd15678b0738749e520da50790e
+SHA256: 7701894e44a81211ccbc4b9a2dedec564eb4c57ede362172967054fc5d8887d5
+Homepage: https://xorg.freedesktop.org/
+Description: Static libraries for libxi
 
 Package: libxml2
 Version: 2.15.4-1
@@ -4043,6 +4168,62 @@ SHA256: 615ab4ab82046700e100ff6aae27209c7c1cb85ad74e65a0cc81500641305b56
 Homepage: https://xorg.freedesktop.org/
 Description: Static libraries for libxss
 
+Package: libxt
+Version: 1.3.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 3120
+Depends: libice, libsm, libx11
+Filename: pool/main/l/libxt/libxt_1.3.1-1_aarch64.deb
+Size: 484168
+MD5sum: b6c5a4e751c9e9d33e70f799fae16394
+SHA1: a84931e139e69de03ba17e0add96c33cd9d0c1aa
+SHA256: 4e1eb90d4b62f3916f1881af6d5d4d2f3e77beb954a919890d2213db9c7bf0cf
+Homepage: https://xorg.freedesktop.org/
+Description: X11 toolkit intrinsics library
+
+Package: libxt-static
+Version: 1.3.1-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 696
+Depends: libxt (= 1.3.1-1)
+Filename: pool/main/l/libxt-static/libxt-static_1.3.1-1_aarch64.deb
+Size: 150172
+MD5sum: 7beaa6353f11f6ac487df8463e37fde1
+SHA1: 028aa5f245f59b6433b12b64556de2a8ff2af203
+SHA256: a0dd858deeac4af741cb860a642dc0b8f20bac2697d5b2357889b98ccca4e4cc
+Homepage: https://xorg.freedesktop.org/
+Description: Static libraries for libxt
+
+Package: libxtst
+Version: 1.2.5-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 232
+Depends: libx11, libxext, libxi
+Filename: pool/main/l/libxtst/libxtst_1.2.5-1_aarch64.deb
+Size: 25784
+MD5sum: 786adceeec5c99de29ded818dd740c69
+SHA1: 871c7b850da3e614110ad4d63cefdf15c94ebed4
+SHA256: ea5490d499aa690e8f8d7a3cd36c57d7c7010845331c97a96602b4fc823727b8
+Homepage: https://xorg.freedesktop.org/
+Description: Xlib-based library for XTEST & RECORD extensions
+
+Package: libxtst-static
+Version: 1.2.5-1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 60
+Depends: libxtst (= 1.2.5-1)
+Filename: pool/main/l/libxtst-static/libxtst-static_1.2.5-1_aarch64.deb
+Size: 8672
+MD5sum: a19c029b41882dcb495f2fc10fa3e829
+SHA1: cc38aad3dfa0c3e127f45f8040b1b5282d6abf56
+SHA256: 44bbbd519d1e20f3e0916eb5f591ca431f250a7194e5218aeaca423995947bd3
+Homepage: https://xorg.freedesktop.org/
+Description: Static libraries for libxtst
+
 Package: libzip
 Version: 1.11.4-1
 Architecture: aarch64
@@ -4058,6 +4239,49 @@ SHA1: 1d38b24c171eed8e975255354ba8ed24fec684bf
 SHA256: f779e31121f01a82a68900b87d7d34b5168b664312100d24a1dc851f03887b46
 Homepage: https://libzip.org/
 Description: Library for reading, creating, and modifying zip archives
+
+Package: littlecms
+Version: 2.19.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 540
+Breaks: littlecms-dev
+Replaces: littlecms-dev
+Filename: pool/main/l/littlecms/littlecms_2.19.1_aarch64.deb
+Size: 143584
+MD5sum: 04cc455cbf46d071d1c3a1d237fd74c9
+SHA1: 449663b6cbd9b1b34717d5f2c2b8bf0541733201
+SHA256: 75123207db7eddcbf7142a25242b5a6d23e47b75084361d3c0b96b02485ff219
+Homepage: http://www.littlecms.com/
+Description: Color management library
+
+Package: littlecms-static
+Version: 2.19.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 652
+Depends: littlecms (= 2.19.1)
+Filename: pool/main/l/littlecms-static/littlecms-static_2.19.1_aarch64.deb
+Size: 146244
+MD5sum: f58ea58fdc14908b7bb5b692804a95ab
+SHA1: 51dcb4c592b0e6fcce264795ea844e7ead9977a8
+SHA256: 3cac992b3b2fdb2afcac1ee3f589a92f5f82eb2beccb648285fd727a3599186e
+Homepage: http://www.littlecms.com/
+Description: Static libraries for littlecms
+
+Package: littlecms-utils
+Version: 2.19.1
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 180
+Depends: libjpeg-turbo, libtiff, littlecms (= 2.19.1)
+Filename: pool/main/l/littlecms-utils/littlecms-utils_2.19.1_aarch64.deb
+Size: 35300
+MD5sum: 01810ef39bbbca34f31d570673bfe8b5
+SHA1: 339e5e9387c2dcef20bd8925b27c88140b3598fc
+SHA256: 57467a1d8bd047558f8b1a8af3af3ab44629916faacb51bf7b2b31399afbade1
+Homepage: http://www.littlecms.com/
+Description: Color management utilities
 
 Package: lld
 Version: 21.1.8-3
@@ -4456,6 +4680,49 @@ SHA1: bd08e5a9b76fb23716afd15fde4bf30ea3a437d5
 SHA256: 8b99f378bde4677e770c4cc078c92bb0601c39fbbdafbce3720441330b4ee025
 Homepage: https://github.com/kkos/oniguruma
 Description: Static libraries for oniguruma
+
+Package: openjdk-17
+Version: 17.0.20
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 217552
+Depends: libandroid-shmem, libandroid-spawn, libiconv, libjpeg-turbo, zlib, littlecms, alsa-plugins
+Recommends: ca-certificates-java, openjdk-17-x, resolv-conf
+Suggests: cups
+Filename: pool/main/o/openjdk-17/openjdk-17_17.0.20_aarch64.deb
+Size: 96082820
+MD5sum: 1745de6a151d4a777b619470cd55af5d
+SHA1: 96f262f2e5ac2a6aca0ceeaf81bb9f520ddb23cf
+SHA256: ff0232fd4bd1da013e22eef3b9808e8a2332ab30f628426979b5063d750d61a4
+Homepage: https://openjdk.java.net
+Description: Java development kit and runtime
+
+Package: openjdk-17-source
+Version: 17.0.20
+Architecture: all
+Maintainer: @termux
+Installed-Size: 50792
+Filename: pool/main/o/openjdk-17-source/openjdk-17-source_17.0.20_all.deb
+Size: 47113480
+MD5sum: bcb11c111c4c42a4601eb01b5747a1ba
+SHA1: 4eecad9f097d45bb1047c58d637cb4369a514263
+SHA256: 8be90cb95765ccd858f6162d743da4d78ebafcdb6a34df8be59712524f0bf266
+Homepage: https://openjdk.java.net
+Description: Source files for openjdk-17
+
+Package: openjdk-17-x
+Version: 17.0.20
+Architecture: aarch64
+Maintainer: @termux
+Installed-Size: 14704
+Depends: freetype, giflib, libandroid-shmem, libjpeg-turbo, libpng, libx11, libxext, libxi, libxrender, libxtst, openjdk-17 (= 17.0.20)
+Filename: pool/main/o/openjdk-17-x/openjdk-17-x_17.0.20_aarch64.deb
+Size: 12560804
+MD5sum: 8f066880488726b6297da18243b16250
+SHA1: df93f3822aab1295e29745f45dee3828a45db78c
+SHA256: b3d3b90a51ea55ac33751bf9bebd4b001baebc46f5117548495f9e46355c2655
+Homepage: https://openjdk.java.net
+Description: Portion of openjdk-17 requiring X11 functionality
 
 Package: openldap
 Version: 2.7.1

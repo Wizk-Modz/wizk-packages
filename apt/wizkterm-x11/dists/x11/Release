@@ -1,36 +1,36 @@
 Architectures: aarch64
 Codename: x11
 Components: main
-Date: Wed, 30 Sep 2026 03:37:50 +0000
+Date: Wed, 30 Sep 2026 04:19:28 +0000
 Description: wizkterm-x11 APT repository
 Label: wizkterm-x11
 Origin: WizkTerm
 Suite: x11
 MD5Sum:
  d41d8cd98f00b204e9800998ecf8427e                0 Contents-aarch64
- e0d035791f15fff00ed54352c2da25ea               37 Contents-aarch64.gz
- 00b084ff72ac1473d96c23479e9a898a             2807 Release
+ e3c76b9379ae86d2be8b06f55407cd49               37 Contents-aarch64.gz
+ 7717f4b71c8ae10bdf7bbe3d21aab6d0             2807 Release
  d41d8cd98f00b204e9800998ecf8427e                0 main/binary-aarch64/Packages
  4059d198768f9f8dc9372dc1c54bc3c3               14 main/binary-aarch64/Packages.bz2
- b593f55c20f8fe1752f220233cd7b885               29 main/binary-aarch64/Packages.gz
+ eaaca104f488c2b4935a296806a5b583               29 main/binary-aarch64/Packages.gz
 SHA1:
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Contents-aarch64
- 342a4064ce0750e5a8a76f3c339a725eaf323b7b               37 Contents-aarch64.gz
- a04111f61e033cd2f1c88b60cbaee72f477b57fc             2807 Release
+ d0e3665ef236bc75c345e7bba3c2370997b04c2c               37 Contents-aarch64.gz
+ c3f9fb2c1ec966b4b1ee7b4a798bebf2b17f8c6d             2807 Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-aarch64/Packages
  64a543afbb5f4bf728636bdcbbe7a2ed0804adc2               14 main/binary-aarch64/Packages.bz2
- c0cc3d963f57c86a51718a84e3a9afaec342a1f9               29 main/binary-aarch64/Packages.gz
+ 40f48580e27cd39ee89567aa11bbf565bac01a39               29 main/binary-aarch64/Packages.gz
 SHA256:
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Contents-aarch64
- 68b3290a2b4448f6f47435e896cba269d1601f03ce750b37908965724d9cbcda               37 Contents-aarch64.gz
- 072e71bce707192b2a6a197babb958d02bea2b34862e330ac918fccd41cef408             2807 Release
+ b4c7d5dd9b4c28b3ec8fbeaa831cdbbfce28e43554e4f001bcd2bff90b2d7696               37 Contents-aarch64.gz
+ 5b7d603caeefcd1c6b88ea34728e42a2b00de9e57a5980aef9559a580326c97e             2807 Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-aarch64/Packages
  d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058               14 main/binary-aarch64/Packages.bz2
- c8c912bda008a6018fc4dbbf73c0998c6309fd9111656e92a9718abf2dcca28c               29 main/binary-aarch64/Packages.gz
+ 34c501dcb42a1a608f111694ef4575c0a32875940d0010afee7ac82bb522b1f5               29 main/binary-aarch64/Packages.gz
 SHA512:
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Contents-aarch64
- 60f4dc1653ce1669112a1a74748e781fbc23ddec994d090e2520299438ddce4565b00a36a22bb7bc073e9cb1dafdb8ced137deb0848b8c8c8151036152a5245c               37 Contents-aarch64.gz
- 91c60cd065cc5d3d41b4a14187cbe5ae7a4272530bc1d66b5c37aedb09916a83884ff712c88c51e3548ae39b63ab7a131b74ac239f58d4301efa55cf1c0024bf             2807 Release
+ 7cea7b1e0275c4178f438e8d41ff08ef32fd0272956dbf5bc0c0154f55ce94851e983eb24a8907770bac7b36a1122bb4b262220d105692cc27f397c152293c82               37 Contents-aarch64.gz
+ ae8bcb8fcfa3e90478f04b18ac8fd74283c7ad543b0d97e683737557eecb3dd0d87ed102f15919e6944dfb071f5777bec2667188812ed7c910c38b3d6ed55047             2807 Release
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-aarch64/Packages
  6de201dfed1d45412509c65deb34690dc2d09c6aafccfe491fd2f440f92842b9c755b61dc7bcdd4cc0c9f18cf46c2b3a1241e99c4c2a33fff5555e7b2f0b6348               14 main/binary-aarch64/Packages.bz2
- 9148c1f75982c053bfbf950f31c607a00b2bd5578d71627bfb96bdba7791e3c243fe2f67d39399452d4524439c05b9017ed0ba463ca46244403021714f485807               29 main/binary-aarch64/Packages.gz
+ 911eaf663f860da9de32a78ec2c008e360620484e5d1ed53b9c3c1fbbf106b2208397b7683388649e70bb055ee3291e91063ac49351d36e455ba8e2e755f22f5               29 main/binary-aarch64/Packages.gz
