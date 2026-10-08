@@ -1,0 +1,79 @@
+name: Mirror APT repo
+
+# Sao chép toàn bộ APT repository từ branch gh-pages của wizk-packages
+# sang branch gh-pages của Wizk-Modz/wizk-apt-repo, chuyển các file *.deb
+# sang Git LFS. Chạy trên runner nên không cần clone về máy local.
+on:
+  workflow_dispatch:
+    inputs:
+      source_repo:
+        description: "Repo nguồn (branch gh-pages)"
+        default: "Wizk-Modz/wizk-packages"
+        required: false
+      target_repo:
+        description: "Repo đích (branch gh-pages)"
+        default: "Wizk-Modz/wizk-apt-repo"
+        required: false
+
+permissions: {} # none
+
+concurrency:
+  group: mirror-apt-repo
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install git-lfs
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends git-lfs
+    - name: Clone source gh-pages
+      env:
+        GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        SOURCE_REPO: ${{ github.event.inputs.source_repo }}
+      run: |
+        if [ -z "$GH_PAGES_TOKEN" ]; then
+          echo "::error::secret GH_PAGES_TOKEN is not set"
+          exit 1
+        fi
+        git clone --depth 1 --branch gh-pages \
+          "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${SOURCE_REPO}.git" old
+        echo "Số .deb nguồn: $(find old -name '*.deb' | wc -l)"
+        du -sh old
+    - name: Clone target gh-pages
+      env:
+        GH_PAGES_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        TARGET_REPO: ${{ github.event.inputs.target_repo }}
+      run: |
+        if git clone --depth 1 --branch gh-pages \
+          "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${TARGET_REPO}.git" new 2>/dev/null; then
+          echo "Đã clone branch gh-pages của repo đích."
+        else
+          echo "Branch gh-pages chưa tồn tại, tạo mới."
+          mkdir -p new
+          cd new
+          git init -q
+          git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${TARGET_REPO}.git"
+        fi
+        cd new
+        git config user.name "Wizk-BOT"
+        git config user.email "wizk-bot@users.noreply.github.com"
+    - name: Sync files from source to target
+      run: |
+        # Chép nội dung nguồn (bỏ .git) đè lên đích.
+        (cd old && tar cf - --exclude=.git .) | tar xf - -C new
+    - name: Commit and push via LFS
+      run: |
+        cd new
+        git lfs install --local
+        git lfs track "*.deb"
+        git add -A
+        if git diff --cached --quiet; then
+          echo "Không có thay đổi để mirror."
+          exit 0
+        fi
+        git commit -q -m "mirror: import APT repo from source [skip ci]"
+        git branch -M gh-pages
+        git push -f origin gh-pages
