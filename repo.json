@@ -4,18 +4,18 @@
     "name": "wizkterm-main",
     "distribution": "stable",
     "component": "main",
-    "url": "https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-main"
+    "url": "https://repo.chuong.qzz.io/apt/wizkterm-main"
   },
   "root-packages": {
     "name": "wizkterm-root",
     "distribution": "root",
     "component": "stable",
-    "url": "https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-root"
+    "url": "https://repo.chuong.qzz.io/apt/wizkterm-root"
   },
   "x11-packages": {
     "name": "wizkterm-x11",
     "distribution": "x11",
     "component": "main",
-    "url": "https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-x11"
+    "url": "https://repo.chuong.qzz.io/apt/wizkterm-x11"
   }
 }

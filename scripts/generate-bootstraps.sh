@@ -24,7 +24,7 @@ TERMUX_PACKAGE_MANAGERS=("apt" "pacman")
 
 # The repository base urls mapping for package managers.
 declare -A REPO_BASE_URLS=(
-	["apt"]="https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-main"
+	["apt"]="https://repo.chuong.qzz.io/apt/wizkterm-main"
 	["pacman"]="https://sync.termux-pacman.dev/main"
 )
 
