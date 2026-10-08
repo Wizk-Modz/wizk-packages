@@ -75,11 +75,11 @@ termux_step_pre_configure() {
 termux_step_post_make_install() {
 	{
 		echo "# The main WizkTerm repository"
-		echo "deb https://wizk-modz.github.io/wizk-packages/apt/wizkterm-main/ stable main"
+		echo "deb https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-main/ stable main"
 		echo "# The WizkTerm root repository"
-		echo "# deb https://wizk-modz.github.io/wizk-packages/apt/wizkterm-root/ root stable"
+		echo "# deb https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-root/ root stable"
 		echo "# The WizkTerm x11 repository"
-		echo "# deb https://wizk-modz.github.io/wizk-packages/apt/wizkterm-x11/ x11 main"
+		echo "# deb https://wizk-modz.github.io/wizk-apt-repo/apt/wizkterm-x11/ x11 main"
 	} > $TERMUX_PREFIX/etc/apt/sources.list
 
 	# apt-transport-tor

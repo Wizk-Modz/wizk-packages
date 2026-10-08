@@ -63,7 +63,7 @@ jobs:
     - name: Install publishing tools
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends dpkg-dev apt-utils gnupg bzip2
+        sudo apt-get install -y --no-install-recommends dpkg-dev apt-utils gnupg bzip2 git-lfs
     - name: Import GPG signing key
       env:
         GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -89,7 +89,8 @@ jobs:
         mkdir -p "$SITE"
         cd "$SITE"
         git init -q
-        git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/${{ github.repository }}.git"
+        git lfs install --local
+        git remote add origin "https://x-access-token:${GH_PAGES_TOKEN}@github.com/Wizk-Modz/wizk-apt-repo.git"
         git config user.name "Wizk-BOT"
         git config user.email "wizk-bot@users.noreply.github.com"
         if git ls-remote --exit-code --heads origin gh-pages > /dev/null 2>&1; then
@@ -99,6 +100,8 @@ jobs:
           echo "gh-pages branch does not exist yet, creating an orphan branch"
           git checkout -q --orphan gh-pages
         fi
+        # Đảm bảo .gitattributes theo dõi *.deb qua LFS (kể cả branch đã tồn tại).
+        git lfs track "*.deb"
     - name: Publish packages to gh-pages
       run: |
         ./scripts/publish-apt-repo.sh "$SITE_DIR" debs
