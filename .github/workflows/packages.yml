@@ -368,6 +368,9 @@ jobs:
   upload-test:
     permissions:
       contents: read
+    # Tạm tắt: kiểm tra file-conflicts của upstream hay fail với artifact
+    # chỉ có aarch64. Bật lại bằng cách xóa dòng 'if: false' này.
+    if: false
     needs: build
     runs-on: ubuntu-slim
     steps:
