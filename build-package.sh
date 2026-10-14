@@ -669,9 +669,9 @@ if [[ "${TERMUX_INSTALL_DEPS-false}" == "true" || "${TERMUX_PACKAGE_LIBRARY-bion
 	}
 	# Khóa ký repository của WizkTerm, dùng để verify metadata khi tải dependency.
 	if [[ -f "$TERMUX_SCRIPTDIR/packages/wizkterm-keyring/wizkterm.gpg" ]]; then
-		gpg --list-keys B984834A0A21075A3ECFCFDA4BB5F6FE7DFABDF3 > /dev/null 2>&1 || {
+		gpg --list-keys F77F2E59428CA255F72026B4014153F8A45FB0A3 > /dev/null 2>&1 || {
 			gpg --import "$TERMUX_SCRIPTDIR/packages/wizkterm-keyring/wizkterm.gpg"
-			gpg --no-tty --command-file <(echo -e "trust\n5\ny") --edit-key B984834A0A21075A3ECFCFDA4BB5F6FE7DFABDF3
+			gpg --no-tty --command-file <(echo -e "trust\n5\ny") --edit-key F77F2E59428CA255F72026B4014153F8A45FB0A3
 		}
 	fi
 fi
