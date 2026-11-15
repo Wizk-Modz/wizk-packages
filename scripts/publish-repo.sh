@@ -96,7 +96,9 @@ for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/rep
         [ -f "$deb" ] || continue
 
         deb_arch="$(dpkg-deb -f "$deb" Architecture)"
-        if [ "$deb_arch" != "$ARCH" ]; then
+        # Gói platform-independent khai báo Architecture: all nhưng vẫn thuộc
+        # binary-$ARCH của repo, nên phải nhận cả hai giá trị.
+        if [ "$deb_arch" != "$ARCH" ] && [ "$deb_arch" != "all" ]; then
           echo "    Bỏ qua $(basename "$deb"): kiến trúc $deb_arch khác $ARCH"
           continue
         fi
