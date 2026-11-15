@@ -484,5 +484,7 @@ jobs:
           echo "Không có thay đổi, bỏ qua commit"
           exit 0
         fi
-        git commit -m "publish: cập nhật APT repository từ wizk-packages [skip ci]"
+        # Không thêm [skip ci]: commit này phải kích hoạt pipeline GitLab để
+        # Pages deploy metadata và .deb mới.
+        git commit -m "publish: cập nhật APT repository từ wizk-packages"
         git push origin gh-pages
