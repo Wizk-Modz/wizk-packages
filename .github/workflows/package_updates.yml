@@ -103,7 +103,9 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-          token: ${{ secrets.BOT_TOKEN }}
+          # Dùng BOT_TOKEN nếu có để commit của bot kích hoạt được workflow build;
+          # chưa cấu hình thì lùi về GITHUB_TOKEN.
+          token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
       - name: Enable zram
         uses: ./.github/actions/zram
         with:
@@ -125,18 +127,18 @@ jobs:
             jq
       - name: Ensure bot labels exist
         env:
-          GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GH_TOKEN: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           gh label create "auto update failing" --color B60205 --force || true
           gh label create "bot" --color 0E8A16 --force || true
           gh label create "file conflict" --color D93F0B --force || true
       - name: Audit published packages for undeclared conflicts
         env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
         run: ./scripts/utils/termux_report_published_conflicts.sh
       - name: Process package updates
         env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
           BUILD_PACKAGES: "true"
           CREATE_ISSUE: "true"
           GIT_COMMIT_PACKAGES: "true"
