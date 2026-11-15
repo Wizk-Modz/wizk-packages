@@ -279,6 +279,15 @@ jobs:
         size /var/lib
         size /var/
 
+    - name: Import repository public key into build container
+      if: ${{ steps.build-info.outputs.skip-building != 'true' }}
+      run: |
+        # Container verify Release.gpg bằng keyring của user builder, nên khoá
+        # công khai của repo phải được import trước khi build.
+        ./scripts/run-docker.sh true
+        docker cp apt-keys/wizkterm.gpg termux-package-builder:/tmp/wizkterm.gpg
+        ./scripts/run-docker.sh gpg --batch --import /tmp/wizkterm.gpg
+
     - name: Build packages
       if: ${{ steps.build-info.outputs.skip-building != 'true' }}
       run: |
