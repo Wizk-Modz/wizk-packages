@@ -1,0 +1,33 @@
+name: Command Not Found Rebuild
+
+on:
+  schedule:
+    - cron: "0 4 * * 0" # Runs at 04:00am UTC every Sunday
+  workflow_dispatch:
+
+permissions: {} # none
+
+jobs:
+  rebuild-command-not-found:
+    permissions:
+      issues: write
+      contents: write
+    if: github.repository == 'Wizk-Modz/wizk-packages'
+    runs-on: ubuntu-slim
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.BOT_TOKEN }}
+      - name: Revbump main/command-not-found
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          git config --global user.name "wizk-bot"
+          git config --global user.email "wizk-bot@users.noreply.github.com"
+
+          ./scripts/bin/revbump command-not-found
+          git add .
+          git commit -m "rebuild(main/command-not-found): to update database"
+          git push

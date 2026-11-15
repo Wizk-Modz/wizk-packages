@@ -1,0 +1,139 @@
+# Default mirrors
+pkgdata_MIRRORS = default
+
+# Removed, renamed or moved mirrors
+# Mirrors files are marked as conffiles and they are manually deleted
+# in preinst step of package upgrade as conffiles removed in a newer
+# version of the package are only deleted if package is purged and
+# would otherwise be left as is after package upgrades and would still
+# get used during mirror selection.
+pkgdata_MIRRORS_REMOVED = \
+asia/mirror.albony.in \
+asia/mirror.bardia.tech \
+asia/mirrors.cbrx.io \
+asia/linux.domainesia.com \
+asia/mirror.nevacloud.com \
+asia/mirror.textcord.xyz \
+asia/tmx.xvx.my.id \
+asia/mirrors.nguyenhoang.cloud \
+asia/mirror.freedif.org \
+asia/mirror.twds.com.tw \
+asia/mirrors.in.sahilister.net \
+asia/mirrors.saswata.cc \
+asia/termux.niranjan.co \
+asia/mirrors.ravidwivedi.in \
+asia/mirror.jeonnam.school \
+asia/mirror.rinarin.dev \
+asia/mirrors.krnk.org \
+asia/mirror.meowsmp.net \
+asia/packages.nscdn.top \
+asia/mirrors.saswata.xyz \
+asia/mirrors.omsinchan.ac.th \
+chinese_mainland/mirrors.tuna.tsinghua.edu.cn \
+chinese_mainland/mirror.iscas.ac.cn \
+chinese_mainland/mirrors.nju.edu.cn \
+chinese_mainland/mirrors.pku.edu.cn \
+chinese_mainland/mirrors.ustc.edu.cn \
+chinese_mainland/mirrors.bfsu.edu.cn \
+chinese_mainland/mirrors.aliyun.com \
+chinese_mainland/mirrors.cqupt.edu.cn \
+chinese_mainland/mirror.nyist.edu.cn \
+chinese_mainland/mirrors.sau.edu.cn \
+chinese_mainland/mirrors.sdu.edu.cn \
+chinese_mainland/mirrors.sustech.edu.cn \
+chinese_mainland/mirrors.zju.edu.cn \
+chinese_mainland/mirror.sjtu.edu.cn \
+chinese_mainland/mirrors.hust.edu.cn \
+chinese_mainland/mirrors.cernet.edu.cn \
+china/mirrors.dgut.edu.cn \
+china/mirrors.hit.edu.cn \
+china/mirrors.njupt.edu.cn \
+china/mirrors.scau.edu.cn \
+china/mirror.iscas.ac.cn \
+china/mirror.nyist.edu.cn \
+china/mirror.sjtu.edu.cn \
+china/mirrors.aliyun.com \
+china/mirrors.bfsu.edu.cn \
+china/mirrors.cqupt.edu.cn \
+china/mirrors.nju.edu.cn \
+china/mirrors.pku.edu.cn \
+china/mirrors.qvq.net.cn \
+china/mirrors.sau.edu.cn \
+china/mirrors.sdu.edu.cn \
+china/mirrors.sustech.edu.cn \
+china/mirrors.tuna.tsinghua.edu.cn \
+china/mirrors.ustc.edu.cn \
+china/mirrors.zju.edu.cn \
+chinese_mainland/mirrors.qvq.net.cn \
+europe/grimler.se \
+europe/mirror.termux.dev \
+europe/packages.termux.dev \
+europe/termux.librehat.com \
+europe/mirror.mwt.me \
+europe/termux.mentality.rip \
+europe/mirrors.de.sahilister.net \
+europe/termux.cdn.lumito.net \
+europe/termux.3san.dev \
+europe/mirror.accum.se \
+europe/md.mirrors.hacktegic.com \
+europe/ftp.fau.de \
+europe/is.mirror.flokinet.net \
+europe/ro.mirror.flokinet.net \
+europe/mirrors.medzik.dev \
+europe/mirrors.cfe.re \
+europe/mirror.sunred.org \
+europe/mirror.autkin.net \
+europe/mirror.bouwhuis.network \
+europe/mirror.leitecastro.com \
+europe/ftp.agdsn.de \
+europe/mirror.polido.pt \
+europe/nl.mirror.flokinet.net \
+europe/cdn.lumito.net \
+europe/mirror.termux.dv \
+europe/termux.sahilister.in \
+europe/termux.astra.in.ua \
+north_america/plug-mirror.rcac.purdue.edu \
+north_america/dl.kcubeterm.com \
+north_america/mirrors.utermux.dev \
+north_america/mirror.fcix.net \
+north_america/mirror.mwt.me \
+north_america/mirror.vern.cc \
+north_america/mirror.csclub.uwaterloo.ca \
+north_america/mirror.quantum5.ca \
+north_america/termux.danyael.xyz \
+north_america/gnlug.org \
+north_america/packages.termux.dev \
+oceania/mirrors.middlendian.com \
+oceania/mirrors.wale.id.au \
+russia/mirror.mephi.ru \
+russia/repository.su \
+russia/mirror.surf \
+south_america/mirrors.rda.run
+
+install-default: $(pkgdata_MIRRORS)
+	$(MKDIR_P) $(DESTDIR)$(sysconfdir)/termux/mirrors
+	for f in $(pkgdata_MIRRORS); do \
+		$(INSTALL) -m 644 $(srcdir)/$$f \
+		$(DESTDIR)$(sysconfdir)/termux/mirrors; \
+	done
+
+uninstall-default:
+	for f in $(pkgdata_MIRRORS); do \
+		rm -f $(DESTDIR)$(sysconfdir)/termux/mirrors/$$f; \
+	done
+	-rmdir $(DESTDIR)$(sysconfdir)/termux/mirrors
+
+uninstall-removed-mirrors:
+	for f in $(pkgdata_MIRRORS_REMOVED); do \
+		rm -f $(DESTDIR)$(sysconfdir)/termux/mirrors/$$f; \
+	done
+
+create-deb-control-files:
+	sh -c "cd $$(dirname $(DESTDIR)$(sysconfdir)); find $$(basename $(DESTDIR)$(sysconfdir))/termux/mirrors -type f" >> ../conffiles;
+	printf "# Delete removed mirrors\nfor f in %s; do\n    if test -f \"%s/etc/termux/mirrors/\$$f\"; then\n        echo \"Deleting removed mirror: \$$f\"; rm -f \"%s/etc/termux/mirrors/\$$f\";\n    fi\ndone" "$(pkgdata_MIRRORS_REMOVED)" "$(termux_prefix)" "$(termux_prefix)" >> ../preinst;
+
+install-data-local: uninstall-removed-mirrors install-default create-deb-control-files
+
+uninstall-local: uninstall-removed-mirrors uninstall-default
+
+EXTRA_DIST = $(pkgdata_MIRRORS)

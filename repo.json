@@ -1,0 +1,21 @@
+{
+  "pkg_format": "debian",
+  "packages": {
+    "name": "wizkterm-main",
+    "distribution": "stable",
+    "component": "main",
+    "url": "https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-main"
+  },
+  "root-packages": {
+    "name": "wizkterm-root",
+    "distribution": "root",
+    "component": "stable",
+    "url": "https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-root"
+  },
+  "x11-packages": {
+    "name": "wizkterm-x11",
+    "distribution": "x11",
+    "component": "main",
+    "url": "https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-x11"
+  }
+}

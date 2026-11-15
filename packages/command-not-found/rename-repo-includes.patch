@@ -1,0 +1,60 @@
+Đổi tên repo trong #include của command-not-found.cpp từ termux-* sang wizkterm-*,
+khớp với tên repo trong repo.json sau khi fork.
+
+diff --git a/command-not-found.cpp b/command-not-found.cpp
+--- a/command-not-found.cpp
++++ b/command-not-found.cpp
+@@ -27,13 +27,13 @@
+ 
+ const std::list<std::string_view> main_commands = {
+ #ifdef __aarch64__
+-#include "commands-aarch64-termux-main.h"
++#include "commands-aarch64-wizkterm-main.h"
+ #elif defined __arm__
+-#include "commands-arm-termux-main.h"
++#include "commands-arm-wizkterm-main.h"
+ #elif defined __i686__
+-#include "commands-i686-termux-main.h"
++#include "commands-i686-wizkterm-main.h"
+ #elif defined __x86_64__
+-#include "commands-x86_64-termux-main.h"
++#include "commands-x86_64-wizkterm-main.h"
+ #else
+ #error Failed to detect arch
+ #endif
+@@ -41,13 +41,13 @@
+ 
+ const std::list<std::string_view> root_commands = {
+ #ifdef __aarch64__
+-#include "commands-aarch64-termux-root.h"
++#include "commands-aarch64-wizkterm-root.h"
+ #elif defined __arm__
+-#include "commands-arm-termux-root.h"
++#include "commands-arm-wizkterm-root.h"
+ #elif defined __i686__
+-#include "commands-i686-termux-root.h"
++#include "commands-i686-wizkterm-root.h"
+ #elif defined __x86_64__
+-#include "commands-x86_64-termux-root.h"
++#include "commands-x86_64-wizkterm-root.h"
+ #else
+ #error Failed to detect arch
+ #endif
+@@ -55,13 +55,13 @@
+ 
+ const std::list<std::string_view> x11_commands = {
+ #ifdef __aarch64__
+-#include "commands-aarch64-termux-x11.h"
++#include "commands-aarch64-wizkterm-x11.h"
+ #elif defined __arm__
+-#include "commands-arm-termux-x11.h"
++#include "commands-arm-wizkterm-x11.h"
+ #elif defined __i686__
+-#include "commands-i686-termux-x11.h"
++#include "commands-i686-wizkterm-x11.h"
+ #elif defined __x86_64__
+-#include "commands-x86_64-termux-x11.h"
++#include "commands-x86_64-wizkterm-x11.h"
+ #else
+ #error Failed to detect arch
+ #endif

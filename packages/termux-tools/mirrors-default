@@ -1,0 +1,6 @@
+# This file is sourced by pkg
+# WizkTerm repository
+WEIGHT=10
+MAIN="https://repo.chuong.qzz.io/wizkterm-main"
+ROOT="https://repo.chuong.qzz.io/wizkterm-root"
+X11="https://repo.chuong.qzz.io/wizkterm-x11"

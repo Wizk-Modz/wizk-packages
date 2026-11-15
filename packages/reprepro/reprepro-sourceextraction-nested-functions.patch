@@ -1,0 +1,266 @@
+--- a/sourceextraction.c	2026-09-29 03:56:57.234490522 +0000
++++ b/sourceextraction.c	2026-09-29 03:56:57.278490522 +0000
+@@ -127,90 +127,102 @@
+ 		return false;
+ }
+ 
+-static retvalue parsediff(struct compressedfile *f, /*@null@*/char **section_p, /*@null@*/char **priority_p, bool *found_p) {
+-	size_t destlength, lines_in, lines_out;
+-	const char *p, *s; char *garbage;
+-#define BUFSIZE 4096
+-	char buffer[BUFSIZE];
+-	int bytes_read, used = 0, filled = 0;
+-
+-	auto inline bool u_getline(void);
+-	inline bool u_getline(void) {
+-		do {
+-		if (filled - used > 0) {
+-			char *n;
+-
+-			p = buffer + used;
+-			n = memchr(p, '\n', filled - used);
+-			if (n != NULL) {
+-				used += 1 + (n - p);
++#define DIFF_BUFSIZE 4096
++
++struct diffreader {
++	struct compressedfile *f;
++	char buffer[DIFF_BUFSIZE];
++	int bytes_read, used, filled;
++};
++
++/* Đọc một dòng từ file diff vào bộ đệm, trả về false khi hết dữ liệu */
++static bool u_getline(struct diffreader *r, const char **p_p) {
++	do {
++	if (r->filled - r->used > 0) {
++		char *n;
++
++		*p_p = r->buffer + r->used;
++		n = memchr(*p_p, '\n', r->filled - r->used);
++		if (n != NULL) {
++			r->used += 1 + (n - *p_p);
++			*n = '\0';
++			while (--n >= *p_p && *n == '\r')
+ 				*n = '\0';
+-				while (--n >= p && *n == '\r')
+-					*n = '\0';
+-				return true;
+-			}
+-		} else { assert (filled == used);
+-			filled = 0;
+-			used = 0;
+-		}
+-		if (filled == BUFSIZE) {
+-			if (used == 0)
+-				/* overlong line */
+-				return false;
+-			memmove(buffer, buffer + used, filled - used);
+-			filled -= used;
+-			used = 0;
++			return true;
+ 		}
+-		bytes_read = uncompress_read(f, buffer + filled,
+-				BUFSIZE - filled);
+-		if (bytes_read <= 0)
++	} else { assert (r->filled == r->used);
++		r->filled = 0;
++		r->used = 0;
++	}
++	if (r->filled == DIFF_BUFSIZE) {
++		if (r->used == 0)
++			/* overlong line */
+ 			return false;
+-		filled += bytes_read;
+-		} while (true);
++		memmove(r->buffer, r->buffer + r->used, r->filled - r->used);
++		r->filled -= r->used;
++		r->used = 0;
+ 	}
+-	auto inline char u_overlinegetchar(void);
+-	inline char u_overlinegetchar(void) {
+-		const char *n;
+-		char ch;
+-
+-		if (filled - used > 0) {
+-			ch = buffer[used];
+-		} else { assert (filled == used);
+-			used = 0;
+-			bytes_read = uncompress_read(f, buffer, BUFSIZE);
+-			if (bytes_read <= 0) {
+-				filled = 0;
+-				return '\0';
+-			}
+-			filled = bytes_read;
+-			ch = buffer[0];
+-		}
+-		if (ch == '\n')
+-			return '\0';
++	r->bytes_read = uncompress_read(r->f, r->buffer + r->filled,
++			DIFF_BUFSIZE - r->filled);
++	if (r->bytes_read <= 0)
++		return false;
++	r->filled += r->bytes_read;
++	} while (true);
++}
+ 
+-		/* over rest of the line */
+-		n = memchr(buffer + used, '\n', filled - used);
+-		if (n != NULL) {
+-			used = 1 + (n - buffer);
+-			return ch;
++/* Đọc ký tự đầu dòng rồi bỏ qua phần còn lại của dòng */
++static char u_overlinegetchar(struct diffreader *r) {
++	const char *n;
++	char ch;
++
++	if (r->filled - r->used > 0) {
++		ch = r->buffer[r->used];
++	} else { assert (r->filled == r->used);
++		r->used = 0;
++		r->bytes_read = uncompress_read(r->f, r->buffer, DIFF_BUFSIZE);
++		if (r->bytes_read <= 0) {
++			r->filled = 0;
++			return '\0';
+ 		}
+-		used = 0;
+-		filled = 0;
+-		/* need to read more to get to the end of the line */
+-		do { /* these lines can be long */
+-			bytes_read = uncompress_read(f, buffer, BUFSIZE);
+-			if (bytes_read <= 0)
+-				return false;
+-			n = memchr(buffer, '\n', bytes_read);
+-		} while (n == NULL);
+-		used = 1 + (n - buffer);
+-		filled = bytes_read;
++		r->filled = r->bytes_read;
++		ch = r->buffer[0];
++	}
++	if (ch == '\n')
++		return '\0';
++
++	/* over rest of the line */
++	n = memchr(r->buffer + r->used, '\n', r->filled - r->used);
++	if (n != NULL) {
++		r->used = 1 + (n - r->buffer);
+ 		return ch;
+ 	}
++	r->used = 0;
++	r->filled = 0;
++	/* need to read more to get to the end of the line */
++	do { /* these lines can be long */
++		r->bytes_read = uncompress_read(r->f, r->buffer, DIFF_BUFSIZE);
++		if (r->bytes_read <= 0)
++			return false;
++		n = memchr(r->buffer, '\n', r->bytes_read);
++	} while (n == NULL);
++	r->used = 1 + (n - r->buffer);
++	r->filled = r->bytes_read;
++	return ch;
++}
++
++static retvalue parsediff(struct compressedfile *f, /*@null@*/char **section_p, /*@null@*/char **priority_p, bool *found_p) {
++	size_t destlength, lines_in, lines_out;
++	const char *p, *s; char *garbage;
++	struct diffreader r;
++
++	r.f = f;
++	r.bytes_read = 0;
++	r.used = 0;
++	r.filled = 0;
+ 
+ 	/* we are assuming the exact format dpkg-source generates here... */
+ 
+-	if (!u_getline()) {
++	if (!u_getline(&r, &p)) {
+ 		/* empty or strange file */
+ 		*found_p = false;
+ 		return RET_OK;
+@@ -218,7 +230,7 @@
+ 	if (memcmp(p, "diff ", 4) == 0) {
+ 		/* one exception is allowing diff lines,
+ 		 * as diff -ru adds them ... */
+-		if (!u_getline()) {
++		if (!u_getline(&r, &p)) {
+ 			/* strange file */
+ 			*found_p = false;
+ 			return RET_OK;
+@@ -226,7 +238,7 @@
+ 	}
+ 	if (unlikely(memcmp(p, "--- ", 4) != 0))
+ 		return RET_NOTHING;
+-	if (!u_getline())
++	if (!u_getline(&r, &p))
+ 		/* so short a file? */
+ 		return RET_NOTHING;
+ 	if (unlikely(memcmp(p, "+++ ", 4) != 0))
+@@ -246,7 +258,7 @@
+ 	while (strcmp(s, "debian/control") != 0) {
+ 		if (unlikely(interrupted()))
+ 			return RET_ERROR_INTERRUPTED;
+-		if (!u_getline())
++		if (!u_getline(&r, &p))
+ 			return RET_NOTHING;
+ 		while (memcmp(p, "@@ -", 4) == 0) {
+ 			if (unlikely(interrupted()))
+@@ -292,7 +304,7 @@
+ 			while (lines_in > 0 || lines_out > 0) {
+ 				char ch;
+ 
+-				ch = u_overlinegetchar();
++				ch = u_overlinegetchar(&r);
+ 				switch (ch) {
+ 					case '+':
+ 						if (unlikely(lines_out == 0))
+@@ -314,21 +326,21 @@
+ 						return RET_NOTHING;
+ 				}
+ 			}
+-			if (!u_getline()) {
++			if (!u_getline(&r, &p)) {
+ 				*found_p = false;
+ 				/* nothing found successfully */
+ 				return RET_OK;
+ 			}
+ 		}
+ 		if (memcmp(p, "\\ No newline at end of file", 27) == 0) {
+-			if (!u_getline()) {
++			if (!u_getline(&r, &p)) {
+ 				/* nothing found successfully */
+ 				*found_p = false;
+ 				return RET_OK;
+ 			}
+ 		}
+ 		if (memcmp(p, "diff ", 4) == 0) {
+-			if (!u_getline()) {
++			if (!u_getline(&r, &p)) {
+ 				/* strange file, but nothing explicitly wrong */
+ 				*found_p = false;
+ 				return RET_OK;
+@@ -336,7 +348,7 @@
+ 		}
+ 		if (unlikely(memcmp(p, "--- ", 4) != 0))
+ 			return RET_NOTHING;
+-		if (!u_getline())
++		if (!u_getline(&r, &p))
+ 			return RET_NOTHING;
+ 		if (unlikely(memcmp(p, "+++ ", 4) != 0))
+ 			return RET_NOTHING;
+@@ -357,7 +369,7 @@
+ 			return RET_NOTHING;
+ 	}
+ 	/* found debian/control */
+-	if (!u_getline())
++	if (!u_getline(&r, &p))
+ 		return RET_NOTHING;
+ 	if (unlikely(memcmp(p, "@@ -", 4) != 0))
+ 		return RET_NOTHING;
+@@ -394,7 +406,7 @@
+ 	while (lines_out > 0) {
+ 		if (unlikely(interrupted()))
+ 			return RET_ERROR_INTERRUPTED;
+-		if (!u_getline())
++		if (!u_getline(&r, &p))
+ 			return RET_NOTHING;
+ 
+ 		switch (*(p++)) {
