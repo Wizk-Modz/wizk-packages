@@ -87,8 +87,10 @@ for repo in $(jq --raw-output 'del(.pkg_format) | keys | .[]' repo.json); do
 				awk '
 					NR==FNR { want[$0]; next }
 					{
-						owners = $NF
-						path = substr($0, 1, length($0) - length(owners) - 1)
+						# Contents ngăn cách path và owner bằng khoảng trắng hoặc tab
+						# (tuỳ phiên bản apt-ftparchive), nên tách theo field.
+						path = $1
+						owners = $2
 						if (path in want) print path "\t" owners
 					}
 				' - "Contents-${repo}-${arch}" |

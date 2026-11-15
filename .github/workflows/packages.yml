@@ -377,11 +377,11 @@ jobs:
   upload-test:
     permissions:
       contents: read
-    # Tạm tắt: kiểm tra file-conflicts của upstream hay fail với artifact
-    # chỉ có aarch64. Bật lại bằng cách xóa dòng 'if: false' này.
-    if: false
+    # Chặn publish khi .deb trùng tên bản đã phát hành hoặc ghi đè file của
+    # gói khác mà chưa khai báo Conflicts/Replaces/Breaks.
     needs: build
-    runs-on: ubuntu-slim
+    # ubuntu-latest có sẵn jq, dpkg, bzip2 và curl mà script kiểm tra cần dùng.
+    runs-on: ubuntu-latest
     steps:
     - name: Clone repository
       uses: actions/checkout@v7
@@ -420,7 +420,8 @@ jobs:
     # Chỉ publish từ repo chính. Cho phép workflow_dispatch từ bất kỳ branch
     # để test (ví dụ build 'nano' rồi đẩy thử lên repo).
     if: github.repository == 'Wizk-Modz/wizk-packages' && (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch')
-    needs: build
+    # Phụ thuộc upload-test để .deb xung đột không bao giờ được publish.
+    needs: [build, upload-test]
     runs-on: ubuntu-latest
     steps:
     - name: Clone repository
