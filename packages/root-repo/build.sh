@@ -13,7 +13,7 @@ termux_step_make_install() {
 	mkdir -p $TERMUX_PREFIX/etc/apt/sources.list.d
 	{
 		echo "# The WizkTerm root repository"
-		echo "deb https://repo.chuong.qzz.io/wizkterm-root/ root stable"
+		echo "deb https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-root/ root stable"
 	} > $TERMUX_PREFIX/etc/apt/sources.list.d/root.list
 }
 

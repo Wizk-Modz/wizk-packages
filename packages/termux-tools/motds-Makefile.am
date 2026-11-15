@@ -42,7 +42,7 @@ motd:
 
 	@echo "Welcome to WizkTerm!" > motd
 	@echo "" >> motd
-	@echo "Repo:       https://repo.chuong.qzz.io" >> motd
+	@echo "Repo:       https://wizk-apt-repo-a60e21.gitlab.io" >> motd
 	@echo "Issues:     https://github.com/Wizk-Modz/wizk-packages/issues" >> motd
 
 	@echo "" >> motd

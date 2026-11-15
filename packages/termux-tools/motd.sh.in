@@ -9,7 +9,7 @@ if [[ "$terminal_width" =~ ^[0-9]+$ ]] && [ "$terminal_width" -gt 60 ]; then
     motd="
  \e[47m                \e[0m  \e[1mWelcome to WizkTerm!\e[0m
  \e[47m  \e[0m            \e[0;37m\e[47m .\e[0m
- \e[47m  \e[0m  \e[47m  \e[0m        \e[47m  \e[0m  \e[1mRepo:\e[0m    \e[4mhttps://repo.chuong.qzz.io\e[0m
+ \e[47m  \e[0m  \e[47m  \e[0m        \e[47m  \e[0m  \e[1mRepo:\e[0m    \e[4mhttps://wizk-apt-repo-a60e21.gitlab.io\e[0m
  \e[47m  \e[0m  \e[47m  \e[0m        \e[47m  \e[0m  \e[1mIssues:\e[0m  \e[4mhttps://github.com/Wizk-Modz/wizk-packages/issues\e[0m
  \e[47m  \e[0m            \e[0;37m\e[47m .\e[0m
  \e[47m                \e[0m  \e[1mWizkTerm version:\e[0m ${TERMUX_VERSION-Unknown}
@@ -22,7 +22,7 @@ else
     motd="
 \e[1mWelcome to WizkTerm!\e[0m
 
-\e[1mRepo:\e[0m    \e[4mhttps://repo.chuong.qzz.io\e[0m
+\e[1mRepo:\e[0m    \e[4mhttps://wizk-apt-repo-a60e21.gitlab.io\e[0m
 \e[1mIssues:\e[0m  \e[4mhttps://github.com/Wizk-Modz/wizk-packages/issues\e[0m
 
 \e[1mWizkTerm version:\e[0m ${TERMUX_VERSION-Unknown}

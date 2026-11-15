@@ -13,7 +13,7 @@ termux_step_make_install() {
 	mkdir -p $TERMUX_PREFIX/etc/apt/sources.list.d
 	{
 		echo "# The WizkTerm x11 repository"
-		echo "deb https://repo.chuong.qzz.io/wizkterm-x11/ x11 main"
+		echo "deb https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-x11/ x11 main"
 	} > $TERMUX_PREFIX/etc/apt/sources.list.d/x11.list
 }
 
