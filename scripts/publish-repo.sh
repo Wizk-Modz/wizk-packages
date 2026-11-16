@@ -254,18 +254,24 @@ bash "$SCRIPT_DIR/verify-apt-repo.sh" "$WORK_DIR"
 # Đẩy .deb và khoá trước, metadata sau: nếu metadata lên trước thì trong lúc
 # upload client có thể đọc Packages trỏ tới file .deb chưa tồn tại.
 echo "==> Đồng bộ pool lên r2:$BUCKET"
+# .deb có version trong tên nên không bao giờ đổi nội dung: cache vĩnh viễn.
 # sync xoá luôn file cũ không còn trong thư mục làm việc, nhờ vậy pool
 # không giữ lại bản .deb đã bị thay thế.
 rclone sync "$WORK_DIR" "r2:$BUCKET" --exclude '**/dists/**' \
-  --checksum --fast-list --stats-one-line --transfers 16
+  --checksum --fast-list --stats-one-line --transfers 16 \
+  --header-upload "Cache-Control: public, max-age=31536000, immutable"
 
 echo "==> Đồng bộ metadata lên r2:$BUCKET"
+# Cloudflare cache theo phần mở rộng (.gz, .bz2) tới 4 giờ nếu object không
+# khai báo Cache-Control, khiến client thấy InRelease mới nhưng Packages cũ.
+# Metadata phải luôn revalidate để mỗi lần publish là thấy ngay.
 for repo_name in $(repo_names); do
   if [ ! -d "$WORK_DIR/$repo_name/dists" ]; then
     continue
   fi
   rclone sync "$WORK_DIR/$repo_name/dists" "r2:$BUCKET/$repo_name/dists" \
-    --checksum --fast-list --stats-one-line --transfers 16
+    --checksum --fast-list --stats-one-line --transfers 16 \
+    --header-upload "Cache-Control: no-cache, max-age=0, must-revalidate"
 done
 
 echo "==> Hoàn tất, đã thêm $pkg_count gói"
