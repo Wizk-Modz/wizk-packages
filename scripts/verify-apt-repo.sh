@@ -82,8 +82,10 @@ while IFS= read -r -d '' packages; do
   # Thư mục gốc của repo là phần trước "dists/"
   repo_root="${packages%%/dists/*}"
   pkg_count=0
+  entry_count=0
   while IFS='|' read -r name version filename size sha256; do
     [ -n "${filename:-}" ] || continue
+    entry_count=$((entry_count + 1))
     deb="$repo_root/$filename"
     if [ ! -f "$deb" ]; then
       fail "$name: thiếu file $filename"
@@ -113,10 +115,10 @@ while IFS= read -r -d '' packages; do
     /^SHA256: /    { sum = substr($0, 9) }
     END { flush() }
   ' "$packages")
-  if [ "$pkg_count" -eq 0 ]; then
+  if [ "$entry_count" -eq 0 ]; then
     echo "    CẢNH BÁO: ${packages#"$ROOT"/} không có gói nào"
   else
-    echo "    OK: ${packages#"$ROOT"/} ($pkg_count gói)"
+    echo "    OK: ${packages#"$ROOT"/} ($pkg_count/$entry_count gói hợp lệ)"
   fi
 done < <(find . -path ./keys -prune -o -name Packages -print0)
 

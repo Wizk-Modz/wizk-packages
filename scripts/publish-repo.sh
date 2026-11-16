@@ -123,7 +123,7 @@ if [ "$DRY_RUN" -eq 0 ]; then
   rclone sync "r2:$BUCKET" "$WORK_DIR" --checksum --fast-list --stats-one-line
 else
   echo "==> Chế độ dry-run: bỏ qua mirror bucket"
-  fi
+fi
 
 echo "==> Sao chép .deb vào pool"
 for repo_name in $(repo_names); do
@@ -251,9 +251,21 @@ fi
 echo "==> Xác thực repository"
 bash "$SCRIPT_DIR/verify-apt-repo.sh" "$WORK_DIR"
 
-echo "==> Đồng bộ ngược lên r2:$BUCKET"
+# Đẩy .deb và khoá trước, metadata sau: nếu metadata lên trước thì trong lúc
+# upload client có thể đọc Packages trỏ tới file .deb chưa tồn tại.
+echo "==> Đồng bộ pool lên r2:$BUCKET"
 # sync xoá luôn file cũ không còn trong thư mục làm việc, nhờ vậy pool
 # không giữ lại bản .deb đã bị thay thế.
-rclone sync "$WORK_DIR" "r2:$BUCKET" --checksum --fast-list --stats-one-line
+rclone sync "$WORK_DIR" "r2:$BUCKET" --exclude '**/dists/**' \
+  --checksum --fast-list --stats-one-line --transfers 16
+
+echo "==> Đồng bộ metadata lên r2:$BUCKET"
+for repo_name in $(repo_names); do
+  if [ ! -d "$WORK_DIR/$repo_name/dists" ]; then
+    continue
+  fi
+  rclone sync "$WORK_DIR/$repo_name/dists" "r2:$BUCKET/$repo_name/dists" \
+    --checksum --fast-list --stats-one-line --transfers 16
+done
 
 echo "==> Hoàn tất, đã thêm $pkg_count gói"
