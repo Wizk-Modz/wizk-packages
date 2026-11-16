@@ -108,6 +108,18 @@ export RCLONE_CONFIG_R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY"
 export RCLONE_CONFIG_R2_ENDPOINT="$R2_ENDPOINT"
 export RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true
 
+# sync sẽ xoá mọi object không có trong thư mục nguồn. Sau khi migration hoàn
+# tất, bucket đã là nguồn dữ liệu chính nên chạy lại sẽ xoá gói publish về sau.
+if [ "${ALLOW_OVERWRITE:-0}" != "1" ]; then
+  existing="$(rclone ls "r2:$BUCKET" | wc -l | tr -d ' ')"
+  if [ "$existing" -gt 0 ]; then
+    echo "Bucket r2:$BUCKET đã có $existing object." >&2
+    echo "Script này ghi đè toàn bộ bucket, chỉ dùng cho lần migration đầu tiên." >&2
+    echo "Đặt ALLOW_OVERWRITE=1 nếu thực sự muốn xoá và thay bằng dữ liệu GitLab." >&2
+    exit 1
+  fi
+fi
+
 echo "==> Đồng bộ lên r2:$BUCKET"
 rclone sync "$WORK_DIR/out" "r2:$BUCKET" --checksum --fast-list --stats-one-line --transfers 16
 

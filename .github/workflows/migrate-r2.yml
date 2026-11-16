@@ -1,8 +1,9 @@
 name: Migrate APT repo to R2
 
-# Chuyển APT repository từ GitLab Pages sang Cloudflare R2 một lần.
-# Chạy trên runner để không phải tải 1.6 GB về máy: clone repo GitLab (Git LFS),
-# đổi layout bỏ tiền tố apt/, rồi đồng bộ thẳng lên bucket.
+# ĐÃ CHẠY XONG — giữ lại để tham khảo.
+# Workflow này ghi đè toàn bộ bucket bằng dữ liệu GitLab cũ, nên chạy lại sẽ
+# xoá mọi gói publish sau đó. Bucket R2 hiện là nguồn dữ liệu duy nhất;
+# chỉ dùng lại khi thực sự cần khôi phục từ GitLab (kèm ALLOW_OVERWRITE=1).
 on:
   workflow_dispatch:
     inputs:
@@ -42,6 +43,7 @@ jobs:
         R2_BUCKET: ${{ vars.R2_BUCKET }}
         R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
       run: |
+        echo "::warning::Workflow này ghi đè toàn bộ bucket R2 bằng dữ liệu GitLab cũ."
         if [ -z "$R2_ACCESS_KEY_ID" ] || [ -z "$R2_SECRET_ACCESS_KEY" ] || [ -z "$R2_ENDPOINT" ]; then
           echo "::error::secret R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY hoặc R2_ENDPOINT chưa được đặt"
           exit 1
