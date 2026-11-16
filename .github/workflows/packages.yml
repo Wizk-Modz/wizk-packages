@@ -408,8 +408,8 @@ jobs:
 
         ./scripts/utils/termux_check_file_conflicts.sh debs
 
-  # Publish *.deb lên GitLab Pages: dựng lại pool + metadata rồi ký Release.
-  # Repository nằm ở project GitLab wizk-apt-repo, Pages phục vụ thư mục public/.
+  # Publish *.deb lên Cloudflare R2: mirror bucket, thêm gói mới, sinh metadata
+  # và ký Release rồi đồng bộ ngược lại. R2 là nguồn dữ liệu duy nhất.
   upload:
     concurrency:
       group: ${{ github.workflow }}-upload
@@ -439,22 +439,8 @@ jobs:
     - name: Install repository tools
       run: |
         sudo apt-get update -qq
-        sudo apt-get install -y -qq --no-install-recommends apt-utils git-lfs
-    - name: Clone APT repository
-      env:
-        APT_REPO_TOKEN: ${{ secrets.APT_REPO_TOKEN }}
-      run: |
-        if [ -z "$APT_REPO_TOKEN" ]; then
-          echo "::error::secret APT_REPO_TOKEN chưa được đặt"
-          exit 1
-        fi
-        # .deb trong repo lưu bằng Git LFS nên phải pull nội dung thật,
-        # nếu không apt-ftparchive sẽ băm nhầm file pointer 131 byte.
-        git clone --branch gh-pages \
-          "https://oauth2:${APT_REPO_TOKEN}@gitlab.com/wizkmodz/wizk-apt-repo.git" apt-repo
-        cd apt-repo
-        git lfs install --local
-        git lfs pull
+        sudo apt-get install -y -qq --no-install-recommends apt-utils rclone
+        rclone version | head -1
     - name: Import signing key
       env:
         GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -466,26 +452,19 @@ jobs:
         mkdir -p "$HOME/.gnupg"
         chmod 700 "$HOME/.gnupg"
         printf '%s' "$GPG_PRIVATE_KEY" | gpg --batch --import
-    - name: Rebuild repository metadata
+    - name: Rebuild repository metadata and upload to R2
       env:
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+        R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+        R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+        R2_BUCKET: ${{ vars.R2_BUCKET }}
+        R2_PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
       run: |
-        chmod +x scripts/publish-repo.sh
-        ./scripts/publish-repo.sh --debs debs --out apt-repo/apt
-    - name: Commit and push
-      env:
-        APT_REPO_TOKEN: ${{ secrets.APT_REPO_TOKEN }}
-      run: |
-        cd apt-repo
-        git config user.name 'wizkterm-ci'
-        git config user.email 'ci@wizkterm.local'
-        git add -A
-        if git diff --cached --quiet; then
-          echo "Không có thay đổi, bỏ qua commit"
-          exit 0
+        if [ -z "$R2_ACCESS_KEY_ID" ] || [ -z "$R2_SECRET_ACCESS_KEY" ] || [ -z "$R2_ENDPOINT" ]; then
+          echo "::error::secret R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY hoặc R2_ENDPOINT chưa được đặt"
+          exit 1
         fi
-        # Không thêm [skip ci]: commit này phải kích hoạt pipeline GitLab để
-        # Pages deploy metadata và .deb mới.
-        git commit -m "publish: cập nhật APT repository từ wizk-packages"
-        git push origin gh-pages
+        chmod +x scripts/publish-repo.sh
+        ./scripts/publish-repo.sh --debs debs --work r2-repo

@@ -4,6 +4,6 @@
 source "@TERMUX_PREFIX@/bin/termux-setup-package-manager" || exit 1
 
 echo "WizkTerm uses a single fixed repository:"
-echo "  https://wizk-apt-repo-a60e21.gitlab.io"
+echo "  https://wizk-repos.chuong.qzz.io"
 echo ""
 echo "Mirror selection is not supported in this build."

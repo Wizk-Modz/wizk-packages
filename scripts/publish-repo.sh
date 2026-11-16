@@ -1,41 +1,53 @@
 #!/usr/bin/env bash
-# Dựng lại pool và metadata APT từ các file .deb rồi ký Release để publish lên GitLab Pages.
+# Dựng lại APT repository trên Cloudflare R2: mirror bucket về máy, thêm .deb mới,
+# sinh metadata, ký Release rồi đồng bộ ngược lại bucket.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 DEB_DIR=""
-OUT_DIR=""
-GPG_KEY_ID="${GPG_KEY_ID:-}"
+WORK_DIR=""
+BUCKET="${R2_BUCKET:-wizk-repos}"
 ARCH="aarch64"
+GPG_KEY_ID="${GPG_KEY_ID:-}"
+PUBLIC_URL="${R2_PUBLIC_URL:-https://wizk-repos.chuong.qzz.io}"
+DRY_RUN=0
 
 usage() {
   cat <<'USAGE'
-Cách dùng: publish-repo.sh --debs <thư mục .deb> --out <thư mục repo> [--gpg-key <key id>]
+Cách dùng: publish-repo.sh --debs <thư mục .deb> --work <thư mục làm việc> [tuỳ chọn]
 
   --debs     Thư mục chứa các file .deb và các file built_<repo>_packages.txt
-  --out      Thư mục gốc của repository (chứa <repo>/dists và <repo>/pool)
-  --gpg-key  Key ID dùng để ký Release; bỏ trống thì dùng khoá mặc định
+  --work     Thư mục nháp, sẽ được mirror từ bucket rồi đồng bộ ngược lại
+  --bucket   Tên bucket R2 (mặc định $R2_BUCKET hoặc wizk-repos)
   --arch     Kiến trúc cần publish (mặc định aarch64)
+  --url      URL công khai của bucket, dùng cho trang index
+  --dry-run  Chỉ dựng metadata ở địa phương, không upload
 
 Biến môi trường:
-  GPG_PASSPHRASE  Passphrase của khoá ký, dùng với --pinentry-mode loopback
+  R2_ACCESS_KEY_ID      Access key ID của R2
+  R2_SECRET_ACCESS_KEY  Secret access key của R2
+  R2_ENDPOINT           Endpoint S3 của R2, dạng https://<account>.r2.cloudflarestorage.com
+  GPG_PASSPHRASE        Passphrase của khoá ký, dùng với --pinentry-mode loopback
+  GPG_KEY_ID            Key ID dùng để ký Release
 USAGE
 }
 
 while [ $# -gt 0 ]; do
   case "$1" in
     --debs) DEB_DIR="${2:-}"; shift 2 ;;
-    --out) OUT_DIR="${2:-}"; shift 2 ;;
-    --gpg-key) GPG_KEY_ID="${2:-}"; shift 2 ;;
+    --work) WORK_DIR="${2:-}"; shift 2 ;;
+    --bucket) BUCKET="${2:-}"; shift 2 ;;
     --arch) ARCH="${2:-}"; shift 2 ;;
+    --url) PUBLIC_URL="${2:-}"; shift 2 ;;
+    --dry-run) DRY_RUN=1; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Tham số không hợp lệ: $1" >&2; usage >&2; exit 2 ;;
   esac
 done
 
-if [ -z "$DEB_DIR" ] || [ -z "$OUT_DIR" ]; then
+if [ -z "$DEB_DIR" ] || [ -z "$WORK_DIR" ]; then
   echo "Thiếu tham số bắt buộc" >&2
   usage >&2
   exit 2
@@ -50,6 +62,23 @@ for tool in dpkg-deb apt-ftparchive gpg jq gzip bzip2; do
   command -v "$tool" >/dev/null || { echo "Thiếu công cụ: $tool" >&2; exit 1; }
 done
 
+# Cấu hình rclone qua biến môi trường để không cần file cấu hình trên runner
+setup_rclone_remote() {
+  for var in R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY R2_ENDPOINT; do
+    if [ -z "${!var:-}" ]; then
+      echo "Thiếu biến môi trường $var" >&2
+      exit 1
+    fi
+  done
+
+  export RCLONE_CONFIG_R2_TYPE=s3
+  export RCLONE_CONFIG_R2_PROVIDER=Cloudflare
+  export RCLONE_CONFIG_R2_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID"
+  export RCLONE_CONFIG_R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY"
+  export RCLONE_CONFIG_R2_ENDPOINT="$R2_ENDPOINT"
+  export RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true
+}
+
 # Lấy distribution và component của một repo từ repo.json
 read_repo_meta() {
   local repo_name="$1"
@@ -58,26 +87,46 @@ read_repo_meta() {
     "$REPO_ROOT/repo.json"
 }
 
+repo_names() {
+  jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/repo.json"
+}
+
 # Chép một file .deb vào pool của repo đích theo layout pool/<component>/<chữ cái>/<gói>/
 copy_deb_to_pool() {
   local deb="$1" repo_name="$2" component="$3"
   local pkg_name pool_dir
+
   pkg_name="$(dpkg-deb -f "$deb" Package)"
 
   # Ký tự đầu của tên gói làm thư mục phân vùng; ký tự lạ gom vào "misc"
   local bucket="${pkg_name:0:1}"
   [[ "$bucket" =~ ^[a-z0-9]$ ]] || bucket="misc"
 
-  pool_dir="$OUT_DIR/$repo_name/pool/$component/$bucket/$pkg_name"
+  pool_dir="$WORK_DIR/$repo_name/pool/$component/$bucket/$pkg_name"
   mkdir -p "$pool_dir"
+
+  # Bỏ bản cũ của cùng gói để pool không phình dần qua từng lần publish
+  find "$pool_dir" -maxdepth 1 -name '*.deb' ! -name "$(basename "$deb")" -delete
+
   cp -f "$deb" "$pool_dir/"
   pkg_count=$((pkg_count + 1))
 }
 
 pkg_count=0
 
+if [ "$DRY_RUN" -eq 0 ]; then
+  setup_rclone_remote
+
+  echo "==> Mirror bucket r2:$BUCKET về $WORK_DIR"
+  mkdir -p "$WORK_DIR"
+  # Bucket là nguồn duy nhất: kéo toàn bộ pool + metadata về trước khi sửa
+  rclone sync "r2:$BUCKET" "$WORK_DIR" --checksum --fast-list --stats-one-line
+else
+  echo "==> Chế độ dry-run: bỏ qua mirror bucket"
+fi
+
 echo "==> Sao chép .deb vào pool"
-for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/repo.json"); do
+for repo_name in $(repo_names); do
   read -r distribution component <<<"$(read_repo_meta "$repo_name")"
 
   manifest="$DEB_DIR/built_${repo_name}_packages.txt"
@@ -118,9 +167,9 @@ if [ "$pkg_count" -eq 0 ]; then
 fi
 
 echo "==> Sinh metadata"
-for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/repo.json"); do
+for repo_name in $(repo_names); do
   read -r distribution component <<<"$(read_repo_meta "$repo_name")"
-  repo_dir="$OUT_DIR/$repo_name"
+  repo_dir="$WORK_DIR/$repo_name"
 
   if [ ! -d "$repo_dir/pool/$component" ]; then
     echo "    Bỏ qua $repo_name: chưa có pool"
@@ -138,13 +187,13 @@ for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/rep
     apt-ftparchive contents "pool/$component" > "dists/$distribution/Contents-$ARCH"
   )
 
-  # Mọi .deb trong pool phải xuất hiện trong Packages; thiếu nghĩa là file hỏng
-  # hoặc còn là LFS pointer, khi đó metadata sẽ sai và phải dừng ngay.
+  # Mọi .deb trong pool phải xuất hiện trong Packages; thiếu nghĩa là file hỏng,
+  # khi đó metadata sẽ sai và phải dừng ngay.
   pool_deb_count="$(find "$repo_dir/pool/$component" -name '*.deb' | wc -l | tr -d ' ')"
   indexed_count="$(grep -c '^Package: ' "$binary_dir/Packages" || true)"
   if [ "$pool_deb_count" != "$indexed_count" ]; then
     echo "LỖI: $repo_name có $pool_deb_count file .deb nhưng Packages chỉ có $indexed_count mục" >&2
-    echo "      Kiểm tra lại git lfs pull hoặc tính toàn vẹn của file .deb" >&2
+    echo "      Kiểm tra lại tính toàn vẹn của file .deb" >&2
     exit 1
   fi
 
@@ -183,6 +232,40 @@ for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/rep
   gpg "${clear_args[@]}" "$dist_dir/Release"
 
   echo "    OK: $repo_name ($distribution/$component)"
+done
+
+# Khoá công khai phải nằm trong bucket để client tải về cài đặt
+mkdir -p "$WORK_DIR/keys"
+cp -f "$REPO_ROOT/apt-keys/wizkterm.gpg" "$WORK_DIR/keys/wizkterm.gpg"
+
+echo "==> Dựng trang index"
+bash "$SCRIPT_DIR/apt-repo-index.sh" "$WORK_DIR" "$PUBLIC_URL" "$ARCH"
+
+if [ "$DRY_RUN" -eq 1 ]; then
+  echo "==> Dry-run: đã dựng $WORK_DIR, không upload"
+  du -sh "$WORK_DIR"
+  exit 0
+fi
+
+# Kiểm tra chữ ký và checksum trước khi đẩy lên bucket để bản hỏng không lên sóng
+echo "==> Xác thực repository"
+bash "$SCRIPT_DIR/verify-apt-repo.sh" "$WORK_DIR"
+
+# Đẩy .deb và khoá trước, metadata sau: nếu metadata lên trước thì trong lúc
+# upload client có thể đọc Packages trỏ tới file .deb chưa tồn tại.
+echo "==> Đồng bộ pool lên r2:$BUCKET"
+# sync xoá luôn file cũ không còn trong thư mục làm việc, nhờ vậy pool
+# không giữ lại bản .deb đã bị thay thế.
+rclone sync "$WORK_DIR" "r2:$BUCKET" --exclude '**/dists/**' \
+  --checksum --fast-list --stats-one-line --transfers 16
+
+echo "==> Đồng bộ metadata lên r2:$BUCKET"
+for repo_name in $(repo_names); do
+  if [ ! -d "$WORK_DIR/$repo_name/dists" ]; then
+    continue
+  fi
+  rclone sync "$WORK_DIR/$repo_name/dists" "r2:$BUCKET/$repo_name/dists" \
+    --checksum --fast-list --stats-one-line --transfers 16
 done
 
 echo "==> Hoàn tất, đã thêm $pkg_count gói"
