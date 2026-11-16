@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Package repository containing X11 programs and libraries
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=8.4
-TERMUX_PKG_REVISION=3
+TERMUX_PKG_REVISION=4
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_DEPENDS="wizkterm-keyring"
 TERMUX_PKG_SKIP_SRC_EXTRACT=true
@@ -13,7 +13,7 @@ termux_step_make_install() {
 	mkdir -p $TERMUX_PREFIX/etc/apt/sources.list.d
 	{
 		echo "# The WizkTerm x11 repository"
-		echo "deb https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-x11/ x11 main"
+		echo "deb https://wizk-repos.chuong.qzz.io/wizkterm-x11/ x11 main"
 	} > $TERMUX_PREFIX/etc/apt/sources.list.d/x11.list
 }
 

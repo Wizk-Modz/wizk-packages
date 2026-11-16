@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# Chuyển APT repository từ GitLab Pages sang Cloudflare R2: clone repo cũ, bỏ
+# tiền tố apt/ trong layout rồi đồng bộ lên bucket. Metadata giữ nguyên chữ ký.
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+SRC_REPO="${SRC_REPO:-https://gitlab.com/wizkmodz/wizk-apt-repo.git}"
+SRC_BRANCH="${SRC_BRANCH:-gh-pages}"
+WORK_DIR="${WORK_DIR:-r2-repo}"
+BUCKET="${R2_BUCKET:-wizk-repos}"
+PUBLIC_URL="${R2_PUBLIC_URL:-https://wizk-repos.chuong.qzz.io}"
+ARCH="${ARCH:-aarch64}"
+SKIP_UPLOAD=0
+
+usage() {
+  cat <<'USAGE'
+Cách dùng: migrate-gitlab-to-r2.sh [tuỳ chọn]
+
+  --work     Thư mục làm việc (mặc định r2-repo)
+  --bucket   Tên bucket R2 (mặc định $R2_BUCKET hoặc wizk-repos)
+  --url      URL công khai của bucket
+  --no-upload  Chỉ dựng thư mục đích, không đẩy lên bucket
+
+Biến môi trường:
+  R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ENDPOINT  Thông tin đăng nhập R2
+USAGE
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --work) WORK_DIR="${2:-}"; shift 2 ;;
+    --bucket) BUCKET="${2:-}"; shift 2 ;;
+    --url) PUBLIC_URL="${2:-}"; shift 2 ;;
+    --no-upload) SKIP_UPLOAD=1; shift ;;
+    -h|--help) usage; exit 0 ;;
+    *) echo "Tham số không hợp lệ: $1" >&2; usage >&2; exit 2 ;;
+  esac
+done
+
+for tool in git git-lfs jq; do
+  command -v "$tool" >/dev/null || { echo "Thiếu công cụ: $tool" >&2; exit 1; }
+done
+
+echo "==> Clone $SRC_REPO ($SRC_BRANCH)"
+rm -rf "$WORK_DIR"
+git clone --quiet --branch "$SRC_BRANCH" --depth 1 "$SRC_REPO" "$WORK_DIR/src"
+
+echo "==> Lấy nội dung Git LFS"
+(
+  cd "$WORK_DIR/src"
+  git lfs install --local >/dev/null
+  git lfs pull
+)
+
+echo "==> Chuyển layout, bỏ tiền tố apt/"
+mkdir -p "$WORK_DIR/out"
+for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/repo.json"); do
+  if [ ! -d "$WORK_DIR/src/apt/$repo_name" ]; then
+    echo "    Bỏ qua $repo_name: không có trong repo cũ"
+    continue
+  fi
+  mv "$WORK_DIR/src/apt/$repo_name" "$WORK_DIR/out/$repo_name"
+  n="$(find "$WORK_DIR/out/$repo_name" -name '*.deb' | wc -l | tr -d ' ')"
+  echo "    $repo_name: $n gói"
+done
+
+mkdir -p "$WORK_DIR/out/keys"
+cp -f "$REPO_ROOT/apt-keys/wizkterm.gpg" "$WORK_DIR/out/keys/wizkterm.gpg"
+
+echo "==> Dựng trang index"
+bash "$SCRIPT_DIR/apt-repo-index.sh" "$WORK_DIR/out" "$PUBLIC_URL" "$ARCH"
+
+echo "==> Xác thực repository"
+bash "$SCRIPT_DIR/verify-apt-repo.sh" "$WORK_DIR/out"
+
+du -sh "$WORK_DIR/out"
+
+if [ "$SKIP_UPLOAD" -eq 1 ]; then
+  echo "==> Bỏ qua upload theo yêu cầu"
+  exit 0
+fi
+
+for var in R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY R2_ENDPOINT; do
+  if [ -z "${!var:-}" ]; then
+    echo "Thiếu biến môi trường $var" >&2
+    exit 1
+  fi
+done
+
+export RCLONE_CONFIG_R2_TYPE=s3
+export RCLONE_CONFIG_R2_PROVIDER=Cloudflare
+export RCLONE_CONFIG_R2_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID"
+export RCLONE_CONFIG_R2_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY"
+export RCLONE_CONFIG_R2_ENDPOINT="$R2_ENDPOINT"
+export RCLONE_CONFIG_R2_NO_CHECK_BUCKET=true
+
+echo "==> Đồng bộ lên r2:$BUCKET"
+rclone sync "$WORK_DIR/out" "r2:$BUCKET" --checksum --fast-list --stats-one-line --transfers 16
+
+echo "==> Kiểm tra lại từ bucket"
+rclone ls "r2:$BUCKET" | wc -l

@@ -26,27 +26,46 @@ Read [CONTRIBUTING.md](/CONTRIBUTING.md) and [Developer's Wiki](https://github.c
 ## Publish repository
 
 Các gói build xong được đưa lên APT repository tại
-<https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-main>.
+<https://wizk-repos.chuong.qzz.io/wizkterm-main>.
 
-Workflow `.github/workflows/packages.yml` (job `upload`) clone project
-`wizkmodz/wizk-apt-repo`, chạy `scripts/publish-repo.sh` để dựng lại pool,
-sinh `Packages`/`Contents`/`Release`, ký bằng GPG rồi push lại nhánh `gh-pages`.
-GitLab Pages phục vụ thư mục `public/`.
+Bucket Cloudflare R2 `wizk-repos` là nguồn dữ liệu duy nhất: vừa chứa pool `.deb`,
+vừa chứa metadata (`Packages`, `Contents`, `Release`, `InRelease`).
+Không còn dùng GitLab repo hay GitLab Pages.
+
+Workflow `.github/workflows/packages.yml` (job `upload`) chạy `scripts/publish-repo.sh`:
+
+1. `rclone sync` kéo toàn bộ bucket về thư mục nháp.
+2. Chép `.deb` mới vào pool, xoá bản cũ của cùng gói.
+3. Sinh `Packages`/`Contents`/`Release`, ký GPG thành `InRelease` và `Release.gpg`.
+4. `scripts/verify-apt-repo.sh` kiểm tra chữ ký và checksum.
+5. `rclone sync` đẩy ngược thư mục nháp lên bucket.
 
 Cần đặt các secret sau trong GitHub repository settings:
 
 | Secret | Nội dung |
 | --- | --- |
-| `APT_REPO_TOKEN` | GitLab access token có quyền `write_repository` trên `wizkmodz/wizk-apt-repo` |
+| `R2_ACCESS_KEY_ID` | Access key ID của R2 token |
+| `R2_SECRET_ACCESS_KEY` | Secret access key của R2 token |
+| `R2_ENDPOINT` | Endpoint S3, dạng `https://<account-id>.r2.cloudflarestorage.com` |
 | `GPG_PRIVATE_KEY` | Khoá riêng ASCII-armored dùng để ký `Release` |
 | `GPG_PASSPHRASE` | Passphrase của khoá ký |
 | `GPG_KEY_ID` | Key ID của khoá ký |
 
+Và các variable (Settings → Variables):
+
+| Variable | Nội dung |
+| --- | --- |
+| `R2_BUCKET` | Tên bucket, mặc định `wizk-repos` |
+| `R2_PUBLIC_URL` | URL công khai, `https://wizk-repos.chuong.qzz.io` |
+
 Chạy tay:
 
 ```bash
-./scripts/publish-repo.sh --debs <thư mục chứa .deb> --out <thư mục repo>
+export R2_ACCESS_KEY_ID=... R2_SECRET_ACCESS_KEY=... R2_ENDPOINT=https://<account>.r2.cloudflarestorage.com
+./scripts/publish-repo.sh --debs <thư mục chứa .deb> --work <thư mục nháp>
 ```
+
+Thêm `--dry-run` để dựng và kiểm tra metadata ở địa phương mà không đụng vào bucket.
 
 
 ## Community

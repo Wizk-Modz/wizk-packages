@@ -1,6 +1,6 @@
 # This file is sourced by pkg
 # WizkTerm repository
 WEIGHT=10
-MAIN="https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-main"
-ROOT="https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-root"
-X11="https://wizk-apt-repo-a60e21.gitlab.io/apt/wizkterm-x11"
+MAIN="https://wizk-repos.chuong.qzz.io/wizkterm-main"
+ROOT="https://wizk-repos.chuong.qzz.io/wizkterm-root"
+X11="https://wizk-repos.chuong.qzz.io/wizkterm-x11"
