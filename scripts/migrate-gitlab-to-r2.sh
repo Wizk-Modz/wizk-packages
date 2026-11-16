@@ -8,6 +8,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 SRC_REPO="${SRC_REPO:-https://gitlab.com/wizkmodz/wizk-apt-repo.git}"
 SRC_BRANCH="${SRC_BRANCH:-gh-pages}"
+SRC_DIR="${SRC_DIR:-}"
 WORK_DIR="${WORK_DIR:-r2-repo}"
 BUCKET="${R2_BUCKET:-wizk-repos}"
 PUBLIC_URL="${R2_PUBLIC_URL:-https://wizk-repos.chuong.qzz.io}"
@@ -18,6 +19,7 @@ usage() {
   cat <<'USAGE'
 Cách dùng: migrate-gitlab-to-r2.sh [tuỳ chọn]
 
+  --src-dir  Dùng checkout có sẵn thay vì clone lại (dùng trong CI)
   --work     Thư mục làm việc (mặc định r2-repo)
   --bucket   Tên bucket R2 (mặc định $R2_BUCKET hoặc wizk-repos)
   --url      URL công khai của bucket
@@ -30,6 +32,7 @@ USAGE
 
 while [ $# -gt 0 ]; do
   case "$1" in
+    --src-dir) SRC_DIR="${2:-}"; shift 2 ;;
     --work) WORK_DIR="${2:-}"; shift 2 ;;
     --bucket) BUCKET="${2:-}"; shift 2 ;;
     --url) PUBLIC_URL="${2:-}"; shift 2 ;;
@@ -43,25 +46,34 @@ for tool in git git-lfs jq; do
   command -v "$tool" >/dev/null || { echo "Thiếu công cụ: $tool" >&2; exit 1; }
 done
 
-echo "==> Clone $SRC_REPO ($SRC_BRANCH)"
 rm -rf "$WORK_DIR"
-git clone --quiet --branch "$SRC_BRANCH" --depth 1 "$SRC_REPO" "$WORK_DIR/src"
+mkdir -p "$WORK_DIR"
 
-echo "==> Lấy nội dung Git LFS"
-(
-  cd "$WORK_DIR/src"
-  git lfs install --local >/dev/null
-  git lfs pull
-)
+if [ -n "$SRC_DIR" ]; then
+  # CI đã checkout sẵn và pull LFS trước khi gọi script
+  echo "==> Dùng checkout có sẵn: $SRC_DIR"
+  SRC_TREE="$SRC_DIR"
+else
+  echo "==> Clone $SRC_REPO ($SRC_BRANCH)"
+  git clone --quiet --branch "$SRC_BRANCH" --depth 1 "$SRC_REPO" "$WORK_DIR/src"
+
+  echo "==> Lấy nội dung Git LFS"
+  (
+    cd "$WORK_DIR/src"
+    git lfs install --local >/dev/null
+    git lfs pull
+  )
+  SRC_TREE="$WORK_DIR/src"
+fi
 
 echo "==> Chuyển layout, bỏ tiền tố apt/"
 mkdir -p "$WORK_DIR/out"
 for repo_name in $(jq --raw-output 'del(.pkg_format) | .[].name' "$REPO_ROOT/repo.json"); do
-  if [ ! -d "$WORK_DIR/src/apt/$repo_name" ]; then
+  if [ ! -d "$SRC_TREE/apt/$repo_name" ]; then
     echo "    Bỏ qua $repo_name: không có trong repo cũ"
     continue
   fi
-  mv "$WORK_DIR/src/apt/$repo_name" "$WORK_DIR/out/$repo_name"
+  mv "$SRC_TREE/apt/$repo_name" "$WORK_DIR/out/$repo_name"
   n="$(find "$WORK_DIR/out/$repo_name" -name '*.deb' | wc -l | tr -d ' ')"
   echo "    $repo_name: $n gói"
 done
