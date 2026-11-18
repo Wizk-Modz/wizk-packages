@@ -1,0 +1,141 @@
+--- a/packages/native/build.zig
++++ b/packages/native/build.zig
+@@ -446,14 +446,24 @@
+ ) void {
+     addMiniaudioShim(b, module, target, macos_sdk_path);
+     addImageShim(b, module, target, macos_sdk_path);
++    // tlsdesc-shim.c: bionic < 11 ignores TLSDESC relocations, and
++    // bionic has no libpthread with pthread_tryjoin_np. Must live in the
++    // module it fixes (see the file header for the full rationale).
++    module.addCSourceFile(.{ .file = b.path("src/tlsdesc-shim.c"), .flags = &.{"-std=c99"} });
+     addVideoDependencies(b, module, target, macos_sdk_path);
+ 
+     switch (target.result.os.tag) {
+         .macos => addMacOSSystemLibraries(b, module, macos_sdk_path.?),
+         .linux => {
+-            module.linkSystemLibrary("dl", .{});
+-            module.linkSystemLibrary("pthread", .{});
+-            module.linkSystemLibrary("m", .{});
++            if (b.graph.environ_map.get("BIONIC_LIB_DIR")) |path| {
++                module.addLibraryPath(.{ .cwd_relative = path });
++                module.linkSystemLibrary("dl", .{});
++                module.linkSystemLibrary("m", .{});
++            } else {
++                module.linkSystemLibrary("dl", .{});
++                module.linkSystemLibrary("pthread", .{});
++                module.linkSystemLibrary("m", .{});
++            }
+         },
+         else => {},
+     }
+@@ -490,6 +500,33 @@
+     };
+ }
+ 
++fn addBionicTranslateIncludes(b: *std.Build, step: *std.Build.Step.TranslateC) void {
++    const arch_inc = b.graph.environ_map.get("BIONIC_ARCH_INCLUDE");
++    const sys_inc = b.graph.environ_map.get("BIONIC_SYS_INCLUDE");
++    if (arch_inc) |path| {
++        step.addSystemIncludePath(.{ .cwd_relative = path });
++    }
++    if (sys_inc) |path| {
++        step.addSystemIncludePath(.{ .cwd_relative = path });
++    }
++    if (arch_inc != null or sys_inc != null) {
++        // Zig 0.17's translate-c also searches the host /usr/include (0.16 did
++        // not). Bionic <limits.h> ends with `#include_next <limits.h>`, which
++        // would then resolve to glibc's limits.h and fail on __GLIBC_USE and
++        // gnu/stubs-32.h. This empty shadow sits right after the NDK dirs, so
++        // include_next stops inside the sysroot. Kept conditional so a
++        // desktop build without the NDK still gets the real limits.h.
++        step.addSystemIncludePath(b.path("src/bionic-include-next"));
++    }
++    // Nullability is type metadata only. Zig translate-c rejects the NDK's
++    // annotated array parameters, so erase these annotations for translation.
++    step.defineCMacroRaw("_Nullable=");
++    step.defineCMacroRaw("_Nonnull=");
++    step.defineCMacroRaw("_Null_unspecified=");
++    step.defineCMacroRaw("__ANDROID_MIN_SDK_VERSION__=24");
++    step.defineCMacroRaw("__ANDROID_API__=24");
++}
++
+ fn addTranslatedCImports(
+     b: *std.Build,
+     module: *std.Build.Module,
+@@ -502,6 +539,7 @@
+         .optimize = optimize,
+     });
+     miniaudio_translate.addIncludePath(b.path("src"));
++    addBionicTranslateIncludes(b, miniaudio_translate);
+     module.addImport("miniaudio", miniaudio_translate.createModule());
+ 
+     const yoga_dep = b.dependency("yoga", .{});
+@@ -511,6 +549,7 @@
+         .optimize = optimize,
+     });
+     yoga_translate.addIncludePath(yoga_dep.path(""));
++    addBionicTranslateIncludes(b, yoga_translate);
+     module.addImport("yoga", yoga_translate.createModule());
+     addContextABIHeader(b, module, optimize, target);
+ }
+@@ -526,6 +565,7 @@
+         .target = target,
+         .optimize = optimize,
+     });
++    addBionicTranslateIncludes(b, header);
+     module.addImport("context_abi_c", header.createModule());
+ }
+ 
+--- a/packages/native/src/buffer.zig
++++ b/packages/native/src/buffer.zig
+@@ -845,8 +845,10 @@
+ 
+     pub fn isPointInScissor(self: *const OptimizedBuffer, x: i32, y: i32) bool {
+         const scissor = self.getCurrentScissorRect() orelse return true;
+-        return x >= scissor.x and x < scissor.x + @as(i32, @intCast(scissor.width)) and
+-            y >= scissor.y and y < scissor.y + @as(i32, @intCast(scissor.height));
++        const w = @as(i32, @intCast(@min(scissor.width, 0x7FFFFFFF)));
++        const h = @as(i32, @intCast(@min(scissor.height, 0x7FFFFFFF)));
++        return x >= scissor.x and x < scissor.x +| w and
++            y >= scissor.y and y < scissor.y +| h;
+     }
+ 
+     /// Reports whether a cell is inside the buffer and the active scissor. The bounds check runs
+@@ -860,10 +862,14 @@
+     pub fn isRectInScissor(self: *const OptimizedBuffer, x: i32, y: i32, width: u32, height: u32) bool {
+         const scissor = self.getCurrentScissorRect() orelse return true;
+ 
+-        const rect_end_x = x + @as(i32, @intCast(width));
+-        const rect_end_y = y + @as(i32, @intCast(height));
+-        const scissor_end_x = scissor.x + @as(i32, @intCast(scissor.width));
+-        const scissor_end_y = scissor.y + @as(i32, @intCast(scissor.height));
++        const w = @as(i32, @intCast(@min(width, 0x7FFFFFFF)));
++        const h = @as(i32, @intCast(@min(height, 0x7FFFFFFF)));
++        const sw = @as(i32, @intCast(@min(scissor.width, 0x7FFFFFFF)));
++        const sh = @as(i32, @intCast(@min(scissor.height, 0x7FFFFFFF)));
++        const rect_end_x = x +| w;
++        const rect_end_y = y +| h;
++        const scissor_end_x = scissor.x +| sw;
++        const scissor_end_y = scissor.y +| sh;
+ 
+         return !(x >= scissor_end_x or rect_end_x <= scissor.x or
+             y >= scissor_end_y or rect_end_y <= scissor.y);
+@@ -877,10 +883,14 @@
+             .height = height,
+         };
+ 
+-        const rect_end_x = x + @as(i32, @intCast(width));
+-        const rect_end_y = y + @as(i32, @intCast(height));
+-        const scissor_end_x = scissor.x + @as(i32, @intCast(scissor.width));
+-        const scissor_end_y = scissor.y + @as(i32, @intCast(scissor.height));
++        const w = @as(i32, @intCast(@min(width, 0x7FFFFFFF)));
++        const h = @as(i32, @intCast(@min(height, 0x7FFFFFFF)));
++        const sw = @as(i32, @intCast(@min(scissor.width, 0x7FFFFFFF)));
++        const sh = @as(i32, @intCast(@min(scissor.height, 0x7FFFFFFF)));
++        const rect_end_x = x +| w;
++        const rect_end_y = y +| h;
++        const scissor_end_x = scissor.x +| sw;
++        const scissor_end_y = scissor.y +| sh;
+ 
+         const intersect_x = @max(x, scissor.x);
+         const intersect_y = @max(y, scissor.y);
